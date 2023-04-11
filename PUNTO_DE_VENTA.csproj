@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +33,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,17 +48,105 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONEXION\CONEXIONMAESTRA.cs" />
-    <Compile Include="UsuariosOK.cs">
+    <Compile Include="CONEXION\WinAutoComplete.cs" />
+    <Compile Include="CONEXION\Desencryptacion.cs" />
+    <Compile Include="CONEXION\Encryptacion.cs" />
+    <Compile Include="CONEXION\Tamaño_automatico_de_datatables.cs" />
+    <Compile Include="MODULOS\CAJA\APERTURA_DE_CAJA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuariosOK.Designer.cs">
+    <Compile Include="MODULOS\CAJA\APERTURA_DE_CAJA.Designer.cs">
+      <DependentUpon>APERTURA_DE_CAJA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\CAJA\CIERRE_DE_CAJA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\CAJA\CIERRE_DE_CAJA.Designer.cs">
+      <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.Designer.cs">
+      <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\LOGIN\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\LOGIN\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.Designer.cs">
+      <DependentUpon>FormInventariosTodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.Designer.cs">
+      <DependentUpon>reportInventarios_Todos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.Designer.cs">
       <DependentUpon>UsuariosOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.Designer.cs">
+      <DependentUpon>VENTAS_MENU_PRINCIPALOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.Designer.cs">
+      <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\productosOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\productosOK.Designer.cs">
+      <DependentUpon>productosOK.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MODULOS\CAJA\APERTURA_DE_CAJA.resx">
+      <DependentUpon>APERTURA_DE_CAJA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\CAJA\CIERRE_DE_CAJA.resx">
+      <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
+      <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\LOGIN\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.resx">
+      <DependentUpon>FormInventariosTodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx">
+      <DependentUpon>reportInventarios_Todos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.resx">
+      <DependentUpon>VENTAS_MENU_PRINCIPALOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.resx">
+      <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\PRODUCTOS_OK\productosOK.resx">
+      <DependentUpon>productosOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,7 +157,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UsuariosOK.resx">
+    <EmbeddedResource Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.resx">
       <DependentUpon>UsuariosOK.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -82,7 +174,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MODULOS\" />
+    <None Include="Resources\gris_azul1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-vega.png" />
@@ -138,5 +230,32 @@
   <ItemGroup>
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="MODULOS\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\agregar-icono.png" />
+    <None Include="Resources\filtro.png" />
+    <None Include="Resources\imprimir2.png" />
+    <None Include="Resources\ocultar.png" />
+    <None Include="Resources\vencimento.png" />
+    <None Include="Resources\lista-de-verificacion.png" />
+    <None Include="Resources\inventario.png" />
+    <None Include="Resources\movimento.png" />
+    <None Include="Resources\agregar_icono22.png" />
+    <None Include="Resources\agregar_icono21.png" />
+    <None Include="Resources\agregar_icono2.png" />
+    <None Include="Resources\ligero.png" />
+    <None Include="Resources\boton agregar producto.png" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\agregar-producto.png" />
+    <None Include="Resources\cerrar-sesion1.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\ajustes.png" />
+    <None Include="Resources\Notificacion.png" />
+    <None Include="Resources\cerrar-sesion.png" />
+    <None Include="Resources\scanner.png" />
+    <None Include="Resources\teclado.png" />
+    <None Include="Resources\cargando.gif" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
