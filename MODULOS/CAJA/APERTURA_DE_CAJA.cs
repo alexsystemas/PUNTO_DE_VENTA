@@ -55,11 +55,11 @@ namespace PUNTO_DE_VENTA.MODULOS.CAJA
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyGroupSeparator = ",";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
-            ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
-            foreach (ManagementObject getserial in MOS.Get())
-            {
-                lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
-                MOSTRAR_CAJA_POR_SERIAL();
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+
+            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            lblSerialPc.Text = lblSerialPc.Text.Trim();
+            MOSTRAR_CAJA_POR_SERIAL();
                 try
                 {
                     txtidCaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
@@ -68,7 +68,6 @@ namespace PUNTO_DE_VENTA.MODULOS.CAJA
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
 
         }
 

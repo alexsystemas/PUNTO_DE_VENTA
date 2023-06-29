@@ -35,8 +35,25 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SpreadsheetLight.Fork.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Xml.Linq" />
@@ -50,18 +67,56 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
     <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONEXION\CONEXIONMAESTRA.cs" />
+    <Compile Include="CONEXION\Encryptar_en_texto.cs" />
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
     <Compile Include="CONEXION\Tamaño_automatico_de_datatables.cs" />
+    <Compile Include="MODULOS\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\admin_nivel_dios\DASHBOARD_PRINCIPAL.Designer.cs">
+      <DependentUpon>DASHBOARD_PRINCIPAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Eleccion_Servidor_o_remoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Eleccion_Servidor_o_remoto.Designer.cs">
+      <DependentUpon>Eleccion_Servidor_o_remoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Instalacion_del_SQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Instalacion_del_SQL.Designer.cs">
+      <DependentUpon>Instalacion_del_SQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\REGISTRO_DE_EMPRESA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\REGISTRO_DE_EMPRESA.Designer.cs">
+      <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.Designer.cs">
+      <DependentUpon>USUARIOS_AUTORIZADO_AL_SISTEMA.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\CAJA\APERTURA_DE_CAJA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MODULOS\CAJA\APERTURA_DE_CAJA.Designer.cs">
       <DependentUpon>APERTURA_DE_CAJA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\CAJA\Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\CAJA\Caja.Designer.cs">
+      <DependentUpon>Caja.cs</DependentUpon>
     </Compile>
     <Compile Include="MODULOS\CAJA\CIERRE_DE_CAJA.cs">
       <SubType>Form</SubType>
@@ -69,11 +124,41 @@
     <Compile Include="MODULOS\CAJA\CIERRE_DE_CAJA.Designer.cs">
       <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\CLIENTES_PROVEEDORES\clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\CLIENTES_PROVEEDORES\clientes.Designer.cs">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\CONFIGURACION\PANEL_CONFIGURACIONES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\CONFIGURACION\PANEL_CONFIGURACIONES.Designer.cs">
+      <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\DISEÑADOR_DE_COMPROBANTES\Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\DISEÑADOR_DE_COMPROBANTES\Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.Designer.cs">
+      <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.Designer.cs">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\LICENCIAS_MEMBRESIAS\Membresias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\LICENCIAS_MEMBRESIAS\Membresias.Designer.cs">
+      <DependentUpon>Membresias.cs</DependentUpon>
     </Compile>
     <Compile Include="MODULOS\LOGIN\LOGIN.cs">
       <SubType>Form</SubType>
@@ -81,17 +166,65 @@
     <Compile Include="MODULOS\LOGIN\LOGIN.Designer.cs">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\NOTIFICACIONES\Notificaiones_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\NOTIFICACIONES\Notificaiones_Form.Designer.cs">
+      <DependentUpon>Notificaiones_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\Asistente_de_ImportacionExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\Asistente_de_ImportacionExcel.Designer.cs">
+      <DependentUpon>Asistente_de_ImportacionExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\Productos_OK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\PRODUCTOS_OK\Productos_OK.Designer.cs">
+      <DependentUpon>Productos_OK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\Impresion_de_comprobantes\Ticket_report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\Impresion_de_comprobantes\Ticket_report.Designer.cs">
+      <DependentUpon>Ticket_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.Designer.cs">
       <DependentUpon>FormInventariosTodos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.Designer.cs">
+      <DependentUpon>FormMovBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.Designer.cs">
       <DependentUpon>reportInventarios_Todos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos.Designer.cs">
+      <DependentUpon>ReportKARDEX_Movimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.Designer.cs">
+      <DependentUpon>ReportMovBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODULOS\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.Designer.cs">
+      <DependentUpon>SEREALIZACION.cs</DependentUpon>
     </Compile>
     <Compile Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.cs">
       <SubType>Form</SubType>
@@ -111,40 +244,88 @@
     <Compile Include="MODULOS\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.Designer.cs">
       <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
     </Compile>
-    <Compile Include="MODULOS\PRODUCTOS_OK\productosOK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MODULOS\PRODUCTOS_OK\productosOK.Designer.cs">
-      <DependentUpon>productosOK.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MODULOS\admin_nivel_dios\DASHBOARD_PRINCIPAL.resx">
+      <DependentUpon>DASHBOARD_PRINCIPAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Eleccion_Servidor_o_remoto.resx">
+      <DependentUpon>Eleccion_Servidor_o_remoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\Instalacion_del_SQL.resx">
+      <DependentUpon>Instalacion_del_SQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\REGISTRO_DE_EMPRESA.resx">
+      <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.resx">
+      <DependentUpon>USUARIOS_AUTORIZADO_AL_SISTEMA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\CAJA\APERTURA_DE_CAJA.resx">
       <DependentUpon>APERTURA_DE_CAJA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\CAJA\Caja.resx">
+      <DependentUpon>Caja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\CAJA\CIERRE_DE_CAJA.resx">
       <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\CLIENTES_PROVEEDORES\clientes.resx">
+      <DependentUpon>clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\CONFIGURACION\PANEL_CONFIGURACIONES.resx">
+      <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\DISEÑADOR_DE_COMPROBANTES\Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.resx">
+      <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\LICENCIAS_MEMBRESIAS\Membresias.resx">
+      <DependentUpon>Membresias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\LOGIN\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\NOTIFICACIONES\Notificaiones_Form.resx">
+      <DependentUpon>Notificaiones_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\PRODUCTOS_OK\Asistente_de_ImportacionExcel.resx">
+      <DependentUpon>Asistente_de_ImportacionExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\PRODUCTOS_OK\Productos_OK.resx">
+      <DependentUpon>Productos_OK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\Impresion_de_comprobantes\Ticket_report.resx">
+      <DependentUpon>Ticket_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.resx">
       <DependentUpon>FormInventariosTodos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.resx">
+      <DependentUpon>FormMovBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx">
       <DependentUpon>reportInventarios_Todos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos.resx">
+      <DependentUpon>ReportKARDEX_Movimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.resx">
+      <DependentUpon>ReportMovBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.resx">
+      <DependentUpon>SEREALIZACION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.resx">
       <DependentUpon>VENTAS_MENU_PRINCIPALOK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.resx">
       <DependentUpon>CONEXION_MANUAL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MODULOS\PRODUCTOS_OK\productosOK.resx">
-      <DependentUpon>productosOK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -160,6 +341,7 @@
     <EmbeddedResource Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.resx">
       <DependentUpon>UsuariosOK.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +414,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MODULOS\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\Captura2.png" />
+    <None Include="Resources\area insertado .png" />
+    <None Include="Resources\csv.png" />
+    <None Include="Resources\descargas.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\CODIGO DE BARRAS.PNG" />
+    <None Include="Resources\camara.png" />
+    <None Include="Resources\boton-x.png" />
+    <None Include="Resources\advertencia.bmp" />
+    <None Include="Resources\Corona.png" />
+    <None Include="Resources\respaldo.png" />
+    <None Include="Resources\Correo.png" />
+    <None Include="Resources\impresora.png" />
+    <None Include="Resources\comprobante.png" />
+    <None Include="Resources\Clientes.png" />
+    <None Include="Resources\productos.png" />
+    <None Include="Resources\convertidor.png" />
+    <None Include="Resources\cajero.png" />
+    <None Include="Resources\usuarios.png" />
+    <None Include="Resources\Compañia.png" />
+    <None Include="Resources\proveedor.png" />
+    <None Include="Resources\comprobado.png" />
+    <None Include="Resources\circulo verde.png" />
+    <None Include="Resources\carpeta.png" />
+    <None Include="Resources\TU LOGO.png" />
+    <None Include="Resources\busq.PNG" />
+    <None Include="Resources\precaucion.png" />
+    <None Include="Resources\PCSs1.PNG" />
+    <None Include="Resources\PCSs.PNG" />
+    <None Include="Resources\PCS.PNG" />
     <None Include="Resources\agregar-icono.png" />
     <None Include="Resources\filtro.png" />
     <None Include="Resources\imprimir2.png" />

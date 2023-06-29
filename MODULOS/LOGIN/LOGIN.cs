@@ -367,7 +367,7 @@ namespace PUNTO_DE_VENTA.MODULOS
 
                 da = new SqlDataAdapter("validar_usuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@password", txtPassword.Text);
+                da.SelectCommand.Parameters.AddWithValue("@password",CONEXION.Encryptar_en_texto.Encriptar (txtPassword.Text));
                 da.SelectCommand.Parameters.AddWithValue("@login", txtLogin.Text);
 
                 da.Fill(dt);
@@ -530,42 +530,177 @@ namespace PUNTO_DE_VENTA.MODULOS
 
 
         }
+        string INDICADOR;
+        private void mostrar_usuarios_registrados()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.Open();
+                da = new SqlDataAdapter("select * from USUARIO2", con);
+                da.Fill(dt);
+                datalistado_USUARIOS_REGISTRADOS.DataSource = dt;
+                con.Close();
+                INDICADOR = "CORRECTO";
+            }
+            catch (Exception ex)
+            {
+
+                INDICADOR = "INCORRECTO";
+            }
+        }
+        private void MOSTRAR_licencia_temporal()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.Open();
+                da = new SqlDataAdapter("select * from Marcan ", con);
+                da.Fill(dt);
+                datalistado_licencia_temporal.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+                INDICADOR = "INCORRECTO";
+            }
+        }
+        int txtcontador_USUARIOS;
+        private void contar_USUARIOS()
+        {
+            int x;
+            x = datalistado_USUARIOS_REGISTRADOS.Rows.Count;
+            txtcontador_USUARIOS = (x);
+        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            
-
             timer1.Stop();
+            mostrar_usuarios_registrados();
+
+            if (INDICADOR == "CORRECTO")
+            {
+                contar_USUARIOS();
+                if (txtcontador_USUARIOS == 0)
+                {
+                    Hide();
+                    MODULOS.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA frm = new MODULOS.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA();
+                    frm.ShowDialog();
+                    Dispose();
+                }
+              
+
+            }
+
+
+            if (INDICADOR == "INCORRECTO")
+            {
+                Hide();
+                MODULOS.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto frm = new MODULOS.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto();
+                frm.ShowDialog();
+                Dispose();
+            }
+            // timer1.Stop();
             try
             {
 
-                ManagementObjectSearcher MOS = new ManagementObjectSearcher("Select * From Win32_BaseBoard");
-                foreach (ManagementObject getserial in MOS.Get())
-                {
-                    lblSerialPc.Text = getserial.Properties["SerialNumber"].Value.ToString();
+                ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+               
+                    lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+                    lblSerialPc.Text = lblSerialPc.Text.Trim(); 
 
                     MOSTRAR_CAJA_POR_SERIAL();
                     try
                     {
-                        txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
-                        lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
-                        idcajavariable = txtidcaja.Text;
+                    txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
+                    lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
+                    idcajavariable = txtidcaja.Text;
 
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
                 }
+                    catch (Exception ex)
+                     {
+                    MessageBox.Show(ex.Message);
+                     }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+            MOSTRAR_licencia_temporal();
+            try
+            {
+                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime( CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
+                lblSerialPCLocal.Text = (CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
+                lblEstadoLicencia.Text = (CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString()));
+                txtfecha_Inicio_licencia_temporal.Value = Convert.ToDateTime(CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
 
+            }
+            catch (Exception ex)
+            {
+
+              
+            }
+            if (lblEstadoLicencia.Text != "VENCIDO")
+            {
+                string fechaHOY = Convert.ToString(DateTime.Now);
+                DateTime fecha_ddmmyy = Convert.ToDateTime(fechaHOY.Split(' ')[0]);
+
+                if(txtfecha_final_licencia_temporal.Value >= fecha_ddmmyy)
+                {
+
+                    if (txtfecha_Inicio_licencia_temporal.Value <= fecha_ddmmyy)
+                    {
+                        if(lblEstadoLicencia.Text=="?ACTIVO?")
+                        {
+                            Ingresar_por_licencia_temporal();
+                        }
+                        else if (lblEstadoLicencia.Text == "?ACTIVO PRO?")
+                        {
+                            Ingresaer_por_licencia_de_paga(); 
+                        }
+
+                    }
+                    else
+                    {
+                       Hide();
+                        MODULOS.LICENCIAS_MEMBRESIAS.Membresias frm = new MODULOS.LICENCIAS_MEMBRESIAS.Membresias();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                }
+                else
+                {
+                    Hide();
+                    MODULOS.LICENCIAS_MEMBRESIAS.Membresias frm = new MODULOS.LICENCIAS_MEMBRESIAS.Membresias();
+                    frm.ShowDialog();
+                    Dispose();
+                }
+            }
+            else
+            {
+                Hide();
+                MODULOS.LICENCIAS_MEMBRESIAS.Membresias frm = new MODULOS.LICENCIAS_MEMBRESIAS.Membresias();
+                frm.ShowDialog();
+                Dispose();
+            }
+        }
+        private void Ingresar_por_licencia_temporal()
+        {
+            lblEstadoLicencia.Text = "Licencia de prueba Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
         }
 
+        private void Ingresaer_por_licencia_de_paga()
+        {
+            lblEstadoLicencia.Text = "Licencia de PROFECCIONAL Activada hasta el: " + txtfecha_final_licencia_temporal.Text;
+        }
         private void Btn0_Click(object sender, EventArgs e)
         {
             txtPassword.Text = txtPassword.Text + "0";
@@ -661,6 +796,30 @@ namespace PUNTO_DE_VENTA.MODULOS
         {
             MessageBox.Show("Usuario o contraseña Incorrectos", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+        private void editar_inicio_De_sesion()
+        {
+            try
+            {
+
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("editar_inicio_De_sesion", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_usuario", IDUSUARIO.Text);
+                cmd.Parameters.AddWithValue("@Id_serial_Pc", CONEXION.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
@@ -679,25 +838,44 @@ namespace PUNTO_DE_VENTA.MODULOS
             {
                 progressBar1.Value = 0;
                 timer2.Stop();
-
-                if (lblaperturaDeCaja.Text == "Nuevo*****" & lblRol.Text != "Solo Ventas(no esta autorizado para manejar dinero)")
+                if (txtLogin.Text == "admin")
                 {
+                    editar_inicio_De_sesion();
                     this.Hide();
-                   CAJA.APERTURA_DE_CAJA frm = new CAJA.APERTURA_DE_CAJA();
+                    admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new admin_nivel_dios.DASHBOARD_PRINCIPAL();
                     frm.ShowDialog();
-                    this.Hide();
+                    Dispose();
                 }
                 else
                 {
-                    this.Hide();
-                    VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK(); 
-                    frm.ShowDialog();
-                    this.Hide();
+                    if (lblaperturaDeCaja.Text == "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        CAJA.APERTURA_DE_CAJA frm = new CAJA.APERTURA_DE_CAJA();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                    else if (lblaperturaDeCaja.Text != "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
+                        frm.ShowDialog();
+                        Dispose();
+                    }
+                    else if (lblRol.Text == "Solo Ventas (no esta autorizado para manejar dinero)")
+                    {
+                        editar_inicio_De_sesion();
+                        this.Hide();
+                        VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
+                        frm.ShowDialog();
+                        Dispose();
 
+                    }
                 }
+
             }
-
-
         }
 
         private void BtnCambiarUsuarios_Click(object sender, EventArgs e)

@@ -29,31 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.flowyoouPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnOlvideContraseña = new System.Windows.Forms.Button();
             this.lbl_inicioSeccion = new System.Windows.Forms.Label();
+            this.blEstado_Licencia_Local = new System.Windows.Forms.Label();
+            this.lblSerialPCLocal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblSerialPc = new System.Windows.Forms.TextBox();
-            this.datalistado_caja = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.datalistado_movimientos_validar = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datalistado_detalle_cierre_de_caja = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datalistado_licencia_temporal = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datalistado_USUARIOS_REGISTRADOS = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblSerialPc = new System.Windows.Forms.TextBox();
             this.cont = new System.Windows.Forms.Label();
             this.lblpermisodeCaja = new System.Windows.Forms.Label();
             this.lblnombredeCajero = new System.Windows.Forms.Label();
@@ -70,8 +68,6 @@
             this.txtLogin = new System.Windows.Forms.Label();
             this.labeldePictureBox = new System.Windows.Forms.Label();
             this.labeldeB = new System.Windows.Forms.Label();
-            this.datalistado_detalle_cierre_de_caja = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRestaurar_Cuenta = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnCerrar = new System.Windows.Forms.Label();
@@ -87,6 +83,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.datalistado_caja = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.button15 = new System.Windows.Forms.Button();
             this.lblLicenciaPClocal = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -112,34 +110,38 @@
             this.btn0 = new System.Windows.Forms.Button();
             this.btnBorrarDerecha = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnCambiarUsuarios = new System.Windows.Forms.Button();
             this.panelIngresoDeContrasena = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblEstadoLicencia = new System.Windows.Forms.Label();
+            this.txtfecha_Inicio_licencia_temporal = new System.Windows.Forms.DateTimePicker();
+            this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelUsuarios.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_USUARIOS_REGISTRADOS)).BeginInit();
             this.panelRestaurar_Cuenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelIngresoDeContrasena.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
-            this.pictureBox2.Location = new System.Drawing.Point(2208, 329);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(828, 138);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(467, 365);
+            this.pictureBox2.Size = new System.Drawing.Size(175, 153);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
@@ -150,29 +152,26 @@
             this.panelUsuarios.Controls.Add(this.flowyoouPanel1);
             this.panelUsuarios.Controls.Add(this.panel9);
             this.panelUsuarios.Controls.Add(this.lbl_inicioSeccion);
-            this.panelUsuarios.Location = new System.Drawing.Point(656, 24);
-            this.panelUsuarios.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panelUsuarios.Location = new System.Drawing.Point(236, 13);
             this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(1616, 1471);
+            this.panelUsuarios.Size = new System.Drawing.Size(606, 442);
             this.panelUsuarios.TabIndex = 3;
             // 
             // flowyoouPanel1
             // 
             this.flowyoouPanel1.AutoScroll = true;
-            this.flowyoouPanel1.Location = new System.Drawing.Point(21, 134);
-            this.flowyoouPanel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.flowyoouPanel1.Location = new System.Drawing.Point(15, 57);
             this.flowyoouPanel1.Name = "flowyoouPanel1";
-            this.flowyoouPanel1.Size = new System.Drawing.Size(1557, 954);
+            this.flowyoouPanel1.Size = new System.Drawing.Size(577, 364);
             this.flowyoouPanel1.TabIndex = 2;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.btnOlvideContraseña);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 1259);
-            this.panel9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel9.Location = new System.Drawing.Point(0, 353);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1616, 212);
+            this.panel9.Size = new System.Drawing.Size(606, 89);
             this.panel9.TabIndex = 3;
             // 
             // btnOlvideContraseña
@@ -180,10 +179,9 @@
             this.btnOlvideContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOlvideContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOlvideContraseña.ForeColor = System.Drawing.Color.Gray;
-            this.btnOlvideContraseña.Location = new System.Drawing.Point(453, 26);
-            this.btnOlvideContraseña.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnOlvideContraseña.Location = new System.Drawing.Point(170, 11);
             this.btnOlvideContraseña.Name = "btnOlvideContraseña";
-            this.btnOlvideContraseña.Size = new System.Drawing.Size(728, 105);
+            this.btnOlvideContraseña.Size = new System.Drawing.Size(273, 44);
             this.btnOlvideContraseña.TabIndex = 0;
             this.btnOlvideContraseña.Text = "OLVIDE MI CONTRASEÑA";
             this.btnOlvideContraseña.UseVisualStyleBackColor = true;
@@ -196,20 +194,41 @@
             this.lbl_inicioSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_inicioSeccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lbl_inicioSeccion.Location = new System.Drawing.Point(0, 0);
-            this.lbl_inicioSeccion.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl_inicioSeccion.Name = "lbl_inicioSeccion";
-            this.lbl_inicioSeccion.Size = new System.Drawing.Size(1436, 113);
+            this.lbl_inicioSeccion.Size = new System.Drawing.Size(592, 46);
             this.lbl_inicioSeccion.TabIndex = 1;
             this.lbl_inicioSeccion.Text = "¿Quien esta iniciando Secion?";
             this.lbl_inicioSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // blEstado_Licencia_Local
+            // 
+            this.blEstado_Licencia_Local.AutoSize = true;
+            this.blEstado_Licencia_Local.Location = new System.Drawing.Point(0, 359);
+            this.blEstado_Licencia_Local.Name = "blEstado_Licencia_Local";
+            this.blEstado_Licencia_Local.Size = new System.Drawing.Size(128, 13);
+            this.blEstado_Licencia_Local.TabIndex = 5;
+            this.blEstado_Licencia_Local.Text = "lblEstado_Licencia_Local";
+            // 
+            // lblSerialPCLocal
+            // 
+            this.lblSerialPCLocal.AutoSize = true;
+            this.lblSerialPCLocal.Location = new System.Drawing.Point(0, 346);
+            this.lblSerialPCLocal.Name = "lblSerialPCLocal";
+            this.lblSerialPCLocal.Size = new System.Drawing.Size(83, 13);
+            this.lblSerialPCLocal.TabIndex = 5;
+            this.lblSerialPCLocal.Text = "lblSerialPCLocal";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataListado);
+            this.panel1.Controls.Add(this.datalistado_movimientos_validar);
+            this.panel1.Controls.Add(this.datalistado_detalle_cierre_de_caja);
+            this.panel1.Controls.Add(this.datalistado_licencia_temporal);
+            this.panel1.Controls.Add(this.datalistado_USUARIOS_REGISTRADOS);
+            this.panel1.Controls.Add(this.blEstado_Licencia_Local);
+            this.panel1.Controls.Add(this.lblSerialPCLocal);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.lblSerialPc);
-            this.panel1.Controls.Add(this.datalistado_caja);
-            this.panel1.Controls.Add(this.datalistado_movimientos_validar);
             this.panel1.Controls.Add(this.cont);
             this.panel1.Controls.Add(this.lblpermisodeCaja);
             this.panel1.Controls.Add(this.lblnombredeCajero);
@@ -226,209 +245,218 @@
             this.panel1.Controls.Add(this.txtLogin);
             this.panel1.Controls.Add(this.labeldePictureBox);
             this.panel1.Controls.Add(this.labeldeB);
-            this.panel1.Location = new System.Drawing.Point(85, 596);
-            this.panel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel1.Location = new System.Drawing.Point(32, 209);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 911);
+            this.panel1.Size = new System.Drawing.Size(192, 423);
             this.panel1.TabIndex = 4;
             // 
             // dataListado
             // 
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToResizeRows = false;
-            this.dataListado.BackgroundColor = System.Drawing.Color.Silver;
+            this.dataListado.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataListado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eli});
             this.dataListado.EnableHeadersVisualStyles = false;
-            this.dataListado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListado.Location = new System.Drawing.Point(291, 12);
-            this.dataListado.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dataListado.Location = new System.Drawing.Point(136, 12);
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.RowHeadersVisible = false;
             this.dataListado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataListado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
+            this.dataListado.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataListado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListado.RowTemplate.Height = 30;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(165, 86);
-            this.dataListado.TabIndex = 8;
+            this.dataListado.Size = new System.Drawing.Size(35, 60);
+            this.dataListado.TabIndex = 623;
             // 
             // Eli
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.Eli.DefaultCellStyle = dataGridViewCellStyle2;
             this.Eli.HeaderText = "";
-            this.Eli.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
+            this.Eli.Image = ((System.Drawing.Image)(resources.GetObject("Eli.Image")));
             this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Eli.Name = "Eli";
             this.Eli.ReadOnly = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(8, 575);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(477, 55);
-            this.progressBar1.TabIndex = 6;
-            // 
-            // lblSerialPc
-            // 
-            this.lblSerialPc.Location = new System.Drawing.Point(16, 269);
-            this.lblSerialPc.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(444, 38);
-            this.lblSerialPc.TabIndex = 9;
-            // 
-            // datalistado_caja
-            // 
-            this.datalistado_caja.AllowUserToAddRows = false;
-            this.datalistado_caja.AllowUserToResizeRows = false;
-            this.datalistado_caja.BackgroundColor = System.Drawing.Color.Silver;
-            this.datalistado_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_caja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datalistado_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn2});
-            this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.datalistado_caja.Location = new System.Drawing.Point(291, 114);
-            this.datalistado_caja.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.datalistado_caja.Name = "datalistado_caja";
-            this.datalistado_caja.ReadOnly = true;
-            this.datalistado_caja.RowHeadersVisible = false;
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_caja.RowTemplate.Height = 30;
-            this.datalistado_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_caja.Size = new System.Drawing.Size(165, 88);
-            this.datalistado_caja.TabIndex = 8;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
             // 
             // datalistado_movimientos_validar
             // 
             this.datalistado_movimientos_validar.AllowUserToAddRows = false;
             this.datalistado_movimientos_validar.AllowUserToResizeRows = false;
-            this.datalistado_movimientos_validar.BackgroundColor = System.Drawing.Color.Silver;
+            this.datalistado_movimientos_validar.BackgroundColor = System.Drawing.Color.Gray;
             this.datalistado_movimientos_validar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado_movimientos_validar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistado_movimientos_validar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_movimientos_validar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.datalistado_movimientos_validar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistado_movimientos_validar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn4});
             this.datalistado_movimientos_validar.EnableHeadersVisualStyles = false;
-            this.datalistado_movimientos_validar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.datalistado_movimientos_validar.Location = new System.Drawing.Point(307, 329);
-            this.datalistado_movimientos_validar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.datalistado_movimientos_validar.Location = new System.Drawing.Point(104, 139);
             this.datalistado_movimientos_validar.Name = "datalistado_movimientos_validar";
             this.datalistado_movimientos_validar.ReadOnly = true;
             this.datalistado_movimientos_validar.RowHeadersVisible = false;
             this.datalistado_movimientos_validar.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_movimientos_validar.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
+            this.datalistado_movimientos_validar.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.datalistado_movimientos_validar.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado_movimientos_validar.RowTemplate.Height = 30;
             this.datalistado_movimientos_validar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_movimientos_validar.Size = new System.Drawing.Size(160, 88);
-            this.datalistado_movimientos_validar.TabIndex = 8;
+            this.datalistado_movimientos_validar.Size = new System.Drawing.Size(61, 44);
+            this.datalistado_movimientos_validar.TabIndex = 621;
             // 
             // dataGridViewImageColumn4
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn4.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewImageColumn4.HeaderText = "";
-            this.dataGridViewImageColumn4.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
+            this.dataGridViewImageColumn4.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn4.Image")));
             this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.ReadOnly = true;
             // 
+            // datalistado_detalle_cierre_de_caja
+            // 
+            this.datalistado_detalle_cierre_de_caja.AllowUserToAddRows = false;
+            this.datalistado_detalle_cierre_de_caja.AllowUserToResizeRows = false;
+            this.datalistado_detalle_cierre_de_caja.BackgroundColor = System.Drawing.Color.Gray;
+            this.datalistado_detalle_cierre_de_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_detalle_cierre_de_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_detalle_cierre_de_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_detalle_cierre_de_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_detalle_cierre_de_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn3});
+            this.datalistado_detalle_cierre_de_caja.EnableHeadersVisualStyles = false;
+            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(44, 145);
+            this.datalistado_detalle_cierre_de_caja.Name = "datalistado_detalle_cierre_de_caja";
+            this.datalistado_detalle_cierre_de_caja.ReadOnly = true;
+            this.datalistado_detalle_cierre_de_caja.RowHeadersVisible = false;
+            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_detalle_cierre_de_caja.RowTemplate.Height = 30;
+            this.datalistado_detalle_cierre_de_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(56, 38);
+            this.datalistado_detalle_cierre_de_caja.TabIndex = 620;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            // 
+            // datalistado_licencia_temporal
+            // 
+            this.datalistado_licencia_temporal.AllowUserToAddRows = false;
+            this.datalistado_licencia_temporal.AllowUserToResizeRows = false;
+            this.datalistado_licencia_temporal.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.datalistado_licencia_temporal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_licencia_temporal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_licencia_temporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_licencia_temporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn6});
+            this.datalistado_licencia_temporal.EnableHeadersVisualStyles = false;
+            this.datalistado_licencia_temporal.Location = new System.Drawing.Point(112, 306);
+            this.datalistado_licencia_temporal.Name = "datalistado_licencia_temporal";
+            this.datalistado_licencia_temporal.ReadOnly = true;
+            this.datalistado_licencia_temporal.RowHeadersVisible = false;
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_licencia_temporal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_licencia_temporal.RowTemplate.Height = 30;
+            this.datalistado_licencia_temporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_licencia_temporal.Size = new System.Drawing.Size(72, 37);
+            this.datalistado_licencia_temporal.TabIndex = 620;
+            // 
+            // dataGridViewImageColumn6
+            // 
+            this.dataGridViewImageColumn6.HeaderText = "";
+            this.dataGridViewImageColumn6.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn6.Image")));
+            this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+            this.dataGridViewImageColumn6.ReadOnly = true;
+            // 
+            // datalistado_USUARIOS_REGISTRADOS
+            // 
+            this.datalistado_USUARIOS_REGISTRADOS.AllowUserToAddRows = false;
+            this.datalistado_USUARIOS_REGISTRADOS.AllowUserToResizeRows = false;
+            this.datalistado_USUARIOS_REGISTRADOS.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.datalistado_USUARIOS_REGISTRADOS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_USUARIOS_REGISTRADOS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_USUARIOS_REGISTRADOS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_USUARIOS_REGISTRADOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_USUARIOS_REGISTRADOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn5});
+            this.datalistado_USUARIOS_REGISTRADOS.EnableHeadersVisualStyles = false;
+            this.datalistado_USUARIOS_REGISTRADOS.Location = new System.Drawing.Point(89, 186);
+            this.datalistado_USUARIOS_REGISTRADOS.Name = "datalistado_USUARIOS_REGISTRADOS";
+            this.datalistado_USUARIOS_REGISTRADOS.ReadOnly = true;
+            this.datalistado_USUARIOS_REGISTRADOS.RowHeadersVisible = false;
+            this.datalistado_USUARIOS_REGISTRADOS.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_USUARIOS_REGISTRADOS.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_USUARIOS_REGISTRADOS.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_USUARIOS_REGISTRADOS.RowTemplate.Height = 30;
+            this.datalistado_USUARIOS_REGISTRADOS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_USUARIOS_REGISTRADOS.Size = new System.Drawing.Size(72, 37);
+            this.datalistado_USUARIOS_REGISTRADOS.TabIndex = 620;
+            // 
+            // dataGridViewImageColumn5
+            // 
+            this.dataGridViewImageColumn5.HeaderText = "";
+            this.dataGridViewImageColumn5.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn5.Image")));
+            this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
+            this.dataGridViewImageColumn5.ReadOnly = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(3, 241);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(179, 23);
+            this.progressBar1.TabIndex = 6;
+            // 
+            // lblSerialPc
+            // 
+            this.lblSerialPc.Location = new System.Drawing.Point(6, 113);
+            this.lblSerialPc.Name = "lblSerialPc";
+            this.lblSerialPc.Size = new System.Drawing.Size(169, 20);
+            this.lblSerialPc.TabIndex = 9;
+            // 
             // cont
             // 
             this.cont.AutoSize = true;
-            this.cont.Location = new System.Drawing.Point(0, 770);
-            this.cont.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.cont.Location = new System.Drawing.Point(0, 323);
             this.cont.Name = "cont";
-            this.cont.Size = new System.Drawing.Size(69, 32);
+            this.cont.Size = new System.Drawing.Size(28, 13);
             this.cont.TabIndex = 0;
             this.cont.Text = "cont";
             // 
             // lblpermisodeCaja
             // 
             this.lblpermisodeCaja.AutoSize = true;
-            this.lblpermisodeCaja.Location = new System.Drawing.Point(0, 701);
-            this.lblpermisodeCaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblpermisodeCaja.Location = new System.Drawing.Point(0, 294);
             this.lblpermisodeCaja.Name = "lblpermisodeCaja";
-            this.lblpermisodeCaja.Size = new System.Drawing.Size(237, 32);
+            this.lblpermisodeCaja.Size = new System.Drawing.Size(86, 13);
             this.lblpermisodeCaja.TabIndex = 0;
             this.lblpermisodeCaja.Text = "lblpermisodeCaja";
             // 
             // lblnombredeCajero
             // 
             this.lblnombredeCajero.AutoSize = true;
-            this.lblnombredeCajero.Location = new System.Drawing.Point(3, 670);
-            this.lblnombredeCajero.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblnombredeCajero.Location = new System.Drawing.Point(1, 281);
             this.lblnombredeCajero.Name = "lblnombredeCajero";
-            this.lblnombredeCajero.Size = new System.Drawing.Size(264, 32);
+            this.lblnombredeCajero.Size = new System.Drawing.Size(96, 13);
             this.lblnombredeCajero.TabIndex = 0;
             this.lblnombredeCajero.Text = "llblnombredeCajero";
             // 
             // lblusuario_queinicioCaja
             // 
             this.lblusuario_queinicioCaja.AutoSize = true;
-            this.lblusuario_queinicioCaja.Location = new System.Drawing.Point(8, 637);
-            this.lblusuario_queinicioCaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblusuario_queinicioCaja.Location = new System.Drawing.Point(3, 267);
             this.lblusuario_queinicioCaja.Name = "lblusuario_queinicioCaja";
-            this.lblusuario_queinicioCaja.Size = new System.Drawing.Size(335, 32);
+            this.lblusuario_queinicioCaja.Size = new System.Drawing.Size(122, 13);
             this.lblusuario_queinicioCaja.TabIndex = 0;
             this.lblusuario_queinicioCaja.Text = "llblusuario_queinicioCaja";
             // 
@@ -436,170 +464,110 @@
             // 
             this.lblaperturaDeCaja.AutoSize = true;
             this.lblaperturaDeCaja.ForeColor = System.Drawing.Color.Gray;
-            this.lblaperturaDeCaja.Location = new System.Drawing.Point(13, 537);
-            this.lblaperturaDeCaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblaperturaDeCaja.Location = new System.Drawing.Point(5, 225);
             this.lblaperturaDeCaja.Name = "lblaperturaDeCaja";
-            this.lblaperturaDeCaja.Size = new System.Drawing.Size(246, 32);
+            this.lblaperturaDeCaja.Size = new System.Drawing.Size(91, 13);
             this.lblaperturaDeCaja.TabIndex = 0;
             this.lblaperturaDeCaja.Text = "lblaperturaDeCaja";
             // 
             // txtidcaja
             // 
             this.txtidcaja.AutoSize = true;
-            this.txtidcaja.Location = new System.Drawing.Point(13, 506);
-            this.txtidcaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.txtidcaja.Location = new System.Drawing.Point(5, 212);
             this.txtidcaja.Name = "txtidcaja";
-            this.txtidcaja.Size = new System.Drawing.Size(121, 32);
+            this.txtidcaja.Size = new System.Drawing.Size(46, 13);
             this.txtidcaja.TabIndex = 0;
             this.txtidcaja.Text = "txtidcaja";
             // 
             // IDUSUARIO
             // 
             this.IDUSUARIO.AutoSize = true;
-            this.IDUSUARIO.Location = new System.Drawing.Point(8, 475);
-            this.IDUSUARIO.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.IDUSUARIO.Location = new System.Drawing.Point(3, 199);
             this.IDUSUARIO.Name = "IDUSUARIO";
-            this.IDUSUARIO.Size = new System.Drawing.Size(169, 32);
+            this.IDUSUARIO.Size = new System.Drawing.Size(67, 13);
             this.IDUSUARIO.TabIndex = 0;
             this.IDUSUARIO.Text = "IDUSUARIO";
             // 
             // txtNombre
             // 
             this.txtNombre.AutoSize = true;
-            this.txtNombre.Location = new System.Drawing.Point(8, 444);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.txtNombre.Location = new System.Drawing.Point(3, 186);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(145, 32);
+            this.txtNombre.Size = new System.Drawing.Size(55, 13);
             this.txtNombre.TabIndex = 0;
             this.txtNombre.Text = "txtNombre";
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(13, 386);
-            this.lblRol.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblRol.Location = new System.Drawing.Point(5, 162);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(88, 32);
+            this.lblRol.Size = new System.Drawing.Size(33, 13);
             this.lblRol.TabIndex = 0;
             this.lblRol.Text = "lblRol";
             // 
             // lblcaja
             // 
             this.lblcaja.AutoSize = true;
-            this.lblcaja.Location = new System.Drawing.Point(13, 346);
-            this.lblcaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblcaja.Location = new System.Drawing.Point(5, 145);
             this.lblcaja.Name = "lblcaja";
-            this.lblcaja.Size = new System.Drawing.Size(98, 32);
+            this.lblcaja.Size = new System.Drawing.Size(37, 13);
             this.lblcaja.TabIndex = 0;
             this.lblcaja.Text = "lblcaja";
             // 
             // lblIdcaja
             // 
             this.lblIdcaja.AutoSize = true;
-            this.lblIdcaja.Location = new System.Drawing.Point(13, 231);
-            this.lblIdcaja.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblIdcaja.Location = new System.Drawing.Point(5, 97);
             this.lblIdcaja.Name = "lblIdcaja";
-            this.lblIdcaja.Size = new System.Drawing.Size(121, 32);
+            this.lblIdcaja.Size = new System.Drawing.Size(46, 13);
             this.lblIdcaja.TabIndex = 0;
             this.lblIdcaja.Text = "lblIdcaja";
             // 
             // lblEstado_de_envio
             // 
             this.lblEstado_de_envio.AutoSize = true;
-            this.lblEstado_de_envio.Location = new System.Drawing.Point(8, 184);
-            this.lblEstado_de_envio.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblEstado_de_envio.Location = new System.Drawing.Point(3, 77);
             this.lblEstado_de_envio.Name = "lblEstado_de_envio";
-            this.lblEstado_de_envio.Size = new System.Drawing.Size(265, 32);
+            this.lblEstado_de_envio.Size = new System.Drawing.Size(100, 13);
             this.lblEstado_de_envio.TabIndex = 0;
             this.lblEstado_de_envio.Text = "lblEstado_de_envio";
             // 
             // lblResultadoContraseña
             // 
             this.lblResultadoContraseña.AutoSize = true;
-            this.lblResultadoContraseña.Location = new System.Drawing.Point(8, 143);
-            this.lblResultadoContraseña.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblResultadoContraseña.Location = new System.Drawing.Point(3, 60);
             this.lblResultadoContraseña.Name = "lblResultadoContraseña";
-            this.lblResultadoContraseña.Size = new System.Drawing.Size(321, 32);
+            this.lblResultadoContraseña.Size = new System.Drawing.Size(119, 13);
             this.lblResultadoContraseña.TabIndex = 0;
             this.lblResultadoContraseña.Text = "lblResultadoContraseña";
             // 
             // txtLogin
             // 
             this.txtLogin.AutoSize = true;
-            this.txtLogin.Location = new System.Drawing.Point(8, 105);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.txtLogin.Location = new System.Drawing.Point(3, 44);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(116, 32);
+            this.txtLogin.Size = new System.Drawing.Size(44, 13);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "txtLogin";
             // 
             // labeldePictureBox
             // 
             this.labeldePictureBox.AutoSize = true;
-            this.labeldePictureBox.Location = new System.Drawing.Point(13, 67);
-            this.labeldePictureBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labeldePictureBox.Location = new System.Drawing.Point(5, 28);
             this.labeldePictureBox.Name = "labeldePictureBox";
-            this.labeldePictureBox.Size = new System.Drawing.Size(93, 32);
+            this.labeldePictureBox.Size = new System.Drawing.Size(35, 13);
             this.labeldePictureBox.TabIndex = 0;
             this.labeldePictureBox.Text = "label1";
             // 
             // labeldeB
             // 
             this.labeldeB.AutoSize = true;
-            this.labeldeB.Location = new System.Drawing.Point(13, 29);
-            this.labeldeB.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.labeldeB.Location = new System.Drawing.Point(5, 12);
             this.labeldeB.Name = "labeldeB";
-            this.labeldeB.Size = new System.Drawing.Size(93, 32);
+            this.labeldeB.Size = new System.Drawing.Size(35, 13);
             this.labeldeB.TabIndex = 0;
             this.labeldeB.Text = "label1";
-            // 
-            // datalistado_detalle_cierre_de_caja
-            // 
-            this.datalistado_detalle_cierre_de_caja.AllowUserToAddRows = false;
-            this.datalistado_detalle_cierre_de_caja.AllowUserToResizeRows = false;
-            this.datalistado_detalle_cierre_de_caja.BackgroundColor = System.Drawing.Color.Silver;
-            this.datalistado_detalle_cierre_de_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_detalle_cierre_de_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_detalle_cierre_de_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_detalle_cierre_de_caja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.datalistado_detalle_cierre_de_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_detalle_cierre_de_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn3});
-            this.datalistado_detalle_cierre_de_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_detalle_cierre_de_caja.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.datalistado_detalle_cierre_de_caja.Location = new System.Drawing.Point(2272, 1283);
-            this.datalistado_detalle_cierre_de_caja.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.datalistado_detalle_cierre_de_caja.Name = "datalistado_detalle_cierre_de_caja";
-            this.datalistado_detalle_cierre_de_caja.ReadOnly = true;
-            this.datalistado_detalle_cierre_de_caja.RowHeadersVisible = false;
-            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
-            this.datalistado_detalle_cierre_de_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_detalle_cierre_de_caja.RowTemplate.Height = 30;
-            this.datalistado_detalle_cierre_de_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_detalle_cierre_de_caja.Size = new System.Drawing.Size(517, 165);
-            this.datalistado_detalle_cierre_de_caja.TabIndex = 8;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.NullValue = null;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewImageColumn3.HeaderText = "";
-            this.dataGridViewImageColumn3.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
             // 
             // panelRestaurar_Cuenta
             // 
@@ -614,19 +582,17 @@
             this.panelRestaurar_Cuenta.Controls.Add(this.label6);
             this.panelRestaurar_Cuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRestaurar_Cuenta.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(925, 17);
-            this.panelRestaurar_Cuenta.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(347, 7);
             this.panelRestaurar_Cuenta.Name = "panelRestaurar_Cuenta";
-            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(1275, 956);
+            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(478, 401);
             this.panelRestaurar_Cuenta.TabIndex = 5;
             this.panelRestaurar_Cuenta.Visible = false;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(133, 548);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.richTextBox1.Location = new System.Drawing.Point(50, 230);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(961, 469);
+            this.richTextBox1.Size = new System.Drawing.Size(363, 199);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -634,10 +600,9 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(1389, 0);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(521, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(77, 81);
+            this.btnCerrar.Size = new System.Drawing.Size(29, 34);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "X";
             this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
@@ -648,9 +613,8 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1275, 107);
+            this.label5.Size = new System.Drawing.Size(478, 45);
             this.label5.TabIndex = 0;
             this.label5.Text = "Restaurar Contraseña";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -658,10 +622,9 @@
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
-            this.btnRegresar.Location = new System.Drawing.Point(595, 408);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnRegresar.Location = new System.Drawing.Point(223, 171);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(288, 67);
+            this.btnRegresar.Size = new System.Drawing.Size(108, 28);
             this.btnRegresar.TabIndex = 4;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -671,10 +634,9 @@
             // 
             this.btnEnviarCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.btnEnviarCorreo.ForeColor = System.Drawing.Color.White;
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(411, 312);
-            this.btnEnviarCorreo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(154, 131);
             this.btnEnviarCorreo.Name = "btnEnviarCorreo";
-            this.btnEnviarCorreo.Size = new System.Drawing.Size(648, 79);
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(243, 33);
             this.btnEnviarCorreo.TabIndex = 4;
             this.btnEnviarCorreo.Text = "Enviar";
             this.btnEnviarCorreo.UseVisualStyleBackColor = false;
@@ -683,19 +645,17 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(411, 241);
-            this.panel8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel8.Location = new System.Drawing.Point(154, 101);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(648, 5);
+            this.panel8.Size = new System.Drawing.Size(243, 2);
             this.panel8.TabIndex = 3;
             // 
             // txtCorreo
             // 
             this.txtCorreo.FormattingEnabled = true;
-            this.txtCorreo.Location = new System.Drawing.Point(411, 176);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtCorreo.Location = new System.Drawing.Point(154, 74);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(641, 54);
+            this.txtCorreo.Size = new System.Drawing.Size(243, 28);
             this.txtCorreo.TabIndex = 2;
             // 
             // lblConElRegistro
@@ -703,10 +663,9 @@
             this.lblConElRegistro.AutoSize = true;
             this.lblConElRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConElRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.lblConElRegistro.Location = new System.Drawing.Point(531, 255);
-            this.lblConElRegistro.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblConElRegistro.Location = new System.Drawing.Point(199, 107);
             this.lblConElRegistro.Name = "lblConElRegistro";
-            this.lblConElRegistro.Size = new System.Drawing.Size(404, 31);
+            this.lblConElRegistro.Size = new System.Drawing.Size(158, 13);
             this.lblConElRegistro.TabIndex = 1;
             this.lblConElRegistro.Text = "Con el que registraste tu Cuenta";
             // 
@@ -715,10 +674,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(13, 186);
-            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label6.Location = new System.Drawing.Point(5, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(361, 46);
+            this.label6.Size = new System.Drawing.Size(142, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Correo electronico:";
             // 
@@ -728,12 +686,12 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.NullValue = null;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -743,10 +701,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(56, 136);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(485, 355);
+            this.pictureBox1.Size = new System.Drawing.Size(182, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -758,14 +715,46 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.datalistado_caja);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(584, 1401);
+            this.panel2.Size = new System.Drawing.Size(219, 688);
             this.panel2.TabIndex = 19;
+            // 
+            // datalistado_caja
+            // 
+            this.datalistado_caja.AllowUserToAddRows = false;
+            this.datalistado_caja.AllowUserToResizeRows = false;
+            this.datalistado_caja.BackgroundColor = System.Drawing.Color.Gray;
+            this.datalistado_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datalistado_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.datalistado_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datalistado_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn2});
+            this.datalistado_caja.EnableHeadersVisualStyles = false;
+            this.datalistado_caja.Location = new System.Drawing.Point(6, 232);
+            this.datalistado_caja.Name = "datalistado_caja";
+            this.datalistado_caja.ReadOnly = true;
+            this.datalistado_caja.RowHeadersVisible = false;
+            this.datalistado_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.datalistado_caja.RowTemplate.Height = 30;
+            this.datalistado_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datalistado_caja.Size = new System.Drawing.Size(40, 120);
+            this.datalistado_caja.TabIndex = 622;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
             // 
             // button15
             // 
@@ -774,10 +763,9 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button15.Location = new System.Drawing.Point(339, 1192);
-            this.button15.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button15.Location = new System.Drawing.Point(127, 500);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(704, 81);
+            this.button15.Size = new System.Drawing.Size(264, 34);
             this.button15.TabIndex = 14;
             this.button15.Text = "¿Olvide Contraseña?";
             this.button15.UseVisualStyleBackColor = false;
@@ -787,10 +775,9 @@
             // 
             this.lblLicenciaPClocal.AutoSize = true;
             this.lblLicenciaPClocal.ForeColor = System.Drawing.Color.White;
-            this.lblLicenciaPClocal.Location = new System.Drawing.Point(2144, 613);
-            this.lblLicenciaPClocal.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLicenciaPClocal.Location = new System.Drawing.Point(804, 257);
             this.lblLicenciaPClocal.Name = "lblLicenciaPClocal";
-            this.lblLicenciaPClocal.Size = new System.Drawing.Size(250, 32);
+            this.lblLicenciaPClocal.Size = new System.Drawing.Size(93, 13);
             this.lblLicenciaPClocal.TabIndex = 10;
             this.lblLicenciaPClocal.Text = "lblLicenciaPClocal";
             // 
@@ -799,19 +786,17 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.txtPassword);
             this.panel4.Controls.Add(this.menuStrip1);
-            this.panel4.Location = new System.Drawing.Point(0, 105);
-            this.panel4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel4.Location = new System.Drawing.Point(0, 44);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1360, 91);
+            this.panel4.Size = new System.Drawing.Size(585, 38);
             this.panel4.TabIndex = 3;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gray;
-            this.panel5.Location = new System.Drawing.Point(331, 74);
-            this.panel5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel5.Location = new System.Drawing.Point(124, 31);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(683, 2);
+            this.panel5.Size = new System.Drawing.Size(256, 1);
             this.panel5.TabIndex = 1;
             // 
             // txtPassword
@@ -819,11 +804,10 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(339, 5);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtPassword.Location = new System.Drawing.Point(127, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(673, 53);
+            this.txtPassword.Size = new System.Drawing.Size(255, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged_1);
             // 
@@ -836,10 +820,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOcultar,
             this.btnVer});
-            this.menuStrip1.Location = new System.Drawing.Point(997, 17);
+            this.menuStrip1.Location = new System.Drawing.Point(374, 7);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(307, 57);
+            this.menuStrip1.Size = new System.Drawing.Size(115, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -847,14 +830,14 @@
             // 
             this.btnOcultar.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultar.Image")));
             this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(52, 47);
+            this.btnOcultar.Size = new System.Drawing.Size(52, 20);
             this.btnOcultar.Click += new System.EventHandler(this.Ocultar_Click);
             // 
             // btnVer
             // 
             this.btnVer.Image = ((System.Drawing.Image)(resources.GetObject("btnVer.Image")));
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(52, 47);
+            this.btnVer.Size = new System.Drawing.Size(52, 20);
             this.btnVer.Visible = false;
             this.btnVer.Click += new System.EventHandler(this.Ver_Click);
             // 
@@ -862,10 +845,9 @@
             // 
             this.lblEstadoLocal.AutoSize = true;
             this.lblEstadoLocal.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoLocal.Location = new System.Drawing.Point(2144, 672);
-            this.lblEstadoLocal.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblEstadoLocal.Location = new System.Drawing.Point(804, 282);
             this.lblEstadoLocal.Name = "lblEstadoLocal";
-            this.lblEstadoLocal.Size = new System.Drawing.Size(203, 32);
+            this.lblEstadoLocal.Size = new System.Drawing.Size(76, 13);
             this.lblEstadoLocal.TabIndex = 10;
             this.lblEstadoLocal.Text = "lblEstadoLocal";
             // 
@@ -875,9 +857,8 @@
             this.lblInicio_de_Seccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicio_de_Seccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lblInicio_de_Seccion.Location = new System.Drawing.Point(0, 0);
-            this.lblInicio_de_Seccion.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblInicio_de_Seccion.Name = "lblInicio_de_Seccion";
-            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(1368, 100);
+            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(664, 42);
             this.lblInicio_de_Seccion.TabIndex = 1;
             this.lblInicio_de_Seccion.Text = "Inicio de Sesion";
             this.lblInicio_de_Seccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -887,10 +868,9 @@
             this.lblEstadoLincecia.AutoSize = true;
             this.lblEstadoLincecia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoLincecia.ForeColor = System.Drawing.Color.White;
-            this.lblEstadoLincecia.Location = new System.Drawing.Point(461, 1426);
-            this.lblEstadoLincecia.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblEstadoLincecia.Location = new System.Drawing.Point(173, 598);
             this.lblEstadoLincecia.Name = "lblEstadoLincecia";
-            this.lblEstadoLincecia.Size = new System.Drawing.Size(114, 31);
+            this.lblEstadoLincecia.Size = new System.Drawing.Size(47, 13);
             this.lblEstadoLincecia.TabIndex = 16;
             this.lblEstadoLincecia.Text = "Licencia";
             // 
@@ -913,10 +893,10 @@
             this.flowLayoutPanel1.Controls.Add(this.btnInsertar);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(357, 210);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(134, 88);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(648, 904);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 379);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btn1
@@ -933,7 +913,7 @@
             this.btn1.Location = new System.Drawing.Point(0, 0);
             this.btn1.Margin = new System.Windows.Forms.Padding(0);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(213, 191);
+            this.btn1.Size = new System.Drawing.Size(80, 80);
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
@@ -950,10 +930,10 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.btn2.Location = new System.Drawing.Point(213, 0);
+            this.btn2.Location = new System.Drawing.Point(80, 0);
             this.btn2.Margin = new System.Windows.Forms.Padding(0);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(213, 191);
+            this.btn2.Size = new System.Drawing.Size(80, 80);
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
@@ -970,10 +950,10 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.btn3.Location = new System.Drawing.Point(426, 0);
+            this.btn3.Location = new System.Drawing.Point(160, 0);
             this.btn3.Margin = new System.Windows.Forms.Padding(0);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(213, 191);
+            this.btn3.Size = new System.Drawing.Size(80, 80);
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
@@ -990,10 +970,10 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Transparent;
-            this.btn4.Location = new System.Drawing.Point(0, 191);
+            this.btn4.Location = new System.Drawing.Point(0, 80);
             this.btn4.Margin = new System.Windows.Forms.Padding(0);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(213, 191);
+            this.btn4.Size = new System.Drawing.Size(80, 80);
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
@@ -1010,10 +990,10 @@
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.Transparent;
-            this.btn5.Location = new System.Drawing.Point(213, 191);
+            this.btn5.Location = new System.Drawing.Point(80, 80);
             this.btn5.Margin = new System.Windows.Forms.Padding(0);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(213, 191);
+            this.btn5.Size = new System.Drawing.Size(80, 80);
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
@@ -1030,10 +1010,10 @@
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.Transparent;
-            this.btn6.Location = new System.Drawing.Point(426, 191);
+            this.btn6.Location = new System.Drawing.Point(160, 80);
             this.btn6.Margin = new System.Windows.Forms.Padding(0);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(213, 191);
+            this.btn6.Size = new System.Drawing.Size(80, 80);
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
@@ -1050,10 +1030,10 @@
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.Transparent;
-            this.btn7.Location = new System.Drawing.Point(0, 382);
+            this.btn7.Location = new System.Drawing.Point(0, 160);
             this.btn7.Margin = new System.Windows.Forms.Padding(0);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(213, 191);
+            this.btn7.Size = new System.Drawing.Size(80, 80);
             this.btn7.TabIndex = 6;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
@@ -1070,10 +1050,10 @@
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.Transparent;
-            this.btn8.Location = new System.Drawing.Point(213, 382);
+            this.btn8.Location = new System.Drawing.Point(80, 160);
             this.btn8.Margin = new System.Windows.Forms.Padding(0);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(213, 191);
+            this.btn8.Size = new System.Drawing.Size(80, 80);
             this.btn8.TabIndex = 7;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
@@ -1090,10 +1070,10 @@
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.Transparent;
-            this.btn9.Location = new System.Drawing.Point(426, 382);
+            this.btn9.Location = new System.Drawing.Point(160, 160);
             this.btn9.Margin = new System.Windows.Forms.Padding(0);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(213, 191);
+            this.btn9.Size = new System.Drawing.Size(80, 80);
             this.btn9.TabIndex = 8;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
@@ -1110,10 +1090,10 @@
             this.btnBorrarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarTodo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBorrarTodo.Location = new System.Drawing.Point(0, 573);
+            this.btnBorrarTodo.Location = new System.Drawing.Point(0, 240);
             this.btnBorrarTodo.Margin = new System.Windows.Forms.Padding(0);
             this.btnBorrarTodo.Name = "btnBorrarTodo";
-            this.btnBorrarTodo.Size = new System.Drawing.Size(213, 191);
+            this.btnBorrarTodo.Size = new System.Drawing.Size(80, 80);
             this.btnBorrarTodo.TabIndex = 9;
             this.btnBorrarTodo.Text = "Borrar";
             this.btnBorrarTodo.UseVisualStyleBackColor = false;
@@ -1130,10 +1110,10 @@
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.Transparent;
-            this.btn0.Location = new System.Drawing.Point(213, 573);
+            this.btn0.Location = new System.Drawing.Point(80, 240);
             this.btn0.Margin = new System.Windows.Forms.Padding(0);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(213, 191);
+            this.btn0.Size = new System.Drawing.Size(80, 80);
             this.btn0.TabIndex = 10;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
@@ -1150,10 +1130,10 @@
             this.btnBorrarDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarDerecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarDerecha.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBorrarDerecha.Location = new System.Drawing.Point(426, 573);
+            this.btnBorrarDerecha.Location = new System.Drawing.Point(160, 240);
             this.btnBorrarDerecha.Margin = new System.Windows.Forms.Padding(0);
             this.btnBorrarDerecha.Name = "btnBorrarDerecha";
-            this.btnBorrarDerecha.Size = new System.Drawing.Size(213, 191);
+            this.btnBorrarDerecha.Size = new System.Drawing.Size(80, 80);
             this.btnBorrarDerecha.TabIndex = 11;
             this.btnBorrarDerecha.Text = "<=";
             this.btnBorrarDerecha.UseVisualStyleBackColor = false;
@@ -1170,25 +1150,13 @@
             this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
-            this.btnInsertar.Location = new System.Drawing.Point(8, 771);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 323);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(632, 136);
+            this.btnInsertar.Size = new System.Drawing.Size(237, 57);
             this.btnInsertar.TabIndex = 13;
             this.btnInsertar.Text = "iniciar sesion";
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.BtnInsertar_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(240, 1362);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(93, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
             // 
             // btnCambiarUsuarios
             // 
@@ -1197,10 +1165,9 @@
             this.btnCambiarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnCambiarUsuarios.Location = new System.Drawing.Point(352, 1116);
-            this.btnCambiarUsuarios.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnCambiarUsuarios.Location = new System.Drawing.Point(132, 468);
             this.btnCambiarUsuarios.Name = "btnCambiarUsuarios";
-            this.btnCambiarUsuarios.Size = new System.Drawing.Size(704, 72);
+            this.btnCambiarUsuarios.Size = new System.Drawing.Size(264, 30);
             this.btnCambiarUsuarios.TabIndex = 17;
             this.btnCambiarUsuarios.Text = "Cambiar Usuario";
             this.btnCambiarUsuarios.UseVisualStyleBackColor = false;
@@ -1208,8 +1175,11 @@
             // 
             // panelIngresoDeContrasena
             // 
+            this.panelIngresoDeContrasena.Controls.Add(this.pictureBox4);
+            this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLicencia);
+            this.panelIngresoDeContrasena.Controls.Add(this.txtfecha_Inicio_licencia_temporal);
+            this.panelIngresoDeContrasena.Controls.Add(this.txtfecha_final_licencia_temporal);
             this.panelIngresoDeContrasena.Controls.Add(this.btnCambiarUsuarios);
-            this.panelIngresoDeContrasena.Controls.Add(this.pictureBox3);
             this.panelIngresoDeContrasena.Controls.Add(this.flowLayoutPanel1);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLincecia);
             this.panelIngresoDeContrasena.Controls.Add(this.lblInicio_de_Seccion);
@@ -1217,27 +1187,62 @@
             this.panelIngresoDeContrasena.Controls.Add(this.panel4);
             this.panelIngresoDeContrasena.Controls.Add(this.lblLicenciaPClocal);
             this.panelIngresoDeContrasena.Controls.Add(this.button15);
-            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(824, 17);
-            this.panelIngresoDeContrasena.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(309, 7);
             this.panelIngresoDeContrasena.Name = "panelIngresoDeContrasena";
-            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(1368, 1312);
+            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(664, 588);
             this.panelIngresoDeContrasena.TabIndex = 2;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
+            this.pictureBox4.Location = new System.Drawing.Point(166, 548);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 19);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lblEstadoLicencia
+            // 
+            this.lblEstadoLicencia.AutoSize = true;
+            this.lblEstadoLicencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblEstadoLicencia.Location = new System.Drawing.Point(188, 551);
+            this.lblEstadoLicencia.Name = "lblEstadoLicencia";
+            this.lblEstadoLicencia.Size = new System.Drawing.Size(51, 13);
+            this.lblEstadoLicencia.TabIndex = 20;
+            this.lblEstadoLicencia.Text = "lICENCIA";
+            // 
+            // txtfecha_Inicio_licencia_temporal
+            // 
+            this.txtfecha_Inicio_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_Inicio_licencia_temporal.Location = new System.Drawing.Point(20, 529);
+            this.txtfecha_Inicio_licencia_temporal.Name = "txtfecha_Inicio_licencia_temporal";
+            this.txtfecha_Inicio_licencia_temporal.Size = new System.Drawing.Size(102, 20);
+            this.txtfecha_Inicio_licencia_temporal.TabIndex = 18;
+            this.txtfecha_Inicio_licencia_temporal.Value = new System.DateTime(2023, 6, 11, 0, 0, 0, 0);
+            // 
+            // txtfecha_final_licencia_temporal
+            // 
+            this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(20, 555);
+            this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
+            this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(102, 20);
+            this.txtfecha_final_licencia_temporal.TabIndex = 19;
+            this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2023, 6, 21, 0, 0, 0, 0);
             // 
             // LOGIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(2542, 1401);
+            this.ClientSize = new System.Drawing.Size(1280, 688);
             this.Controls.Add(this.panelUsuarios);
-            this.Controls.Add(this.datalistado_detalle_cierre_de_caja);
             this.Controls.Add(this.panelIngresoDeContrasena);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelRestaurar_Cuenta);
             this.Controls.Add(this.pictureBox2);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "LOGIN";
             this.Text = "LOGIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1249,21 +1254,23 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_movimientos_validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_detalle_cierre_de_caja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_licencia_temporal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_USUARIOS_REGISTRADOS)).EndInit();
             this.panelRestaurar_Cuenta.ResumeLayout(false);
             this.panelRestaurar_Cuenta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelIngresoDeContrasena.ResumeLayout(false);
             this.panelIngresoDeContrasena.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1287,8 +1294,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ComboBox txtCorreo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataListado;
-        private System.Windows.Forms.DataGridViewImageColumn Eli;
         private System.Windows.Forms.Label lblConElRegistro;
         private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Label lblResultadoContraseña;
@@ -1296,12 +1301,8 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblIdcaja;
-        private System.Windows.Forms.DataGridView datalistado_caja;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.TextBox lblSerialPc;
         private System.Windows.Forms.Label lblcaja;
-        private System.Windows.Forms.DataGridView datalistado_detalle_cierre_de_caja;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label IDUSUARIO;
         private System.Windows.Forms.Label txtNombre;
@@ -1310,8 +1311,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView datalistado_movimientos_validar;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.Label lblnombredeCajero;
         private System.Windows.Forms.Label lblusuario_queinicioCaja;
         private System.Windows.Forms.Label lblpermisodeCaja;
@@ -1343,8 +1342,25 @@
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnBorrarDerecha;
         private System.Windows.Forms.Button btnInsertar;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnCambiarUsuarios;
         private System.Windows.Forms.Panel panelIngresoDeContrasena;
+        private System.Windows.Forms.Label blEstado_Licencia_Local;
+        private System.Windows.Forms.Label lblSerialPCLocal;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblEstadoLicencia;
+        private System.Windows.Forms.DateTimePicker txtfecha_Inicio_licencia_temporal;
+        private System.Windows.Forms.DateTimePicker txtfecha_final_licencia_temporal;
+        private System.Windows.Forms.DataGridView datalistado_USUARIOS_REGISTRADOS;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
+        private System.Windows.Forms.DataGridView datalistado_licencia_temporal;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
+        private System.Windows.Forms.DataGridView datalistado_detalle_cierre_de_caja;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridView dataListado;
+        private System.Windows.Forms.DataGridViewImageColumn Eli;
+        private System.Windows.Forms.DataGridView datalistado_caja;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridView datalistado_movimientos_validar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
     }
 }

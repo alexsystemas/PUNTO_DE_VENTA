@@ -14,15 +14,18 @@ using System.IO;
 using System.Threading;
 using System.Management;
 
-namespace PUNTO_DE_VENTA.PRODUCTOS
+namespace PUNTO_DE_VENTA.MODULOS.PRODUCTOS_OK
 {
-    public partial class productosOK : Form
+    public partial class Productos_OK : Form
     {
         int txtcontador;
-        public productosOK()
+        public Productos_OK()
         {
             InitializeComponent();
         }
+        public static int idUsuario;
+        public static int idcaja;
+     
 
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
@@ -70,18 +73,69 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
 
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = true;
+        }
+        private void MOSTRAR_CAJA_POR_SERIAL()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
 
+            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
+            try
+            {
+                con.Open();
+                idcaja = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void mostrar_inicio_de_sesion()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+
+            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@id_serial_pc", lblSerialPc.Text);
+
+            try
+            {
+                con.Open();
+                idUsuario = Convert.ToInt32(com.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+
+            }
 
 
         }
-
-        private void ProductosOK_Load(object sender, EventArgs e)
+        private void Productos_OK_Load(object sender, EventArgs e)
         {
             pnlPrincipal.Visible = false;
             PANELREGISTRO.Visible = false;
             panelInventario.Visible = false;
             panelGuardar.Visible = true;
             datalistado.Visible = true;
+            mostrar_grupos();
+
+            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
+
+            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
+            lblSerialPc.Text = lblSerialPc.Text.Trim();
+            // MessageBox.Show("SERIAL" + lblSerialPc);
+
+            mostrar_inicio_de_sesion();
+            MOSTRAR_CAJA_POR_SERIAL();
 
         }
         private void mostrar_grupos()
@@ -156,7 +210,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             btnCancelar.Visible = true;
             btnNuevoGrupo.Visible = false;
 
-
         }
 
         private void Txtgrupo_TextChanged(object sender, EventArgs e)
@@ -216,7 +269,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
 
             }
         }
-
         private void insertar_productos()
         {
             if (txtpreciomayoreo.Text == "0" | txtpreciomayoreo.Text == "") txtapartirde.Text = "0";
@@ -271,11 +323,11 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
                 cmd.Parameters.AddWithValue("@Fecha", DateTime.Today);
                 cmd.Parameters.AddWithValue("@Motivo", "Registro inicial de Producto");
                 cmd.Parameters.AddWithValue("@Cantidad ", txtStockHay.Text);
-                cmd.Parameters.AddWithValue("@Id_usuario", MODULOS.LOGIN.idusuariovariable);
+                cmd.Parameters.AddWithValue("@Id_usuario", idUsuario);
                 cmd.Parameters.AddWithValue("@Tipo", "ENTRADA");
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
-                cmd.Parameters.AddWithValue("@Id_caja", MODULOS.LOGIN.idcajavariable);
-           
+                cmd.Parameters.AddWithValue("@Id_caja", idcaja);
+
                 cmd.ExecuteNonQuery();
 
 
@@ -379,7 +431,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
 
             }
 
-
         }
         private void GENERAR_CODIGO_DE_BARRAS_AUTOMATICO()
         {
@@ -413,7 +464,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             {
             }
         }
-
         private void mostrar_descripcion_produco_sin_repetir()
         {
             try
@@ -452,6 +502,7 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             txtcontador = (x);
 
         }
+
         private void TxtDescripcion_TextChanged(object sender, EventArgs e)
         {
             mostrar_descripcion_produco_sin_repetir();
@@ -469,11 +520,11 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             {
                 DATALISTADO_PRODUCTOS_OKA.Visible = false;
             }
-
         }
 
         private void DATALISTADO_PRODUCTOS_OKA_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 txtDescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[1].Value.ToString();
@@ -485,10 +536,9 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             }
         }
 
-       
-
         private void TimerCalucular_porcentaje_ganancia_Tick(object sender, EventArgs e)
         {
+
             TimerCalucular_porcentaje_ganancia.Stop();
             try
             {
@@ -516,21 +566,18 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
 
             }
         }
-
-        private void Datalistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-
-        }
         internal void proceso_para_obtener_datos_de_productos()
         {
             try
             {
 
-              //  Panel25.Enabled = true;
-                DATALISTADO_PRODUCTOS_OKA.Visible = false;
+                datalistado.Visible = false;
+                pnlPrincipal.Visible = true;
+                PANELREGISTRO.Visible = true;
+                panelInventario.Visible = true;
+                panelGuardar.Visible = true;
 
-              //  Panel6.Visible = false;
+
                 TGUARDAR.Visible = false;
                 TGUARDARCAMBIOS.Visible = true;
                 PANELDEPARTAMENTO.Visible = true;
@@ -688,6 +735,11 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
                 MessageBox.Show("Estas configurando Precio mayoreo, debes completar los campos de Precio mayoreo y A partir de, si no deseas configurarlo dejalos en blanco", "Datos incompletos", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             }
+            datalistado.Visible = true;
+            PANELDEPARTAMENTO.Visible = true;
+            pnlPrincipal.Visible = false;
+            PANELREGISTRO.Visible = false;
+            panelGuardar.Visible = false;
         }
 
         private void editar_productos()
@@ -758,6 +810,7 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             }
 
         }
+
         private void buscar()
         {
             try
@@ -900,7 +953,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
         {
 
 
-
             if (TXTIDPRODUCTOOk.Text != "0" & Convert.ToDouble(txtStockHay.Text) > 0)
             {
                 if (CheckInventarios.Checked == false)
@@ -934,7 +986,6 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
 
                 panelInventario.Visible = true;
             }
-
         }
 
         private void Datalistado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1010,14 +1061,86 @@ namespace PUNTO_DE_VENTA.PRODUCTOS
             buscar();
         }
 
-        private void Txtbusca_TextChanged_1(object sender, EventArgs e)
-        {
-            buscar();
-        }
-
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
             pnlPrincipal.Visible = false;
+            PANELREGISTRO.Visible = false;
+            datalistado.Visible = true;
+        }
+
+        private void Btn_Configuracion_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            MODULOS.CONFIGURACION.PANEL_CONFIGURACIONES frm = new MODULOS.CONFIGURACION.PANEL_CONFIGURACIONES();
+            frm.ShowDialog();
+        }
+
+        private void Datalistado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            proceso_para_obtener_datos_de_productos();
+        }
+
+        private void BtnRegresar_DoubleClick(object sender, EventArgs e)
+        {
+            pnlPrincipal.Visible = false;
+            PANELREGISTRO.Visible = false;
+            datalistado.Visible = true;
+        }
+
+        private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar != '.') || (e.KeyChar != ','))
+            {
+
+
+                string CultureName = Thread.CurrentThread.CurrentCulture.Name;
+                CultureInfo ci = new CultureInfo(CultureName);
+
+
+                ci.NumberFormat.NumberDecimalSeparator = ".";
+                Thread.CurrentThread.CurrentCulture = ci;
+
+            }
+            Separador_de_Numeros(txtcosto, e);
+        }
+        public static void Separador_de_Numeros(System.Windows.Forms.TextBox CajaTexto, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (!(e.KeyChar == CajaTexto.Text.IndexOf('.')))
+            {
+                e.Handled = true;
+            }
+
+
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == ',')
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+
+            }
+
+        }
+
+        private void BtnImportarExcel_Click(object sender, EventArgs e)
+        {
+            MODULOS.PRODUCTOS_OK.Asistente_de_ImportacionExcel frm = new MODULOS.PRODUCTOS_OK.Asistente_de_ImportacionExcel();
+            frm.ShowDialog();
         }
     }
 }
