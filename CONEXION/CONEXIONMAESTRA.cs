@@ -15,14 +15,14 @@ namespace PUNTO_DE_VENTA.CONEXION
         // public static string conexion = @"Data source=DESKTOP-VBGGJBO;Initial Catalog=BASE_PUNTO_VENTA;Integrated Security=True";
 
         public static SqlConnection conectar = new SqlConnection(conexion);
-        internal void abrir()
+        public static void abrir()
         {
             if(conectar.State == ConnectionState.Closed)
             {
                 conectar.Open();
             }
         }
-        internal void cerrar()
+        public static void cerrar()
         {
             if(conectar.State==ConnectionState.Open)
             {
