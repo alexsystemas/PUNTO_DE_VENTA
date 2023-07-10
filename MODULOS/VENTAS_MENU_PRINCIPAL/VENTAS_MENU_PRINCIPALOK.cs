@@ -25,11 +25,12 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         int idClienteEstandar;
         int iddetalleventa;
         int idusuario_que_inicio_sesion;
-        int idVenta;
+      public static  int idVenta;
         int idproducto;
         int contador;
         double txtpantalla;
         double lblStock_De_Productos;
+        public static double total;
 
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
@@ -40,9 +41,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator = ".";
             System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator = ",";
 
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblSerialPc.Text = lblSerialPc.Text.Trim();
+            CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPc);
 
             MOSTRAR_CAJA_POR_SERIAL();
             MOSTRAR_TIPO_DE_BUSQUEDA();
@@ -309,7 +308,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
             SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", lblSerialPc.Text);
+            com.Parameters.AddWithValue("@id_serial_pc",CONEXION.Encryptar_en_texto.Encriptar (lblSerialPc.Text));
             try
             {
                 con.Open();
@@ -919,7 +918,12 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 
         }
 
-      
+        private void BtnCobrar_Click(object sender, EventArgs e)
+        {
+            total = Convert.ToDouble(txt_total_suma.Text);
+            VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO frm = new VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO();
+            frm.ShowDialog();
+        }
     }
 }
 

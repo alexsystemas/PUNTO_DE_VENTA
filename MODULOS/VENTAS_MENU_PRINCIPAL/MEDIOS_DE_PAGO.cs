@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Drawing.Printing;
 namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 {
     public partial class MEDIOS_DE_PAGO : Form
@@ -17,11 +17,217 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         {
             InitializeComponent();
         }
-
+        string moneda;
+        int idcliente;
+        int idventa;
+        double total;
+        double vuelto = 0;
+        double efectivo_calculado = 0;
+        double restante = 0;
+        int INDICADOR_DE_FOCO;
+        bool SECUENCIA1 = true;
+        bool SECUENCIA2 = true;
+        bool SECUENCIA3 = true;
+        string indicador;
+        string indicador_de_tipo_de_pago_string;
+        string txttipo;
+        string TXTTOTAL_STRING;
+        string lblproceso;
+        double credito = 0;
+        int idcomprobante;
         private void MEDIOS_DE_PAGO_Load(object sender, EventArgs e)
         {
             panel13.Visible = false;
+            cambiar_el_formato_de_separador_de_decimales();
             MOSTRAR_comprobante_serializado_POR_DEFECTO();
+            obtener_serial_pc();
+            mostrar_moneda_de_empresa();
+            configuraciones_de_diseño();
+            Obtener_id_de_venta();
+            mostrar_impresora();
+            cargar_impresoras_del_equipo();
+            calcular_restante();
+
+        }
+        void calcular_restante()
+        {
+            try
+            {
+                double efectivo = 0;
+                double tarjeta = 0;
+
+                if (txtefectivo2.Text == "")
+                {
+                    efectivo = 0;
+                }
+                else
+                {
+                    efectivo = Convert.ToDouble(txtefectivo2.Text);
+                }
+                if (txtcredito2.Text == "")
+                {
+                    credito = 0;
+                }
+                else
+                {
+                    credito = Convert.ToDouble(txtcredito2.Text);
+                }
+                if (txttarjeta2.Text == "")
+                {
+                    tarjeta = 0;
+                }
+                else
+                {
+                    tarjeta = Convert.ToDouble(txttarjeta2.Text);
+                }
+
+                if (txtefectivo2.Text == "0.00")
+                {
+                    efectivo = 0;
+                }
+                if (txtcredito2.Text == "0.00")
+                {
+                    credito = 0;
+                }
+                if (txttarjeta2.Text == "0.00")
+                {
+                    tarjeta = 0;
+
+                }
+
+                if (txtefectivo2.Text == ".")
+                {
+                    efectivo = 0;
+                }
+                if (txtcredito2.Text == ".")
+                {
+                    tarjeta = 0;
+                }
+                if (txttarjeta2.Text == ".")
+                {
+                    credito = 0;
+                }
+                ///////
+                //Total= 5 
+                //Efectivo= 10
+                // Tarjeta = 22
+                //EC=E-(T+TA)
+                //EC= 10-(5+22)
+                //EC= 3
+                //V=E-(T-TA)
+                //V=10-(5-2)
+                //V=7
+
+                try
+                {
+                    if (efectivo > total)
+                    {
+                        efectivo_calculado = efectivo - (total + credito + tarjeta);
+                        if (efectivo_calculado < 0)
+                        {
+                            vuelto = 0;
+                            TXTVUELTO.Text = "0";
+                            txtrestante.Text = Convert.ToString(efectivo_calculado);
+                            restante = efectivo_calculado;
+                        }
+                        else
+                        {
+                            vuelto = efectivo - (total - credito - tarjeta);
+                            TXTVUELTO.Text = Convert.ToString(vuelto);
+                            restante = efectivo - (total + credito + tarjeta + efectivo_calculado);
+                            txtrestante.Text = Convert.ToString(restante);
+                            txtrestante.Text = decimal.Parse(txtrestante.Text).ToString("##0.00");
+                        }
+
+                    }
+                    else
+                    {
+                        vuelto = 0;
+                        TXTVUELTO.Text = "0";
+                        efectivo_calculado = efectivo;
+                        restante = total - efectivo_calculado - credito - tarjeta;
+                        txtrestante.Text = Convert.ToString(restante);
+                        txtrestante.Text = decimal.Parse(txtrestante.Text).ToString("##0.00");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+         void mostrar_impresora()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("mostrar_impresoras_por_caja", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Serial", lblSerialPC.Text);
+                try
+                {
+                    CONEXION.CONEXIONMAESTRA.abrir();
+                    txtImpresora.Text = Convert.ToString(cmd.ExecuteScalar());
+                    CONEXION.CONEXIONMAESTRA.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.StackTrace);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        void cargar_impresoras_del_equipo()
+        {
+            txtImpresora.Items.Clear();
+            for (var I = 0; I < PrinterSettings.InstalledPrinters.Count; I++)
+            {
+                txtImpresora.Items.Add(PrinterSettings.InstalledPrinters[I]);
+            }
+            txtImpresora.Items.Add("Ninguna");
+        }
+       
+        void Obtener_id_de_venta()
+        {
+            idventa = VENTAS_MENU_PRINCIPALOK.idVenta;
+        }
+        void configuraciones_de_diseño()
+        {
+            TXTVUELTO.Text = "0.0";
+            txtrestante.Text = "0.0";
+            TXTTOTAL.Text = moneda + " " + VENTAS_MENU_PRINCIPALOK.total;
+            total = VENTAS_MENU_PRINCIPALOK.total;
+            idcliente = 0;
+
+        }
+        void mostrar_moneda_de_empresa()
+        {
+            SqlCommand cmd = new SqlCommand("Select Moneda From Empresa", CONEXION.CONEXIONMAESTRA.conectar);
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                moneda = Convert.ToString(cmd.ExecuteScalar());
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public void obtener_serial_pc()
+        {
+            CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPC);
+        }
+        public void cambiar_el_formato_de_separador_de_decimales()
+        {
+            CONEXION.cambiar_el_formato_de_seprador_de_decimales.cambiar();
         }
         private void MOSTRAR_comprobante_serializado_POR_DEFECTO()
         {
@@ -77,5 +283,559 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             lblComprobante.Text = ((Button)sender).Text;
             dibujarCOMPROBANTES();
         }
+
+        private void Txtefectivo2_TextChanged(object sender, EventArgs e)
+        {
+            calcular_restante();
+        }
+
+        private void Txttarjeta2_TextChanged(object sender, EventArgs e)
+        {
+            calcular_restante();
+        }
+
+        private void Txtcredito2_TextChanged(object sender, EventArgs e)
+        {
+            calcular_restante();
+            hacer_visible_panel_de_clientes_a_credito();
+        }
+        void hacer_visible_panel_de_clientes_a_credito()
+        {
+            try
+            {
+                double textocredito = 0;
+                if (txtcredito2.Text == ".")
+                {
+                    textocredito = 0;
+                }
+                if (txtcredito2.Text == "")
+                {
+                    textocredito = 0;
+                }
+                else
+                {
+                    textocredito = Convert.ToDouble(txtcredito2.Text);
+                }
+
+                if (textocredito > 0)
+                {
+                    pcredito.Visible = true;
+                }
+                else
+                {
+                    pcredito.Visible = false;
+                    idcliente = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "1";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "1";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "1";
+            }
+        }
+
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "2";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "2";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "2";
+            }
+        }
+
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "3";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "3";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "3";
+            }
+        }
+
+        private void Btn4_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "4";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "4";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "4";
+            }
+        }
+
+        private void Btn5_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "5";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "5";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "5";
+            }
+        }
+
+        private void Btn6_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "6";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "6";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "6";
+            }
+        }
+
+        private void Btn7_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "7";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "7";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "7";
+            }
+        }
+
+        private void Btn8_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "8";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "8";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "8";
+            }
+        }
+
+        private void Btn9_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "9";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "9";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "9";
+            }
+        }
+
+        private void Btn0_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtefectivo2.Text = txtefectivo2.Text + "0";
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Text = txttarjeta2 + "0";
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Text = txtcredito2.Text + "0";
+            }
+
+        }
+
+        private void BtnPunto_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                if (SECUENCIA1 == true)
+                {
+                    txtefectivo2.Text = txtefectivo2.Text + ".";
+                    SECUENCIA1 = false;
+                }
+
+                else
+                {
+                    return;
+                }
+
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                if (SECUENCIA2 == true)
+                {
+                    txttarjeta2.Text = txttarjeta2.Text + ".";
+                    SECUENCIA2 = false;
+                }
+
+                else
+                {
+                    return;
+                }
+
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                if (SECUENCIA3 == true)
+                {
+                    txtcredito2.Text = txtcredito2.Text + ".";
+                    SECUENCIA3 = false;
+                }
+
+                else
+                {
+                    return;
+                }
+
+            }
+
+        }
+
+            private void Btnborrartodo_Click(object sender, EventArgs e)
+        {
+            if (INDICADOR_DE_FOCO == 1)
+            {
+                txtcredito2.Clear();
+                SECUENCIA1 = true;
+            }
+            else if (INDICADOR_DE_FOCO == 2)
+            {
+                txttarjeta2.Clear();
+                SECUENCIA2 = true;
+            }
+            else if (INDICADOR_DE_FOCO == 3)
+            {
+                txtcredito2.Clear();
+                SECUENCIA3 = true;
+            }
+        }
+
+        private void Txtclientesolicitabnte2_TextChanged(object sender, EventArgs e)
+        {
+            buscarclientes2();
+            datalistadoclientes2.Visible = true;
+        }
+        void buscarclientes2()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscar_cliente_POR_nombre_PARA_VENTAS_todos", CONEXION.CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letra", txtclientesolicitabnte2.Text);
+                da.Fill(dt);
+                datalistadoclientes2.DataSource = dt;
+                datalistadoclientes2.Columns[2].Visible = false;
+                datalistadoclientes2.Columns[3].Visible = false;
+                datalistadoclientes2.Columns[4].Visible = false;
+                datalistadoclientes2.Columns[5].Visible = false;
+                datalistadoclientes2.Columns[1].Width = 420;
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void Datalistadoclientes2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[1].Value.ToString();
+            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[2].Value.ToString());
+            datalistadoclientes2.Visible = false;
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            insertar_cliente();
+        }
+        void insertar_cliente()
+        {
+            if (txtnombrecliente.Text != "")
+            {
+
+                if (txtdirecciondefactura.Text == "")
+                {
+                    txtdirecciondefactura.Text = "0";
+                }
+                if (txtrucdefactura.Text == "")
+                {
+                    txtrucdefactura.Text = "0";
+                }
+                if (txtcelular.Text == "")
+                {
+                    txtcelular.Text = "0";
+                }
+
+
+                try
+                {
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd = new SqlCommand("insertar_cliente", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Nombre", txtnombrecliente.Text);
+                    cmd.Parameters.AddWithValue("@Direccion_para_factura", txtdirecciondefactura.Text);
+                    cmd.Parameters.AddWithValue("@Ruc", txtrucdefactura.Text);
+                    cmd.Parameters.AddWithValue("@movil", txtcelular.Text);
+                    cmd.Parameters.AddWithValue("@Cliente", "SI");
+                    cmd.Parameters.AddWithValue("@Proveedor", "NO");
+                    cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+                    cmd.Parameters.AddWithValue("@Saldo", 0);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            PANELREGISTRO.Visible = false;
+        }
+
+        private void BtnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            PANELREGISTRO.Visible = true;
+            PANELREGISTRO.Dock = DockStyle.Fill;
+            PANELREGISTRO.BringToFront();
+            limpiar_datos_de_registroDeClientes();
+        }
+        void limpiar_datos_de_registroDeClientes()
+        {
+            txtnombrecliente.Clear();
+            txtdirecciondefactura.Clear();
+            txtcelular.Clear();
+            txtrucdefactura.Clear();
+        }
+
+        private void Txtefectivo2_Click(object sender, EventArgs e)
+        {
+            INDICADOR_DE_FOCO = 1;
+            if (txtrestante.Text == "0.00")
+            {
+                txtefectivo2.Text = "";
+            }
+            else
+            {
+                txtefectivo2.Text = txtrestante.Text;
+            }
+        }
+
+        private void Txttarjeta2_Click(object sender, EventArgs e)
+        {
+            calcular_restante();
+            INDICADOR_DE_FOCO = 2;
+            if (txtrestante.Text == "0.00")
+            {
+                txttarjeta2.Text = "";
+            }
+            else
+            {
+                txttarjeta2.Text = txtrestante.Text;
+            }
+        }
+
+        private void Txtcredito2_Click(object sender, EventArgs e)
+        {
+            calcular_restante();
+            INDICADOR_DE_FOCO = 3;
+            if (txtrestante.Text == "0.00")
+            {
+                txtcredito2.Text = "";
+            }
+            else
+            {
+                txtcredito2.Text = txtrestante.Text;
+                hacer_visible_panel_de_clientes_a_credito();
+            }
+        }
+
+        private void BtnSinImprimir_Click(object sender, EventArgs e)
+        {
+            indicador = "VISTA PREVIA";
+            identificar_el_tipo_de_pago();
+            INGRESAR_LOS_DATOS();
+        }
+        void INGRESAR_LOS_DATOS()
+        {
+            CONVERTIR_TOTAL_A_LETRAS();
+           // completar_con_ceros_los_texbox_de_otros_medios_de_pago();
+            if (txttipo == "EFECTIVO" && vuelto >= 0)
+            {
+                //vender_en_efectivo();
+
+            }
+            else if (txttipo == "EFECTIVO" && vuelto < 0)
+            {
+                MessageBox.Show("El vuelto no puede ser menor a el Total pagado ", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            // condicional para creditos
+            if (txttipo == "CREDITO" && datalistadoclientes2.Visible == false)
+            {
+               // vender_en_efectivo();
+            }
+            else if (txttipo == "CREDITO" && datalistadoclientes2.Visible == true)
+            {
+                MessageBox.Show("Seleccione un Cliente para Activar Pago a Credito", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            if (txttipo == "TARJETA")
+            {
+               // vender_en_efectivo();
+            }
+
+
+            if (txttipo == "MIXTO")
+            {
+               // vender_en_efectivo();
+            }
+
+        }
+        void CONVERTIR_TOTAL_A_LETRAS()
+        {
+            try
+            {
+                TXTTOTAL.Text = Convert.ToString(total);
+                TXTTOTAL.Text = decimal.Parse(TXTTOTAL.Text).ToString("##0.00");
+                int numero = Convert.ToInt32(Math.Floor(Convert.ToDouble(total)));
+                TXTTOTAL_STRING = CONEXION.total_en_letras.Num2Text(numero);
+                string[] a = TXTTOTAL.Text.Split('.');
+                txttotaldecimal.Text = a[1];
+                txtnumeroconvertidoenletra.Text = TXTTOTAL_STRING + " CON " + txttotaldecimal.Text + "/100 ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        void identificar_el_tipo_de_pago()
+        {
+            int indicadorEfectivo = 4;
+            int indicadorCredito = 2;
+            int indicadorTarjeta = 3;
+
+            // validacion para evitar valores vacios
+            if (txtefectivo2.Text == "")
+            {
+                txtefectivo2.Text = "0";
+            }
+            if (txttarjeta2.Text == "")
+            {
+                txttarjeta2.Text = "0";
+            }
+            if (txtcredito2.Text == "")
+            {
+                txtcredito2.Text = "0";
+            }
+            //validacion de .
+            if (txtefectivo2.Text == ".")
+            {
+                txtefectivo2.Text = "0";
+            }
+            if (txttarjeta2.Text == ".")
+            {
+                txttarjeta2.Text = "0";
+            }
+            if (txtcredito2.Text == ".")
+            {
+                txtcredito2.Text = "0";
+            }
+            //validacion de 0
+            if (txtefectivo2.Text == "0")
+            {
+                indicadorEfectivo = 0;
+            }
+            if (txttarjeta2.Text == "0")
+            {
+                indicadorTarjeta = 0;
+            }
+            if (txtcredito2.Text == "0")
+            {
+                indicadorCredito = 0;
+            }
+            //calculo de indicador
+            int calculo_identificacion = indicadorCredito + indicadorEfectivo + indicadorTarjeta;
+            //consulta al identificador
+            if (calculo_identificacion == 4)
+            {
+                indicador_de_tipo_de_pago_string = "EFECTIVO";
+            }
+            if (calculo_identificacion == 2)
+            {
+                indicador_de_tipo_de_pago_string = "CREDITO";
+            }
+            if (calculo_identificacion == 3)
+            {
+                indicador_de_tipo_de_pago_string = "TARJETA";
+            }
+            if (calculo_identificacion > 4)
+            {
+                indicador_de_tipo_de_pago_string = "MIXTO";
+            }
+            txttipo = indicador_de_tipo_de_pago_string;
+
+        }
     }
 }
+

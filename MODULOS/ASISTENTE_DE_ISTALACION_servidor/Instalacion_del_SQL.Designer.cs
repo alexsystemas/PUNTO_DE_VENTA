@@ -131,7 +131,7 @@
             this.panel4.Controls.Add(this.Nombre_Instancia);
             this.panel4.Location = new System.Drawing.Point(107, 171);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(101, 29);
+            this.panel4.Size = new System.Drawing.Size(31, 32);
             this.panel4.TabIndex = 3;
             // 
             // pnEliminaBD

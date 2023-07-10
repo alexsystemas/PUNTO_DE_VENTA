@@ -28,14 +28,19 @@ namespace PUNTO_DE_VENTA.MODULOS
         }
         public void DIBUJARusuarios()
         {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.Open();
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-            con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO' ", con); // ejecutamos procedimiento almacenado
+                SqlDataReader rdr = cmd.ExecuteReader();
+            
 
-            SqlCommand cmd = new SqlCommand();
-            cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO' ", con); // ejecutamos procedimiento almacenado
-            SqlDataReader rdr = cmd.ExecuteReader();
+
+
             while (rdr.Read()) // bucle tipo while 
             {
                 Label b = new Label(); // declaramos un label llamdo b
@@ -77,9 +82,14 @@ namespace PUNTO_DE_VENTA.MODULOS
             }
             con.Close();
         }
+           catch (Exception)
+            {
 
+               
+            }
+}
 
-        private void MOSTRAR_PERMISOS()
+    private void MOSTRAR_PERMISOS()
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;

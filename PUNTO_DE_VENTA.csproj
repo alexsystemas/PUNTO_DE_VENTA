@@ -70,8 +70,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONEXION\cambiar_el_formato_de_seprador_de_decimales.cs" />
     <Compile Include="CONEXION\CONEXIONMAESTRA.cs" />
     <Compile Include="CONEXION\Encryptar_en_texto.cs" />
+    <Compile Include="CONEXION\Obtener_serial_de_PC.cs" />
+    <Compile Include="CONEXION\total_en_letras.cs" />
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />

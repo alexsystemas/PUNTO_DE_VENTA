@@ -103,7 +103,7 @@ namespace PUNTO_DE_VENTA.MODULOS.PRODUCTOS_OK
 
             SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc", lblSerialPc.Text);
+            com.Parameters.AddWithValue("@id_serial_pc",CONEXION.Encryptar_en_texto.Encriptar( lblSerialPc.Text));
 
             try
             {
