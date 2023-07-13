@@ -63,7 +63,7 @@ namespace PUNTO_DE_VENTA.MODULOS.SEREALIZACION_DE_COMPROBANTES
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message, ex.StackTrace);
             }
         }
 

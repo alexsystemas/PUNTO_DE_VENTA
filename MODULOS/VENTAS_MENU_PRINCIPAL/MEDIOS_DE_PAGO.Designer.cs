@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MEDIOS_DE_PAGO));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtnumeroconvertidoenletra = new System.Windows.Forms.TextBox();
+            this.txttotaldecimal = new System.Windows.Forms.TextBox();
             this.lblSerialPC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,7 +43,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -98,13 +100,18 @@
             this.txtefectivo2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelImpresionVistaPrevia = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblComprobante = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -115,16 +122,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtImpresora = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.btnGuradarImprimirDirecto = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.btnSinImprimir = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGuardarImprimirdirecto = new System.Windows.Forms.MenuStrip();
-            this.guardarEImprimirEnterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelImpresionVistaPrevia = new System.Windows.Forms.Panel();
-            this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txttotaldecimal = new System.Windows.Forms.TextBox();
-            this.txtnumeroconvertidoenletra = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -136,15 +137,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoclientes2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelImpresionVistaPrevia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel12.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip4.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
-            this.btnGuardarImprimirdirecto.SuspendLayout();
-            this.panelImpresionVistaPrevia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,6 +162,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 662);
             this.panel1.TabIndex = 0;
+            // 
+            // txtnumeroconvertidoenletra
+            // 
+            this.txtnumeroconvertidoenletra.Location = new System.Drawing.Point(38, 128);
+            this.txtnumeroconvertidoenletra.Name = "txtnumeroconvertidoenletra";
+            this.txtnumeroconvertidoenletra.Size = new System.Drawing.Size(138, 20);
+            this.txtnumeroconvertidoenletra.TabIndex = 4;
+            // 
+            // txttotaldecimal
+            // 
+            this.txttotaldecimal.Location = new System.Drawing.Point(38, 102);
+            this.txttotaldecimal.Name = "txttotaldecimal";
+            this.txttotaldecimal.Size = new System.Drawing.Size(138, 20);
+            this.txttotaldecimal.TabIndex = 4;
             // 
             // lblSerialPC
             // 
@@ -261,9 +276,9 @@
             this.PANELREGISTRO.Controls.Add(this.txtcelular);
             this.PANELREGISTRO.Controls.Add(this.label15);
             this.PANELREGISTRO.ForeColor = System.Drawing.Color.White;
-            this.PANELREGISTRO.Location = new System.Drawing.Point(13, 335);
+            this.PANELREGISTRO.Location = new System.Drawing.Point(10, 331);
             this.PANELREGISTRO.Name = "PANELREGISTRO";
-            this.PANELREGISTRO.Size = new System.Drawing.Size(455, 288);
+            this.PANELREGISTRO.Size = new System.Drawing.Size(455, 336);
             this.PANELREGISTRO.TabIndex = 605;
             this.PANELREGISTRO.Visible = false;
             // 
@@ -291,7 +306,7 @@
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.btnGuardar);
-            this.flowLayoutPanel4.Controls.Add(this.button3);
+            this.flowLayoutPanel4.Controls.Add(this.btnVolver);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(168, 272);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(166, 42);
@@ -309,16 +324,16 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // button3
+            // btnVolver
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button3.Location = new System.Drawing.Point(84, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 31;
-            this.button3.Text = "Volver";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnVolver.Location = new System.Drawing.Point(84, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 31);
+            this.btnVolver.TabIndex = 31;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // panel8
             // 
@@ -781,7 +796,7 @@
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
@@ -1001,16 +1016,59 @@
             this.panel3.Size = new System.Drawing.Size(1024, 613);
             this.panel3.TabIndex = 2;
             // 
+            // panelImpresionVistaPrevia
+            // 
+            this.panelImpresionVistaPrevia.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelImpresionVistaPrevia.Controls.Add(this.pictureBox2);
+            this.panelImpresionVistaPrevia.Controls.Add(this.label17);
+            this.panelImpresionVistaPrevia.Controls.Add(this.reportViewer1);
+            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(466, 10);
+            this.panelImpresionVistaPrevia.Name = "panelImpresionVistaPrevia";
+            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(124, 37);
+            this.panelImpresionVistaPrevia.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo_vega;
+            this.pictureBox2.Location = new System.Drawing.Point(142, 111);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(0, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(142, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 111);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "VENTA REALIZADA CORRECTAMENTE";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.AccessibilityKeyMap = null;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(142, 37);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // panel12
             // 
+            this.panel12.AutoScroll = true;
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel12.Controls.Add(this.flowLayoutPanel6);
             this.panel12.Controls.Add(this.flowLayoutPanel3);
-            this.panel12.Controls.Add(this.flowLayoutPanel2);
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Controls.Add(this.txtImpresora);
             this.panel12.Controls.Add(this.label8);
+            this.panel12.Controls.Add(this.menuStrip2);
             this.panel12.Controls.Add(this.menuStrip3);
-            this.panel12.Controls.Add(this.btnGuardarImprimirdirecto);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel12.Location = new System.Drawing.Point(722, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
@@ -1018,12 +1076,21 @@
             this.panel12.Size = new System.Drawing.Size(302, 613);
             this.panel12.TabIndex = 2;
             // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.AutoScroll = true;
+            this.flowLayoutPanel6.BackColor = System.Drawing.Color.LightGray;
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(17, 187);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(212, 82);
+            this.flowLayoutPanel6.TabIndex = 5;
+            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.lblComprobante);
             this.flowLayoutPanel3.Controls.Add(this.lblSerie);
             this.flowLayoutPanel3.Controls.Add(this.label12);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(24, 420);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(24, 441);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(245, 41);
@@ -1065,28 +1132,31 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Comprobante";
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(20, 166);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(205, 91);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.label18);
             this.panel13.Controls.Add(this.dataGridView1);
             this.panel13.Controls.Add(this.textBox7);
             this.panel13.Controls.Add(this.menuStrip4);
             this.panel13.Controls.Add(this.label11);
             this.panel13.Controls.Add(this.label10);
             this.panel13.Controls.Add(this.label9);
-            this.panel13.Location = new System.Drawing.Point(20, 285);
+            this.panel13.Location = new System.Drawing.Point(20, 282);
             this.panel13.Margin = new System.Windows.Forms.Padding(1);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(249, 127);
+            this.panel13.Size = new System.Drawing.Size(249, 157);
             this.panel13.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label18.Location = new System.Drawing.Point(8, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 15);
+            this.label18.TabIndex = 625;
+            this.label18.Text = "Cliente Opcional";
             // 
             // dataGridView1
             // 
@@ -1100,7 +1170,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn1});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -1123,7 +1193,7 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(4, 8);
+            this.textBox7.Location = new System.Drawing.Point(4, 24);
             this.textBox7.Margin = new System.Windows.Forms.Padding(1);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(203, 23);
@@ -1138,7 +1208,7 @@
             this.menuStrip4.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3});
-            this.menuStrip4.Location = new System.Drawing.Point(209, 7);
+            this.menuStrip4.Location = new System.Drawing.Point(209, 23);
             this.menuStrip4.Name = "menuStrip4";
             this.menuStrip4.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
             this.menuStrip4.Size = new System.Drawing.Size(26, 22);
@@ -1157,7 +1227,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label11.Location = new System.Drawing.Point(4, 87);
+            this.label11.Location = new System.Drawing.Point(4, 110);
             this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 17);
@@ -1169,7 +1239,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label10.Location = new System.Drawing.Point(4, 62);
+            this.label10.Location = new System.Drawing.Point(4, 85);
             this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 17);
@@ -1181,7 +1251,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label9.Location = new System.Drawing.Point(2, 41);
+            this.label9.Location = new System.Drawing.Point(2, 64);
             this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 17);
@@ -1192,7 +1262,7 @@
             // 
             this.txtImpresora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImpresora.FormattingEnabled = true;
-            this.txtImpresora.Location = new System.Drawing.Point(15, 34);
+            this.txtImpresora.Location = new System.Drawing.Point(15, 28);
             this.txtImpresora.Margin = new System.Windows.Forms.Padding(1);
             this.txtImpresora.Name = "txtImpresora";
             this.txtImpresora.Size = new System.Drawing.Size(250, 24);
@@ -1210,6 +1280,30 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Impresora:";
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.AutoSize = false;
+            this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGuradarImprimirDirecto});
+            this.menuStrip2.Location = new System.Drawing.Point(15, 56);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
+            this.menuStrip2.Size = new System.Drawing.Size(265, 59);
+            this.menuStrip2.TabIndex = 2;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // btnGuradarImprimirDirecto
+            // 
+            this.btnGuradarImprimirDirecto.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnGuradarImprimirDirecto.ForeColor = System.Drawing.Color.White;
+            this.btnGuradarImprimirDirecto.Name = "btnGuradarImprimirDirecto";
+            this.btnGuradarImprimirDirecto.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.btnGuradarImprimirDirecto.Size = new System.Drawing.Size(215, 57);
+            this.btnGuradarImprimirDirecto.Text = "Guardar y Imprimir Directo ";
+            // 
             // menuStrip3
             // 
             this.menuStrip3.AutoSize = false;
@@ -1218,10 +1312,10 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSinImprimir});
-            this.menuStrip3.Location = new System.Drawing.Point(15, 108);
+            this.menuStrip3.Location = new System.Drawing.Point(15, 117);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.menuStrip3.Size = new System.Drawing.Size(211, 44);
+            this.menuStrip3.Size = new System.Drawing.Size(265, 59);
             this.menuStrip3.TabIndex = 2;
             this.menuStrip3.Text = "menuStrip2";
             // 
@@ -1231,89 +1325,8 @@
             this.btnSinImprimir.ForeColor = System.Drawing.Color.White;
             this.btnSinImprimir.Name = "btnSinImprimir";
             this.btnSinImprimir.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.btnSinImprimir.Size = new System.Drawing.Size(197, 42);
+            this.btnSinImprimir.Size = new System.Drawing.Size(197, 57);
             this.btnSinImprimir.Text = "Guardar y ver en Pantalla";
-            this.btnSinImprimir.Click += new System.EventHandler(this.BtnSinImprimir_Click);
-            // 
-            // btnGuardarImprimirdirecto
-            // 
-            this.btnGuardarImprimirdirecto.AutoSize = false;
-            this.btnGuardarImprimirdirecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnGuardarImprimirdirecto.Dock = System.Windows.Forms.DockStyle.None;
-            this.btnGuardarImprimirdirecto.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.btnGuardarImprimirdirecto.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardarEImprimirEnterToolStripMenuItem});
-            this.btnGuardarImprimirdirecto.Location = new System.Drawing.Point(15, 59);
-            this.btnGuardarImprimirdirecto.Name = "btnGuardarImprimirdirecto";
-            this.btnGuardarImprimirdirecto.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.btnGuardarImprimirdirecto.Size = new System.Drawing.Size(211, 43);
-            this.btnGuardarImprimirdirecto.TabIndex = 2;
-            this.btnGuardarImprimirdirecto.Text = "menuStrip2";
-            // 
-            // guardarEImprimirEnterToolStripMenuItem
-            // 
-            this.guardarEImprimirEnterToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.guardarEImprimirEnterToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.guardarEImprimirEnterToolStripMenuItem.Name = "guardarEImprimirEnterToolStripMenuItem";
-            this.guardarEImprimirEnterToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.guardarEImprimirEnterToolStripMenuItem.Size = new System.Drawing.Size(209, 41);
-            this.guardarEImprimirEnterToolStripMenuItem.Text = "Guardar e Imprimir (Enter)";
-            // 
-            // panelImpresionVistaPrevia
-            // 
-            this.panelImpresionVistaPrevia.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelImpresionVistaPrevia.Controls.Add(this.pictureBox2);
-            this.panelImpresionVistaPrevia.Controls.Add(this.label17);
-            this.panelImpresionVistaPrevia.Controls.Add(this.reportViewer1);
-            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(551, 21);
-            this.panelImpresionVistaPrevia.Name = "panelImpresionVistaPrevia";
-            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(124, 37);
-            this.panelImpresionVistaPrevia.TabIndex = 3;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.AccessibilityKeyMap = null;
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(250, 37);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // label17
-            // 
-            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(250, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 111);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "VENTA REALIZADA CORRECTAMENTE";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo_vega;
-            this.pictureBox2.Location = new System.Drawing.Point(250, 111);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(0, 97);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txttotaldecimal
-            // 
-            this.txttotaldecimal.Location = new System.Drawing.Point(38, 102);
-            this.txttotaldecimal.Name = "txttotaldecimal";
-            this.txttotaldecimal.Size = new System.Drawing.Size(138, 20);
-            this.txttotaldecimal.TabIndex = 4;
-            // 
-            // txtnumeroconvertidoenletra
-            // 
-            this.txtnumeroconvertidoenletra.Location = new System.Drawing.Point(38, 128);
-            this.txtnumeroconvertidoenletra.Name = "txtnumeroconvertidoenletra";
-            this.txtnumeroconvertidoenletra.Size = new System.Drawing.Size(138, 20);
-            this.txtnumeroconvertidoenletra.TabIndex = 4;
             // 
             // MEDIOS_DE_PAGO
             // 
@@ -1348,6 +1361,8 @@
             this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelImpresionVistaPrevia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -1357,12 +1372,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
-            this.btnGuardarImprimirdirecto.ResumeLayout(false);
-            this.btnGuardarImprimirdirecto.PerformLayout();
-            this.panelImpresionVistaPrevia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1417,7 +1430,6 @@
         private System.Windows.Forms.Label lblComprobante;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
@@ -1431,8 +1443,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem btnSinImprimir;
-        private System.Windows.Forms.MenuStrip btnGuardarImprimirdirecto;
-        private System.Windows.Forms.ToolStripMenuItem guardarEImprimirEnterToolStripMenuItem;
         private System.Windows.Forms.TextBox lblSerialPC;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel15;
@@ -1445,7 +1455,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel20;
@@ -1465,5 +1475,9 @@
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.TextBox txttotaldecimal;
         private System.Windows.Forms.TextBox txtnumeroconvertidoenletra;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem btnGuradarImprimirDirecto;
+        private System.Windows.Forms.Label label18;
     }
 }
