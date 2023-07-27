@@ -104,7 +104,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.panelGuardado_de_Datos = new System.Windows.Forms.Panel();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblComprobante = new System.Windows.Forms.Label();
@@ -125,7 +125,8 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.btnGuradarImprimirDirecto = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.btnSinImprimir = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGuardarSinImprimir = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -139,7 +140,7 @@
             this.panel3.SuspendLayout();
             this.panelImpresionVistaPrevia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel12.SuspendLayout();
+            this.panelGuardado_de_Datos.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -1006,7 +1007,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panelImpresionVistaPrevia);
-            this.panel3.Controls.Add(this.panel12);
+            this.panel3.Controls.Add(this.panelGuardado_de_Datos);
             this.panel3.Controls.Add(this.TXTTOTAL);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1022,16 +1023,16 @@
             this.panelImpresionVistaPrevia.Controls.Add(this.pictureBox2);
             this.panelImpresionVistaPrevia.Controls.Add(this.label17);
             this.panelImpresionVistaPrevia.Controls.Add(this.reportViewer1);
-            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(466, 10);
+            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(459, 10);
             this.panelImpresionVistaPrevia.Name = "panelImpresionVistaPrevia";
-            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(124, 37);
+            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(211, 71);
             this.panelImpresionVistaPrevia.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo_vega;
-            this.pictureBox2.Location = new System.Drawing.Point(142, 111);
+            this.pictureBox2.Location = new System.Drawing.Point(311, 111);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(0, 97);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1042,7 +1043,7 @@
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Top;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(142, 0);
+            this.label17.Location = new System.Drawing.Point(311, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(0, 111);
             this.label17.TabIndex = 1;
@@ -1055,26 +1056,26 @@
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Left;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(142, 37);
+            this.reportViewer1.Size = new System.Drawing.Size(311, 71);
             this.reportViewer1.TabIndex = 0;
             // 
-            // panel12
+            // panelGuardado_de_Datos
             // 
-            this.panel12.AutoScroll = true;
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panel12.Controls.Add(this.flowLayoutPanel6);
-            this.panel12.Controls.Add(this.flowLayoutPanel3);
-            this.panel12.Controls.Add(this.panel13);
-            this.panel12.Controls.Add(this.txtImpresora);
-            this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.menuStrip2);
-            this.panel12.Controls.Add(this.menuStrip3);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(722, 0);
-            this.panel12.Margin = new System.Windows.Forms.Padding(1);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(302, 613);
-            this.panel12.TabIndex = 2;
+            this.panelGuardado_de_Datos.AutoScroll = true;
+            this.panelGuardado_de_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel6);
+            this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel3);
+            this.panelGuardado_de_Datos.Controls.Add(this.panel13);
+            this.panelGuardado_de_Datos.Controls.Add(this.txtImpresora);
+            this.panelGuardado_de_Datos.Controls.Add(this.label8);
+            this.panelGuardado_de_Datos.Controls.Add(this.menuStrip2);
+            this.panelGuardado_de_Datos.Controls.Add(this.menuStrip3);
+            this.panelGuardado_de_Datos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelGuardado_de_Datos.Location = new System.Drawing.Point(722, 0);
+            this.panelGuardado_de_Datos.Margin = new System.Windows.Forms.Padding(1);
+            this.panelGuardado_de_Datos.Name = "panelGuardado_de_Datos";
+            this.panelGuardado_de_Datos.Size = new System.Drawing.Size(302, 613);
+            this.panelGuardado_de_Datos.TabIndex = 2;
             // 
             // flowLayoutPanel6
             // 
@@ -1311,7 +1312,8 @@
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSinImprimir});
+            this.btnGuardarSinImprimir,
+            this.toolStripMenuItem1});
             this.menuStrip3.Location = new System.Drawing.Point(15, 117);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
@@ -1319,14 +1321,20 @@
             this.menuStrip3.TabIndex = 2;
             this.menuStrip3.Text = "menuStrip2";
             // 
-            // btnSinImprimir
+            // btnGuardarSinImprimir
             // 
-            this.btnSinImprimir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSinImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnSinImprimir.Name = "btnSinImprimir";
-            this.btnSinImprimir.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.btnSinImprimir.Size = new System.Drawing.Size(197, 57);
-            this.btnSinImprimir.Text = "Guardar y ver en Pantalla";
+            this.btnGuardarSinImprimir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnGuardarSinImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarSinImprimir.Name = "btnGuardarSinImprimir";
+            this.btnGuardarSinImprimir.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.btnGuardarSinImprimir.Size = new System.Drawing.Size(197, 57);
+            this.btnGuardarSinImprimir.Text = "Guardar y ver en Pantalla";
+            this.btnGuardarSinImprimir.Click += new System.EventHandler(this.BtnGuardarSinImprimir_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 57);
             // 
             // MEDIOS_DE_PAGO
             // 
@@ -1363,8 +1371,8 @@
             this.panel3.PerformLayout();
             this.panelImpresionVistaPrevia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.panelGuardado_de_Datos.ResumeLayout(false);
+            this.panelGuardado_de_Datos.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -1425,7 +1433,7 @@
         private System.Windows.Forms.TextBox txtefectivo2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panelGuardado_de_Datos;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label lblComprobante;
         private System.Windows.Forms.Label lblSerie;
@@ -1442,7 +1450,7 @@
         private System.Windows.Forms.ComboBox txtImpresora;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MenuStrip menuStrip3;
-        private System.Windows.Forms.ToolStripMenuItem btnSinImprimir;
+        private System.Windows.Forms.ToolStripMenuItem btnGuardarSinImprimir;
         private System.Windows.Forms.TextBox lblSerialPC;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel15;
@@ -1479,5 +1487,6 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem btnGuradarImprimirDirecto;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

@@ -88,7 +88,7 @@ namespace PUNTO_DE_VENTA.MODULOS.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "VENTAS");
-                cmd.Parameters.AddWithValue("@Id_tipodoc", "TICKET");
+                cmd.Parameters.AddWithValue("@tipodoc", "TICKET");
                 cmd.Parameters.AddWithValue("@Por_defecto", "SI");
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -103,7 +103,7 @@ namespace PUNTO_DE_VENTA.MODULOS.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "VENTAS");
-                cmd.Parameters.AddWithValue("@Id_tipodoc", "BOLETA");
+                cmd.Parameters.AddWithValue("@tipodoc", "BOLETA");
                 cmd.Parameters.AddWithValue("@Por_defecto", "-");
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -117,7 +117,7 @@ namespace PUNTO_DE_VENTA.MODULOS.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "VENTAS");
-                cmd.Parameters.AddWithValue("@Id_tipodoc", "FACTURA");
+                cmd.Parameters.AddWithValue("@tipodoc", "FACTURA");
                 cmd.Parameters.AddWithValue("@Por_defecto", "-");
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -131,7 +131,7 @@ namespace PUNTO_DE_VENTA.MODULOS.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "INGRESO DE COBROS");
-                cmd.Parameters.AddWithValue("@Id_tipodoc", "INGRESOS");
+                cmd.Parameters.AddWithValue("@tipodoc", "INGRESOS");
                 cmd.Parameters.AddWithValue("@Por_defecto", "-");
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -145,7 +145,7 @@ namespace PUNTO_DE_VENTA.MODULOS.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "EGRESO DE PAGOS");
-                cmd.Parameters.AddWithValue("@Id_tipodoc", "EGRESOS");
+                cmd.Parameters.AddWithValue("@tipodoc", "EGRESOS");
                 cmd.Parameters.AddWithValue("@Por_defecto", "-");
                 cmd.ExecuteNonQuery();
                 con.Close();

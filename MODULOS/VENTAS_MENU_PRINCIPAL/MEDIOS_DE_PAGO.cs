@@ -29,6 +29,11 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         bool SECUENCIA1 = true;
         bool SECUENCIA2 = true;
         bool SECUENCIA3 = true;
+        string indicador;
+        string TXTTOTAL_STRING;
+        string txttipo;
+        string lblproceso;
+        string indicador_de_tipo_de_pago_string;
 
         private void MEDIOS_DE_PAGO_Load(object sender, EventArgs e)
         {
@@ -314,6 +319,45 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 
 
         }
+
+        //void validar_tipos_de_comprobantes()
+        //{
+        //    buscar_Tipo_de_documentos_para_insertar_en_ventas();
+        //    try
+        //    {
+        //        int numerofin;
+
+        //        txtserie.Text = dtComprobantes.SelectedCells[2].Value.ToString();
+
+        //        numerofin = Convert.ToInt32(dtComprobantes.SelectedCells[4].Value);
+        //        idcomprobante = Convert.ToInt32(dtComprobantes.SelectedCells[5].Value);
+        //        txtnumerofin.Text = Convert.ToString(numerofin + 1);
+        //        lblCantidad_de_numeros.Text = dtComprobantes.SelectedCells[3].Value.ToString();
+        //        lblCorrelativoconCeros.Text = CONEXION.Agregar_ceros_adelante_De_numero.ceros(txtnumerofin.Text, Convert.ToInt32(lblCantidad_de_numeros.Text));
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
+
+        //void buscar_Tipo_de_documentos_para_insertar_en_ventas()
+        //{
+        //    DataTable dt = new DataTable();
+        //    try
+        //    {
+        //        CONEXION.CONEXIONMAESTRA.abrir();
+        //        SqlDataAdapter da = new SqlDataAdapter("buscar_Tipo_de_documentos_para_insertar_en_ventas", CONEXION.CONEXIONMAESTRA.conectar);
+        //        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //        da.SelectCommand.Parameters.AddWithValue("@letra", lblComprobante.Text);
+        //        da.Fill(dt);
+        //        dtComprobantes.DataSource = dt;
+        //        CONEXION.CONEXIONMAESTRA.cerrar();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //}
 
         private void Txtefectivo2_TextChanged(object sender, EventArgs e)
         {
@@ -626,6 +670,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 else
                 {
                     pcredito.Visible = false;
+                    idcliente = 0;
                 }
             }
             catch (Exception ex)
@@ -748,6 +793,318 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 txtcredito2.Text = txtrestante.Text;
                 hacer_visible_panel_de_cliente_a_credito();
 
+            }
+        }
+
+        private void BtnGuardarSinImprimir_Click(object sender, EventArgs e)
+        {
+            if (restante == 0)
+            {
+                indicador = "VISTA PREVIA";
+                identificar_el_tipo_de_pago();
+                INGRESAR_LOS_DATOS();
+            }
+            else
+            {
+                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        void CONVERTIR_TOTAL_A_LETRAS()
+        {
+            try
+            {
+                TXTTOTAL.Text = Convert.ToString(total);
+                TXTTOTAL.Text = decimal.Parse(TXTTOTAL.Text).ToString("##0.00");
+                int numero = Convert.ToInt32(Math.Floor(Convert.ToDouble(total)));
+                TXTTOTAL_STRING = CONEXION.total_en_letras.Num2Text(numero);
+                string[] a = TXTTOTAL.Text.Split('.');
+                txttotaldecimal.Text = a[1];
+                txtnumeroconvertidoenletra.Text = TXTTOTAL_STRING + " CON " + txttotaldecimal.Text + "/100 ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        void INGRESAR_LOS_DATOS()
+        {
+            CONVERTIR_TOTAL_A_LETRAS();
+            completar_con_ceros_los_texbox_de_otros_medios_de_pago();
+            if (txttipo == "EFECTIVO" && vuelto >= 0)
+            {
+                vender_en_efectivo();
+
+            }
+            else if (txttipo == "EFECTIVO" && vuelto < 0)
+            {
+                MessageBox.Show("El vuelto no puede ser menor a el Total pagado ", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            // condicional para creditos
+            if (txttipo == "CREDITO" && datalistadoclientes2.Visible == false)
+            {
+                vender_en_efectivo();
+            }
+            else if (txttipo == "CREDITO" && datalistadoclientes2.Visible == true)
+            {
+                MessageBox.Show("Seleccione un Cliente para Activar Pago a Credito", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            if (txttipo == "TARJETA")
+            {
+                vender_en_efectivo();
+            }
+
+
+            if (txttipo == "MIXTO")
+            {
+                vender_en_efectivo();
+            }
+
+        }
+
+        void vender_en_efectivo()
+        {
+            if (idcliente == 0)
+            {
+                MOSTRAR_cliente_standar();
+            }
+            if (lblComprobante.Text == "FACTURA" && idcliente == 0 && txttipo != "CREDITO")
+            {
+                MessageBox.Show("Seleccione un Cliente, para Facturas es Obligatorio", "Datos Incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (lblComprobante.Text == "FACTURA" && idcliente != 0)
+            {
+                procesar_venta_efectivo();
+            }
+
+            else if (lblComprobante.Text != "FACTURA" && txttipo != "CREDITO")
+            {
+                procesar_venta_efectivo();
+            }
+            else if (lblComprobante.Text != "FACTURA" && txttipo == "CREDITO")
+            {
+                procesar_venta_efectivo();
+            }
+
+
+
+
+        }
+        void procesar_venta_efectivo()
+        {
+            CONFIRMAR_VENTA_EFECTIVO();
+            if (lblproceso == "PROCEDE")
+            {
+                //validar_tipos_de_comprobantes();
+                //actualizar_serie_mas_uno();
+                aumentar_monto_a_cliente();
+                validar_tipo_de_impresion();
+            }
+        }
+        void validar_tipo_de_impresion()
+        {
+            if (indicador == "VISTA PREVIA")
+            {
+                mostrar_ticket_impreso_VISTA_PREVIA();
+            }
+            else if (indicador == "DIRECTO")
+            {
+                //imprimir_directo();
+            }
+        }
+        void mostrar_ticket_impreso_VISTA_PREVIA()
+        {
+            panelImpresionVistaPrevia.Visible = true;
+            panelImpresionVistaPrevia.Dock = DockStyle.Fill;
+            panelGuardado_de_Datos.Dock = DockStyle.None;
+            panelGuardado_de_Datos.Visible = false;
+
+            MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report rpt = new MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report();
+            DataTable dt = new DataTable();
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", CONEXION.CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
+                da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
+                da.Fill(dt);
+                rpt = new MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report();
+                rpt.table1.DataSource = dt;
+                rpt.DataSource = dt;
+                reportViewer1.Report = rpt;
+                reportViewer1.RefreshReport();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+
+        }
+        void CONFIRMAR_VENTA_EFECTIVO()
+        {
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("Confirmar_venta", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idventa", idventa);
+                cmd.Parameters.AddWithValue("@montototal", total);
+                cmd.Parameters.AddWithValue("@IVA", 0);
+                cmd.Parameters.AddWithValue("@Saldo", vuelto);
+                cmd.Parameters.AddWithValue("@Tipo_de_pago", txttipo);
+                cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
+                cmd.Parameters.AddWithValue("@idcliente", idcliente);
+                cmd.Parameters.AddWithValue("@Comprobante", lblComprobante.Text);
+                cmd.Parameters.AddWithValue("@Numero_de_doc", "F9");
+                cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Now);
+                cmd.Parameters.AddWithValue("@ACCION", "VENTA");
+                cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
+                cmd.Parameters.AddWithValue("@Pago_con", txtefectivo2.Text);
+                cmd.Parameters.AddWithValue("@Referencia_tarjeta", "NULO");
+                cmd.Parameters.AddWithValue("@Vuelto", vuelto);
+                cmd.Parameters.AddWithValue("@Efectivo", efectivo_calculado);
+                cmd.Parameters.AddWithValue("@Credito", txtcredito2.Text);
+                cmd.Parameters.AddWithValue("@Tarjeta", txttarjeta2.Text);
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+                lblproceso = "PROCEDE";
+            }
+            catch (Exception ex)
+            {
+                CONEXION.CONEXIONMAESTRA.cerrar();
+                lblproceso = "NO PROCEDE";
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void aumentar_monto_a_cliente()
+        {
+            if (credito > 0)
+            {
+                try
+                {
+                    CONEXION.CONEXIONMAESTRA.abrir();
+                    SqlCommand cmd = new SqlCommand("aumentar_saldo_a_cliente", CONEXION.CONEXIONMAESTRA.conectar);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Saldo", txtcredito2.Text);
+                    cmd.Parameters.AddWithValue("@idcliente", idcliente);
+                    cmd.ExecuteNonQuery();
+                    CONEXION.CONEXIONMAESTRA.cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    CONEXION.CONEXIONMAESTRA.cerrar();
+                    MessageBox.Show(ex.StackTrace);
+                }
+            }
+
+        }
+        void MOSTRAR_cliente_standar()
+        {
+            SqlCommand com = new SqlCommand("select idclientev from clientes where Cliente = 'NEUTRO'", CONEXION.CONEXIONMAESTRA.conectar);
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                idcliente = Convert.ToInt32(com.ExecuteScalar());
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        void identificar_el_tipo_de_pago()
+        {
+            int indicadorEfectivo = 4;
+            int indicadorCredito = 2;
+            int indicadorTarjeta = 3;
+
+            // validacion para evitar valores vacios
+            if (txtefectivo2.Text == "")
+            {
+                txtefectivo2.Text = "0";
+            }
+            if (txttarjeta2.Text == "")
+            {
+                txttarjeta2.Text = "0";
+            }
+            if (txtcredito2.Text == "")
+            {
+                txtcredito2.Text = "0";
+            }
+            //validacion de .
+            if (txtefectivo2.Text == ".")
+            {
+                txtefectivo2.Text = "0";
+            }
+            if (txttarjeta2.Text == ".")
+            {
+                txttarjeta2.Text = "0";
+            }
+            if (txtcredito2.Text == ".")
+            {
+                txtcredito2.Text = "0";
+            }
+            //validacion de 0
+            if (txtefectivo2.Text == "0")
+            {
+                indicadorEfectivo = 0;
+            }
+            if (txttarjeta2.Text == "0")
+            {
+                indicadorTarjeta = 0;
+            }
+            if (txtcredito2.Text == "0")
+            {
+                indicadorCredito = 0;
+            }
+            //calculo de indicador
+            int calculo_identificacion = indicadorCredito + indicadorEfectivo + indicadorTarjeta;
+            //consulta al identificador
+            if (calculo_identificacion == 4)
+            {
+                indicador_de_tipo_de_pago_string = "EFECTIVO";
+            }
+            if (calculo_identificacion == 2)
+            {
+                indicador_de_tipo_de_pago_string = "CREDITO";
+            }
+            if (calculo_identificacion == 3)
+            {
+                indicador_de_tipo_de_pago_string = "TARJETA";
+            }
+            if (calculo_identificacion > 4)
+            {
+                indicador_de_tipo_de_pago_string = "MIXTO";
+            }
+            txttipo = indicador_de_tipo_de_pago_string;
+
+        }
+
+        void completar_con_ceros_los_texbox_de_otros_medios_de_pago()
+        {
+            if (txtefectivo2.Text == "")
+            {
+                txtefectivo2.Text = "0";
+            }
+            if (txtcredito2.Text == "")
+            {
+                txtcredito2.Text = "0";
+            }
+            if (txttarjeta2.Text == "")
+            {
+                txttarjeta2.Text = "0";
+            }
+            if (TXTVUELTO.Text == "")
+            {
+                TXTVUELTO.Text = "0";
             }
         }
     }

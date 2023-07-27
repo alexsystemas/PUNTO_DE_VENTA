@@ -104,7 +104,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.richTextBox3);
             this.panel1.Controls.Add(this.txtArgumentosini);
             this.panel1.Controls.Add(this.lblnombredeservicio);
@@ -129,9 +128,9 @@
             this.panel4.Controls.Add(this.BD);
             this.panel4.Controls.Add(this.ContrasenaSQL);
             this.panel4.Controls.Add(this.Nombre_Instancia);
-            this.panel4.Location = new System.Drawing.Point(107, 171);
+            this.panel4.Location = new System.Drawing.Point(110, 154);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(31, 32);
+            this.panel4.Size = new System.Drawing.Size(552, 334);
             this.panel4.TabIndex = 3;
             // 
             // pnEliminaBD
@@ -186,7 +185,7 @@
             this.lblRutaInstancia.Location = new System.Drawing.Point(21, 59);
             this.lblRutaInstancia.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.lblRutaInstancia.Name = "lblRutaInstancia";
-            this.lblRutaInstancia.Size = new System.Drawing.Size(83, 13);
+            this.lblRutaInstancia.Size = new System.Drawing.Size(124, 20);
             this.lblRutaInstancia.TabIndex = 605;
             this.lblRutaInstancia.Text = "lblRutaInstancia";
             // 
@@ -197,7 +196,7 @@
             this.min2.Location = new System.Drawing.Point(725, 625);
             this.min2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.min2.Name = "min2";
-            this.min2.Size = new System.Drawing.Size(19, 13);
+            this.min2.Size = new System.Drawing.Size(27, 20);
             this.min2.TabIndex = 618;
             this.min2.Text = "00";
             // 
@@ -208,7 +207,7 @@
             this.label9.Location = new System.Drawing.Point(797, 410);
             this.label9.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 618;
             this.label9.Text = "Servidor:";
             // 
@@ -219,7 +218,7 @@
             this.seg2.Location = new System.Drawing.Point(904, 625);
             this.seg2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.seg2.Name = "seg2";
-            this.seg2.Size = new System.Drawing.Size(19, 13);
+            this.seg2.Size = new System.Drawing.Size(27, 20);
             this.seg2.TabIndex = 618;
             this.seg2.Text = "00";
             // 
@@ -230,7 +229,7 @@
             this.milise.Location = new System.Drawing.Point(925, 484);
             this.milise.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.milise.Name = "milise";
-            this.milise.Size = new System.Drawing.Size(19, 13);
+            this.milise.Size = new System.Drawing.Size(27, 20);
             this.milise.TabIndex = 618;
             this.milise.Text = "00";
             // 
@@ -241,7 +240,7 @@
             this.mils2.Location = new System.Drawing.Point(1480, 625);
             this.mils2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.mils2.Name = "mils2";
-            this.mils2.Size = new System.Drawing.Size(19, 13);
+            this.mils2.Size = new System.Drawing.Size(27, 20);
             this.mils2.TabIndex = 618;
             this.mils2.Text = "00";
             // 
@@ -252,7 +251,7 @@
             this.label7.Location = new System.Drawing.Point(1187, 410);
             this.label7.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.Size = new System.Drawing.Size(24, 20);
             this.label7.TabIndex = 611;
             this.label7.Text = "---";
             // 
@@ -263,7 +262,7 @@
             this.millseg.Location = new System.Drawing.Point(177, 95);
             this.millseg.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.millseg.Name = "millseg";
-            this.millseg.Size = new System.Drawing.Size(19, 13);
+            this.millseg.Size = new System.Drawing.Size(27, 20);
             this.millseg.TabIndex = 620;
             this.millseg.Text = "00";
             // 
@@ -274,7 +273,7 @@
             this.seg3.Location = new System.Drawing.Point(147, 95);
             this.seg3.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.seg3.Name = "seg3";
-            this.seg3.Size = new System.Drawing.Size(19, 13);
+            this.seg3.Size = new System.Drawing.Size(27, 20);
             this.seg3.TabIndex = 620;
             this.seg3.Text = "00";
             // 
@@ -285,7 +284,7 @@
             this.mil3.Location = new System.Drawing.Point(981, 50);
             this.mil3.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.mil3.Name = "mil3";
-            this.mil3.Size = new System.Drawing.Size(13, 13);
+            this.mil3.Size = new System.Drawing.Size(18, 20);
             this.mil3.TabIndex = 619;
             this.mil3.Text = "0";
             // 
@@ -329,7 +328,7 @@
             // 
             this.txtnombre_scrypt.Location = new System.Drawing.Point(158, 93);
             this.txtnombre_scrypt.Name = "txtnombre_scrypt";
-            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 20);
+            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 26);
             this.txtnombre_scrypt.TabIndex = 1;
             this.txtnombre_scrypt.Text = "Script_BASE_PUNTO_VENTA";
             // 
@@ -337,7 +336,7 @@
             // 
             this.txtBaseDeDatos.Location = new System.Drawing.Point(158, 70);
             this.txtBaseDeDatos.Name = "txtBaseDeDatos";
-            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 20);
+            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 26);
             this.txtBaseDeDatos.TabIndex = 1;
             this.txtBaseDeDatos.Text = "BASE_PUNTO_VENTA\r\n";
             // 
@@ -345,14 +344,14 @@
             // 
             this.lblcontraseña.Location = new System.Drawing.Point(158, 48);
             this.lblcontraseña.Name = "lblcontraseña";
-            this.lblcontraseña.Size = new System.Drawing.Size(134, 20);
+            this.lblcontraseña.Size = new System.Drawing.Size(134, 26);
             this.lblcontraseña.TabIndex = 1;
             // 
             // nombre_del_equipo_usuario
             // 
             this.nombre_del_equipo_usuario.Location = new System.Drawing.Point(158, 27);
             this.nombre_del_equipo_usuario.Name = "nombre_del_equipo_usuario";
-            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 20);
+            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 26);
             this.nombre_del_equipo_usuario.TabIndex = 1;
             this.nombre_del_equipo_usuario.Text = "MSSQL15";
             // 
@@ -361,7 +360,7 @@
             this.Nombre_Screypt.AutoSize = true;
             this.Nombre_Screypt.Location = new System.Drawing.Point(39, 96);
             this.Nombre_Screypt.Name = "Nombre_Screypt";
-            this.Nombre_Screypt.Size = new System.Drawing.Size(98, 13);
+            this.Nombre_Screypt.Size = new System.Drawing.Size(144, 20);
             this.Nombre_Screypt.TabIndex = 0;
             this.Nombre_Screypt.Text = "Nombre de Scrypt: ";
             // 
@@ -370,7 +369,7 @@
             this.BD.AutoSize = true;
             this.BD.Location = new System.Drawing.Point(39, 73);
             this.BD.Name = "BD";
-            this.BD.Size = new System.Drawing.Size(83, 13);
+            this.BD.Size = new System.Drawing.Size(123, 20);
             this.BD.TabIndex = 0;
             this.BD.Text = "Base de Datos: ";
             // 
@@ -379,7 +378,7 @@
             this.ContrasenaSQL.AutoSize = true;
             this.ContrasenaSQL.Location = new System.Drawing.Point(39, 52);
             this.ContrasenaSQL.Name = "ContrasenaSQL";
-            this.ContrasenaSQL.Size = new System.Drawing.Size(64, 13);
+            this.ContrasenaSQL.Size = new System.Drawing.Size(96, 20);
             this.ContrasenaSQL.TabIndex = 0;
             this.ContrasenaSQL.Text = "Contraseña:";
             // 
@@ -388,7 +387,7 @@
             this.Nombre_Instancia.AutoSize = true;
             this.Nombre_Instancia.Location = new System.Drawing.Point(39, 28);
             this.Nombre_Instancia.Name = "Nombre_Instancia";
-            this.Nombre_Instancia.Size = new System.Drawing.Size(108, 13);
+            this.Nombre_Instancia.Size = new System.Drawing.Size(160, 20);
             this.Nombre_Instancia.TabIndex = 0;
             this.Nombre_Instancia.Text = "Nombre de Instancia:";
             // 
@@ -463,6 +462,7 @@
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.Controls.Add(this.panel4);
             this.pnlTitulo.Controls.Add(this.lblbuscador_de_servidores);
             this.pnlTitulo.Controls.Add(this.button1);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Fill;

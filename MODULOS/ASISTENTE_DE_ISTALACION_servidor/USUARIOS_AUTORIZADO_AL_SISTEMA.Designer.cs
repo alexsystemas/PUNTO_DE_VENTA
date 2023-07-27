@@ -176,10 +176,12 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Location = new System.Drawing.Point(354, 75);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "admin";
             // 
             // label5
             // 
