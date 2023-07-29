@@ -110,8 +110,8 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblComprobante = new System.Windows.Forms.Label();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.txtSerie = new System.Windows.Forms.Label();
+            this.lblCorrelativoconCeros = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -127,6 +127,10 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.btnGuardarSinImprimir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dtComprobantes = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtnumerofin = new System.Windows.Forms.Label();
+            this.lblCantidad_de_numeros = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -146,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.menuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtComprobantes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1066,7 +1071,7 @@
             this.GuardarYImprimirDirecto.ForeColor = System.Drawing.Color.White;
             this.GuardarYImprimirDirecto.Location = new System.Drawing.Point(38, 144);
             this.GuardarYImprimirDirecto.Name = "GuardarYImprimirDirecto";
-            this.GuardarYImprimirDirecto.Size = new System.Drawing.Size(712, 132);
+            this.GuardarYImprimirDirecto.Size = new System.Drawing.Size(507, 132);
             this.GuardarYImprimirDirecto.TabIndex = 6;
             this.GuardarYImprimirDirecto.Text = "Guardar Y Imprimir Directo";
             this.GuardarYImprimirDirecto.UseVisualStyleBackColor = false;
@@ -1110,6 +1115,9 @@
             // 
             this.panelGuardado_de_Datos.AutoScroll = true;
             this.panelGuardado_de_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panelGuardado_de_Datos.Controls.Add(this.lblCantidad_de_numeros);
+            this.panelGuardado_de_Datos.Controls.Add(this.txtnumerofin);
+            this.panelGuardado_de_Datos.Controls.Add(this.dtComprobantes);
             this.panelGuardado_de_Datos.Controls.Add(this.GuardarYImprimirDirecto);
             this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel6);
             this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel3);
@@ -1137,8 +1145,8 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.lblComprobante);
-            this.flowLayoutPanel3.Controls.Add(this.lblSerie);
-            this.flowLayoutPanel3.Controls.Add(this.label12);
+            this.flowLayoutPanel3.Controls.Add(this.txtSerie);
+            this.flowLayoutPanel3.Controls.Add(this.lblCorrelativoconCeros);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(64, 1052);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -1156,27 +1164,27 @@
             this.lblComprobante.TabIndex = 0;
             this.lblComprobante.Text = "Comprobante";
             // 
-            // lblSerie
+            // txtSerie
             // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.lblSerie.Location = new System.Drawing.Point(198, 0);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(189, 31);
-            this.lblSerie.TabIndex = 0;
-            this.lblSerie.Text = "Comprobante";
+            this.txtSerie.AutoSize = true;
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.txtSerie.Location = new System.Drawing.Point(198, 0);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(189, 31);
+            this.txtSerie.TabIndex = 0;
+            this.txtSerie.Text = "Comprobante";
             // 
-            // label12
+            // lblCorrelativoconCeros
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label12.Location = new System.Drawing.Point(393, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(189, 31);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Comprobante";
+            this.lblCorrelativoconCeros.AutoSize = true;
+            this.lblCorrelativoconCeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrelativoconCeros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.lblCorrelativoconCeros.Location = new System.Drawing.Point(393, 0);
+            this.lblCorrelativoconCeros.Name = "lblCorrelativoconCeros";
+            this.lblCorrelativoconCeros.Size = new System.Drawing.Size(189, 31);
+            this.lblCorrelativoconCeros.TabIndex = 0;
+            this.lblCorrelativoconCeros.Text = "Comprobante";
             // 
             // panel13
             // 
@@ -1336,7 +1344,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(40, 279);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(707, 141);
+            this.menuStrip3.Size = new System.Drawing.Size(505, 141);
             this.menuStrip3.TabIndex = 2;
             this.menuStrip3.Text = "menuStrip2";
             // 
@@ -1354,6 +1362,61 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 137);
+            // 
+            // dtComprobantes
+            // 
+            this.dtComprobantes.AllowUserToAddRows = false;
+            this.dtComprobantes.AllowUserToResizeRows = false;
+            this.dtComprobantes.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dtComprobantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtComprobantes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtComprobantes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtComprobantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtComprobantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn2});
+            this.dtComprobantes.EnableHeadersVisualStyles = false;
+            this.dtComprobantes.Location = new System.Drawing.Point(353, 122);
+            this.dtComprobantes.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dtComprobantes.Name = "dtComprobantes";
+            this.dtComprobantes.ReadOnly = true;
+            this.dtComprobantes.RowHeadersVisible = false;
+            this.dtComprobantes.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtComprobantes.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtComprobantes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtComprobantes.RowTemplate.Height = 30;
+            this.dtComprobantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtComprobantes.Size = new System.Drawing.Size(645, 219);
+            this.dtComprobantes.TabIndex = 624;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            // 
+            // txtnumerofin
+            // 
+            this.txtnumerofin.AutoSize = true;
+            this.txtnumerofin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnumerofin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.txtnumerofin.Location = new System.Drawing.Point(67, 1188);
+            this.txtnumerofin.Name = "txtnumerofin";
+            this.txtnumerofin.Size = new System.Drawing.Size(189, 31);
+            this.txtnumerofin.TabIndex = 0;
+            this.txtnumerofin.Text = "Comprobante";
+            // 
+            // lblCantidad_de_numeros
+            // 
+            this.lblCantidad_de_numeros.AutoSize = true;
+            this.lblCantidad_de_numeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad_de_numeros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.lblCantidad_de_numeros.Location = new System.Drawing.Point(299, 1188);
+            this.lblCantidad_de_numeros.Name = "lblCantidad_de_numeros";
+            this.lblCantidad_de_numeros.Size = new System.Drawing.Size(189, 31);
+            this.lblCantidad_de_numeros.TabIndex = 0;
+            this.lblCantidad_de_numeros.Text = "Comprobante";
             // 
             // MEDIOS_DE_PAGO
             // 
@@ -1401,6 +1464,7 @@
             this.menuStrip4.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtComprobantes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1453,8 +1517,8 @@
         private System.Windows.Forms.Panel panelGuardado_de_Datos;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label lblComprobante;
-        private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label txtSerie;
+        private System.Windows.Forms.Label lblCorrelativoconCeros;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
@@ -1505,5 +1569,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.Button GuardarYImprimirDirecto;
+        private System.Windows.Forms.DataGridView dtComprobantes;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Label txtnumerofin;
+        private System.Windows.Forms.Label lblCantidad_de_numeros;
     }
 }

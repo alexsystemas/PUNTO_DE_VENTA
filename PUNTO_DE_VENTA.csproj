@@ -70,6 +70,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONEXION\Agregar_ceros_adelante_De_numero.cs" />
     <Compile Include="CONEXION\cambiar_el_formato_de_seprador_de_decimales.cs" />
     <Compile Include="CONEXION\CONEXIONMAESTRA.cs" />
     <Compile Include="CONEXION\Encryptar_en_texto.cs" />

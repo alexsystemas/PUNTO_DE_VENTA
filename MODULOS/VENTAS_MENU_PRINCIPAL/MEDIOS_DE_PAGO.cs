@@ -285,7 +285,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         {
             lblComprobante.Text = ((Button)sender).Text;
             dibujarCOMPROBANTES();
-            //validar_tipos_de_comprobantes();
+            validar_tipos_de_comprobantes();
             //identificar_el_tipo_de_pago();
             //if (lblComprobante.Text == "FACTURA" && txttipo == "CREDITO")
             //{
@@ -323,44 +323,44 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 
         }
 
-        //void validar_tipos_de_comprobantes()
-        //{
-        //    buscar_Tipo_de_documentos_para_insertar_en_ventas();
-        //    try
-        //    {
-        //        int numerofin;
+        void validar_tipos_de_comprobantes()
+        {
+            buscar_Tipo_de_documentos_para_insertar_en_ventas();
+            try
+            {
+                int numerofin;
 
-        //        txtserie.Text = dtComprobantes.SelectedCells[2].Value.ToString();
+                txtSerie.Text = dtComprobantes.SelectedCells[2].Value.ToString();
 
-        //        numerofin = Convert.ToInt32(dtComprobantes.SelectedCells[4].Value);
-        //        idcomprobante = Convert.ToInt32(dtComprobantes.SelectedCells[5].Value);
-        //        txtnumerofin.Text = Convert.ToString(numerofin + 1);
-        //        lblCantidad_de_numeros.Text = dtComprobantes.SelectedCells[3].Value.ToString();
-        //        lblCorrelativoconCeros.Text = CONEXION.Agregar_ceros_adelante_De_numero.ceros(txtnumerofin.Text, Convert.ToInt32(lblCantidad_de_numeros.Text));
-        //    }
-        //    catch (Exception ex)
-        //    {
+                numerofin = Convert.ToInt32(dtComprobantes.SelectedCells[4].Value);
+              //  idcomprobante = Convert.ToInt32(dtComprobantes.SelectedCells[5].Value);
+                txtnumerofin.Text = Convert.ToString(numerofin + 1);
+                lblCantidad_de_numeros.Text = dtComprobantes.SelectedCells[3].Value.ToString();
+                lblCorrelativoconCeros.Text = CONEXION.Agregar_ceros_adelante_De_numero.ceros(txtnumerofin.Text, Convert.ToInt32(lblCantidad_de_numeros.Text));
+            }
+            catch (Exception ex)
+            {
 
-        //    }
-        //}
+            }
+        }
 
-        //void buscar_Tipo_de_documentos_para_insertar_en_ventas()
-        //{
-        //    DataTable dt = new DataTable();
-        //    try
-        //    {
-        //        CONEXION.CONEXIONMAESTRA.abrir();
-        //        SqlDataAdapter da = new SqlDataAdapter("buscar_Tipo_de_documentos_para_insertar_en_ventas", CONEXION.CONEXIONMAESTRA.conectar);
-        //        da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //        da.SelectCommand.Parameters.AddWithValue("@letra", lblComprobante.Text);
-        //        da.Fill(dt);
-        //        dtComprobantes.DataSource = dt;
-        //        CONEXION.CONEXIONMAESTRA.cerrar();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-        //}
+        void buscar_Tipo_de_documentos_para_insertar_en_ventas()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscar_Tipo_de_documentos_para_insertar_en_ventas", CONEXION.CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letra", lblComprobante.Text);
+                da.Fill(dt);
+                dtComprobantes.DataSource = dt;
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
         private void Txtefectivo2_TextChanged(object sender, EventArgs e)
         {
