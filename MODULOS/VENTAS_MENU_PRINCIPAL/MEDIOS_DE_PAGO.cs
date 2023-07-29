@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
+using Telerik.Reporting.Processing;
+using Telerik.Reporting.Drawing;
 namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 {
     public partial class MEDIOS_DE_PAGO : Form
@@ -17,6 +19,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         {
             InitializeComponent();
         }
+        private PrintDocument DOCUMENTO;
         string moneda;
         int idcliente;
         public static int idventa;
@@ -911,7 +914,55 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             }
             else if (indicador == "DIRECTO")
             {
-                //imprimir_directo();
+               imprimir_directo();
+            }
+        }
+
+        void imprimir_directo()
+        {
+            mostrar_Ticket_lleno();
+            try
+            {
+                DOCUMENTO = new PrintDocument();
+                DOCUMENTO.PrinterSettings.PrinterName = txtImpresora.Text;
+                if (DOCUMENTO.PrinterSettings.IsValid)
+                {
+                    PrinterSettings printerSettings = new PrinterSettings();
+                    printerSettings.PrinterName = txtImpresora.Text;
+                    ReportProcessor reportProcessor = new ReportProcessor();
+                    reportProcessor.PrintReport(reportViewer2.ReportSource, printerSettings);
+                }
+                Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        void mostrar_Ticket_lleno()
+        {
+            MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report rpt = new MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report();
+            DataTable dt = new DataTable();
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_ticket_impreso", CONEXION.CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Id_venta", idventa);
+                da.SelectCommand.Parameters.AddWithValue("@total_en_letras", txtnumeroconvertidoenletra.Text);
+                da.Fill(dt);
+                rpt = new MODULOS.REPORTES.Impresion_de_comprobantes.Ticket_report();
+                rpt.table1.DataSource = dt;
+                rpt.DataSource = dt;
+                reportViewer2.Report = rpt;
+                reportViewer2.RefreshReport();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
             }
         }
         void mostrar_ticket_impreso_VISTA_PREVIA()
@@ -960,7 +1011,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
                 cmd.Parameters.AddWithValue("@idcliente", idcliente);
                 cmd.Parameters.AddWithValue("@Comprobante", lblComprobante.Text);
-                cmd.Parameters.AddWithValue("@Numero_de_doc", "F9");
+                cmd.Parameters.AddWithValue("@Numero_de_doc", "F10");
                 cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ACCION", "VENTA");
                 cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
@@ -1105,6 +1156,53 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             if (TXTVUELTO.Text == "")
             {
                 TXTVUELTO.Text = "0";
+            }
+        }
+
+       
+
+        void editar_eleccion_de_impresora()
+        {
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_eleccion_impresoras", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Impresora_Ticket", txtImpresora.Text);
+                cmd.Parameters.AddWithValue("@idcaja", VENTAS_MENU_PRINCIPALOK.Id_caja);
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void MenuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void GuardarYImprimirDirecto_Click(object sender, EventArgs e)
+        {
+            if (restante == 0)
+            {
+                if (txtImpresora.Text != "Ninguna")
+                {
+                    editar_eleccion_de_impresora();
+                    indicador = "DIRECTO";
+                    identificar_el_tipo_de_pago();
+                    INGRESAR_LOS_DATOS();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una Impresora", "Impresora Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

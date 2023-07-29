@@ -31,6 +31,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         double txtpantalla;
         double lblStock_De_Productos;
         public static double total;
+        public static int Id_caja;
 
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        int Id_caja;
+        
         private void MOSTRAR_CAJA_POR_SERIAL()
         {
             SqlConnection con = new SqlConnection();
