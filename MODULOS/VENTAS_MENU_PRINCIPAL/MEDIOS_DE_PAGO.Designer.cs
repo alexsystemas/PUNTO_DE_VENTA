@@ -112,8 +112,8 @@
             this.lblComprobante = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.Label();
             this.lblCorrelativoconCeros = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.PANEL_CLIENTE_FACTURA = new System.Windows.Forms.Panel();
+            this.lblindicador_de_factura_1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -124,13 +124,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtImpresora = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.btnGuardarSinImprimir = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dtComprobantes = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtnumerofin = new System.Windows.Forms.Label();
             this.lblCantidad_de_numeros = new System.Windows.Forms.Label();
+            this.GuardarYVerEnPanatalla = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -146,10 +144,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelGuardado_de_Datos.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.panel13.SuspendLayout();
+            this.PANEL_CLIENTE_FACTURA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip4.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtComprobantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1057,6 +1054,7 @@
             this.panelImpresionVistaPrevia.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panelImpresionVistaPrevia.Controls.Add(this.pictureBox2);
             this.panelImpresionVistaPrevia.Controls.Add(this.label17);
+            this.panelImpresionVistaPrevia.Controls.Add(this.dtComprobantes);
             this.panelImpresionVistaPrevia.Controls.Add(this.reportViewer1);
             this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(1135, 12);
             this.panelImpresionVistaPrevia.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -1115,16 +1113,15 @@
             // 
             this.panelGuardado_de_Datos.AutoScroll = true;
             this.panelGuardado_de_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panelGuardado_de_Datos.Controls.Add(this.GuardarYVerEnPanatalla);
             this.panelGuardado_de_Datos.Controls.Add(this.lblCantidad_de_numeros);
             this.panelGuardado_de_Datos.Controls.Add(this.txtnumerofin);
-            this.panelGuardado_de_Datos.Controls.Add(this.dtComprobantes);
             this.panelGuardado_de_Datos.Controls.Add(this.GuardarYImprimirDirecto);
             this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel6);
             this.panelGuardado_de_Datos.Controls.Add(this.flowLayoutPanel3);
-            this.panelGuardado_de_Datos.Controls.Add(this.panel13);
+            this.panelGuardado_de_Datos.Controls.Add(this.PANEL_CLIENTE_FACTURA);
             this.panelGuardado_de_Datos.Controls.Add(this.txtImpresora);
             this.panelGuardado_de_Datos.Controls.Add(this.label8);
-            this.panelGuardado_de_Datos.Controls.Add(this.menuStrip3);
             this.panelGuardado_de_Datos.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelGuardado_de_Datos.Location = new System.Drawing.Point(1684, 0);
             this.panelGuardado_de_Datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1186,32 +1183,32 @@
             this.lblCorrelativoconCeros.TabIndex = 0;
             this.lblCorrelativoconCeros.Text = "Comprobante";
             // 
-            // panel13
+            // PANEL_CLIENTE_FACTURA
             // 
-            this.panel13.Controls.Add(this.label18);
-            this.panel13.Controls.Add(this.dataGridView1);
-            this.panel13.Controls.Add(this.textBox7);
-            this.panel13.Controls.Add(this.menuStrip4);
-            this.panel13.Controls.Add(this.label11);
-            this.panel13.Controls.Add(this.label10);
-            this.panel13.Controls.Add(this.label9);
-            this.panel13.Location = new System.Drawing.Point(53, 672);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(664, 374);
-            this.panel13.TabIndex = 3;
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.lblindicador_de_factura_1);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.dataGridView1);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.textBox7);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.menuStrip4);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.label11);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.label10);
+            this.PANEL_CLIENTE_FACTURA.Controls.Add(this.label9);
+            this.PANEL_CLIENTE_FACTURA.Location = new System.Drawing.Point(53, 672);
+            this.PANEL_CLIENTE_FACTURA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PANEL_CLIENTE_FACTURA.Name = "PANEL_CLIENTE_FACTURA";
+            this.PANEL_CLIENTE_FACTURA.Size = new System.Drawing.Size(664, 374);
+            this.PANEL_CLIENTE_FACTURA.TabIndex = 3;
             // 
-            // label18
+            // lblindicador_de_factura_1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label18.Location = new System.Drawing.Point(21, 14);
-            this.label18.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(249, 36);
-            this.label18.TabIndex = 625;
-            this.label18.Text = "Cliente Opcional";
+            this.lblindicador_de_factura_1.AutoSize = true;
+            this.lblindicador_de_factura_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblindicador_de_factura_1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblindicador_de_factura_1.Location = new System.Drawing.Point(21, 14);
+            this.lblindicador_de_factura_1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblindicador_de_factura_1.Name = "lblindicador_de_factura_1";
+            this.lblindicador_de_factura_1.Size = new System.Drawing.Size(249, 36);
+            this.lblindicador_de_factura_1.TabIndex = 625;
+            this.lblindicador_de_factura_1.Text = "Cliente Opcional";
             // 
             // dataGridView1
             // 
@@ -1332,37 +1329,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Impresora:";
             // 
-            // menuStrip3
-            // 
-            this.menuStrip3.AutoSize = false;
-            this.menuStrip3.BackColor = System.Drawing.Color.DimGray;
-            this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip3.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnGuardarSinImprimir,
-            this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(40, 279);
-            this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(505, 141);
-            this.menuStrip3.TabIndex = 2;
-            this.menuStrip3.Text = "menuStrip2";
-            // 
-            // btnGuardarSinImprimir
-            // 
-            this.btnGuardarSinImprimir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnGuardarSinImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarSinImprimir.Name = "btnGuardarSinImprimir";
-            this.btnGuardarSinImprimir.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.btnGuardarSinImprimir.Size = new System.Drawing.Size(472, 137);
-            this.btnGuardarSinImprimir.Text = "Guardar y ver en Pantalla";
-            this.btnGuardarSinImprimir.Click += new System.EventHandler(this.BtnGuardarSinImprimir_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 137);
-            // 
             // dtComprobantes
             // 
             this.dtComprobantes.AllowUserToAddRows = false;
@@ -1375,7 +1341,7 @@
             this.dtComprobantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.dtComprobantes.EnableHeadersVisualStyles = false;
-            this.dtComprobantes.Location = new System.Drawing.Point(353, 122);
+            this.dtComprobantes.Location = new System.Drawing.Point(53, 110);
             this.dtComprobantes.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dtComprobantes.Name = "dtComprobantes";
             this.dtComprobantes.ReadOnly = true;
@@ -1385,7 +1351,7 @@
             this.dtComprobantes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dtComprobantes.RowTemplate.Height = 30;
             this.dtComprobantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtComprobantes.Size = new System.Drawing.Size(645, 219);
+            this.dtComprobantes.Size = new System.Drawing.Size(308, 42);
             this.dtComprobantes.TabIndex = 624;
             // 
             // dataGridViewImageColumn2
@@ -1417,6 +1383,19 @@
             this.lblCantidad_de_numeros.Size = new System.Drawing.Size(189, 31);
             this.lblCantidad_de_numeros.TabIndex = 0;
             this.lblCantidad_de_numeros.Text = "Comprobante";
+            // 
+            // GuardarYVerEnPanatalla
+            // 
+            this.GuardarYVerEnPanatalla.BackColor = System.Drawing.Color.DimGray;
+            this.GuardarYVerEnPanatalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarYVerEnPanatalla.ForeColor = System.Drawing.Color.White;
+            this.GuardarYVerEnPanatalla.Location = new System.Drawing.Point(37, 290);
+            this.GuardarYVerEnPanatalla.Name = "GuardarYVerEnPanatalla";
+            this.GuardarYVerEnPanatalla.Size = new System.Drawing.Size(507, 137);
+            this.GuardarYVerEnPanatalla.TabIndex = 7;
+            this.GuardarYVerEnPanatalla.Text = "Guardar y Ver en Pantalla";
+            this.GuardarYVerEnPanatalla.UseVisualStyleBackColor = false;
+            this.GuardarYVerEnPanatalla.Click += new System.EventHandler(this.GuardarYVerEnPanatalla_Click);
             // 
             // MEDIOS_DE_PAGO
             // 
@@ -1457,13 +1436,11 @@
             this.panelGuardado_de_Datos.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
+            this.PANEL_CLIENTE_FACTURA.ResumeLayout(false);
+            this.PANEL_CLIENTE_FACTURA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
-            this.menuStrip3.ResumeLayout(false);
-            this.menuStrip3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtComprobantes)).EndInit();
             this.ResumeLayout(false);
 
@@ -1519,7 +1496,7 @@
         private System.Windows.Forms.Label lblComprobante;
         private System.Windows.Forms.Label txtSerie;
         private System.Windows.Forms.Label lblCorrelativoconCeros;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel PANEL_CLIENTE_FACTURA;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.TextBox textBox7;
@@ -1530,8 +1507,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox txtImpresora;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MenuStrip menuStrip3;
-        private System.Windows.Forms.ToolStripMenuItem btnGuardarSinImprimir;
         private System.Windows.Forms.TextBox lblSerialPC;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel15;
@@ -1565,13 +1540,13 @@
         private System.Windows.Forms.TextBox txttotaldecimal;
         private System.Windows.Forms.TextBox txtnumeroconvertidoenletra;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label lblindicador_de_factura_1;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.Button GuardarYImprimirDirecto;
         private System.Windows.Forms.DataGridView dtComprobantes;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Label txtnumerofin;
         private System.Windows.Forms.Label lblCantidad_de_numeros;
+        private System.Windows.Forms.Button GuardarYVerEnPanatalla;
     }
 }

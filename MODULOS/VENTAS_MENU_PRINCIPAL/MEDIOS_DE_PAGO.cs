@@ -37,11 +37,13 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         string txttipo;
         string lblproceso;
         string indicador_de_tipo_de_pago_string;
+        int idcomprobante;
 
         private void MEDIOS_DE_PAGO_Load(object sender, EventArgs e)
         {
             cambiar_el_formato_de_separador_de_decimales();
             MOSTRAR_comprobante_serializado_POR_DEFECTO();
+            validar_tipos_de_comprobantes();
             obtener_serial_pc();
             mostrar_moneda_de_empresa();
             configuraciones_de_diseño();
@@ -286,39 +288,39 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             lblComprobante.Text = ((Button)sender).Text;
             dibujarCOMPROBANTES();
             validar_tipos_de_comprobantes();
-            //identificar_el_tipo_de_pago();
-            //if (lblComprobante.Text == "FACTURA" && txttipo == "CREDITO")
-            //{
-            //    PANEL_CLIENTE_FACTURA.Visible = false;
-            //}
-            //if (lblComprobante.Text == "FACTURA" && txttipo == "EFECTIVO")
-            //{
-            //    PANEL_CLIENTE_FACTURA.Visible = true;
-            //    lblindicador_de_factura_1.Text = "Cliente: (Obligatorio)";
-            //    lblindicador_de_factura_1.ForeColor = Color.FromArgb(255, 192, 192);
+            identificar_el_tipo_de_pago();
+            if (lblComprobante.Text == "FACTURA" && txttipo == "CREDITO")
+            {
+                PANEL_CLIENTE_FACTURA.Visible = false;
+            }
+            if (lblComprobante.Text == "FACTURA" && txttipo == "EFECTIVO")
+            {
+                PANEL_CLIENTE_FACTURA.Visible = true;
+                lblindicador_de_factura_1.Text = "Cliente: (Obligatorio)";
+                lblindicador_de_factura_1.ForeColor = Color.FromArgb(255, 192, 192);
 
-            //}
-            //else if (lblComprobante.Text != "FACTURA" && txttipo == "EFECTIVO")
-            //{
-            //    PANEL_CLIENTE_FACTURA.Visible = true;
-            //    lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
-            //    lblindicador_de_factura_1.ForeColor = Color.DimGray;
+            }
+            else if (lblComprobante.Text != "FACTURA" && txttipo == "EFECTIVO")
+            {
+                PANEL_CLIENTE_FACTURA.Visible = true;
+                lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
+                lblindicador_de_factura_1.ForeColor = Color.DimGray;
 
-            //}
+            }
 
-            //if (lblComprobante.Text == "FACTURA" && txttipo == "TARJETA")
-            //{
-            //    PANEL_CLIENTE_FACTURA.Visible = true;
-            //    lblindicador_de_factura_1.Text = "Cliente: (Obligatorio)";
-            //    lblindicador_de_factura_1.ForeColor = Color.FromArgb(255, 192, 192);
+            if (lblComprobante.Text == "FACTURA" && txttipo == "TARJETA")
+            {
+                PANEL_CLIENTE_FACTURA.Visible = true;
+                lblindicador_de_factura_1.Text = "Cliente: (Obligatorio)";
+                lblindicador_de_factura_1.ForeColor = Color.FromArgb(255, 192, 192);
 
-            //}
-            //else if (lblComprobante.Text != "FACTURA" && txttipo == "TARJETA")
-            //{
-            //    PANEL_CLIENTE_FACTURA.Visible = true;
-            //    lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
-            //    lblindicador_de_factura_1.ForeColor = Color.DimGray;
-            //}
+            }
+            else if (lblComprobante.Text != "FACTURA" && txttipo == "TARJETA")
+            {
+                PANEL_CLIENTE_FACTURA.Visible = true;
+                lblindicador_de_factura_1.Text = "Cliente: (Opcional)";
+                lblindicador_de_factura_1.ForeColor = Color.DimGray;
+            }
 
 
         }
@@ -333,7 +335,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 txtSerie.Text = dtComprobantes.SelectedCells[2].Value.ToString();
 
                 numerofin = Convert.ToInt32(dtComprobantes.SelectedCells[4].Value);
-              //  idcomprobante = Convert.ToInt32(dtComprobantes.SelectedCells[5].Value);
+                idcomprobante = Convert.ToInt32(dtComprobantes.SelectedCells[5].Value);
                 txtnumerofin.Text = Convert.ToString(numerofin + 1);
                 lblCantidad_de_numeros.Text = dtComprobantes.SelectedCells[3].Value.ToString();
                 lblCorrelativoconCeros.Text = CONEXION.Agregar_ceros_adelante_De_numero.ceros(txtnumerofin.Text, Convert.ToInt32(lblCantidad_de_numeros.Text));
@@ -901,9 +903,29 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             if (lblproceso == "PROCEDE")
             {
                 //validar_tipos_de_comprobantes();
-                //actualizar_serie_mas_uno();
+                actualizar_serie_mas_uno();
                 aumentar_monto_a_cliente();
                 validar_tipo_de_impresion();
+            }
+        }
+        void actualizar_serie_mas_uno()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                CONEXION.CONEXIONMAESTRA.abrir();
+                cmd = new SqlCommand("actualizar_serializacion_mas_uno", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idserie", idcomprobante);
+                cmd.Parameters.AddWithValue("@numerofin", txtnumerofin.Text);
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         void validar_tipo_de_impresion()
@@ -1011,7 +1033,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 cmd.Parameters.AddWithValue("@Estado", "CONFIRMADO");
                 cmd.Parameters.AddWithValue("@idcliente", idcliente);
                 cmd.Parameters.AddWithValue("@Comprobante", lblComprobante.Text);
-                cmd.Parameters.AddWithValue("@Numero_de_doc", "F10");
+                cmd.Parameters.AddWithValue("@Numero_de_doc", (txtSerie.Text  + "-" + lblCorrelativoconCeros.Text ));
                 cmd.Parameters.AddWithValue("@fecha_venta", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ACCION", "VENTA");
                 cmd.Parameters.AddWithValue("@Fecha_de_pago", txtfecha_de_pago.Value);
@@ -1199,6 +1221,21 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 {
                     MessageBox.Show("Seleccione una Impresora", "Impresora Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+            else
+            {
+                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void GuardarYVerEnPanatalla_Click(object sender, EventArgs e)
+        {
+
+            if (restante == 0)
+            {
+                indicador = "VISTA PREVIA";
+                identificar_el_tipo_de_pago();
+                INGRESAR_LOS_DATOS();
             }
             else
             {

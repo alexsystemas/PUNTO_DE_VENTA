@@ -63,6 +63,14 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             }
             limpiar();
         }
+
+        private void Limpiar_para_venta_nueva()
+        {
+            idVenta = 0;
+            Listarproductosagregados();
+            txtVentaGenerada.Text = "VENTA NUEVA";
+            sumar();
+        }
         private void sumar()
         {
             try
@@ -923,7 +931,13 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         {
             total = Convert.ToDouble(txt_total_suma.Text);
             VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO frm = new VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO();
+            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
             frm.ShowDialog();
+        }
+
+        private void frm_FormClosed(Object sender, FormClosedEventArgs e)
+        {
+            Limpiar_para_venta_nueva();
         }
     }
 }
