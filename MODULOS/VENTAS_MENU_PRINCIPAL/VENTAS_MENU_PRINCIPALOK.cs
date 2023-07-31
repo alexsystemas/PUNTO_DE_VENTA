@@ -460,7 +460,11 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 {
                     if (lblStock_De_Productos >= txtpantalla)
                     {
-                        insertar_detalle_venta_SIN_VALIDAR();
+                        insertar_detalle_venta_Validado();
+                    }
+                    else
+                    {
+                        timerLABEL_Stock.Start();
                     }
                 }
 
@@ -476,6 +480,67 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             }
 
 
+        }
+        private void insertar_detalle_venta_Validado()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd = new SqlCommand("insertar_detalle_venta", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idventa", idVenta);
+                cmd.Parameters.AddWithValue("@Id_presentacionfraccionada", idproducto);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                cmd.Parameters.AddWithValue("@preciounitario", txtPrecio_Unitario.Text);
+                cmd.Parameters.AddWithValue("@moneda", 0);
+                cmd.Parameters.AddWithValue("@unidades", "Unidad");
+                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
+                cmd.Parameters.AddWithValue("@Estado", "EN ESPERA");
+                cmd.Parameters.AddWithValue("@Descripcion", lblDescripcion.Text);
+                cmd.Parameters.AddWithValue("@Codigo", lblCodigo.Text);
+                cmd.Parameters.AddWithValue("@Stock", lblStock_De_Productos);
+                cmd.Parameters.AddWithValue("@Se_vende_a", txtSevendePor.Text);
+                cmd.Parameters.AddWithValue("@Usa_inventarios", lblUsaInventarios.Text);
+                cmd.Parameters.AddWithValue("@Costo", lblCosto.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                disminuir_stock();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace + ex.Message);
+            }
+        }
+
+
+        public void disminuir_stock()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                CONEXION.CONEXIONMAESTRA.abrir();
+                cmd = new SqlCommand("disminuir_stock_en_detalle_de_venta", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Producto1", idproducto);
+                if (txtSevendePor.Text != "Granel")
+                {
+                    cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                }
+                else if (txtSevendePor.Text == "Granel")
+                {
+
+                }
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+
+            }
         }
 
         private void insertar_detalle_venta_SIN_VALIDAR()
@@ -938,6 +1003,26 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         private void frm_FormClosed(Object sender, FormClosedEventArgs e)
         {
             Limpiar_para_venta_nueva();
+        }
+
+        private void TimerLABEL_Stock_Tick(object sender, EventArgs e)
+        {
+            
+            if (progressBarETICKETA_Stock.Value < 100)
+            {
+                progressBarETICKETA_Stock.Value = progressBarETICKETA_Stock.Value + 10;
+                panel5.Visible = true;
+                LABEL_STOCK.Visible = true;
+                panel5.Dock = DockStyle.Top;
+                LABEL_STOCK.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                LABEL_STOCK.Visible = false;
+                LABEL_STOCK.Dock = DockStyle.None;
+                progressBarETICKETA_Stock.Value = 0;
+                timerLABEL_Stock.Stop();
+            }
         }
     }
 }
