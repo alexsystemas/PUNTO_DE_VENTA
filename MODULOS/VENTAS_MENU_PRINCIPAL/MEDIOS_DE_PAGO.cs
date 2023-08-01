@@ -902,11 +902,59 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             CONFIRMAR_VENTA_EFECTIVO();
             if (lblproceso == "PROCEDE")
             {
-                //validar_tipos_de_comprobantes();
+                validar_tipos_de_comprobantes();
                 actualizar_serie_mas_uno();
+                disminuir_stock_productos();
                 aumentar_monto_a_cliente();
                 validar_tipo_de_impresion();
             }
+        }
+        void mostrar_productos_agregados_a_venta()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_productos_agregados_a_venta", CONEXION.CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idventa", idventa);
+                da.Fill(dt);
+                datalistadoDetalleVenta.DataSource = dt;
+                CONEXION.CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                CONEXION.CONEXIONMAESTRA.cerrar();
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void disminuir_stock_productos()
+        {
+             mostrar_productos_agregados_a_venta();
+            foreach (DataGridViewRow row in datalistadoDetalleVenta.Rows)
+            {
+                int idproducto = Convert.ToInt32(row.Cells["Id_producto"].Value);
+                double cantidad = Convert.ToInt32(row.Cells["Cant"].Value);
+                try
+                {
+                    MessageBox.Show("entramos");
+                    CONEXION.CONEXIONMAESTRA.abrir();
+                    SqlCommand cmd = new SqlCommand("disminuir_stock", CONEXION.CONEXIONMAESTRA.conectar);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id_Producto1", idproducto);
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmd.ExecuteNonQuery();
+                    CONEXION.CONEXIONMAESTRA.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    CONEXION.CONEXIONMAESTRA.cerrar();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+
         }
         void actualizar_serie_mas_uno()
         {
