@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PdCarga = new System.Windows.Forms.PictureBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.flowyoouPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -116,7 +116,7 @@
             this.lblEstadoLicencia = new System.Windows.Forms.Label();
             this.txtfecha_Inicio_licencia_temporal = new System.Windows.Forms.DateTimePicker();
             this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PdCarga)).BeginInit();
             this.panelUsuarios.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -136,42 +136,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // PdCarga
             // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
-            this.pictureBox2.Location = new System.Drawing.Point(828, 138);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 153);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.PdCarga.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
+            this.PdCarga.Location = new System.Drawing.Point(831, 161);
+            this.PdCarga.Name = "PdCarga";
+            this.PdCarga.Size = new System.Drawing.Size(175, 153);
+            this.PdCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PdCarga.TabIndex = 18;
+            this.PdCarga.TabStop = false;
+            this.PdCarga.Visible = false;
             // 
             // panelUsuarios
             // 
             this.panelUsuarios.Controls.Add(this.flowyoouPanel1);
             this.panelUsuarios.Controls.Add(this.panel9);
             this.panelUsuarios.Controls.Add(this.lbl_inicioSeccion);
-            this.panelUsuarios.Location = new System.Drawing.Point(236, 13);
+            this.panelUsuarios.Location = new System.Drawing.Point(335, 19);
             this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(606, 442);
+            this.panelUsuarios.Size = new System.Drawing.Size(63, 39);
             this.panelUsuarios.TabIndex = 3;
             // 
             // flowyoouPanel1
             // 
             this.flowyoouPanel1.AutoScroll = true;
-            this.flowyoouPanel1.Location = new System.Drawing.Point(15, 57);
+            this.flowyoouPanel1.Location = new System.Drawing.Point(112, 57);
             this.flowyoouPanel1.Name = "flowyoouPanel1";
-            this.flowyoouPanel1.Size = new System.Drawing.Size(577, 364);
+            this.flowyoouPanel1.Size = new System.Drawing.Size(583, 457);
             this.flowyoouPanel1.TabIndex = 2;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.btnOlvideContraseña);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 353);
+            this.panel9.Location = new System.Drawing.Point(0, -50);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(606, 89);
+            this.panel9.Size = new System.Drawing.Size(63, 89);
             this.panel9.TabIndex = 3;
             // 
             // btnOlvideContraseña
@@ -179,7 +179,7 @@
             this.btnOlvideContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOlvideContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOlvideContraseña.ForeColor = System.Drawing.Color.Gray;
-            this.btnOlvideContraseña.Location = new System.Drawing.Point(170, 11);
+            this.btnOlvideContraseña.Location = new System.Drawing.Point(333, 3);
             this.btnOlvideContraseña.Name = "btnOlvideContraseña";
             this.btnOlvideContraseña.Size = new System.Drawing.Size(273, 44);
             this.btnOlvideContraseña.TabIndex = 0;
@@ -189,15 +189,14 @@
             // 
             // lbl_inicioSeccion
             // 
-            this.lbl_inicioSeccion.AutoSize = true;
             this.lbl_inicioSeccion.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_inicioSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_inicioSeccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lbl_inicioSeccion.Location = new System.Drawing.Point(0, 0);
             this.lbl_inicioSeccion.Name = "lbl_inicioSeccion";
-            this.lbl_inicioSeccion.Size = new System.Drawing.Size(592, 46);
+            this.lbl_inicioSeccion.Size = new System.Drawing.Size(63, 46);
             this.lbl_inicioSeccion.TabIndex = 1;
-            this.lbl_inicioSeccion.Text = "¿Quien esta iniciando Secion?";
+            this.lbl_inicioSeccion.Text = "¿Quien esta iniciando Sesion?";
             this.lbl_inicioSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // blEstado_Licencia_Local
@@ -220,6 +219,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtfecha_Inicio_licencia_temporal);
+            this.panel1.Controls.Add(this.txtfecha_final_licencia_temporal);
+            this.panel1.Controls.Add(this.datalistado_caja);
             this.panel1.Controls.Add(this.dataListado);
             this.panel1.Controls.Add(this.datalistado_movimientos_validar);
             this.panel1.Controls.Add(this.datalistado_detalle_cierre_de_caja);
@@ -245,9 +247,9 @@
             this.panel1.Controls.Add(this.txtLogin);
             this.panel1.Controls.Add(this.labeldePictureBox);
             this.panel1.Controls.Add(this.labeldeB);
-            this.panel1.Location = new System.Drawing.Point(32, 209);
+            this.panel1.Location = new System.Drawing.Point(3, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(192, 423);
+            this.panel1.Size = new System.Drawing.Size(10, 21);
             this.panel1.TabIndex = 4;
             // 
             // dataListado
@@ -582,9 +584,9 @@
             this.panelRestaurar_Cuenta.Controls.Add(this.label6);
             this.panelRestaurar_Cuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRestaurar_Cuenta.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(347, 7);
+            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(815, 7);
             this.panelRestaurar_Cuenta.Name = "panelRestaurar_Cuenta";
-            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(478, 401);
+            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(10, 78);
             this.panelRestaurar_Cuenta.TabIndex = 5;
             this.panelRestaurar_Cuenta.Visible = false;
             // 
@@ -614,7 +616,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(478, 45);
+            this.label5.Size = new System.Drawing.Size(10, 45);
             this.label5.TabIndex = 0;
             this.label5.Text = "Restaurar Contraseña";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -686,12 +688,12 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -701,7 +703,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 250);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -715,9 +717,8 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.datalistado_caja);
-            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -736,7 +737,7 @@
             this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn2});
             this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.Location = new System.Drawing.Point(6, 232);
+            this.datalistado_caja.Location = new System.Drawing.Point(223, 186);
             this.datalistado_caja.Name = "datalistado_caja";
             this.datalistado_caja.ReadOnly = true;
             this.datalistado_caja.RowHeadersVisible = false;
@@ -763,9 +764,9 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button15.Location = new System.Drawing.Point(127, 500);
+            this.button15.Location = new System.Drawing.Point(200, 500);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(264, 34);
+            this.button15.Size = new System.Drawing.Size(237, 34);
             this.button15.TabIndex = 14;
             this.button15.Text = "¿Olvide Contraseña?";
             this.button15.UseVisualStyleBackColor = false;
@@ -786,15 +787,16 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.txtPassword);
             this.panel4.Controls.Add(this.menuStrip1);
-            this.panel4.Location = new System.Drawing.Point(0, 44);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(585, 38);
+            this.panel4.Size = new System.Drawing.Size(19, 38);
             this.panel4.TabIndex = 3;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gray;
-            this.panel5.Location = new System.Drawing.Point(124, 31);
+            this.panel5.Location = new System.Drawing.Point(180, 31);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(256, 1);
             this.panel5.TabIndex = 1;
@@ -804,7 +806,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(127, 2);
+            this.txtPassword.Location = new System.Drawing.Point(183, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(255, 26);
@@ -820,7 +822,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOcultar,
             this.btnVer});
-            this.menuStrip1.Location = new System.Drawing.Point(374, 7);
+            this.menuStrip1.Location = new System.Drawing.Point(430, 7);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(115, 24);
             this.menuStrip1.TabIndex = 2;
@@ -858,7 +860,7 @@
             this.lblInicio_de_Seccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lblInicio_de_Seccion.Location = new System.Drawing.Point(0, 0);
             this.lblInicio_de_Seccion.Name = "lblInicio_de_Seccion";
-            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(664, 42);
+            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(19, 42);
             this.lblInicio_de_Seccion.TabIndex = 1;
             this.lblInicio_de_Seccion.Text = "Inicio de Sesion";
             this.lblInicio_de_Seccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -893,7 +895,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnInsertar);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(134, 88);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(194, 88);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 379);
@@ -1165,9 +1167,9 @@
             this.btnCambiarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnCambiarUsuarios.Location = new System.Drawing.Point(132, 468);
+            this.btnCambiarUsuarios.Location = new System.Drawing.Point(197, 474);
             this.btnCambiarUsuarios.Name = "btnCambiarUsuarios";
-            this.btnCambiarUsuarios.Size = new System.Drawing.Size(264, 30);
+            this.btnCambiarUsuarios.Size = new System.Drawing.Size(241, 30);
             this.btnCambiarUsuarios.TabIndex = 17;
             this.btnCambiarUsuarios.Text = "Cambiar Usuario";
             this.btnCambiarUsuarios.UseVisualStyleBackColor = false;
@@ -1177,25 +1179,23 @@
             // 
             this.panelIngresoDeContrasena.Controls.Add(this.pictureBox4);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLicencia);
-            this.panelIngresoDeContrasena.Controls.Add(this.txtfecha_Inicio_licencia_temporal);
-            this.panelIngresoDeContrasena.Controls.Add(this.txtfecha_final_licencia_temporal);
             this.panelIngresoDeContrasena.Controls.Add(this.btnCambiarUsuarios);
+            this.panelIngresoDeContrasena.Controls.Add(this.panel4);
             this.panelIngresoDeContrasena.Controls.Add(this.flowLayoutPanel1);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLincecia);
             this.panelIngresoDeContrasena.Controls.Add(this.lblInicio_de_Seccion);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLocal);
-            this.panelIngresoDeContrasena.Controls.Add(this.panel4);
             this.panelIngresoDeContrasena.Controls.Add(this.lblLicenciaPClocal);
             this.panelIngresoDeContrasena.Controls.Add(this.button15);
-            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(309, 7);
+            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(272, 10);
             this.panelIngresoDeContrasena.Name = "panelIngresoDeContrasena";
-            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(664, 588);
+            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(19, 87);
             this.panelIngresoDeContrasena.TabIndex = 2;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
-            this.pictureBox4.Location = new System.Drawing.Point(166, 548);
+            this.pictureBox4.Location = new System.Drawing.Point(200, 540);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(16, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1206,7 +1206,7 @@
             // 
             this.lblEstadoLicencia.AutoSize = true;
             this.lblEstadoLicencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEstadoLicencia.Location = new System.Drawing.Point(188, 551);
+            this.lblEstadoLicencia.Location = new System.Drawing.Point(222, 543);
             this.lblEstadoLicencia.Name = "lblEstadoLicencia";
             this.lblEstadoLicencia.Size = new System.Drawing.Size(51, 13);
             this.lblEstadoLicencia.TabIndex = 20;
@@ -1215,19 +1215,19 @@
             // txtfecha_Inicio_licencia_temporal
             // 
             this.txtfecha_Inicio_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_Inicio_licencia_temporal.Location = new System.Drawing.Point(20, 529);
+            this.txtfecha_Inicio_licencia_temporal.Location = new System.Drawing.Point(112, 189);
             this.txtfecha_Inicio_licencia_temporal.Name = "txtfecha_Inicio_licencia_temporal";
             this.txtfecha_Inicio_licencia_temporal.Size = new System.Drawing.Size(102, 20);
-            this.txtfecha_Inicio_licencia_temporal.TabIndex = 18;
+            this.txtfecha_Inicio_licencia_temporal.TabIndex = 624;
             this.txtfecha_Inicio_licencia_temporal.Value = new System.DateTime(2023, 6, 11, 0, 0, 0, 0);
             // 
             // txtfecha_final_licencia_temporal
             // 
             this.txtfecha_final_licencia_temporal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(20, 555);
+            this.txtfecha_final_licencia_temporal.Location = new System.Drawing.Point(112, 215);
             this.txtfecha_final_licencia_temporal.Name = "txtfecha_final_licencia_temporal";
             this.txtfecha_final_licencia_temporal.Size = new System.Drawing.Size(102, 20);
-            this.txtfecha_final_licencia_temporal.TabIndex = 19;
+            this.txtfecha_final_licencia_temporal.TabIndex = 625;
             this.txtfecha_final_licencia_temporal.Value = new System.DateTime(2023, 6, 21, 0, 0, 0, 0);
             // 
             // LOGIN
@@ -1240,16 +1240,15 @@
             this.Controls.Add(this.panelIngresoDeContrasena);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelRestaurar_Cuenta);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.PdCarga);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LOGIN";
             this.Text = "LOGIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LOGIN_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PdCarga)).EndInit();
             this.panelUsuarios.ResumeLayout(false);
-            this.panelUsuarios.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1310,7 +1309,7 @@
         private System.Windows.Forms.Label lblaperturaDeCaja;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox PdCarga;
         private System.Windows.Forms.Label lblnombredeCajero;
         private System.Windows.Forms.Label lblusuario_queinicioCaja;
         private System.Windows.Forms.Label lblpermisodeCaja;
@@ -1348,8 +1347,6 @@
         private System.Windows.Forms.Label lblSerialPCLocal;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblEstadoLicencia;
-        private System.Windows.Forms.DateTimePicker txtfecha_Inicio_licencia_temporal;
-        private System.Windows.Forms.DateTimePicker txtfecha_final_licencia_temporal;
         private System.Windows.Forms.DataGridView datalistado_USUARIOS_REGISTRADOS;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.DataGridView datalistado_licencia_temporal;
@@ -1362,5 +1359,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridView datalistado_movimientos_validar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.DateTimePicker txtfecha_Inicio_licencia_temporal;
+        private System.Windows.Forms.DateTimePicker txtfecha_final_licencia_temporal;
     }
 }

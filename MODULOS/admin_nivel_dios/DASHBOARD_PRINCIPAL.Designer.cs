@@ -160,7 +160,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 62);
+            this.panel1.Size = new System.Drawing.Size(1016, 62);
             this.panel1.TabIndex = 1;
             // 
             // btn_Inventarios
@@ -171,6 +171,7 @@
             this.btn_Inventarios.TabIndex = 2;
             this.btn_Inventarios.Text = "Inventarios";
             this.btn_Inventarios.UseVisualStyleBackColor = true;
+            this.btn_Inventarios.Click += new System.EventHandler(this.Btn_Inventarios_Click);
             // 
             // panel2
             // 
@@ -179,7 +180,7 @@
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.menuStrip4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(583, 0);
+            this.panel2.Location = new System.Drawing.Point(585, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 62);
             this.panel2.TabIndex = 1;
@@ -210,7 +211,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(370, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -284,9 +285,9 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1014, 635);
+            this.panel3.Size = new System.Drawing.Size(1016, 564);
             this.panel3.TabIndex = 2;
             // 
             // panel13
@@ -1111,12 +1112,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 697);
+            this.ClientSize = new System.Drawing.Size(1016, 626);
             this.Controls.Add(this.PictureBox20);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "DASHBOARD_PRINCIPAL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VEGA";

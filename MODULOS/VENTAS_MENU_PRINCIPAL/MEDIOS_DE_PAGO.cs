@@ -899,12 +899,13 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         }
         void procesar_venta_efectivo()
         {
+            actualizar_serie_mas_uno();
+            validar_tipos_de_comprobantes();
             CONFIRMAR_VENTA_EFECTIVO();
             if (lblproceso == "PROCEDE")
             {
-                validar_tipos_de_comprobantes();
-                actualizar_serie_mas_uno();
                 disminuir_stock_productos();
+                INSERTAR_KARDEX_SALIDA();
                 aumentar_monto_a_cliente();
                 validar_tipo_de_impresion();
             }
@@ -927,6 +928,41 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             {
                 CONEXION.CONEXIONMAESTRA.cerrar();
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        void INSERTAR_KARDEX_SALIDA()
+        {
+            try
+            {
+                foreach (DataGridViewRow row in datalistadoDetalleVenta.Rows)
+                {
+                    int Id_producto = Convert.ToInt32(row.Cells["Id_producto"].Value);
+                    double cantidad = Convert.ToDouble(row.Cells["Cant"].Value);
+                    string STOCK = Convert.ToString(row.Cells["Stock"].Value);
+                    if (STOCK != "Ilimitado")
+                    {
+                        CONEXION.CONEXIONMAESTRA.abrir();
+                        SqlCommand cmd = new SqlCommand("insertar_KARDEX_SALIDA", CONEXION.CONEXIONMAESTRA.conectar);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Motivo", "Venta #" + lblComprobante.Text + " " + lblCorrelativoconCeros.Text);
+                        cmd.Parameters.AddWithValue("@Cantidad ", cantidad);
+                        cmd.Parameters.AddWithValue("@Id_producto", Id_producto);
+                        cmd.Parameters.AddWithValue("@Id_usuario", VENTAS_MENU_PRINCIPALOK.idusuario_que_inicio_sesion);
+                        cmd.Parameters.AddWithValue("@Tipo", "SALIDA");
+                        cmd.Parameters.AddWithValue("@Estado", "DESPACHO CONFIRMADO");
+                        cmd.Parameters.AddWithValue("@Id_caja", VENTAS_MENU_PRINCIPALOK.Id_caja);
+                        cmd.ExecuteNonQuery();
+                        CONEXION.CONEXIONMAESTRA.cerrar();
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " " + ex.StackTrace);
             }
         }
         void disminuir_stock_productos()
@@ -965,7 +1001,6 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 cmd = new SqlCommand("actualizar_serializacion_mas_uno", CONEXION.CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idserie", idcomprobante);
-                cmd.Parameters.AddWithValue("@numerofin", txtnumerofin.Text);
                 cmd.ExecuteNonQuery();
                 CONEXION.CONEXIONMAESTRA.cerrar();
 

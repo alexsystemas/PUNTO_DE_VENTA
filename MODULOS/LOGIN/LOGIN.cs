@@ -140,13 +140,23 @@ namespace PUNTO_DE_VENTA.MODULOS
         private void LOGIN_Load(object sender, EventArgs e)
         {
             DIBUJARusuarios();
-            panelIngresoDeContrasena.Visible = false;
             timer1.Start();
+            escalar_paneles();
+        }
 
-            pictureBox2.Location = new Point((Width - pictureBox2.Width) / 2, (Height - pictureBox2.Height) / 2); // centramos el gif en el centro
+        void escalar_paneles()
+        {
+            panelUsuarios.Size = new System.Drawing.Size (794, 618);
+            panelIngresoDeContrasena.Size = new System.Drawing.Size(630, 568);
+            panelRestaurar_Cuenta.Size=new System.Drawing.Size(553, 223);
+            PdCarga.Size = new System.Drawing.Size(175, 153);
+
+            panelIngresoDeContrasena.Visible = false;
+            PdCarga.Location = new Point((Width - PdCarga.Width) / 2, (Height - PdCarga.Height) / 2); // centramos el gif en el centro
+            panelIngresoDeContrasena.Location = new Point((Width - panelIngresoDeContrasena.Width) / 2, (Height - panelIngresoDeContrasena.Height) / 2);
             panelUsuarios.Location = new Point((Width - panelUsuarios.Width) / 2, (Height - panelUsuarios.Height) / 2);
             panelRestaurar_Cuenta.Location = new Point((Width - panelRestaurar_Cuenta.Width) / 2, (Height - panelRestaurar_Cuenta.Height) / 2);
-            panelIngresoDeContrasena.Location = new Point((Width - panelIngresoDeContrasena.Width) / 2, (Height - panelIngresoDeContrasena.Height) / 2);
+
         }
         private void ListarAPERTURAS_de_detalle_de_cierres_de_caja()
         {
@@ -838,7 +848,7 @@ namespace PUNTO_DE_VENTA.MODULOS
             {
                 BackColor = Color.FromArgb(218, 243, 233);
                 progressBar1.Value = progressBar1.Value + 10;
-                pictureBox2.Visible = true;
+                PdCarga.Visible = true;
                 panelIngresoDeContrasena.Visible = false;
                 panelUsuarios.Visible = false;
                 panelRestaurar_Cuenta.Visible = false;

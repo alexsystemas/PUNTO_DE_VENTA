@@ -324,5 +324,11 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
         {
             
         }
+
+        private void Btn_Inventarios_Click(object sender, EventArgs e)
+        {
+            MODULOS.INVENTARIOS_KARDEX.INVENTARIO_MENU frm = new MODULOS.INVENTARIOS_KARDEX.INVENTARIO_MENU();
+            frm.ShowDialog();
+        }
     }
 }

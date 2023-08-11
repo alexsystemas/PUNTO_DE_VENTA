@@ -24,7 +24,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         int idProducto;
         int idClienteEstandar;
         int iddetalleventa;
-        int idusuario_que_inicio_sesion;
+       public static int idusuario_que_inicio_sesion;
       public static  int idVenta;
         int idproducto;
         int contador;
