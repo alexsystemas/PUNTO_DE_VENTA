@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
     <Reference Include="Telerik.ReportViewer.WinForms, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="UIDC">
+      <HintPath>..\..\..\PUNTO_DE_VENTA_689\UIDC.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -427,6 +430,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MODULOS\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\ingresos y salidas.png" />
+    <None Include="Resources\teclados.png" />
+    <None Include="Resources\wallet.png" />
+    <None Include="Resources\credito.png" />
+    <None Include="Resources\pagos.png" />
+    <None Include="Resources\cobros.png" />
+    <None Include="Resources\flecha-roja.png" />
+    <None Include="Resources\flecha-verde.png" />
+    <None Include="Resources\servicio.png" />
+    <None Include="Resources\mayoreo.png" />
+    <None Include="Resources\negro-gris.png" />
+    <None Include="Resources\suma.png" />
+    <None Include="Resources\xx.png" />
+    <None Include="Resources\x1.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\btn21.png" />
+    <None Include="Resources\btn2.png" />
+    <None Include="Resources\btn-azul.png" />
+    <None Include="Resources\cohete.png" />
+    <None Include="Resources\carrito.png" />
+    <None Include="Resources\clientesss.png" />
+    <None Include="Resources\no-hay-stock.png" />
+    <None Include="Resources\ganancia.png" />
+    <None Include="Resources\pagar.png" />
+    <None Include="Resources\cxc.png" />
+    <None Include="Resources\respaldo1.png" />
+    <None Include="Resources\restaurar-base-de-datos1.png" />
+    <None Include="Resources\restaurar-base-de-datos.png" />
+    <None Include="Resources\gris_azul2.png" />
     <None Include="Resources\Captura2.png" />
     <None Include="Resources\area insertado .png" />
     <None Include="Resources\csv.png" />

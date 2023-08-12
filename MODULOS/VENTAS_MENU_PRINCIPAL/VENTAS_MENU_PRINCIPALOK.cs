@@ -1011,9 +1011,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             if (progressBarETICKETA_Stock.Value < 100)
             {
                 progressBarETICKETA_Stock.Value = progressBarETICKETA_Stock.Value + 10;
-                panel5.Visible = true;
                 LABEL_STOCK.Visible = true;
-                panel5.Dock = DockStyle.Top;
                 LABEL_STOCK.Dock = DockStyle.Fill;
             }
             else

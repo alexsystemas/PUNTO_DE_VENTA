@@ -57,7 +57,7 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
 
         private void BtnVender_Click(object sender, EventArgs e)
         {
-            iniciar_sesion_correcto();
+            
 
         }
         private void contar_aperturas_de_cierres_de_caja()
@@ -88,7 +88,7 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
             {
                 aperturar_detalle_de_cierre_caja();
                 lblaperturaDeCaja.Text = "Nuevo*****";
-                timer2.Start();
+                inicio_de_caja();
 
             }
             else
@@ -139,18 +139,37 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
                     if (lblpermisodeCaja.Text == "correcto")
                     {
                         lblaperturaDeCaja.Text = "Aperturado";
-                        timer2.Start();
+                        inicio_de_caja();
 
                     }
 
                 }
                 else
                 {
-                    timer2.Start();
+                    inicio_de_caja();
                 }
 
 
             }
+        }
+
+        void inicio_de_caja()
+        {
+            if (lblApertura_De_caja.Text == "Nuevo*****")
+            {
+                this.Hide();
+                CAJA.APERTURA_DE_CAJA frm = new CAJA.APERTURA_DE_CAJA();
+                frm.ShowDialog();
+                Dispose();
+            }
+            else
+            {
+                this.Hide();
+                VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
+                frm.ShowDialog();
+                Dispose();
+            }
+
         }
         private void aperturar_detalle_de_cierre_caja()
         {
@@ -289,35 +308,6 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value < 100)
-            {
-                progressBar1.Value = progressBar1.Value + 10;
-                panel1.Visible = false;
-                panel3.Visible = false;
-                PictureBox20.Visible = true;
-                PictureBox20.Dock = DockStyle.Fill;
-            }
-            else
-            {
-                progressBar1.Value = 0;
-                timer2.Stop();
-
-                if (lblApertura_De_caja.Text == "Nuevo*****")
-                {
-                    this.Hide();
-                    CAJA.APERTURA_DE_CAJA frm = new CAJA.APERTURA_DE_CAJA();
-                    frm.ShowDialog();
-                    Dispose();
-                }
-                else
-                {
-                    this.Hide();
-                    VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
-                    frm.ShowDialog();
-                    Dispose();
-                }
-
-            }
         }
 
         private void Btn_Notificacion_Click(object sender, EventArgs e)
@@ -325,10 +315,16 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
             
         }
 
-        private void Btn_Inventarios_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
-            MODULOS.INVENTARIOS_KARDEX.INVENTARIO_MENU frm = new MODULOS.INVENTARIOS_KARDEX.INVENTARIO_MENU();
-            frm.ShowDialog();
+
         }
+
+        private void BtnVender_Click_1(object sender, EventArgs e)
+        {
+            iniciar_sesion_correcto();
+        }
+
+   
     }
 }

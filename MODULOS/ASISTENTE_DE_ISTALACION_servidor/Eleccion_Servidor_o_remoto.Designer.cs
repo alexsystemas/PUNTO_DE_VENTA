@@ -43,16 +43,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -100,7 +103,7 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(1024, 45);
@@ -110,10 +113,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.PCSs1;
-            this.pictureBox2.Location = new System.Drawing.Point(281, 34);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(463, 281);
+            this.pictureBox2.Size = new System.Drawing.Size(1024, 539);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -122,9 +126,9 @@
             // 
             this.btnCliente.BackColor = System.Drawing.Color.LightGray;
             this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.Location = new System.Drawing.Point(216, 279);
+            this.btnCliente.Location = new System.Drawing.Point(68, 460);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(123, 36);
+            this.btnCliente.Size = new System.Drawing.Size(117, 53);
             this.btnCliente.TabIndex = 5;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.UseVisualStyleBackColor = false;
@@ -133,9 +137,9 @@
             // 
             this.btnServidor.BackColor = System.Drawing.Color.LightGray;
             this.btnServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServidor.Location = new System.Drawing.Point(216, 111);
+            this.btnServidor.Location = new System.Drawing.Point(68, 137);
             this.btnServidor.Name = "btnServidor";
-            this.btnServidor.Size = new System.Drawing.Size(123, 36);
+            this.btnServidor.Size = new System.Drawing.Size(117, 53);
             this.btnServidor.TabIndex = 6;
             this.btnServidor.Text = "Servidor";
             this.btnServidor.UseVisualStyleBackColor = false;
@@ -143,7 +147,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.datalistado);
             this.panel5.Controls.Add(this.btnCliente);
             this.panel5.Controls.Add(this.btnServidor);
             this.panel5.Controls.Add(this.pictureBox2);
@@ -174,7 +177,7 @@
             this.dataGridViewImageColumn4});
             this.datalistado.EnableHeadersVisualStyles = false;
             this.datalistado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.datalistado.Location = new System.Drawing.Point(82, 385);
+            this.datalistado.Location = new System.Drawing.Point(13, 39);
             this.datalistado.Name = "datalistado";
             this.datalistado.ReadOnly = true;
             this.datalistado.RowHeadersVisible = false;
@@ -183,7 +186,7 @@
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.datalistado.RowTemplate.Height = 30;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(597, 108);
+            this.datalistado.Size = new System.Drawing.Size(63, 96);
             this.datalistado.TabIndex = 9;
             // 
             // dataGridViewImageColumn4
@@ -199,6 +202,14 @@
             this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.ReadOnly = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.datalistado);
+            this.panel6.Location = new System.Drawing.Point(12, 12);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 36);
+            this.panel6.TabIndex = 2;
             // 
             // Eleccion_Servidor_o_remoto
             // 
@@ -221,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -239,5 +251,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView datalistado;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.Panel panel6;
     }
 }
