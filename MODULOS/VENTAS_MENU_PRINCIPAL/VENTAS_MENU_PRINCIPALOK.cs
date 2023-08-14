@@ -32,7 +32,7 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
         double lblStock_De_Productos;
         public static double total;
         public static int Id_caja;
-
+        Panel panel_mostrador_de_productos = new Panel();
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
         {
@@ -109,19 +109,30 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                con.Open();
-                da = new SqlDataAdapter("BUSCAR_PRODUCTOS_oka", con);
+                CONEXION.CONEXIONMAESTRA.abrir();
+                da = new SqlDataAdapter("BUSCAR_PRODUCTOS_oka", CONEXION.CONEXIONMAESTRA.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@letrab", txtbuscar.Text);
                 da.Fill(dt);
                 DATALISTADO_PRODUCTOS_OKA.DataSource = dt;
-                con.Close();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+                DATALISTADO_PRODUCTOS_OKA.Columns[0].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[1].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[2].Width = 645;
+                DATALISTADO_PRODUCTOS_OKA.Columns[3].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[4].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[5].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[6].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[7].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[8].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[9].Visible = false;
+                DATALISTADO_PRODUCTOS_OKA.Columns[10].Visible = false;
+
 
             }
             catch (Exception ex)
             {
+                CONEXION.CONEXIONMAESTRA.cerrar();
                 MessageBox.Show(ex.StackTrace);
             }
         }
@@ -227,21 +238,39 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
             {
                 if (txtbuscar.Text == "")
                 {
-                    DATALISTADO_PRODUCTOS_OKA.Visible = false;
-                    lbltipodebusqueda2.Visible = true;
-
+                    ocultar_productos();
                 }
                 else if (txtbuscar.Text != "")
                 {
-                    DATALISTADO_PRODUCTOS_OKA.Visible = true;
-                    lbltipodebusqueda2.Visible = false;
+                    mostrar_productos();
                 }
                 LISTAR_PRODUCTOS_Abuscador();
 
             }
 
         }
+        private void mostrar_productos()
+        {
+            panel_mostrador_de_productos.Size = new System.Drawing.Size(645, 252);
+            panel_mostrador_de_productos.BackColor = Color.White;
+            panel_mostrador_de_productos.Location = new Point(panelReferencia.Location.X, panelReferencia.Location.Y);
+            panel_mostrador_de_productos.Visible = true;
+            DATALISTADO_PRODUCTOS_OKA.Visible = true;
+            DATALISTADO_PRODUCTOS_OKA.Dock = DockStyle.Fill;
+            lbltipodebusqueda2.Visible = false;
+            panel_mostrador_de_productos.Controls.Add(DATALISTADO_PRODUCTOS_OKA);
+            this.Controls.Add(panel_mostrador_de_productos);
+            panel_mostrador_de_productos.BringToFront();
 
+
+        }
+
+        private void ocultar_productos()
+        {
+            panel_mostrador_de_productos.Visible = false;
+            DATALISTADO_PRODUCTOS_OKA.Visible = false;
+            lbltipodebusqueda2.Visible = true;
+        }
         private void DATALISTADO_PRODUCTOS_OKA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -992,7 +1021,9 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
 
         }
 
-        private void BtnCobrar_Click(object sender, EventArgs e)
+    
+
+        private void BtnCobrar_Click_1(object sender, EventArgs e)
         {
             total = Convert.ToDouble(txt_total_suma.Text);
             VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO frm = new VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO();
@@ -1022,6 +1053,8 @@ namespace PUNTO_DE_VENTA.MODULOS.VENTAS_MENU_PRINCIPAL
                 timerLABEL_Stock.Stop();
             }
         }
+
+     
     }
 }
 

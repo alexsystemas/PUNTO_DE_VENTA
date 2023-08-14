@@ -120,7 +120,7 @@
             // textBox17
             // 
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(6.594D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(6.593D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
             this.textBox17.Style.BackgroundColor = System.Drawing.Color.LightGray;
             this.textBox17.Style.Font.Bold = true;
             this.textBox17.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;

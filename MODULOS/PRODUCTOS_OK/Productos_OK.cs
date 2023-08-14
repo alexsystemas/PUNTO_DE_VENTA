@@ -1142,5 +1142,12 @@ namespace PUNTO_DE_VENTA.MODULOS.PRODUCTOS_OK
             MODULOS.PRODUCTOS_OK.Asistente_de_ImportacionExcel frm = new MODULOS.PRODUCTOS_OK.Asistente_de_ImportacionExcel();
             frm.ShowDialog();
         }
+
+        private void Productos_OK_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dispose();
+            CONFIGURACION.PANEL_CONFIGURACIONES frm = new CONFIGURACION.PANEL_CONFIGURACIONES();
+            frm.ShowDialog();
+        }
     }
 }

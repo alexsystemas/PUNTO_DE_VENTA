@@ -239,6 +239,12 @@
     <Compile Include="MODULOS\USUARIOS_Y_PERMISOS\UsuariosOK.Designer.cs">
       <DependentUpon>UsuariosOK.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\VENTAS_MENU_PRINCIPAL\CANTIDAD_A_GRANEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\VENTAS_MENU_PRINCIPAL\CANTIDAD_A_GRANEL.Designer.cs">
+      <DependentUpon>CANTIDAD_A_GRANEL.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\VENTAS_MENU_PRINCIPAL\MEDIOS_DE_PAGO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.resx">
       <DependentUpon>SEREALIZACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\VENTAS_MENU_PRINCIPAL\CANTIDAD_A_GRANEL.resx">
+      <DependentUpon>CANTIDAD_A_GRANEL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\VENTAS_MENU_PRINCIPAL\MEDIOS_DE_PAGO.resx">
       <DependentUpon>MEDIOS_DE_PAGO.cs</DependentUpon>

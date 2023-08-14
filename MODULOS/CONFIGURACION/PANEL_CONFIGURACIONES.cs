@@ -19,9 +19,16 @@ namespace PUNTO_DE_VENTA.MODULOS.CONFIGURACION
 
         private void PictureBoxProductos_Click(object sender, EventArgs e)
         {
-           
+            Dispose();
             MODULOS.PRODUCTOS_OK.Productos_OK frm = new MODULOS.PRODUCTOS_OK.Productos_OK();
+            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
             frm.ShowDialog();
+
+        }
+
+        private void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+          
 
         }
 

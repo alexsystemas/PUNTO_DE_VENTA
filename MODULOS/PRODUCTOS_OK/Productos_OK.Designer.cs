@@ -264,7 +264,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Verdana", 11F);
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(126)))));
             this.radioButton1.Location = new System.Drawing.Point(550, 89);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(1);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(211, 22);
             this.radioButton1.TabIndex = 18;
@@ -276,7 +276,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(1, 250);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(188, 147);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -374,7 +374,7 @@
             // 
             this.txtbusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbusca.Location = new System.Drawing.Point(58, 13);
-            this.txtbusca.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtbusca.Margin = new System.Windows.Forms.Padding(1);
             this.txtbusca.Name = "txtbusca";
             this.txtbusca.Size = new System.Drawing.Size(266, 26);
             this.txtbusca.TabIndex = 631;
@@ -520,7 +520,7 @@
             // 
             this.txtStockMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockMinimo.Location = new System.Drawing.Point(142, 39);
-            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(1);
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(106, 24);
             this.txtStockMinimo.TabIndex = 16;
@@ -530,7 +530,7 @@
             // 
             this.txtStockHay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockHay.Location = new System.Drawing.Point(142, 13);
-            this.txtStockHay.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtStockHay.Margin = new System.Windows.Forms.Padding(1);
             this.txtStockHay.Name = "txtStockHay";
             this.txtStockHay.Size = new System.Drawing.Size(106, 24);
             this.txtStockHay.TabIndex = 16;
@@ -599,7 +599,7 @@
             // 
             this.TGUARDAR.Image = ((System.Drawing.Image)(resources.GetObject("TGUARDAR.Image")));
             this.TGUARDAR.Location = new System.Drawing.Point(808, 34);
-            this.TGUARDAR.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TGUARDAR.Margin = new System.Windows.Forms.Padding(1);
             this.TGUARDAR.Name = "TGUARDAR";
             this.TGUARDAR.Size = new System.Drawing.Size(40, 47);
             this.TGUARDAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -611,7 +611,7 @@
             // 
             this.TGUARDARCAMBIOS.Image = ((System.Drawing.Image)(resources.GetObject("TGUARDARCAMBIOS.Image")));
             this.TGUARDARCAMBIOS.Location = new System.Drawing.Point(808, 35);
-            this.TGUARDARCAMBIOS.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TGUARDARCAMBIOS.Margin = new System.Windows.Forms.Padding(1);
             this.TGUARDARCAMBIOS.Name = "TGUARDARCAMBIOS";
             this.TGUARDARCAMBIOS.Size = new System.Drawing.Size(40, 47);
             this.TGUARDARCAMBIOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -623,7 +623,7 @@
             // 
             this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
             this.btnRegresar.Location = new System.Drawing.Point(854, 34);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(1);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(42, 47);
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -636,7 +636,7 @@
             // 
             this.generarCodigo.Image = ((System.Drawing.Image)(resources.GetObject("generarCodigo.Image")));
             this.generarCodigo.Location = new System.Drawing.Point(496, 258);
-            this.generarCodigo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.generarCodigo.Margin = new System.Windows.Forms.Padding(1);
             this.generarCodigo.Name = "generarCodigo";
             this.generarCodigo.Size = new System.Drawing.Size(29, 26);
             this.generarCodigo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -648,7 +648,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(142, 258);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -670,7 +670,7 @@
             // 
             this.txtcodigodebarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigodebarra.Location = new System.Drawing.Point(186, 260);
-            this.txtcodigodebarra.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtcodigodebarra.Margin = new System.Windows.Forms.Padding(1);
             this.txtcodigodebarra.Name = "txtcodigodebarra";
             this.txtcodigodebarra.Size = new System.Drawing.Size(308, 24);
             this.txtcodigodebarra.TabIndex = 38;
@@ -800,7 +800,7 @@
             // 
             this.txtgrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgrupo.Location = new System.Drawing.Point(147, 160);
-            this.txtgrupo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtgrupo.Margin = new System.Windows.Forms.Padding(1);
             this.txtgrupo.Name = "txtgrupo";
             this.txtgrupo.Size = new System.Drawing.Size(254, 24);
             this.txtgrupo.TabIndex = 32;
@@ -887,7 +887,7 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(147, 4);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(1);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(425, 24);
             this.txtDescripcion.TabIndex = 19;
@@ -910,7 +910,7 @@
             // 
             this.TXTPRECIODEVENTA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTPRECIODEVENTA2.Location = new System.Drawing.Point(147, 107);
-            this.TXTPRECIODEVENTA2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.TXTPRECIODEVENTA2.Margin = new System.Windows.Forms.Padding(1);
             this.TXTPRECIODEVENTA2.Name = "TXTPRECIODEVENTA2";
             this.TXTPRECIODEVENTA2.Size = new System.Drawing.Size(150, 24);
             this.TXTPRECIODEVENTA2.TabIndex = 30;
@@ -956,7 +956,7 @@
             // 
             this.txtpreciomayoreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpreciomayoreo.Location = new System.Drawing.Point(148, 134);
-            this.txtpreciomayoreo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtpreciomayoreo.Margin = new System.Windows.Forms.Padding(1);
             this.txtpreciomayoreo.Name = "txtpreciomayoreo";
             this.txtpreciomayoreo.Size = new System.Drawing.Size(150, 24);
             this.txtpreciomayoreo.TabIndex = 16;
@@ -966,7 +966,7 @@
             // 
             this.txtapartirde.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtapartirde.Location = new System.Drawing.Point(404, 138);
-            this.txtapartirde.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtapartirde.Margin = new System.Windows.Forms.Padding(1);
             this.txtapartirde.Name = "txtapartirde";
             this.txtapartirde.Size = new System.Drawing.Size(149, 24);
             this.txtapartirde.TabIndex = 14;
@@ -978,7 +978,7 @@
             this.Agranel.Font = new System.Drawing.Font("Verdana", 11F);
             this.Agranel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(126)))));
             this.Agranel.Location = new System.Drawing.Point(306, 32);
-            this.Agranel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Agranel.Margin = new System.Windows.Forms.Padding(1);
             this.Agranel.Name = "Agranel";
             this.Agranel.Size = new System.Drawing.Size(211, 22);
             this.Agranel.TabIndex = 18;
@@ -1002,7 +1002,7 @@
             // 
             this.txtcosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcosto.Location = new System.Drawing.Point(148, 53);
-            this.txtcosto.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtcosto.Margin = new System.Windows.Forms.Padding(1);
             this.txtcosto.Name = "txtcosto";
             this.txtcosto.Size = new System.Drawing.Size(150, 24);
             this.txtcosto.TabIndex = 13;
@@ -1025,7 +1025,7 @@
             // 
             this.txtPorcentajeGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPorcentajeGanancia.Location = new System.Drawing.Point(148, 81);
-            this.txtPorcentajeGanancia.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtPorcentajeGanancia.Margin = new System.Windows.Forms.Padding(1);
             this.txtPorcentajeGanancia.Name = "txtPorcentajeGanancia";
             this.txtPorcentajeGanancia.Size = new System.Drawing.Size(150, 24);
             this.txtPorcentajeGanancia.TabIndex = 12;
@@ -1038,7 +1038,7 @@
             this.PorUnidad.Font = new System.Drawing.Font("Verdana", 11F);
             this.PorUnidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(126)))));
             this.PorUnidad.Location = new System.Drawing.Point(148, 32);
-            this.PorUnidad.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.PorUnidad.Margin = new System.Windows.Forms.Padding(1);
             this.PorUnidad.Name = "PorUnidad";
             this.PorUnidad.Size = new System.Drawing.Size(152, 22);
             this.PorUnidad.TabIndex = 17;
@@ -1051,7 +1051,7 @@
             this.pnlPrincipal.Controls.Add(this.PANELREGISTRO);
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(256, 50);
-            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(1);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(759, 610);
             this.pnlPrincipal.TabIndex = 3;
@@ -1072,7 +1072,7 @@
             this.datalistado.EnableHeadersVisualStyles = false;
             this.datalistado.GridColor = System.Drawing.Color.YellowGreen;
             this.datalistado.Location = new System.Drawing.Point(256, 50);
-            this.datalistado.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.datalistado.Margin = new System.Windows.Forms.Padding(1);
             this.datalistado.Name = "datalistado";
             this.datalistado.ReadOnly = true;
             this.datalistado.RowHeadersVisible = false;
@@ -1120,11 +1120,12 @@
             this.Controls.Add(this.PANELDEPARTAMENTO);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Productos_OK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos_OK";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Productos_OK_FormClosed);
             this.Load += new System.EventHandler(this.Productos_OK_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

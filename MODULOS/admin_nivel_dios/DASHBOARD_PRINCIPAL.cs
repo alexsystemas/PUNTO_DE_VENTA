@@ -20,11 +20,20 @@ namespace PUNTO_DE_VENTA.MODULOS.admin_nivel_dios
         }
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
-            Dispose();
             MODULOS.CONFIGURACION.PANEL_CONFIGURACIONES frm = new MODULOS.CONFIGURACION.PANEL_CONFIGURACIONES();
+            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+            Dispose();
             frm.ShowDialog();
 
         }
+
+        private void frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dispose();
+            admin_nivel_dios.DASHBOARD_PRINCIPAL frm= new admin_nivel_dios.DASHBOARD_PRINCIPAL();
+            frm.ShowDialog();
+        }
+
         private void ListarAPERTURAS_de_detalle_de_cierres_de_caja()
         {
             try
