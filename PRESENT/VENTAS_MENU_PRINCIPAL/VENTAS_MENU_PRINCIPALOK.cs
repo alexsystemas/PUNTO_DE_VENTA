@@ -38,7 +38,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string sevendePor;
         string txtVentaGenerada;
         double txtPrecio_Unitario;
-
+        string usaInventarios;
         Panel panel_mostrador_de_productos = new Panel();
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
@@ -305,7 +305,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 lblStock_De_Productos = Convert.ToDouble(datalistadoStockDetalleVenta2.SelectedCells[1].Value.ToString());
             }
             //Extraemos los datos del producto de la tabla Productos directamente
-            lblUsaInventarios.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
+            usaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
             lblDescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
             lblCodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
             lblCosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
@@ -514,7 +514,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             try
             {
-                if (lblUsaInventarios.Text == "SI")
+                if ( usaInventarios == "SI")
                 {
                     if (lblStock_De_Productos >= txtpantalla)
                     {
@@ -526,7 +526,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                     }
                 }
 
-                else if (lblUsaInventarios.Text == "NO")
+                else if ( usaInventarios == "NO")
                 {
                     insertar_detalle_venta_SIN_VALIDAR();
                 }
@@ -561,11 +561,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 cmd.Parameters.AddWithValue("@Codigo", lblCodigo.Text);
                 cmd.Parameters.AddWithValue("@Stock", lblStock_De_Productos);
                 cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
-                cmd.Parameters.AddWithValue("@Usa_inventarios", lblUsaInventarios.Text);
+                cmd.Parameters.AddWithValue("@Usa_inventarios",  usaInventarios);
                 cmd.Parameters.AddWithValue("@Costo", lblCosto.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                disminuir_stock();
+                disminuir_stock_en_detalle_de_venta();
             }
             catch (Exception ex)
             {
@@ -574,32 +574,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
 
 
-        public void disminuir_stock()
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                CONEXION.CONEXIONMAESTRA.abrir();
-                cmd = new SqlCommand("disminuir_stock_en_detalle_de_venta", CONEXION.CONEXIONMAESTRA.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id_Producto1", idproducto);
-                if (sevendePor != "Granel")
-                {
-                    cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
-                }
-                else if (sevendePor == "Granel")
-                {
-
-                }
-                cmd.ExecuteNonQuery();
-                CONEXION.CONEXIONMAESTRA.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-
-            }
-        }
+       
 
         private void insertar_detalle_venta_SIN_VALIDAR()
         {
@@ -623,7 +598,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 cmd.Parameters.AddWithValue("@Codigo", lblCodigo.Text);
                 cmd.Parameters.AddWithValue("@Stock", lblStock_De_Productos);
                 cmd.Parameters.AddWithValue("@Se_vende_a", sevendePor);
-                cmd.Parameters.AddWithValue("@Usa_inventarios", lblUsaInventarios.Text);
+                cmd.Parameters.AddWithValue("@Usa_inventarios",  usaInventarios);
                 cmd.Parameters.AddWithValue("@Costo", lblCosto.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -662,7 +637,9 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 MessageBox.Show(ex.StackTrace + ex.Message);
             }
         }
-        private void editar_detalle_venta_sumar()
+      
+
+        private void ejecutar_editar_detalle_venta_sumar()
         {
             try
             {
@@ -673,20 +650,37 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 cmd = new SqlCommand("editar_detalle_venta_sumar", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_producto", idproducto);
-                cmd.Parameters.AddWithValue("@cantidad", 1);
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", 1);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
                 cmd.Parameters.AddWithValue("@Id_venta", idVenta);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Listarproductosagregados();
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+
+                throw;
             }
+                       
+        }
+        public void disminuir_stock_en_detalle_de_venta()
+        {
+
+            try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("disminuir_stock_en_detalle_de_venta", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Producto1", idproducto);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
 
 
+            }
         }
         private void Obtener_datos_del_detalle_de_venta()
         {
@@ -695,15 +689,74 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 iddetalleventa = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[9].Value.ToString());
                 idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
                 sevendePor = datalistadoDetalleVenta.SelectedCells[17].Value.ToString();
+                usaInventarios = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+                
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        private void editar_detalle_venta_sumar()
+        {
+                txtpantalla = 1;
+                if (usaInventarios == "SI")
+                {
+                   lblStock_De_Productos =Convert.ToDouble( datalistadoDetalleVenta.SelectedCells[15].Value.ToString());
+                   if(lblStock_De_Productos>0)
+                    {
+                        ejecutar_editar_detalle_venta_sumar();
+                        disminuir_stock_en_detalle_de_venta();
+                    }
+                    else
+                    {
+                        timerLABEL_Stock.Start();
+                    }
+                }
+                else
+                {
+                    ejecutar_editar_detalle_venta_sumar();
+                }
+                Listarproductosagregados();
+        }
         private void editar_detalle_venta_restar()
         {
+            txtpantalla = 1;
+            if (usaInventarios == "SI")
+            {
+                ejecutar_editar_detalle_venta_restar();
+                aumentar_stock_en_detalle_de_venta();
+            }
+            else
+            {
+                ejecutar_editar_detalle_venta_restar();
+            }
+            Listarproductosagregados();
+
+        }
+
+        private void aumentar_stock_en_detalle_de_venta()
+        {
             try
+            {
+                CONEXION.CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aumentar_stock_en_detalle_de_venta", CONEXION.CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Producto1", idproducto);
+                cmd.Parameters.AddWithValue("@cantidad", txtpantalla);
+                cmd.ExecuteNonQuery();
+                CONEXION.CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+       private void ejecutar_editar_detalle_venta_restar()
+        {
+        try
             {
                 SqlCommand cmd;
                 SqlConnection con = new SqlConnection();
@@ -712,22 +765,18 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 cmd = new SqlCommand("editar_detalle_venta_restar", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@iddetalle_venta", iddetalleventa);
-                cmd.Parameters.AddWithValue("cantidad", 1);
-                cmd.Parameters.AddWithValue("@Cantidad_mostrada", 1);
+                cmd.Parameters.AddWithValue("cantidad", txtpantalla);
+                cmd.Parameters.AddWithValue("@Cantidad_mostrada", txtpantalla);
                 cmd.Parameters.AddWithValue("@Id_producto", idproducto);
                 cmd.Parameters.AddWithValue("@Id_venta", idVenta);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Listarproductosagregados();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
-       
         private void DatalistadoDetalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Obtener_datos_del_detalle_de_venta();
@@ -968,7 +1017,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 {
                     lblStock_De_Productos = Convert.ToDouble(datalistadoStockDetalleVenta2.SelectedCells[1].Value.ToString());
                 }
-                lblUsaInventarios.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
+                 usaInventarios = DATALISTADO_PRODUCTOS_OKA.SelectedCells[3].Value.ToString();
                 lblDescripcion.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[9].Value.ToString();
                 lblCodigo.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[10].Value.ToString();
                 lblCosto.Text = DATALISTADO_PRODUCTOS_OKA.SelectedCells[5].Value.ToString();
@@ -1083,7 +1132,10 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
         }
 
-     
+        private void PanelReferencia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
