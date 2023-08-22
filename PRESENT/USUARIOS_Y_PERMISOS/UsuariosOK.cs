@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Text.RegularExpressions;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA
 {
@@ -185,7 +186,7 @@ namespace PUNTO_DE_VENTA
                 MessageBox.Show(ex.Message);
             }
 
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListado);
+            Bases.Multilinea(ref dataListado);
 
 
 
@@ -461,7 +462,7 @@ namespace PUNTO_DE_VENTA
                 MessageBox.Show(ex.Message);
             }
 
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListado);
+            Bases.Multilinea(ref dataListado);
 
         }
         private void TxtBuscar_TextChanged(object sender, EventArgs e)

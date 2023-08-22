@@ -13,6 +13,7 @@ using System.Threading;
 using System.Globalization;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL;
+using PUNTO_DE_VENTA.DATE;
 
 namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 {
@@ -45,9 +46,10 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
-           // CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPc);
+            // CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPc);
 
-            MOSTRAR_CAJA_POR_SERIAL();
+            Obtener_datos.obtener_id_caja_PorSerial(ref Id_caja);
+           
             MOSTRAR_TIPO_DE_BUSQUEDA();
             Obtener_id_de_cliente_estandar();
             Obtener_id_de_usuario_que_inicio_sesion();
@@ -140,25 +142,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
         }
         
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Serial", SerialPC);
-            try
-            {
-                con.Open();
-                Id_caja = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-
-        }
+      
         string Tipo_de_busqueda;
         private void MOSTRAR_TIPO_DE_BUSQUEDA()
         {

@@ -12,6 +12,7 @@ using System.Globalization;
 using System.Data.OleDb;
 using System.IO;
 using System.Threading;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 {
@@ -55,7 +56,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 DATALISTADO_PRODUCTOS_Movimientos.Columns[15].Visible = false;
                 DATALISTADO_PRODUCTOS_Movimientos.Columns[16].Visible = false;
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref DATALISTADO_PRODUCTOS_Movimientos);
+                Bases.Multilinea(ref DATALISTADO_PRODUCTOS_Movimientos);
 
             }
             catch (Exception ex)
@@ -89,7 +90,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoInventarioBAJO.Columns[9].Visible = false;
 
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoInventarioBAJO);
+                Bases.Multilinea(ref dataListadoInventarioBAJO);
 
             }
             catch (Exception ex)
@@ -151,7 +152,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoMovimientos.Columns[0].Visible = false;
                 dataListadoMovimientos.Columns[10].Visible = false;
                 dataListadoMovimientos.Columns[11].Visible = false;
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoMovimientos);
+                Bases.Multilinea(ref dataListadoMovimientos);
             }
             catch (Exception ex)
             {
@@ -189,7 +190,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoMovimientos.Columns[13].Visible = false;
                 dataListadoMovimientos.Columns[14].Visible = false;
                 dataListadoMovimientos.Columns[12].Visible = false;
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoMovimientos);
+                Bases.Multilinea(ref dataListadoMovimientos);
             }
             catch (Exception ex)
             {
@@ -223,7 +224,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoMovimimientosAcumulado_Producto.Columns[5].Visible = false;
                 dataListadoMovimimientosAcumulado_Producto.Columns[6].Visible = false;
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoMovimimientosAcumulado_Producto);
+                Bases.Multilinea(ref dataListadoMovimimientosAcumulado_Producto);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -469,7 +470,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoInventarioReport.Columns[9].Visible = false;
                 dataListadoInventarioReport.Columns[10].Visible = false;
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoInventarioReport);
+                Bases.Multilinea(ref dataListadoInventarioReport);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -545,7 +546,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoVencimientos.Columns[6].Visible = false;
                 dataListadoVencimientos.Columns[7].Visible = false;
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoInventarioReport);
+                Bases.Multilinea(ref dataListadoInventarioReport);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -591,7 +592,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoVencimientos.Columns[1].Visible = false;
 
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoInventarioReport);
+                Bases.Multilinea(ref dataListadoInventarioReport);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -632,7 +633,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 dataListadoVencimientos.Columns[1].Visible = false;
 
 
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListadoInventarioReport);
+                Bases.Multilinea(ref dataListadoInventarioReport);
                 DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
                 styCabeceras.BackColor = System.Drawing.Color.FromArgb(26, 115, 232);
                 styCabeceras.ForeColor = System.Drawing.Color.White;
@@ -814,7 +815,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 DATALISTADO_PRODUCTOS_kardex.Columns[14].Visible = false;
                 DATALISTADO_PRODUCTOS_kardex.Columns[15].Visible = false;
                 DATALISTADO_PRODUCTOS_kardex.Columns[16].Visible = false;
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref DATALISTADO_PRODUCTOS_Movimientos);
+                Bases.Multilinea(ref DATALISTADO_PRODUCTOS_Movimientos);
             }
             catch (Exception ex)
             {

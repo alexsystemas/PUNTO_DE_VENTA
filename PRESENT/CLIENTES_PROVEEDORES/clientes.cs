@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using PUNTO_DE_VENTA.LOGIC;
 namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
 {
     public partial class clientes : Form
@@ -117,7 +117,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             {
                 MessageBox.Show(ex.StackTrace);
             }
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+            Bases.Multilinea(ref datalistado);
             Cambiar_color_para_registros_eliminados();
             contar_clientes_activos();
             contar_clientes_ELIMINADOS();
@@ -294,7 +294,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             {
                 MessageBox.Show(ex.StackTrace);
             }
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+            Bases.Multilinea(ref datalistado);
             Cambiar_color_para_registros_eliminados();
             contar_clientes_activos();
             contar_clientes_ELIMINADOS();

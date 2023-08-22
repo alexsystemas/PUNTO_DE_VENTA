@@ -82,7 +82,7 @@
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
-    <Compile Include="CONEXION\Tamaño_automatico_de_datatables.cs" />
+    <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
       <SubType>Form</SubType>
@@ -252,6 +252,12 @@
     <Compile Include="PRESENT\VENTAS_MENU_PRINCIPAL\MEDIOS_DE_PAGO.Designer.cs">
       <DependentUpon>MEDIOS_DE_PAGO.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\VENTAS_MENU_PRINCIPAL\Ventas_en_espera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\VENTAS_MENU_PRINCIPAL\Ventas_en_espera.Designer.cs">
+      <DependentUpon>Ventas_en_espera.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\VENTAS_MENU_PRINCIPAL\MEDIOS_DE_PAGO.resx">
       <DependentUpon>MEDIOS_DE_PAGO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\VENTAS_MENU_PRINCIPAL\Ventas_en_espera.resx">
+      <DependentUpon>Ventas_en_espera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.resx">
       <DependentUpon>VENTAS_MENU_PRINCIPALOK.cs</DependentUpon>
@@ -526,7 +535,6 @@
     <None Include="Resources\cargando.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DATE\" />
     <Folder Include="MODULOS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

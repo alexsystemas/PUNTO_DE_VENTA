@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.SEREALIZACION_DE_COMPROBANTES
 {
@@ -86,7 +87,7 @@ namespace PUNTO_DE_VENTA.PRESENT.SEREALIZACION_DE_COMPROBANTES
                 datalistado.Columns[4].Visible = false;
                 datalistado.Columns[5].Width = 220;
                 datalistado.Columns[6].Width = 520;
-                CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+                Bases.Multilinea(ref datalistado);
 
 
             }

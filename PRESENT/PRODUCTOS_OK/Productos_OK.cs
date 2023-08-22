@@ -13,6 +13,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.Threading;
 using System.Management;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
 {
@@ -160,11 +161,12 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
                 datalistadoGrupos.Columns[2].Visible = false;
                 datalistadoGrupos.Columns[3].Width = 500;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
+            Bases.Multilinea(ref datalistado);
         }
 
         private void BtnGuardar_grupo_Click(object sender, EventArgs e)
@@ -841,7 +843,7 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
 
             }
 
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref datalistado);
+            Bases.Multilinea(ref datalistado);
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
         }
 

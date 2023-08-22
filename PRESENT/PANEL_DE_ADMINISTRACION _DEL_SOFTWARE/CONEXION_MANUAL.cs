@@ -84,7 +84,6 @@ namespace PUNTO_DE_VENTA.PANEL_DE_ADMINISTRACION__DEL_SOFTWARE
 
             }
 
-            CONEXION.Tamaño_automatico_de_datatables.Multilinea(ref dataListado);
 
         }
 
