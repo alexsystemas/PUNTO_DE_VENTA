@@ -66,7 +66,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 btn_Scanner.BackColor = Color.LightGreen;
                 btn_Teclado.BackColor = Color.WhiteSmoke;
             }
-            limpiar();
+            Limpiar_para_venta_nueva();
         }
 
         private void Limpiar_para_venta_nueva()
@@ -75,6 +75,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             Listarproductosagregados();
             txtVentaGenerada = "VENTA NUEVA";
             sumar();
+            pnlEnEspera.Visible = false;
         }
         private void sumar()
         {
@@ -104,10 +105,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 MessageBox.Show(ex.Message);
             }
         }
-        private void limpiar()
-        {
-            txtVentaGenerada = "VENTA NUEVA";
-        }
+        
         private void LISTAR_PRODUCTOS_Abuscador()
         {
             try
@@ -1118,6 +1116,85 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void PanelReferencia_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void BtnRestaurar_Click(object sender, EventArgs e)
+        {
+            Ventas_en_espera frm = new Ventas_en_espera();
+            frm.FormClosing += Frm_FormClosing1;
+            frm.ShowDialog();
+        }
+
+        private void Frm_FormClosing1(object sender, FormClosingEventArgs e)
+        {
+            Listarproductosagregados();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if(datalistadoDetalleVenta.RowCount>0)
+            {
+         DialogResult Pregunta = MessageBox.Show("¿Realmente desea eliminar esta Venta?", "Eliminado registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(Pregunta==DialogResult.OK)
+            {
+                Eliminar_datos.eliminar_venta(idVenta);
+                Limpiar_para_venta_nueva();
+            }
+           
+            }
+
+           
+        }
+
+        private void BtnPonerEspera_Click(object sender, EventArgs e)
+        {
+            if(datalistadoDetalleVenta.RowCount>0)
+            {
+                pnlEnEspera.Visible = true;
+                pnlEnEspera.BringToFront();
+                pnlEnEspera.Dock = DockStyle.Fill;
+                txtNombre.Clear();
+            }
+           
+
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            ocultarPanelEspera();
+
+        }
+        private void ocultarPanelEspera()
+        {
+            pnlEnEspera.Visible = false;
+            pnlEnEspera.Dock = DockStyle.None;
+        }
+        private void BtnGuardarEspera_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtNombre.Text))
+            {
+                editarVentaEspera();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese una referencia");
+            }
+           
+
+        }
+
+        private void editarVentaEspera()
+        {
+            Editar_datos.ingresar_nombre_a_venta_en_espera(idVenta, txtNombre.Text);
+            Limpiar_para_venta_nueva();
+            ocultarPanelEspera();
+        }
+
+        private void BtnAutomaticosEspera_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "Ticket" + idVenta;
+            editarVentaEspera();
 
         }
     }

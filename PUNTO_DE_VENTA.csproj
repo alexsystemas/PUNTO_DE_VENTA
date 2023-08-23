@@ -82,6 +82,8 @@
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
+    <Compile Include="DATE\Editar_datos.cs" />
+    <Compile Include="DATE\Eliminar_datos.cs" />
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">

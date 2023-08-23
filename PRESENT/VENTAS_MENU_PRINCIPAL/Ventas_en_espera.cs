@@ -51,16 +51,36 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             try
             {
-                DataTable dt = new DataTable();
+                
                 idventa = Convert.ToInt32(datalistado_ventas_en_espera.SelectedCells[1].Value);
-                Obtener_datos.mostrar_productos_agregados_a_ventas_en_espera(ref dt, idventa);
-                dataGridView_detalle_ventas_restaurar.DataSource = dt;
+                mostrar_detalle_venta();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.StackTrace);
             }
+        }
+
+        private void mostrar_detalle_venta()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_productos_agregados_a_ventas_en_espera(ref dt, idventa);
+            dataGridView_detalle_ventas_restaurar.DataSource = dt;
+        }
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar_datos.eliminar_venta(idventa);
+            idventa = 0;
+            mostrar_ventas_en_espera_con_fecha_y_monto();
+            mostrar_detalle_venta();
+        }
+
+        private void Btn_restaurar_Click(object sender, EventArgs e)
+        {
+            VENTAS_MENU_PRINCIPALOK.idVenta = idventa;
+            Editar_datos.cambio_de_caja(idcaja, idventa);
+            Dispose();
         }
     }
 }
