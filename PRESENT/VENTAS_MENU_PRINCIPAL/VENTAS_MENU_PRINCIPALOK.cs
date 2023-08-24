@@ -485,7 +485,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 datalistadoDetalleVenta.Columns[17].Visible = false;
                 datalistadoDetalleVenta.Columns[18].Visible = false;
                 sumar();
-
+                Bases.Multilinea(ref datalistadoDetalleVenta);
             }
             catch (Exception ex)
             {
