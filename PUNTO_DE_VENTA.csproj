@@ -84,6 +84,7 @@
     <Compile Include="CONEXION\Encryptacion.cs" />
     <Compile Include="DATE\Editar_datos.cs" />
     <Compile Include="DATE\Eliminar_datos.cs" />
+    <Compile Include="DATE\Insertar_datos.cs" />
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
@@ -157,6 +158,12 @@
     </Compile>
     <Compile Include="PRESENT\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.Designer.cs">
       <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\GASTOS_VARIOS\Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\GASTOS_VARIOS\Gastos.Designer.cs">
+      <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.cs">
       <SubType>Form</SubType>
@@ -310,6 +317,9 @@
     <EmbeddedResource Include="PRESENT\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.resx">
       <DependentUpon>EMPRESA_CONFIG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\GASTOS_VARIOS\Gastos.resx">
+      <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
     </EmbeddedResource>
@@ -451,6 +461,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PRESENT\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\lapiz.png" />
     <None Include="Resources\ingresos y salidas.png" />
     <None Include="Resources\teclados.png" />
     <None Include="Resources\wallet.png" />

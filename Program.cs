@@ -16,7 +16,7 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PRESENT.LOGIN());
+            Application.Run(new PRESENT.GASTOS_VARIOS.Gastos());
         }
     }
 }

@@ -202,11 +202,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         void configuraciones_de_diseño()
         {
-           // btnGuradarImprimirDirecto.Text = " Guadar e Imprimir " + lblComprobante + "(Enter)";
             TXTVUELTO.Text = "0.0";
             txtrestante.Text = "0.0";
             TXTTOTAL.Text = moneda + " " + VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK.total;
             total = VENTAS_MENU_PRINCIPALOK.total;
+            txtefectivo2.Text = Convert.ToString(total);
             idcliente = 0;
 
         }

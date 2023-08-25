@@ -44,5 +44,14 @@ namespace PUNTO_DE_VENTA.DATE
             CONEXIONMAESTRA.cerrar();
 
         }
+        public static void buscar_conceptos(ref DataTable dt, string buscador)
+        {
+            CONEXIONMAESTRA.abrir();
+            SqlDataAdapter da = new SqlDataAdapter("buscar_conceptos", CONEXIONMAESTRA.conectar);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
+            da.Fill(dt);
+            CONEXIONMAESTRA.cerrar();
+        }
     }
 }

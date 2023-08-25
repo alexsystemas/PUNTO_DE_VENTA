@@ -165,7 +165,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 292);
+            this.panel1.Size = new System.Drawing.Size(256, 674);
             this.panel1.TabIndex = 0;
             // 
             // txtnumeroconvertidoenletra
@@ -206,7 +206,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(193, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(63, 292);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(63, 674);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -216,7 +216,7 @@
             this.panel2.Location = new System.Drawing.Point(256, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(224, 49);
+            this.panel2.Size = new System.Drawing.Size(747, 49);
             this.panel2.TabIndex = 1;
             // 
             // TXTTOTAL
@@ -229,7 +229,7 @@
             this.TXTTOTAL.Name = "TXTTOTAL";
             this.TXTTOTAL.Size = new System.Drawing.Size(357, 76);
             this.TXTTOTAL.TabIndex = 0;
-            this.TXTTOTAL.Text = "$ 50 000.0";
+            this.TXTTOTAL.Text = "$ 00 000.0";
             // 
             // panel4
             // 
@@ -1019,7 +1019,7 @@
             this.panel3.Location = new System.Drawing.Point(256, 49);
             this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(224, 243);
+            this.panel3.Size = new System.Drawing.Size(747, 625);
             this.panel3.TabIndex = 2;
             // 
             // reportViewer2
@@ -1121,10 +1121,10 @@
             this.panelGuardado_de_Datos.Controls.Add(this.txtImpresora);
             this.panelGuardado_de_Datos.Controls.Add(this.label8);
             this.panelGuardado_de_Datos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelGuardado_de_Datos.Location = new System.Drawing.Point(-78, 0);
+            this.panelGuardado_de_Datos.Location = new System.Drawing.Point(445, 0);
             this.panelGuardado_de_Datos.Margin = new System.Windows.Forms.Padding(1);
             this.panelGuardado_de_Datos.Name = "panelGuardado_de_Datos";
-            this.panelGuardado_de_Datos.Size = new System.Drawing.Size(302, 243);
+            this.panelGuardado_de_Datos.Size = new System.Drawing.Size(302, 625);
             this.panelGuardado_de_Datos.TabIndex = 2;
             // 
             // GuardarYVerEnPanatalla
@@ -1419,7 +1419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 292);
+            this.ClientSize = new System.Drawing.Size(1003, 674);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
