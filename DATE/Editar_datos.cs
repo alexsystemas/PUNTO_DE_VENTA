@@ -39,5 +39,27 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public static bool editar_Conceptos(int Idconcepto, string descripcion)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_Conceptos", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_concepto", Idconcepto);
+                cmd.Parameters.AddWithValue("@Descripcion", descripcion);
+                cmd.ExecuteNonQuery();
+                CONEXIONMAESTRA.cerrar();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+           
+        }
     }
 }

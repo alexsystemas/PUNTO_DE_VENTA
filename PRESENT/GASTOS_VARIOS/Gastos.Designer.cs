@@ -46,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardarRegistro = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnlBuscador_conceptos = new System.Windows.Forms.Panel();
             this.btnNuevoConcepto = new System.Windows.Forms.Button();
@@ -56,13 +55,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnGuardarConceptos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.txtDescripcionConcepto = new System.Windows.Forms.TextBox();
             this.datalistado_conceptos = new System.Windows.Forms.DataGridView();
             this.chSinConprobante = new System.Windows.Forms.CheckBox();
+            this.btnGuardarCambiosConceptos = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnGuardarCambiosConceptos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
             this.pnlComprobantes.SuspendLayout();
@@ -83,12 +82,11 @@
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(541, 38);
+            this.label1.Size = new System.Drawing.Size(541, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "GASTOS(-)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,7 +227,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnGuardarRegistro);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(58, 320);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -253,22 +250,6 @@
             this.btnGuardarRegistro.UseVisualStyleBackColor = false;
             this.btnGuardarRegistro.Click += new System.EventHandler(this.BtnGuardarRegistro_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(78, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Guardar Cambios";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
@@ -277,13 +258,14 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(219, 3);
+            this.button2.Location = new System.Drawing.Point(78, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(69, 38);
             this.button2.TabIndex = 4;
             this.button2.Text = "Volver";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // pnlBuscador_conceptos
             // 
@@ -334,14 +316,14 @@
             // 
             this.pnlConceptos.BackColor = System.Drawing.Color.White;
             this.pnlConceptos.Controls.Add(this.panel7);
-            this.pnlConceptos.Controls.Add(this.btnGuardarCambiosConceptos);
             this.pnlConceptos.Controls.Add(this.btnGuardarConceptos);
             this.pnlConceptos.Controls.Add(this.label7);
-            this.pnlConceptos.Controls.Add(this.button5);
-            this.pnlConceptos.Controls.Add(this.txtDescripcion);
-            this.pnlConceptos.Location = new System.Drawing.Point(436, 324);
+            this.pnlConceptos.Controls.Add(this.btnVolver);
+            this.pnlConceptos.Controls.Add(this.txtDescripcionConcepto);
+            this.pnlConceptos.Controls.Add(this.btnGuardarCambiosConceptos);
+            this.pnlConceptos.Location = new System.Drawing.Point(426, 324);
             this.pnlConceptos.Name = "pnlConceptos";
-            this.pnlConceptos.Size = new System.Drawing.Size(11, 10);
+            this.pnlConceptos.Size = new System.Drawing.Size(49, 10);
             this.pnlConceptos.TabIndex = 1;
             this.pnlConceptos.Visible = false;
             // 
@@ -361,9 +343,9 @@
             this.btnGuardarConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarConceptos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.btnGuardarConceptos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarConceptos.Location = new System.Drawing.Point(19, 85);
+            this.btnGuardarConceptos.Location = new System.Drawing.Point(22, 87);
             this.btnGuardarConceptos.Name = "btnGuardarConceptos";
-            this.btnGuardarConceptos.Size = new System.Drawing.Size(150, 38);
+            this.btnGuardarConceptos.Size = new System.Drawing.Size(147, 38);
             this.btnGuardarConceptos.TabIndex = 4;
             this.btnGuardarConceptos.Text = "Guardar";
             this.btnGuardarConceptos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -381,30 +363,31 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Etiqueta";
             // 
-            // button5
+            // btnVolver
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(175, 85);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(179, 38);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Volver";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVolver.Location = new System.Drawing.Point(175, 85);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(179, 38);
+            this.btnVolver.TabIndex = 4;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
-            // txtDescripcion
+            // txtDescripcionConcepto
             // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtDescripcion.Location = new System.Drawing.Point(19, 50);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(335, 21);
-            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcionConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcionConcepto.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtDescripcionConcepto.Location = new System.Drawing.Point(19, 50);
+            this.txtDescripcionConcepto.Name = "txtDescripcionConcepto";
+            this.txtDescripcionConcepto.Size = new System.Drawing.Size(335, 21);
+            this.txtDescripcionConcepto.TabIndex = 1;
             // 
             // datalistado_conceptos
             // 
@@ -446,12 +429,26 @@
             this.chSinConprobante.UseVisualStyleBackColor = true;
             this.chSinConprobante.CheckedChanged += new System.EventHandler(this.ChSinConprobante_CheckedChanged);
             // 
+            // btnGuardarCambiosConceptos
+            // 
+            this.btnGuardarCambiosConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnGuardarCambiosConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGuardarCambiosConceptos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnGuardarCambiosConceptos.Location = new System.Drawing.Point(22, 85);
+            this.btnGuardarCambiosConceptos.Name = "btnGuardarCambiosConceptos";
+            this.btnGuardarCambiosConceptos.Size = new System.Drawing.Size(147, 40);
+            this.btnGuardarCambiosConceptos.TabIndex = 6;
+            this.btnGuardarCambiosConceptos.Text = "Guardar Cambios";
+            this.btnGuardarCambiosConceptos.UseVisualStyleBackColor = false;
+            this.btnGuardarCambiosConceptos.Click += new System.EventHandler(this.BtnGuardarCambiosConceptos_Click);
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::PUNTO_DE_VENTA.Properties.Resources.lapiz;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Visible = false;
             // 
             // Editar
@@ -461,23 +458,6 @@
             this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
-            // 
-            // btnGuardarCambiosConceptos
-            // 
-            this.btnGuardarCambiosConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnGuardarCambiosConceptos.FlatAppearance.BorderSize = 0;
-            this.btnGuardarCambiosConceptos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCambiosConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosConceptos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnGuardarCambiosConceptos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarCambiosConceptos.Location = new System.Drawing.Point(19, 85);
-            this.btnGuardarCambiosConceptos.Name = "btnGuardarCambiosConceptos";
-            this.btnGuardarCambiosConceptos.Size = new System.Drawing.Size(150, 38);
-            this.btnGuardarCambiosConceptos.TabIndex = 4;
-            this.btnGuardarCambiosConceptos.Text = "Guardar Cambios";
-            this.btnGuardarCambiosConceptos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarCambiosConceptos.UseVisualStyleBackColor = false;
-            this.btnGuardarCambiosConceptos.Click += new System.EventHandler(this.BtnGuardarConceptos_Click);
             // 
             // Gastos
             // 
@@ -495,7 +475,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Gastos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "txtTipo_Comprobante";
             this.Load += new System.EventHandler(this.Gastos_Load);
             this.panel1.ResumeLayout(false);
             this.pnlDetalle.ResumeLayout(false);
@@ -535,10 +514,9 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnGuardarConceptos;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.TextBox txtDescripcionConcepto;
         private System.Windows.Forms.Button btnGuardarRegistro;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel pnlBuscador_conceptos;
         private System.Windows.Forms.Button btnNuevoConcepto;

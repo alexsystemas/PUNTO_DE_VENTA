@@ -165,6 +165,12 @@
     <Compile Include="PRESENT\GASTOS_VARIOS\Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\INGRESOS_VARIOS\IngresosVarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\INGRESOS_VARIOS\IngresosVarios.Designer.cs">
+      <DependentUpon>IngresosVarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\GASTOS_VARIOS\Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\INGRESOS_VARIOS\IngresosVarios.resx">
+      <DependentUpon>IngresosVarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>

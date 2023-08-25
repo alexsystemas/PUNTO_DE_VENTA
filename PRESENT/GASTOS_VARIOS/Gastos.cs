@@ -22,8 +22,16 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
         int idcaja;
         private void BtnGuardarConceptos_Click(object sender, EventArgs e)
         {
-            Insertar_datos.insertar_Conceptos(txtDescripcion.Text);
-            buscador_de_conceptos();
+           bool estado= Insertar_datos.insertar_Conceptos(txtDescripcionConcepto.Text);
+            if(estado==true)
+            {
+                buscador_de_conceptos();
+                ocultar_panelConceptos();
+            }
+           
+        }
+        private void ocultar_panelConceptos()
+        {
             pnlConceptos.Visible = false;
             pnlConceptos.Dock = DockStyle.None;
         }
@@ -45,7 +53,7 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
 
             btnGuardarConceptos.Visible = true;
             btnGuardarCambiosConceptos.Visible = false;
-            txtDescripcion.Clear();
+            txtDescripcionConcepto.Clear();
         }
         private void mostrar_panelconceptos()
         {
@@ -57,7 +65,7 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
         {
             pnlConceptos.Visible = false;
             pnlConceptos.Dock = DockStyle.None;
-            txtDescripcion.Clear();
+            txtDescripcionConcepto.Clear();
             txtBuscarConcepto.Clear();
             mostrar_datalistadoConceptos();
             this.Size = new System.Drawing.Size(557, 409);
@@ -99,7 +107,7 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
                     mostrar_panelconceptos();
                     btnGuardarCambiosConceptos.Visible = true;
                     btnGuardarConceptos.Visible = false;
-                    txtDescripcion.Text = txtBuscarConcepto.Text;
+                    txtDescripcionConcepto.Text = txtBuscarConcepto.Text;
                 }
             }
             catch (Exception ex)
@@ -119,10 +127,16 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
         private void BtnGuardarRegistro_Click(object sender, EventArgs e)
         {
             rellenar_campos_vacios();
-            Insertar_datos.insertar_Gastos_varios(txtfecha.Value, txtNroComprobante.Text,
-            txtTipo_de_comprobante.Text, Convert.ToDouble(txtImporte.Text), txtDetalle.Text,
+             bool estado =Insertar_datos.insertar_Gastos_varios(txtfecha.Value, txtNroComprobante.Text,
+                   txtTipo_de_comprobante.Text, Convert.ToDouble(txtImporte.Text), txtDetalle.Text,
             idcaja, idConcepto);
-            limpiar_inicio();
+            if (estado==true)
+            {
+              
+                limpiar_inicio();
+                MessageBox.Show("Datos ingresados correctamente", "Registros exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          
 
         }
 
@@ -142,6 +156,33 @@ namespace PUNTO_DE_VENTA.PRESENT.GASTOS_VARIOS
         {
             txtBuscarConcepto.SelectAll();
             mostrar_datalistadoConceptos();
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            pnlConceptos.Visible = false;
+            pnlConceptos.Dock = DockStyle.None;
+        }
+
+        private void BtnGuardarCambiosConceptos_Click(object sender, EventArgs e)
+        {
+            bool Estado=Editar_datos.editar_Conceptos(idConcepto, txtDescripcionConcepto.Text);
+            if(Estado==true)
+            {
+                ocultar_panelConceptos();
+                buscador_de_conceptos();
+                txtBuscarConcepto.Text = txtDescripcionConcepto.Text;
+            }
+            else
+            {
+                txtDescripcionConcepto.SelectAll();
+            }
+           
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
