@@ -16,7 +16,17 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PRESENT.LOGIN());
+            PRESENT.VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new PRESENT.VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
+            frm.FormClosed += Frm_FormClosed;
+            frm.ShowDialog();
+            Application.Run();
+        }
+
+        private static void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+            Application.Exit();
+
         }
     }
 }

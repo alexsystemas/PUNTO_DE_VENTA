@@ -61,5 +61,27 @@ namespace PUNTO_DE_VENTA.DATE
             }
            
         }
+
+        public static bool editar_dinero_caja_inicial(int Idcaja, double saldo)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_dinero_caja_inicial", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_caja", Idcaja);
+                cmd.Parameters.AddWithValue("@saldo", saldo);
+                cmd.ExecuteNonQuery();
+                CONEXIONMAESTRA.cerrar();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+        }
     }
 }

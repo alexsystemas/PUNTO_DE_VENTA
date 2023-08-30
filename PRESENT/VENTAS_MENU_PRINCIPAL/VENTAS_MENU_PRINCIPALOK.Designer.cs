@@ -41,12 +41,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnGastos = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnVerMovimientosCaja = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -190,12 +190,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panel1.Controls.Add(this.button13);
+            this.panel1.Controls.Add(this.btnGastos);
             this.panel1.Controls.Add(this.button12);
             this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button14);
+            this.panel1.Controls.Add(this.btnVerMovimientosCaja);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
@@ -220,21 +220,22 @@
             this.panel1.Size = new System.Drawing.Size(256, 697);
             this.panel1.TabIndex = 0;
             // 
-            // button13
+            // btnGastos
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(41, 504);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(149, 38);
-            this.button13.TabIndex = 7;
-            this.button13.Text = "Salida dinero";
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnGastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnGastos.FlatAppearance.BorderSize = 0;
+            this.btnGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGastos.Location = new System.Drawing.Point(41, 504);
+            this.btnGastos.Name = "btnGastos";
+            this.btnGastos.Size = new System.Drawing.Size(149, 38);
+            this.btnGastos.TabIndex = 7;
+            this.btnGastos.Text = "Salida dinero";
+            this.btnGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGastos.UseVisualStyleBackColor = false;
+            this.btnGastos.Click += new System.EventHandler(this.BtnGastos_Click);
             // 
             // button12
             // 
@@ -300,21 +301,22 @@
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btnVerMovimientosCaja
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(39, 294);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(152, 38);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "Ver Ingresos y Salidas";
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnVerMovimientosCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnVerMovimientosCaja.FlatAppearance.BorderSize = 0;
+            this.btnVerMovimientosCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerMovimientosCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerMovimientosCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnVerMovimientosCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerMovimientosCaja.Location = new System.Drawing.Point(39, 294);
+            this.btnVerMovimientosCaja.Name = "btnVerMovimientosCaja";
+            this.btnVerMovimientosCaja.Size = new System.Drawing.Size(152, 38);
+            this.btnVerMovimientosCaja.TabIndex = 6;
+            this.btnVerMovimientosCaja.Text = "Ver Ingresos y Salidas";
+            this.btnVerMovimientosCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVerMovimientosCaja.UseVisualStyleBackColor = false;
+            this.btnVerMovimientosCaja.Click += new System.EventHandler(this.BtnVerMovimientosCaja_Click);
             // 
             // button8
             // 
@@ -730,9 +732,9 @@
             // 
             // panelReferencia
             // 
-            this.panelReferencia.Location = new System.Drawing.Point(450, 13);
+            this.panelReferencia.Location = new System.Drawing.Point(313, 39);
             this.panelReferencia.Name = "panelReferencia";
-            this.panelReferencia.Size = new System.Drawing.Size(17, 33);
+            this.panelReferencia.Size = new System.Drawing.Size(10, 10);
             this.panelReferencia.TabIndex = 638;
             this.panelReferencia.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelReferencia_Paint);
             // 
@@ -1081,7 +1083,7 @@
             this.DATALISTADO_PRODUCTOS_OKA.AllowUserToAddRows = false;
             this.DATALISTADO_PRODUCTOS_OKA.AllowUserToDeleteRows = false;
             this.DATALISTADO_PRODUCTOS_OKA.AllowUserToResizeRows = false;
-            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.DATALISTADO_PRODUCTOS_OKA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.DATALISTADO_PRODUCTOS_OKA.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DATALISTADO_PRODUCTOS_OKA.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DATALISTADO_PRODUCTOS_OKA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1900,13 +1902,13 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnGastos;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private UIDC.UI_TecladoBasico uI_TecladoBasico1;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnVerMovimientosCaja;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panelReferencia;
         private System.Windows.Forms.Panel panel13;

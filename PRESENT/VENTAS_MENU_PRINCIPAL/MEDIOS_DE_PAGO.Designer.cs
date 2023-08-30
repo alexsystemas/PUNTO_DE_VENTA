@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtnumeroconvertidoenletra = new System.Windows.Forms.TextBox();
             this.txttotaldecimal = new System.Windows.Forms.TextBox();
-            this.lblSerialPC = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -158,7 +157,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel1.Controls.Add(this.txtnumeroconvertidoenletra);
             this.panel1.Controls.Add(this.txttotaldecimal);
-            this.panel1.Controls.Add(this.lblSerialPC);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -181,13 +179,6 @@
             this.txttotaldecimal.Name = "txttotaldecimal";
             this.txttotaldecimal.Size = new System.Drawing.Size(138, 20);
             this.txttotaldecimal.TabIndex = 4;
-            // 
-            // lblSerialPC
-            // 
-            this.lblSerialPC.Location = new System.Drawing.Point(38, 70);
-            this.lblSerialPC.Name = "lblSerialPC";
-            this.lblSerialPC.Size = new System.Drawing.Size(138, 20);
-            this.lblSerialPC.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -1526,7 +1517,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox txtImpresora;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox lblSerialPC;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel17;

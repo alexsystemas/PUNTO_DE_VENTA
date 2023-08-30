@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Drawing.Printing;
 using Telerik.Reporting.Processing;
 using Telerik.Reporting.Drawing;
+using PUNTO_DE_VENTA.LOGIC;
 namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 {
     public partial class MEDIOS_DE_PAGO : Form
@@ -38,6 +39,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string lblproceso;
         string indicador_de_tipo_de_pago_string;
         int idcomprobante;
+        string lblSerialPC;
 
         private void MEDIOS_DE_PAGO_Load(object sender, EventArgs e)
         {
@@ -170,7 +172,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             {
                 SqlCommand cmd = new SqlCommand("mostrar_impresoras_por_caja", CONEXION.CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Serial", lblSerialPC.Text);
+                cmd.Parameters.AddWithValue("@Serial", lblSerialPC);
                 try
                 {
                     CONEXION.CONEXIONMAESTRA.abrir();
@@ -226,7 +228,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         public void obtener_serial_pc()
         {
-            CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPC);
+            Bases.Obtener_serialPC( ref lblSerialPC);
         }
         public void cambiar_el_formato_de_separador_de_decimales()
         {

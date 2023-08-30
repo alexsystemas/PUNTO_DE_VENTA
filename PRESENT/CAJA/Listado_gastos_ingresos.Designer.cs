@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.uI_GradientPanel1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(26, 37);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(862, 342);
             this.panel1.TabIndex = 0;
@@ -74,7 +74,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(365, 342);
+            this.panel2.Size = new System.Drawing.Size(440, 342);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -83,18 +83,18 @@
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(372, 0);
+            this.panel3.Location = new System.Drawing.Point(453, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(490, 342);
+            this.panel3.Size = new System.Drawing.Size(409, 342);
             this.panel3.TabIndex = 2;
             // 
             // uI_GradientPanel1
             // 
             this.uI_GradientPanel1.BackColor = System.Drawing.Color.White;
             this.uI_GradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.uI_GradientPanel1.Location = new System.Drawing.Point(365, 0);
+            this.uI_GradientPanel1.Location = new System.Drawing.Point(440, 0);
             this.uI_GradientPanel1.Name = "uI_GradientPanel1";
-            this.uI_GradientPanel1.Size = new System.Drawing.Size(7, 342);
+            this.uI_GradientPanel1.Size = new System.Drawing.Size(13, 342);
             this.uI_GradientPanel1.TabIndex = 3;
             this.uI_GradientPanel1.UIBackColor = System.Drawing.Color.Empty;
             this.uI_GradientPanel1.UIBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(218)))), ((int)(((byte)(216)))));
@@ -112,7 +112,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(365, 41);
+            this.label1.Size = new System.Drawing.Size(440, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gastos de Caja";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +124,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(490, 41);
+            this.label2.Size = new System.Drawing.Size(409, 41);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ingresos de caja";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,11 +136,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 281);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(365, 61);
+            this.panel4.Size = new System.Drawing.Size(440, 61);
             this.panel4.TabIndex = 1;
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
@@ -152,11 +153,12 @@
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(62, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(303, 61);
+            this.label4.Size = new System.Drawing.Size(378, 61);
             this.label4.TabIndex = 1;
             this.label4.Text = "0.00";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -168,22 +170,24 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 281);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(490, 61);
+            this.panel5.Size = new System.Drawing.Size(409, 61);
             this.panel5.TabIndex = 2;
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(62, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(428, 61);
+            this.label5.Size = new System.Drawing.Size(347, 61);
             this.label5.TabIndex = 1;
             this.label5.Text = "0.00";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 0);
@@ -197,7 +201,7 @@
             // 
             this.datalistadoGastos.AllowUserToAddRows = false;
             this.datalistadoGastos.AllowUserToResizeRows = false;
-            this.datalistadoGastos.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.datalistadoGastos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.datalistadoGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoGastos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoGastos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -218,7 +222,7 @@
             this.datalistadoGastos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.datalistadoGastos.RowTemplate.Height = 30;
             this.datalistadoGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoGastos.Size = new System.Drawing.Size(365, 240);
+            this.datalistadoGastos.Size = new System.Drawing.Size(440, 240);
             this.datalistadoGastos.TabIndex = 38;
             // 
             // Eliminar
@@ -241,7 +245,7 @@
             // 
             this.datalistadoIngresos.AllowUserToAddRows = false;
             this.datalistadoIngresos.AllowUserToResizeRows = false;
-            this.datalistadoIngresos.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.datalistadoIngresos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.datalistadoIngresos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoIngresos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoIngresos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -262,7 +266,7 @@
             this.datalistadoIngresos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.datalistadoIngresos.RowTemplate.Height = 30;
             this.datalistadoIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoIngresos.Size = new System.Drawing.Size(490, 240);
+            this.datalistadoIngresos.Size = new System.Drawing.Size(409, 240);
             this.datalistadoIngresos.TabIndex = 39;
             // 
             // dataGridViewImageColumn1
@@ -285,9 +289,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 697);
+            this.ClientSize = new System.Drawing.Size(883, 371);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Listado_gastos_ingresos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado_gastos_ingresos";
             this.Load += new System.EventHandler(this.Listado_gastos_ingresos_Load);
             this.panel1.ResumeLayout(false);

@@ -236,7 +236,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void mostrar_productos()
         {
-            panel_mostrador_de_productos.Size = new System.Drawing.Size(645, 252);
+            panel_mostrador_de_productos.Size = new System.Drawing.Size(600, 252);
             panel_mostrador_de_productos.BackColor = Color.White;
             panel_mostrador_de_productos.Location = new Point(panelReferencia.Location.X, panelReferencia.Location.Y);
             panel_mostrador_de_productos.Visible = true;
@@ -1196,6 +1196,18 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             txtNombre.Text = "Ticket" + idVenta;
             editarVentaEspera();
 
+        }
+
+        private void BtnVerMovimientosCaja_Click(object sender, EventArgs e)
+        {
+            CAJA.Listado_gastos_ingresos frm = new CAJA.Listado_gastos_ingresos();
+            frm.ShowDialog();
+        }
+
+        private void BtnGastos_Click(object sender, EventArgs e)
+        {
+            GASTOS_VARIOS.Gastos frm= new GASTOS_VARIOS.Gastos();
+            frm.ShowDialog();
         }
     }
 }

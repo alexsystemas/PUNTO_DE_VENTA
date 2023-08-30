@@ -29,7 +29,7 @@ namespace PUNTO_DE_VENTA.PRESENT
         string lblSerialPCLocal;
         string cajero = "Cajero(si esta autorizado para manejar dinero)";
         string vendedor = "Solo Ventas(no esta autorizado para manejar dinero)";
-        string administrador = "Administrador(control total)";
+        string admin = "Administrador (Control total)";
         string lblRol;
         string txtlogin;
         string lblaperturaDeCaja;
@@ -113,22 +113,22 @@ namespace PUNTO_DE_VENTA.PRESENT
             SqlCommand com = new SqlCommand("mostrar_permisos_por_usuario_ROL_UNICO", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@idusuario", idusuariovariable);
-            string importe;
+            
+
 
 
             try
             {
                 con.Open();
-                importe = Convert.ToString(com.ExecuteScalar());
+                lblRol = Convert.ToString(com.ExecuteScalar());
                 con.Close();
-                lblRol = importe;
+
 
             }
             catch (Exception ex)
             {
 
             }
-
 
 
 
@@ -219,9 +219,9 @@ namespace PUNTO_DE_VENTA.PRESENT
                 SqlCommand cmd = new SqlCommand();
                 cmd = new SqlCommand("insertar_DETALLE_cierre_de_caja", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fechaini", DateTime.Today);
-                cmd.Parameters.AddWithValue("@fechafin", DateTime.Today);
-                cmd.Parameters.AddWithValue("@fechacierre", DateTime.Today);
+                cmd.Parameters.AddWithValue("@fechaini", DateTime.Now);
+                cmd.Parameters.AddWithValue("@fechafin", DateTime.Now);
+                cmd.Parameters.AddWithValue("@fechacierre", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ingresos", "0.00");
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
                 cmd.Parameters.AddWithValue("@saldo", "0.00");
@@ -584,10 +584,10 @@ namespace PUNTO_DE_VENTA.PRESENT
             {
                 if (idUsuarioVerificador == 0)
                 {
-                    Hide();
+                    Dispose();
                     PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA frm = new PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA();
                     frm.ShowDialog();
-                    Dispose();
+                    
                 }
                 else
                 {
@@ -596,10 +596,10 @@ namespace PUNTO_DE_VENTA.PRESENT
             }
             if (INDICADOR == "INCORRECTO")
             {
-                Hide();
+                Dispose();
                 PRESENT.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto frm = new PRESENT.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto();
                 frm.ShowDialog();
-                Dispose();
+                
             }
             
             try
@@ -658,26 +658,26 @@ namespace PUNTO_DE_VENTA.PRESENT
                     }
                     else
                     {
-                        Hide();
+                        Dispose();
                         PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
                         frm.ShowDialog();
-                        Dispose();
+                        
                     }
                 }
                 else
                 {
-                    Hide();
+                    Dispose();
                     PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
                     frm.ShowDialog();
-                    Dispose();
+                    
                 }
             }
             else
             {
-                Hide();
+                Dispose();
                 PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
                 frm.ShowDialog();
-                Dispose();
+                
             }
         }
         private void Timer1_Tick(object sender, EventArgs e)
@@ -815,7 +815,6 @@ namespace PUNTO_DE_VENTA.PRESENT
         }
         private void TimerValidaRol_Tick(object sender, EventArgs e)
         {
-
             if (progressBar1.Value < 100)
             {
                 BackColor = Color.FromArgb(218, 243, 233);
@@ -830,47 +829,43 @@ namespace PUNTO_DE_VENTA.PRESENT
             {
                 progressBar1.Value = 0;
                 timerValidaRol.Stop();
-                if (lblRol == administrador)
+                if (lblRol == admin)
                 {
+                    Dispose();
                     editar_inicio_De_sesion();
-                    this.Hide();
                     admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new admin_nivel_dios.DASHBOARD_PRINCIPAL();
                     frm.ShowDialog();
-                    Dispose();
                 }
                 else
                 {
                     if (lblaperturaDeCaja == "Nuevo*****" & lblRol == cajero)
                     {
                         editar_inicio_De_sesion();
-                        this.Hide();
+                       
                         CAJA.APERTURA_DE_CAJA frm = new CAJA.APERTURA_DE_CAJA();
                         frm.ShowDialog();
                         Dispose();
                     }
                     else if (lblaperturaDeCaja == "Aperturado" & lblRol == cajero)
                     {
+                        Dispose();
                         editar_inicio_De_sesion();
-                        this.Hide();
                         VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
                         frm.ShowDialog();
-                        Dispose();
+                       
                     }
                     else if (lblRol == vendedor)
                     {
+                        Dispose();
                         editar_inicio_De_sesion();
-                        this.Hide();
                         VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
                         frm.ShowDialog();
-                        Dispose();
-
                     }
                 }
 
             }
         }
-        
-        private void BtnCambiarUsuarios_Click(object sender, EventArgs e)
+                    private void BtnCambiarUsuarios_Click(object sender, EventArgs e)
         {
             panelIngresoDeContrasena.Visible = false;
             panelUsuarios.Visible = true;

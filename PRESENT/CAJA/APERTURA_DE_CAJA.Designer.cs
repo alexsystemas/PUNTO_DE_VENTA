@@ -35,9 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.datalistado_caja = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblSerialPc = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.Label();
-            this.txtidCaja = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,11 +44,13 @@
             this.txtmontos = new System.Windows.Forms.TextBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnOmitir = new System.Windows.Forms.Button();
+            this.pnlCaja = new System.Windows.Forms.Panel();
             this.pnl_Izq_azulClaro.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.pnlCaja.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Izq_azulClaro
@@ -67,9 +67,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.datalistado_caja);
-            this.panel2.Controls.Add(this.lblSerialPc);
             this.panel2.Controls.Add(this.txtMonto);
-            this.panel2.Controls.Add(this.txtidCaja);
             this.panel2.Location = new System.Drawing.Point(5, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 108);
@@ -122,15 +120,6 @@
             this.Eli.Name = "Eli";
             this.Eli.ReadOnly = true;
             // 
-            // lblSerialPc
-            // 
-            this.lblSerialPc.AutoSize = true;
-            this.lblSerialPc.Location = new System.Drawing.Point(2, 26);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(56, 13);
-            this.lblSerialPc.TabIndex = 0;
-            this.lblSerialPc.Text = "lblSerialPc";
-            // 
             // txtMonto
             // 
             this.txtMonto.AutoSize = true;
@@ -139,15 +128,6 @@
             this.txtMonto.Size = new System.Drawing.Size(48, 13);
             this.txtMonto.TabIndex = 0;
             this.txtMonto.Text = "txtMonto";
-            // 
-            // txtidCaja
-            // 
-            this.txtidCaja.AutoSize = true;
-            this.txtidCaja.Location = new System.Drawing.Point(3, 0);
-            this.txtidCaja.Name = "txtidCaja";
-            this.txtidCaja.Size = new System.Drawing.Size(47, 13);
-            this.txtidCaja.TabIndex = 0;
-            this.txtidCaja.Text = "txtidCaja";
             // 
             // pictureBox1
             // 
@@ -176,7 +156,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(256, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 49);
+            this.panel1.Size = new System.Drawing.Size(1024, 49);
             this.panel1.TabIndex = 1;
             // 
             // lblDineroEnCaja
@@ -186,7 +166,7 @@
             this.lblDineroEnCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lblDineroEnCaja.Location = new System.Drawing.Point(0, 0);
             this.lblDineroEnCaja.Name = "lblDineroEnCaja";
-            this.lblDineroEnCaja.Size = new System.Drawing.Size(762, 40);
+            this.lblDineroEnCaja.Size = new System.Drawing.Size(1024, 40);
             this.lblDineroEnCaja.TabIndex = 0;
             this.lblDineroEnCaja.Text = "Dinero en Caja";
             this.lblDineroEnCaja.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -196,7 +176,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(510, 92);
+            this.label2.Location = new System.Drawing.Point(391, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(230, 25);
             this.label2.TabIndex = 2;
@@ -205,7 +185,7 @@
             // txtmontos
             // 
             this.txtmontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmontos.Location = new System.Drawing.Point(505, 136);
+            this.txtmontos.Location = new System.Drawing.Point(386, 65);
             this.txtmontos.Name = "txtmontos";
             this.txtmontos.Size = new System.Drawing.Size(240, 23);
             this.txtmontos.TabIndex = 3;
@@ -215,7 +195,7 @@
             this.btnIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.Color.White;
-            this.btnIniciar.Location = new System.Drawing.Point(505, 179);
+            this.btnIniciar.Location = new System.Drawing.Point(386, 108);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(75, 31);
             this.btnIniciar.TabIndex = 4;
@@ -226,7 +206,7 @@
             // btnOmitir
             // 
             this.btnOmitir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOmitir.Location = new System.Drawing.Point(591, 179);
+            this.btnOmitir.Location = new System.Drawing.Point(472, 108);
             this.btnOmitir.Name = "btnOmitir";
             this.btnOmitir.Size = new System.Drawing.Size(75, 31);
             this.btnOmitir.TabIndex = 4;
@@ -234,16 +214,25 @@
             this.btnOmitir.UseVisualStyleBackColor = true;
             this.btnOmitir.Click += new System.EventHandler(this.BtnOmitir_Click);
             // 
+            // pnlCaja
+            // 
+            this.pnlCaja.Controls.Add(this.label2);
+            this.pnlCaja.Controls.Add(this.btnOmitir);
+            this.pnlCaja.Controls.Add(this.txtmontos);
+            this.pnlCaja.Controls.Add(this.btnIniciar);
+            this.pnlCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCaja.Location = new System.Drawing.Point(256, 49);
+            this.pnlCaja.Name = "pnlCaja";
+            this.pnlCaja.Size = new System.Drawing.Size(1024, 153);
+            this.pnlCaja.TabIndex = 5;
+            // 
             // APERTURA_DE_CAJA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(1018, 697);
-            this.Controls.Add(this.btnOmitir);
-            this.Controls.Add(this.btnIniciar);
-            this.Controls.Add(this.txtmontos);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1280, 697);
+            this.Controls.Add(this.pnlCaja);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_Izq_azulClaro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -257,8 +246,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.pnlCaja.ResumeLayout(false);
+            this.pnlCaja.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -278,6 +268,6 @@
         private System.Windows.Forms.Label txtMonto;
         private System.Windows.Forms.DataGridView datalistado_caja;
         private System.Windows.Forms.DataGridViewImageColumn Eli;
-        private System.Windows.Forms.Label lblSerialPc;
+        private System.Windows.Forms.Panel pnlCaja;
     }
 }

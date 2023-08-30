@@ -13,6 +13,7 @@ namespace PUNTO_DE_VENTA.DATE
     class Obtener_datos
     {
         private static string serialPC;
+        private static int idcaja;
         public static void obtener_id_caja_PorSerial(ref int idcaja)
         {
             try
@@ -90,7 +91,7 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
-        public static void mostrar_gastos_por_turnos(int idcaja,ref DataTable dt)
+        public static void mostrar_gastos_por_turnos(int idcaja, DateTime fi, DateTime ff,  ref DataTable dt)
         {
             try
             {
@@ -98,6 +99,29 @@ namespace PUNTO_DE_VENTA.DATE
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_gastos_por_turnos", CONEXIONMAESTRA.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
+                da.SelectCommand.Parameters.AddWithValue("@fi", fi);
+                da.SelectCommand.Parameters.AddWithValue("@ff", ff);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+
+        }
+
+        public static void mostrar_cierre_de_caja_pendiente(  ref DataTable dt)
+        {
+            obtener_id_caja_PorSerial(ref idcaja);
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_cierre_de_caja_pendiente", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
+             
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
             }

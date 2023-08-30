@@ -221,7 +221,7 @@
             this.panel1.Controls.Add(this.labeldeB);
             this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 396);
+            this.panel1.Size = new System.Drawing.Size(10, 10);
             this.panel1.TabIndex = 4;
             // 
             // txtfecha_Inicio_licencia_temporal
@@ -1122,6 +1122,7 @@
             // 
             // timerValidaRol
             // 
+            this.timerValidaRol.Interval = 200;
             this.timerValidaRol.Tick += new System.EventHandler(this.TimerValidaRol_Tick);
             // 
             // LOGIN

@@ -18,11 +18,30 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             InitializeComponent();
         }
         int idcaja;
+        DateTime fechaInicial;
+        DateTime fechaFinal;
         private void Listado_gastos_ingresos_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable ();
-            Obtener_datos.mostrar_gastos_por_turnos(idcaja, ref dt);
+            fechaFinal = DateTime.Now;
+            mostrar_cierre_de_caja_pendientes();
+            listar_gastos();
+          
+        }
+        private void listar_gastos()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_gastos_por_turnos(idcaja, fechaInicial, fechaFinal, ref dt);
             datalistadoGastos.DataSource = dt;
+        }
+        private void mostrar_cierre_de_caja_pendientes()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_cierre_de_caja_pendiente(ref dt);
+            foreach(DataRow dr in dt.Rows)
+            {
+                idcaja =Convert.ToInt32( dr["Id_caja"]);
+                fechaInicial =Convert.ToDateTime( dr["fechainicio"]);
+            }
         }
     }
 }

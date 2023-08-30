@@ -31,11 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instalacion_del_servidorSQL));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.txtArgumentosini = new System.Windows.Forms.RichTextBox();
-            this.lblnombredeservicio = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.txtservidor = new System.Windows.Forms.Label();
-            this.pnlDerAzul = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnEliminaBD = new System.Windows.Forms.Panel();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
@@ -61,6 +58,11 @@
             this.BD = new System.Windows.Forms.Label();
             this.ContrasenaSQL = new System.Windows.Forms.Label();
             this.Nombre_Instancia = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.lblnombredeservicio = new System.Windows.Forms.TextBox();
+            this.txtArgumentosini = new System.Windows.Forms.RichTextBox();
+            this.pnlDerAzul = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlCentral = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
@@ -76,37 +78,34 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblInstalandoServidor = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlPrecaucion = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timerCRARINI = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnEliminaBD.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlCentral.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlInstaladoServidor.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlPrecaucion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlPrecaucion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.pnlDerAzul);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -115,46 +114,26 @@
             this.panel1.Size = new System.Drawing.Size(256, 644);
             this.panel1.TabIndex = 0;
             // 
-            // richTextBox3
+            // panel6
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(10, 135);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(138, 20);
-            this.richTextBox3.TabIndex = 8;
-            this.richTextBox3.Text = "";
-            // 
-            // txtArgumentosini
-            // 
-            this.txtArgumentosini.Location = new System.Drawing.Point(10, 109);
-            this.txtArgumentosini.Name = "txtArgumentosini";
-            this.txtArgumentosini.Size = new System.Drawing.Size(138, 20);
-            this.txtArgumentosini.TabIndex = 8;
-            this.txtArgumentosini.Text = "";
-            // 
-            // lblnombredeservicio
-            // 
-            this.lblnombredeservicio.Location = new System.Drawing.Point(10, 77);
-            this.lblnombredeservicio.Name = "lblnombredeservicio";
-            this.lblnombredeservicio.Size = new System.Drawing.Size(100, 20);
-            this.lblnombredeservicio.TabIndex = 7;
+            this.panel6.Controls.Add(this.txtservidor);
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.richTextBox3);
+            this.panel6.Controls.Add(this.lblnombredeservicio);
+            this.panel6.Controls.Add(this.txtArgumentosini);
+            this.panel6.Location = new System.Drawing.Point(161, 128);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(575, 447);
+            this.panel6.TabIndex = 4;
             // 
             // txtservidor
             // 
             this.txtservidor.AutoSize = true;
             this.txtservidor.Location = new System.Drawing.Point(7, 57);
             this.txtservidor.Name = "txtservidor";
-            this.txtservidor.Size = new System.Drawing.Size(55, 13);
+            this.txtservidor.Size = new System.Drawing.Size(81, 20);
             this.txtservidor.TabIndex = 6;
             this.txtservidor.Text = "txtservidor";
-            // 
-            // pnlDerAzul
-            // 
-            this.pnlDerAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.pnlDerAzul.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDerAzul.Location = new System.Drawing.Point(193, 0);
-            this.pnlDerAzul.Name = "pnlDerAzul";
-            this.pnlDerAzul.Size = new System.Drawing.Size(63, 644);
-            this.pnlDerAzul.TabIndex = 5;
             // 
             // panel4
             // 
@@ -170,7 +149,7 @@
             this.panel4.Controls.Add(this.Nombre_Instancia);
             this.panel4.Location = new System.Drawing.Point(42, 14);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(552, 334);
+            this.panel4.Size = new System.Drawing.Size(552, 430);
             this.panel4.TabIndex = 3;
             // 
             // pnEliminaBD
@@ -225,7 +204,7 @@
             this.lblRutaInstancia.Location = new System.Drawing.Point(21, 59);
             this.lblRutaInstancia.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.lblRutaInstancia.Name = "lblRutaInstancia";
-            this.lblRutaInstancia.Size = new System.Drawing.Size(83, 13);
+            this.lblRutaInstancia.Size = new System.Drawing.Size(124, 20);
             this.lblRutaInstancia.TabIndex = 605;
             this.lblRutaInstancia.Text = "lblRutaInstancia";
             // 
@@ -236,7 +215,7 @@
             this.min2.Location = new System.Drawing.Point(725, 625);
             this.min2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.min2.Name = "min2";
-            this.min2.Size = new System.Drawing.Size(19, 13);
+            this.min2.Size = new System.Drawing.Size(27, 20);
             this.min2.TabIndex = 618;
             this.min2.Text = "00";
             // 
@@ -247,7 +226,7 @@
             this.label9.Location = new System.Drawing.Point(797, 410);
             this.label9.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.Size = new System.Drawing.Size(71, 20);
             this.label9.TabIndex = 618;
             this.label9.Text = "Servidor:";
             // 
@@ -258,7 +237,7 @@
             this.seg2.Location = new System.Drawing.Point(904, 625);
             this.seg2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.seg2.Name = "seg2";
-            this.seg2.Size = new System.Drawing.Size(19, 13);
+            this.seg2.Size = new System.Drawing.Size(27, 20);
             this.seg2.TabIndex = 618;
             this.seg2.Text = "00";
             // 
@@ -269,7 +248,7 @@
             this.milise.Location = new System.Drawing.Point(925, 484);
             this.milise.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.milise.Name = "milise";
-            this.milise.Size = new System.Drawing.Size(19, 13);
+            this.milise.Size = new System.Drawing.Size(27, 20);
             this.milise.TabIndex = 618;
             this.milise.Text = "00";
             // 
@@ -280,7 +259,7 @@
             this.mils2.Location = new System.Drawing.Point(1480, 625);
             this.mils2.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.mils2.Name = "mils2";
-            this.mils2.Size = new System.Drawing.Size(19, 13);
+            this.mils2.Size = new System.Drawing.Size(27, 20);
             this.mils2.TabIndex = 618;
             this.mils2.Text = "00";
             // 
@@ -291,7 +270,7 @@
             this.label7.Location = new System.Drawing.Point(1187, 410);
             this.label7.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.Size = new System.Drawing.Size(24, 20);
             this.label7.TabIndex = 611;
             this.label7.Text = "---";
             // 
@@ -302,7 +281,7 @@
             this.millseg.Location = new System.Drawing.Point(177, 95);
             this.millseg.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.millseg.Name = "millseg";
-            this.millseg.Size = new System.Drawing.Size(19, 13);
+            this.millseg.Size = new System.Drawing.Size(27, 20);
             this.millseg.TabIndex = 620;
             this.millseg.Text = "00";
             // 
@@ -313,7 +292,7 @@
             this.seg3.Location = new System.Drawing.Point(147, 95);
             this.seg3.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.seg3.Name = "seg3";
-            this.seg3.Size = new System.Drawing.Size(19, 13);
+            this.seg3.Size = new System.Drawing.Size(27, 20);
             this.seg3.TabIndex = 620;
             this.seg3.Text = "00";
             // 
@@ -324,7 +303,7 @@
             this.mil3.Location = new System.Drawing.Point(981, 50);
             this.mil3.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.mil3.Name = "mil3";
-            this.mil3.Size = new System.Drawing.Size(13, 13);
+            this.mil3.Size = new System.Drawing.Size(18, 20);
             this.mil3.TabIndex = 619;
             this.mil3.Text = "0";
             // 
@@ -368,7 +347,7 @@
             // 
             this.txtnombre_scrypt.Location = new System.Drawing.Point(158, 93);
             this.txtnombre_scrypt.Name = "txtnombre_scrypt";
-            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 20);
+            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 26);
             this.txtnombre_scrypt.TabIndex = 1;
             this.txtnombre_scrypt.Text = "Script_BASE_PUNTO_VENTA";
             // 
@@ -376,7 +355,7 @@
             // 
             this.txtBaseDeDatos.Location = new System.Drawing.Point(158, 70);
             this.txtBaseDeDatos.Name = "txtBaseDeDatos";
-            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 20);
+            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 26);
             this.txtBaseDeDatos.TabIndex = 1;
             this.txtBaseDeDatos.Text = "BASE_PUNTO_VENTA\r\n";
             // 
@@ -384,14 +363,14 @@
             // 
             this.lblcontraseña.Location = new System.Drawing.Point(158, 48);
             this.lblcontraseña.Name = "lblcontraseña";
-            this.lblcontraseña.Size = new System.Drawing.Size(134, 20);
+            this.lblcontraseña.Size = new System.Drawing.Size(134, 26);
             this.lblcontraseña.TabIndex = 1;
             // 
             // nombre_del_equipo_usuario
             // 
             this.nombre_del_equipo_usuario.Location = new System.Drawing.Point(158, 27);
             this.nombre_del_equipo_usuario.Name = "nombre_del_equipo_usuario";
-            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 20);
+            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 26);
             this.nombre_del_equipo_usuario.TabIndex = 1;
             this.nombre_del_equipo_usuario.Text = "MSSQL15";
             // 
@@ -400,7 +379,7 @@
             this.Nombre_Screypt.AutoSize = true;
             this.Nombre_Screypt.Location = new System.Drawing.Point(39, 96);
             this.Nombre_Screypt.Name = "Nombre_Screypt";
-            this.Nombre_Screypt.Size = new System.Drawing.Size(98, 13);
+            this.Nombre_Screypt.Size = new System.Drawing.Size(144, 20);
             this.Nombre_Screypt.TabIndex = 0;
             this.Nombre_Screypt.Text = "Nombre de Scrypt: ";
             // 
@@ -409,7 +388,7 @@
             this.BD.AutoSize = true;
             this.BD.Location = new System.Drawing.Point(39, 73);
             this.BD.Name = "BD";
-            this.BD.Size = new System.Drawing.Size(83, 13);
+            this.BD.Size = new System.Drawing.Size(123, 20);
             this.BD.TabIndex = 0;
             this.BD.Text = "Base de Datos: ";
             // 
@@ -418,7 +397,7 @@
             this.ContrasenaSQL.AutoSize = true;
             this.ContrasenaSQL.Location = new System.Drawing.Point(39, 52);
             this.ContrasenaSQL.Name = "ContrasenaSQL";
-            this.ContrasenaSQL.Size = new System.Drawing.Size(64, 13);
+            this.ContrasenaSQL.Size = new System.Drawing.Size(96, 20);
             this.ContrasenaSQL.TabIndex = 0;
             this.ContrasenaSQL.Text = "Contraseña:";
             // 
@@ -427,9 +406,51 @@
             this.Nombre_Instancia.AutoSize = true;
             this.Nombre_Instancia.Location = new System.Drawing.Point(39, 28);
             this.Nombre_Instancia.Name = "Nombre_Instancia";
-            this.Nombre_Instancia.Size = new System.Drawing.Size(108, 13);
+            this.Nombre_Instancia.Size = new System.Drawing.Size(160, 20);
             this.Nombre_Instancia.TabIndex = 0;
             this.Nombre_Instancia.Text = "Nombre de Instancia:";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(10, 135);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(138, 20);
+            this.richTextBox3.TabIndex = 8;
+            this.richTextBox3.Text = "";
+            // 
+            // lblnombredeservicio
+            // 
+            this.lblnombredeservicio.Location = new System.Drawing.Point(10, 77);
+            this.lblnombredeservicio.Name = "lblnombredeservicio";
+            this.lblnombredeservicio.Size = new System.Drawing.Size(100, 26);
+            this.lblnombredeservicio.TabIndex = 7;
+            // 
+            // txtArgumentosini
+            // 
+            this.txtArgumentosini.Location = new System.Drawing.Point(10, 109);
+            this.txtArgumentosini.Name = "txtArgumentosini";
+            this.txtArgumentosini.Size = new System.Drawing.Size(138, 20);
+            this.txtArgumentosini.TabIndex = 8;
+            this.txtArgumentosini.Text = "";
+            // 
+            // pnlDerAzul
+            // 
+            this.pnlDerAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.pnlDerAzul.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDerAzul.Location = new System.Drawing.Point(193, 0);
+            this.pnlDerAzul.Name = "pnlDerAzul";
+            this.pnlDerAzul.Size = new System.Drawing.Size(63, 644);
+            this.pnlDerAzul.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 250);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(188, 147);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // pnlTop
             // 
@@ -451,6 +472,7 @@
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.Controls.Add(this.panel6);
             this.pnlTitulo.Controls.Add(this.lblbuscador_de_servidores);
             this.pnlTitulo.Controls.Add(this.button1);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -587,6 +609,16 @@
             this.panel2.Size = new System.Drawing.Size(627, 404);
             this.panel2.TabIndex = 4;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
+            this.pictureBox4.Location = new System.Drawing.Point(422, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(178, 113);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // pnlPrecaucion
             // 
             this.pnlPrecaucion.Controls.Add(this.pictureBox1);
@@ -595,6 +627,16 @@
             this.pnlPrecaucion.Name = "pnlPrecaucion";
             this.pnlPrecaucion.Size = new System.Drawing.Size(627, 60);
             this.pnlPrecaucion.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.precaucion;
+            this.pictureBox1.Location = new System.Drawing.Point(480, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // timer2
             // 
@@ -620,48 +662,6 @@
             this.timerCRARINI.Interval = 10;
             this.timerCRARINI.Tick += new System.EventHandler(this.TimerCRARINI_Tick);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
-            this.pictureBox4.Location = new System.Drawing.Point(422, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(178, 113);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.precaucion;
-            this.pictureBox1.Location = new System.Drawing.Point(480, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 250);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(188, 147);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtservidor);
-            this.panel6.Controls.Add(this.panel4);
-            this.panel6.Controls.Add(this.richTextBox3);
-            this.panel6.Controls.Add(this.lblnombredeservicio);
-            this.panel6.Controls.Add(this.txtArgumentosini);
-            this.panel6.Location = new System.Drawing.Point(12, 11);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(26, 38);
-            this.panel6.TabIndex = 4;
-            // 
             // Instalacion_del_servidorSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,12 +677,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Instalacion_del_servidorSQL_Load);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnEliminaBD.ResumeLayout(false);
             this.pnEliminaBD.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlCentral.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -690,12 +693,9 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.pnlPrecaucion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnlPrecaucion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
