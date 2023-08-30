@@ -132,5 +132,27 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
         }
+
+        public static void mostrar_ingresos_por_turnos(int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_ingresos_por_turnos", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
+                da.SelectCommand.Parameters.AddWithValue("@fi", fi);
+                da.SelectCommand.Parameters.AddWithValue("@ff", ff);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+
+        }
+
     }
 }

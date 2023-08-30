@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PUNTO_DE_VENTA.DATE;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.CAJA
 {
@@ -25,6 +26,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             fechaFinal = DateTime.Now;
             mostrar_cierre_de_caja_pendientes();
             listar_gastos();
+            listar_ingresos();
           
         }
         private void listar_gastos()
@@ -32,6 +34,37 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             DataTable dt = new DataTable();
             Obtener_datos.mostrar_gastos_por_turnos(idcaja, fechaInicial, fechaFinal, ref dt);
             datalistadoGastos.DataSource = dt;
+            datalistadoGastos.Columns[1].Visible = false;
+            sumar_gastos();
+            Bases.Multilinea(ref datalistadoGastos);
+        }
+        private void sumar_gastos()
+        {
+            double total=0;
+            foreach(DataGridViewRow fila in datalistadoGastos.Rows)
+            {
+                total +=Convert.ToDouble( (fila.Cells["Importe"].Value));
+            }
+            lblGastos.Text =Convert.ToString( total);
+        }
+        private void sumar_ingresos()
+        {
+            double total = 0;
+            foreach (DataGridViewRow fila in datalistadoIngresos.Rows)
+            {
+                total += Convert.ToDouble((fila.Cells["Importe"].Value));
+            }
+            lblIngresos.Text = Convert.ToString(total);
+        }
+        private void listar_ingresos()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_ingresos_por_turnos(idcaja, fechaInicial, fechaFinal, ref dt);
+            datalistadoIngresos.DataSource = dt;
+            Bases.Multilinea(ref datalistadoIngresos);
+            datalistadoIngresos.Columns[1].Visible = false;
+            sumar_ingresos();
+
         }
         private void mostrar_cierre_de_caja_pendientes()
         {
@@ -41,6 +74,34 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             {
                 idcaja =Convert.ToInt32( dr["Id_caja"]);
                 fechaInicial =Convert.ToDateTime( dr["fechainicio"]);
+            }
+        }
+
+        private void DatalistadoGastos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==datalistadoGastos.Columns["EliminarG"].Index)
+            {
+                DialogResult result = MessageBox.Show("¿Realmente desea eliminar este gasto?", "Eliminado registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(result==DialogResult.OK)
+                {
+                    int idgasto = Convert.ToInt32(datalistadoGastos.SelectedCells[1].Value);
+                    Eliminar_datos.eliminar_gasto(idgasto);
+                    listar_gastos();
+                }
+            }
+        }
+
+        private void DatalistadoIngresos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == datalistadoIngresos.Columns["EliminarI"].Index)
+            {
+                DialogResult result = MessageBox.Show("¿Realmente desea eliminar este Ingreso?", "Eliminado registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    int idIngreso = Convert.ToInt32(datalistadoIngresos.SelectedCells[1].Value);
+                    Eliminar_datos.eliminar_ingresos(idIngreso);
+                    listar_ingresos();
+                }
             }
         }
     }

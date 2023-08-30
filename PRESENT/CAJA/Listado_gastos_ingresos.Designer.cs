@@ -37,16 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblGastos = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblIngresos = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.datalistadoGastos = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.datalistadoIngresos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EliminarG = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EliminarI = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -131,7 +129,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.lblGastos);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 281);
@@ -151,21 +149,21 @@
             this.label3.Text = "Total:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblGastos
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(378, 61);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "0.00";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGastos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblGastos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGastos.Location = new System.Drawing.Point(62, 0);
+            this.lblGastos.Name = "lblGastos";
+            this.lblGastos.Size = new System.Drawing.Size(378, 61);
+            this.lblGastos.TabIndex = 1;
+            this.lblGastos.Text = "0.00";
+            this.lblGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblIngresos);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 281);
@@ -173,17 +171,17 @@
             this.panel5.Size = new System.Drawing.Size(409, 61);
             this.panel5.TabIndex = 2;
             // 
-            // label5
+            // lblIngresos
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(347, 61);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "0.00";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIngresos.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngresos.Location = new System.Drawing.Point(62, 0);
+            this.lblIngresos.Name = "lblIngresos";
+            this.lblIngresos.Size = new System.Drawing.Size(347, 61);
+            this.lblIngresos.TabIndex = 1;
+            this.lblIngresos.Text = "0.00";
+            this.lblIngresos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
@@ -207,8 +205,7 @@
             this.datalistadoGastos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datalistadoGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistadoGastos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
-            this.Editar});
+            this.EliminarG});
             this.datalistadoGastos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoGastos.EnableHeadersVisualStyles = false;
             this.datalistadoGastos.GridColor = System.Drawing.Color.YellowGreen;
@@ -224,22 +221,7 @@
             this.datalistadoGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datalistadoGastos.Size = new System.Drawing.Size(440, 240);
             this.datalistadoGastos.TabIndex = 38;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
+            this.datalistadoGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatalistadoGastos_CellClick);
             // 
             // datalistadoIngresos
             // 
@@ -251,8 +233,7 @@
             this.datalistadoIngresos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datalistadoIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalistadoIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2});
+            this.EliminarI});
             this.datalistadoIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistadoIngresos.EnableHeadersVisualStyles = false;
             this.datalistadoIngresos.GridColor = System.Drawing.Color.YellowGreen;
@@ -268,22 +249,23 @@
             this.datalistadoIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datalistadoIngresos.Size = new System.Drawing.Size(409, 240);
             this.datalistadoIngresos.TabIndex = 39;
+            this.datalistadoIngresos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatalistadoIngresos_CellClick);
             // 
-            // dataGridViewImageColumn1
+            // EliminarG
             // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.EliminarG.HeaderText = "";
+            this.EliminarG.Image = ((System.Drawing.Image)(resources.GetObject("EliminarG.Image")));
+            this.EliminarG.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EliminarG.Name = "EliminarG";
+            this.EliminarG.ReadOnly = true;
             // 
-            // dataGridViewImageColumn2
+            // EliminarI
             // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.EliminarI.HeaderText = "";
+            this.EliminarI.Image = ((System.Drawing.Image)(resources.GetObject("EliminarI.Image")));
+            this.EliminarI.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EliminarI.Name = "EliminarI";
+            this.EliminarI.ReadOnly = true;
             // 
             // Listado_gastos_ingresos
             // 
@@ -316,16 +298,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblIngresos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblGastos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView datalistadoIngresos;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridView datalistadoGastos;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn EliminarG;
+        private System.Windows.Forms.DataGridViewImageColumn EliminarI;
     }
 }

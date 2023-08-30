@@ -1209,6 +1209,12 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             GASTOS_VARIOS.Gastos frm= new GASTOS_VARIOS.Gastos();
             frm.ShowDialog();
         }
+
+        private void BtnIngresos_Click(object sender, EventArgs e)
+        {
+            INGRESOS_VARIOS.IngresosVarios frm = new INGRESOS_VARIOS.IngresosVarios();
+            frm.ShowDialog();
+        }
     }
 }
 
