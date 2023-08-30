@@ -410,10 +410,9 @@
             this.PANELREGISTRO.Controls.Add(this.label9);
             this.PANELREGISTRO.Controls.Add(this.txtPorcentajeGanancia);
             this.PANELREGISTRO.Controls.Add(this.PorUnidad);
-            this.PANELREGISTRO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PANELREGISTRO.Location = new System.Drawing.Point(0, 0);
             this.PANELREGISTRO.Name = "PANELREGISTRO";
-            this.PANELREGISTRO.Size = new System.Drawing.Size(759, 610);
+            this.PANELREGISTRO.Size = new System.Drawing.Size(659, 610);
             this.PANELREGISTRO.TabIndex = 14;
             // 
             // panelInventario
@@ -430,7 +429,7 @@
             this.panelInventario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInventario.Location = new System.Drawing.Point(0, 395);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(759, 98);
+            this.panelInventario.Size = new System.Drawing.Size(659, 98);
             this.panelInventario.TabIndex = 498;
             // 
             // txtfechaoka
@@ -548,7 +547,7 @@
             this.panelGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelGuardar.Location = new System.Drawing.Point(0, 493);
             this.panelGuardar.Name = "panelGuardar";
-            this.panelGuardar.Size = new System.Drawing.Size(759, 117);
+            this.panelGuardar.Size = new System.Drawing.Size(659, 117);
             this.panelGuardar.TabIndex = 497;
             // 
             // lblcosto_inventario
@@ -1049,11 +1048,10 @@
             // pnlPrincipal
             // 
             this.pnlPrincipal.Controls.Add(this.PANELREGISTRO);
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(256, 50);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(1);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(759, 610);
+            this.pnlPrincipal.Size = new System.Drawing.Size(681, 610);
             this.pnlPrincipal.TabIndex = 3;
             // 
             // datalistado

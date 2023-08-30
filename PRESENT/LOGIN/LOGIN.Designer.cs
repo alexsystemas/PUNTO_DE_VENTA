@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PdCarga = new System.Windows.Forms.PictureBox();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.flowyoouPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,7 +38,6 @@
             this.btnOlvideContraseña = new System.Windows.Forms.Button();
             this.lbl_inicioSeccion = new System.Windows.Forms.Label();
             this.blEstado_Licencia_Local = new System.Windows.Forms.Label();
-            this.lblSerialPCLocal = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtfecha_Inicio_licencia_temporal = new System.Windows.Forms.DateTimePicker();
             this.txtfecha_final_licencia_temporal = new System.Windows.Forms.DateTimePicker();
@@ -55,21 +54,14 @@
             this.datalistado_USUARIOS_REGISTRADOS = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblSerialPc = new System.Windows.Forms.TextBox();
             this.cont = new System.Windows.Forms.Label();
             this.lblpermisodeCaja = new System.Windows.Forms.Label();
             this.lblnombredeCajero = new System.Windows.Forms.Label();
             this.lblusuario_queinicioCaja = new System.Windows.Forms.Label();
-            this.lblaperturaDeCaja = new System.Windows.Forms.Label();
-            this.txtidcaja = new System.Windows.Forms.Label();
-            this.IDUSUARIO = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
             this.lblcaja = new System.Windows.Forms.Label();
             this.lblIdcaja = new System.Windows.Forms.Label();
             this.lblEstado_de_envio = new System.Windows.Forms.Label();
             this.lblResultadoContraseña = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.Label();
             this.labeldePictureBox = new System.Windows.Forms.Label();
             this.labeldeB = new System.Windows.Forms.Label();
             this.panelRestaurar_Cuenta = new System.Windows.Forms.Panel();
@@ -82,10 +74,8 @@
             this.txtCorreo = new System.Windows.Forms.ComboBox();
             this.lblConElRegistro = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.button15 = new System.Windows.Forms.Button();
             this.lblLicenciaPClocal = new System.Windows.Forms.Label();
@@ -114,8 +104,8 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnCambiarUsuarios = new System.Windows.Forms.Button();
             this.panelIngresoDeContrasena = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblEstadoLicencia = new System.Windows.Forms.Label();
+            this.timerValidaRol = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PdCarga)).BeginInit();
             this.panelUsuarios.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -133,7 +123,6 @@
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelIngresoDeContrasena.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // PdCarga
@@ -208,15 +197,6 @@
             this.blEstado_Licencia_Local.TabIndex = 5;
             this.blEstado_Licencia_Local.Text = "lblEstado_Licencia_Local";
             // 
-            // lblSerialPCLocal
-            // 
-            this.lblSerialPCLocal.AutoSize = true;
-            this.lblSerialPCLocal.Location = new System.Drawing.Point(0, 346);
-            this.lblSerialPCLocal.Name = "lblSerialPCLocal";
-            this.lblSerialPCLocal.Size = new System.Drawing.Size(83, 13);
-            this.lblSerialPCLocal.TabIndex = 5;
-            this.lblSerialPCLocal.Text = "lblSerialPCLocal";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtfecha_Inicio_licencia_temporal);
@@ -228,28 +208,20 @@
             this.panel1.Controls.Add(this.datalistado_licencia_temporal);
             this.panel1.Controls.Add(this.datalistado_USUARIOS_REGISTRADOS);
             this.panel1.Controls.Add(this.blEstado_Licencia_Local);
-            this.panel1.Controls.Add(this.lblSerialPCLocal);
             this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.lblSerialPc);
             this.panel1.Controls.Add(this.cont);
             this.panel1.Controls.Add(this.lblpermisodeCaja);
             this.panel1.Controls.Add(this.lblnombredeCajero);
             this.panel1.Controls.Add(this.lblusuario_queinicioCaja);
-            this.panel1.Controls.Add(this.lblaperturaDeCaja);
-            this.panel1.Controls.Add(this.txtidcaja);
-            this.panel1.Controls.Add(this.IDUSUARIO);
-            this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Controls.Add(this.lblRol);
             this.panel1.Controls.Add(this.lblcaja);
             this.panel1.Controls.Add(this.lblIdcaja);
             this.panel1.Controls.Add(this.lblEstado_de_envio);
             this.panel1.Controls.Add(this.lblResultadoContraseña);
-            this.panel1.Controls.Add(this.txtLogin);
             this.panel1.Controls.Add(this.labeldePictureBox);
             this.panel1.Controls.Add(this.labeldeB);
-            this.panel1.Location = new System.Drawing.Point(3, 7);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 21);
+            this.panel1.Size = new System.Drawing.Size(413, 396);
             this.panel1.TabIndex = 4;
             // 
             // txtfecha_Inicio_licencia_temporal
@@ -469,13 +441,6 @@
             this.progressBar1.Size = new System.Drawing.Size(179, 23);
             this.progressBar1.TabIndex = 6;
             // 
-            // lblSerialPc
-            // 
-            this.lblSerialPc.Location = new System.Drawing.Point(6, 113);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(169, 20);
-            this.lblSerialPc.TabIndex = 9;
-            // 
             // cont
             // 
             this.cont.AutoSize = true;
@@ -512,52 +477,6 @@
             this.lblusuario_queinicioCaja.TabIndex = 0;
             this.lblusuario_queinicioCaja.Text = "llblusuario_queinicioCaja";
             // 
-            // lblaperturaDeCaja
-            // 
-            this.lblaperturaDeCaja.AutoSize = true;
-            this.lblaperturaDeCaja.ForeColor = System.Drawing.Color.Gray;
-            this.lblaperturaDeCaja.Location = new System.Drawing.Point(5, 225);
-            this.lblaperturaDeCaja.Name = "lblaperturaDeCaja";
-            this.lblaperturaDeCaja.Size = new System.Drawing.Size(91, 13);
-            this.lblaperturaDeCaja.TabIndex = 0;
-            this.lblaperturaDeCaja.Text = "lblaperturaDeCaja";
-            // 
-            // txtidcaja
-            // 
-            this.txtidcaja.AutoSize = true;
-            this.txtidcaja.Location = new System.Drawing.Point(5, 212);
-            this.txtidcaja.Name = "txtidcaja";
-            this.txtidcaja.Size = new System.Drawing.Size(46, 13);
-            this.txtidcaja.TabIndex = 0;
-            this.txtidcaja.Text = "txtidcaja";
-            // 
-            // IDUSUARIO
-            // 
-            this.IDUSUARIO.AutoSize = true;
-            this.IDUSUARIO.Location = new System.Drawing.Point(3, 199);
-            this.IDUSUARIO.Name = "IDUSUARIO";
-            this.IDUSUARIO.Size = new System.Drawing.Size(67, 13);
-            this.IDUSUARIO.TabIndex = 0;
-            this.IDUSUARIO.Text = "IDUSUARIO";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.AutoSize = true;
-            this.txtNombre.Location = new System.Drawing.Point(3, 186);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(55, 13);
-            this.txtNombre.TabIndex = 0;
-            this.txtNombre.Text = "txtNombre";
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(5, 162);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(33, 13);
-            this.lblRol.TabIndex = 0;
-            this.lblRol.Text = "lblRol";
-            // 
             // lblcaja
             // 
             this.lblcaja.AutoSize = true;
@@ -593,15 +512,6 @@
             this.lblResultadoContraseña.Size = new System.Drawing.Size(119, 13);
             this.lblResultadoContraseña.TabIndex = 0;
             this.lblResultadoContraseña.Text = "lblResultadoContraseña";
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.AutoSize = true;
-            this.txtLogin.Location = new System.Drawing.Point(3, 44);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(44, 13);
-            this.txtLogin.TabIndex = 0;
-            this.txtLogin.Text = "txtLogin";
             // 
             // labeldePictureBox
             // 
@@ -732,18 +642,14 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Correo electronico:";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -760,11 +666,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // timer2
-            // 
-            this.timer2.Interval = 200;
-            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
@@ -772,7 +673,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(219, 618);
+            this.panel2.Size = new System.Drawing.Size(219, 697);
             this.panel2.TabIndex = 19;
             // 
             // button15
@@ -1195,7 +1096,6 @@
             // 
             // panelIngresoDeContrasena
             // 
-            this.panelIngresoDeContrasena.Controls.Add(this.pictureBox4);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLicencia);
             this.panelIngresoDeContrasena.Controls.Add(this.btnCambiarUsuarios);
             this.panelIngresoDeContrasena.Controls.Add(this.panel4);
@@ -1210,16 +1110,6 @@
             this.panelIngresoDeContrasena.Size = new System.Drawing.Size(342, 315);
             this.panelIngresoDeContrasena.TabIndex = 2;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
-            this.pictureBox4.Location = new System.Drawing.Point(184, 540);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 19);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
-            // 
             // lblEstadoLicencia
             // 
             this.lblEstadoLicencia.AutoSize = true;
@@ -1230,12 +1120,16 @@
             this.lblEstadoLicencia.TabIndex = 20;
             this.lblEstadoLicencia.Text = "lICENCIA";
             // 
+            // timerValidaRol
+            // 
+            this.timerValidaRol.Tick += new System.EventHandler(this.TimerValidaRol_Tick);
+            // 
             // LOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(1013, 618);
+            this.ClientSize = new System.Drawing.Size(1280, 697);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panelIngresoDeContrasena);
             this.Controls.Add(this.panel2);
@@ -1269,7 +1163,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelIngresoDeContrasena.ResumeLayout(false);
             this.panelIngresoDeContrasena.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1298,22 +1191,14 @@
         private System.Windows.Forms.Label lblResultadoContraseña;
         private System.Windows.Forms.Label lblEstado_de_envio;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblIdcaja;
-        private System.Windows.Forms.TextBox lblSerialPc;
         private System.Windows.Forms.Label lblcaja;
-        private System.Windows.Forms.Label lblRol;
-        private System.Windows.Forms.Label IDUSUARIO;
-        private System.Windows.Forms.Label txtNombre;
-        private System.Windows.Forms.Label txtidcaja;
-        private System.Windows.Forms.Label lblaperturaDeCaja;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Timer timer2;
+      //  private System.Windows.Forms.Timer timervalidarRol;
         private System.Windows.Forms.PictureBox PdCarga;
         private System.Windows.Forms.Label lblnombredeCajero;
         private System.Windows.Forms.Label lblusuario_queinicioCaja;
         private System.Windows.Forms.Label lblpermisodeCaja;
-        private System.Windows.Forms.Label txtLogin;
         private System.Windows.Forms.Label cont;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button15;
@@ -1344,8 +1229,6 @@
         private System.Windows.Forms.Button btnCambiarUsuarios;
         private System.Windows.Forms.Panel panelIngresoDeContrasena;
         private System.Windows.Forms.Label blEstado_Licencia_Local;
-        private System.Windows.Forms.Label lblSerialPCLocal;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblEstadoLicencia;
         private System.Windows.Forms.DataGridView datalistado_USUARIOS_REGISTRADOS;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
@@ -1361,5 +1244,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DateTimePicker txtfecha_Inicio_licencia_temporal;
         private System.Windows.Forms.DateTimePicker txtfecha_final_licencia_temporal;
+        private System.Windows.Forms.Timer timerValidaRol;
     }
 }

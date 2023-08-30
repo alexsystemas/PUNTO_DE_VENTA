@@ -11,7 +11,7 @@ using System.Management;
 using System.IO;
 using System.Xml;
 using System.Data.SqlClient;
-
+using PUNTO_DE_VENTA.LOGIC;
 namespace PUNTO_DE_VENTA.PRESENT.LICENCIAS_MEMBRESIAS
 {
     public partial class Membresias : Form
@@ -88,8 +88,8 @@ namespace PUNTO_DE_VENTA.PRESENT.LICENCIAS_MEMBRESIAS
                     {
                         txtfecha_final_licencia_temporal.Value = Convert.ToDateTime(lblFecha.Text);
                         lblSerialPcLocal.Text = (datalistado_licencia_temporal.SelectedCells[2].Value.ToString());
-                        LBLESTADOLicenciaLocal.Text = CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString());
-                        txtfecha_inicio_licencia.Value = Convert.ToDateTime(CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
+                        LBLESTADOLicenciaLocal.Text = Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString());
+                        txtfecha_inicio_licencia.Value = Convert.ToDateTime(Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
 
                     }
                     catch (Exception ex)
@@ -135,11 +135,11 @@ namespace PUNTO_DE_VENTA.PRESENT.LICENCIAS_MEMBRESIAS
             SERIALpC = lblIDSERIAL.Text;
 
             string FECHA_FINAL;
-            FECHA_FINAL = CONEXION.Encryptar_en_texto.Encriptar(this.lblIDSERIAL.Text.Trim());
+            FECHA_FINAL = Bases.Encriptar(this.lblIDSERIAL.Text.Trim());
             string estado;
-            estado = CONEXION.Encryptar_en_texto.Encriptar("?ACTIVADO PRO?");
+            estado = Bases.Encriptar("?ACTIVADO PRO?");
             string fecha_activacion;
-            fecha_activacion = CONEXION.Encryptar_en_texto.Encriptar(this.TXTFECHA_SISTEMA.Text.Trim());
+            fecha_activacion = Bases.Encriptar(this.TXTFECHA_SISTEMA.Text.Trim());
             try
             {
 

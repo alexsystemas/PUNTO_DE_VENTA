@@ -353,7 +353,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
             SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc",CONEXION.Encryptar_en_texto.Encriptar (SerialPC));
+            com.Parameters.AddWithValue("@id_serial_pc",Bases.Encriptar (SerialPC));
             try
             {
                 con.Open();

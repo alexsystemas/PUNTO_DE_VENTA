@@ -76,8 +76,6 @@
     <Compile Include="CONEXION\Agregar_ceros_adelante_De_numero.cs" />
     <Compile Include="CONEXION\cambiar_el_formato_de_seprador_de_decimales.cs" />
     <Compile Include="CONEXION\CONEXIONMAESTRA.cs" />
-    <Compile Include="CONEXION\Encryptar_en_texto.cs" />
-    <Compile Include="CONEXION\Obtener_serial_de_PC.cs" />
     <Compile Include="CONEXION\total_en_letras.cs" />
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
@@ -134,6 +132,12 @@
     </Compile>
     <Compile Include="PRESENT\CAJA\CIERRE_DE_CAJA.Designer.cs">
       <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\CAJA\Listado_gastos_ingresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\CAJA\Listado_gastos_ingresos.Designer.cs">
+      <DependentUpon>Listado_gastos_ingresos.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CLIENTES_PROVEEDORES\clientes.cs">
       <SubType>Form</SubType>
@@ -310,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CAJA\CIERRE_DE_CAJA.resx">
       <DependentUpon>CIERRE_DE_CAJA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\CAJA\Listado_gastos_ingresos.resx">
+      <DependentUpon>Listado_gastos_ingresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\clientes.resx">
       <DependentUpon>clientes.cs</DependentUpon>

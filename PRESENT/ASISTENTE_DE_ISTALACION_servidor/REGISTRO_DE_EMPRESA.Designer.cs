@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(REGISTRO_DE_EMPRESA));
             this.pnlIzquido = new System.Windows.Forms.Panel();
-            this.lblSerialPc = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.TXTTRABAJASCONIMPUESTOS = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlDerAzul = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -77,8 +77,8 @@
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlIzquido.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenEmpresa)).BeginInit();
@@ -91,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel9.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlIzquido
@@ -105,21 +104,14 @@
             this.pnlIzquido.Size = new System.Drawing.Size(256, 450);
             this.pnlIzquido.TabIndex = 0;
             // 
-            // lblSerialPc
+            // panel2
             // 
-            this.lblSerialPc.AutoSize = true;
-            this.lblSerialPc.Location = new System.Drawing.Point(22, 63);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(41, 13);
-            this.lblSerialPc.TabIndex = 5;
-            this.lblSerialPc.Text = "label12";
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(7, 40);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(98, 20);
-            this.txtFecha.TabIndex = 4;
+            this.panel2.Controls.Add(this.TXTTRABAJASCONIMPUESTOS);
+            this.panel2.Controls.Add(this.txtFecha);
+            this.panel2.Location = new System.Drawing.Point(5, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(160, 185);
+            this.panel2.TabIndex = 6;
             // 
             // TXTTRABAJASCONIMPUESTOS
             // 
@@ -127,6 +119,13 @@
             this.TXTTRABAJASCONIMPUESTOS.Name = "TXTTRABAJASCONIMPUESTOS";
             this.TXTTRABAJASCONIMPUESTOS.Size = new System.Drawing.Size(103, 20);
             this.TXTTRABAJASCONIMPUESTOS.TabIndex = 3;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(7, 40);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(98, 20);
+            this.txtFecha.TabIndex = 4;
             // 
             // pictureBox2
             // 
@@ -572,7 +571,7 @@
             // 
             this.BTN_SIGUIENTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.BTN_SIGUIENTE.ForeColor = System.Drawing.Color.White;
-            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(46, 2);
+            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(13, 8);
             this.BTN_SIGUIENTE.Name = "BTN_SIGUIENTE";
             this.BTN_SIGUIENTE.Size = new System.Drawing.Size(75, 23);
             this.BTN_SIGUIENTE.TabIndex = 0;
@@ -610,16 +609,6 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(895, 401);
             this.pnlPrincipal.TabIndex = 8;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.TXTTRABAJASCONIMPUESTOS);
-            this.panel2.Controls.Add(this.lblSerialPc);
-            this.panel2.Controls.Add(this.txtFecha);
-            this.panel2.Location = new System.Drawing.Point(5, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 22);
-            this.panel2.TabIndex = 6;
-            // 
             // REGISTRO_DE_EMPRESA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,6 +624,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.REGISTRO_DE_EMPRESA_Load);
             this.pnlIzquido.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -653,8 +644,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel9.ResumeLayout(false);
             this.pnlPrincipal.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -706,7 +695,6 @@
         private System.Windows.Forms.DateTimePicker txtFecha;
         private System.Windows.Forms.OpenFileDialog dlg;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Label lblSerialPc;
         private System.Windows.Forms.Button BTN_SIGUIENTE;
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.Panel panel2;

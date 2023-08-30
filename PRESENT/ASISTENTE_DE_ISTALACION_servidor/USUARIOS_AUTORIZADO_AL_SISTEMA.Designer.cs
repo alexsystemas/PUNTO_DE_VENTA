@@ -32,12 +32,11 @@
             this.pnlIzqLogo = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.txtfechaInicio = new System.Windows.Forms.Label();
-            this.lblIDSERIAL = new System.Windows.Forms.Label();
             this.txtfechaFinalOK = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlIzqAzul = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.lblSerialPc = new System.Windows.Forms.Panel();
+            this.pn1 = new System.Windows.Forms.Panel();
             this.txtConfirmaContraseña = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -57,7 +56,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pnlIzqLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.lblSerialPc.SuspendLayout();
+            this.pn1.SuspendLayout();
             this.pnlCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +65,6 @@
             // 
             this.pnlIzqLogo.Controls.Add(this.label11);
             this.pnlIzqLogo.Controls.Add(this.txtfechaInicio);
-            this.pnlIzqLogo.Controls.Add(this.lblIDSERIAL);
             this.pnlIzqLogo.Controls.Add(this.txtfechaFinalOK);
             this.pnlIzqLogo.Controls.Add(this.pictureBox2);
             this.pnlIzqLogo.Controls.Add(this.pnlIzqAzul);
@@ -93,15 +91,6 @@
             this.txtfechaInicio.Size = new System.Drawing.Size(41, 13);
             this.txtfechaInicio.TabIndex = 6;
             this.txtfechaInicio.Text = "label11";
-            // 
-            // lblIDSERIAL
-            // 
-            this.lblIDSERIAL.AutoSize = true;
-            this.lblIDSERIAL.Location = new System.Drawing.Point(15, 69);
-            this.lblIDSERIAL.Name = "lblIDSERIAL";
-            this.lblIDSERIAL.Size = new System.Drawing.Size(41, 13);
-            this.lblIDSERIAL.TabIndex = 5;
-            this.lblIDSERIAL.Text = "label11";
             // 
             // txtfechaFinalOK
             // 
@@ -139,26 +128,26 @@
             this.pnlTop.Size = new System.Drawing.Size(896, 49);
             this.pnlTop.TabIndex = 1;
             // 
-            // lblSerialPc
+            // pn1
             // 
-            this.lblSerialPc.Controls.Add(this.txtConfirmaContraseña);
-            this.lblSerialPc.Controls.Add(this.txtContraseña);
-            this.lblSerialPc.Controls.Add(this.txtUsuario);
-            this.lblSerialPc.Controls.Add(this.label5);
-            this.lblSerialPc.Controls.Add(this.txtNombre);
-            this.lblSerialPc.Controls.Add(this.label7);
-            this.lblSerialPc.Controls.Add(this.label9);
-            this.lblSerialPc.Controls.Add(this.label8);
-            this.lblSerialPc.Controls.Add(this.label6);
-            this.lblSerialPc.Controls.Add(this.label4);
-            this.lblSerialPc.Controls.Add(this.label3);
-            this.lblSerialPc.Controls.Add(this.label2);
-            this.lblSerialPc.Controls.Add(this.label1);
-            this.lblSerialPc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSerialPc.Location = new System.Drawing.Point(256, 49);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(896, 176);
-            this.lblSerialPc.TabIndex = 2;
+            this.pn1.Controls.Add(this.txtConfirmaContraseña);
+            this.pn1.Controls.Add(this.txtContraseña);
+            this.pn1.Controls.Add(this.txtUsuario);
+            this.pn1.Controls.Add(this.label5);
+            this.pn1.Controls.Add(this.txtNombre);
+            this.pn1.Controls.Add(this.label7);
+            this.pn1.Controls.Add(this.label9);
+            this.pn1.Controls.Add(this.label8);
+            this.pn1.Controls.Add(this.label6);
+            this.pn1.Controls.Add(this.label4);
+            this.pn1.Controls.Add(this.label3);
+            this.pn1.Controls.Add(this.label2);
+            this.pn1.Controls.Add(this.label1);
+            this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pn1.Location = new System.Drawing.Point(256, 49);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(896, 176);
+            this.pn1.TabIndex = 2;
             // 
             // txtConfirmaContraseña
             // 
@@ -341,7 +330,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 450);
             this.Controls.Add(this.pnlCentral);
-            this.Controls.Add(this.lblSerialPc);
+            this.Controls.Add(this.pn1);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlIzqLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -352,8 +341,8 @@
             this.pnlIzqLogo.ResumeLayout(false);
             this.pnlIzqLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.lblSerialPc.ResumeLayout(false);
-            this.lblSerialPc.PerformLayout();
+            this.pn1.ResumeLayout(false);
+            this.pn1.PerformLayout();
             this.pnlCentral.ResumeLayout(false);
             this.pnlCentral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -366,7 +355,7 @@
         private System.Windows.Forms.Panel pnlIzqLogo;
         private System.Windows.Forms.Panel pnlIzqAzul;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Panel lblSerialPc;
+        private System.Windows.Forms.Panel pn1;
         private System.Windows.Forms.Panel pnlCentral;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtConfirmaContraseña;
@@ -386,7 +375,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BTN_SIGUIENTE;
         private System.Windows.Forms.Label txtfechaFinalOK;
-        private System.Windows.Forms.Label lblIDSERIAL;
         private System.Windows.Forms.Label txtfechaInicio;
         private System.Windows.Forms.Label label11;
     }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Management;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 {
@@ -19,6 +20,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
         {
             InitializeComponent();
         }
+        string lblSerialPc;
         public static string correo;
         public bool validar_Mail(string sMail)
         {
@@ -187,20 +189,13 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 
                 cmd.Parameters.AddWithValue("@descripcion", txtCaja.Text);
                 cmd.Parameters.AddWithValue("@Tema", "Redentor");
-                cmd.Parameters.AddWithValue("@Serial_PC", lblSerialPc.Text);
+                cmd.Parameters.AddWithValue("@Serial_PC", lblSerialPc);
                 cmd.Parameters.AddWithValue("@Impresora_Ticket", "Ninguna");
                 cmd.Parameters.AddWithValue("@Impresora_A4", "Ninguna");
                 cmd.Parameters.AddWithValue("@Tipo", "PRINCIPAL");
                 cmd.ExecuteNonQuery();
                 con.Close();
-                //               @descripcion varchar(50),
-
-
-                //@Tema varchar(50),
-                // @Serial_PC varchar(50),
-                //  @Impresora_Ticket varchar(max),
-                //  @Impresora_A4 varchar(max),
-                //  @Tipo varchar(50)
+          
             }
             catch (Exception ex)
             {
@@ -356,11 +351,8 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 
         private void REGISTRO_DE_EMPRESA_Load(object sender, EventArgs e)
         {
+            Bases.Obtener_serialPC(ref lblSerialPc);
             
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-
-            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblSerialPc.Text = lblSerialPc.Text.Trim();
             txtLectora.Checked = true;
             txtIngresarTeclado.Checked = false;
             No.Checked = true;

@@ -12,6 +12,8 @@ using System.IO;
 using System.Net.Mail;
 using System.Management;
 using System.Net;
+using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.CONEXION;
 
 namespace PUNTO_DE_VENTA.PRESENT
 {
@@ -20,12 +22,26 @@ namespace PUNTO_DE_VENTA.PRESENT
         int contador;
         int contadorCajas;
         int contador_Movimientos_de_caja;
-        public static String idusuariovariable;
-        public static String idcajavariable;
+        public static int idusuariovariable;
+        public static int idcajavariable;
+        int idUsuarioVerificador;
+        string lblSerialPC;
+        string lblSerialPCLocal;
+        string cajero = "Cajero(si esta autorizado para manejar dinero)";
+        string vendedor = "Solo Ventas(no esta autorizado para manejar dinero)";
+        string administrador = "Administrador(control total)";
+        string lblRol;
+        string txtlogin;
+        string lblaperturaDeCaja;
+
+
+
+
         public LOGIN()
         {
             InitializeComponent();
         }
+
         public void DIBUJARusuarios()
         {
             try
@@ -37,66 +53,66 @@ namespace PUNTO_DE_VENTA.PRESENT
                 SqlCommand cmd = new SqlCommand();
                 cmd = new SqlCommand("select * from USUARIO2 WHERE Estado = 'ACTIVO' ", con); // ejecutamos procedimiento almacenado
                 SqlDataReader rdr = cmd.ExecuteReader();
-            
 
 
 
-            while (rdr.Read()) // bucle tipo while 
-            {
-                Label b = new Label(); // declaramos un label llamdo b
-                Panel p1 = new Panel(); // declaramos un panel llamdo p1
-                PictureBox I1 = new PictureBox(); // declaramos un pictureBox lllamdo I1
 
-                b.Text = rdr["Login"].ToString(); // el testo del label b va jalar la columna del procedimento 
-                b.Name = rdr["idUsuario"].ToString();// el nombre del label va jalar el idUsuario
-                b.Size = new System.Drawing.Size(163, 42);// asignamos un tamaño
-                b.Font = new System.Drawing.Font("Microsoft Sans Serif", 13);// asignamos un tipo de letra
-                b.BackColor = Color.FromArgb(236, 240, 241);//asignamos un color de fondo
-                b.ForeColor = Color.FromArgb(0, 85, 128);// asignamos el color de la letra
-                b.Dock = DockStyle.Bottom;// agregamos la pocision del dock 
-                b.TextAlign = ContentAlignment.MiddleCenter;// agregamos la pocision de la letra
-                b.Cursor = Cursors.Hand;//agregamos el tipo de cursor
+                while (rdr.Read()) // bucle tipo while 
+                {
+                    Label b = new Label(); // declaramos un label llamdo b
+                    Panel p1 = new Panel(); // declaramos un panel llamdo p1
+                    PictureBox I1 = new PictureBox(); // declaramos un pictureBox lllamdo I1
 
-                p1.Size = new System.Drawing.Size(163, 140);//asiganamos el tamaño de panel
-                p1.BorderStyle = BorderStyle.None;// quitamos la propiedad border
-                p1.BackColor = Color.FromArgb(226, 226, 226);// asignamos un color a panel
+                    b.Text = rdr["Login"].ToString(); // el testo del label b va jalar la columna del procedimento 
+                    b.Name = rdr["idUsuario"].ToString();// el nombre del label va jalar el idUsuario
+                    b.Size = new System.Drawing.Size(163, 42);// asignamos un tamaño
+                    b.Font = new System.Drawing.Font("Microsoft Sans Serif", 13);// asignamos un tipo de letra
+                    b.BackColor = Color.FromArgb(236, 240, 241);//asignamos un color de fondo
+                    b.ForeColor = Color.FromArgb(0, 85, 128);// asignamos el color de la letra
+                    b.Dock = DockStyle.Bottom;// agregamos la pocision del dock 
+                    b.TextAlign = ContentAlignment.MiddleCenter;// agregamos la pocision de la letra
+                    b.Cursor = Cursors.Hand;//agregamos el tipo de cursor
+
+                    p1.Size = new System.Drawing.Size(163, 140);//asiganamos el tamaño de panel
+                    p1.BorderStyle = BorderStyle.None;// quitamos la propiedad border
+                    p1.BackColor = Color.FromArgb(226, 226, 226);// asignamos un color a panel
 
 
-                I1.Size = new System.Drawing.Size(163, 95); //asignamos un tamaño a nuestro pictureBox
-                I1.Dock = DockStyle.Top;// asiganos pocision del I1
-                I1.BackgroundImage = null;// el tratamiento de la imagen va estar en null
-                byte[] bi = (Byte[])rdr["Icono"];//se pone en byte y luego obtiene la variable icono de nuetra tabla
-                MemoryStream ms = new MemoryStream(bi); // asemos una conversion de datos del rdr
-                I1.Image = Image.FromStream(ms);
-                I1.SizeMode = PictureBoxSizeMode.Zoom;//mostramos la ppriedad zoom
-                I1.Tag = rdr["Login"].ToString();
-                I1.Cursor = Cursors.Hand;// avilitamos la propiedad cursor con hand
+                    I1.Size = new System.Drawing.Size(163, 95); //asignamos un tamaño a nuestro pictureBox
+                    I1.Dock = DockStyle.Top;// asiganos pocision del I1
+                    I1.BackgroundImage = null;// el tratamiento de la imagen va estar en null
+                    byte[] bi = (Byte[])rdr["Icono"];//se pone en byte y luego obtiene la variable icono de nuetra tabla
+                    MemoryStream ms = new MemoryStream(bi); // asemos una conversion de datos del rdr
+                    I1.Image = Image.FromStream(ms);
+                    I1.SizeMode = PictureBoxSizeMode.Zoom;//mostramos la ppriedad zoom
+                    I1.Tag = rdr["Login"].ToString();
+                    I1.Cursor = Cursors.Hand;// avilitamos la propiedad cursor con hand
 
-                p1.Controls.Add(b);// agregamos al panel el label b
-                p1.Controls.Add(I1);// egramos al panel el pictureBox
-                b.BringToFront();// decimos que el label estaria adelante
-                flowyoouPanel1.Controls.Add(p1); // en el FlowyouPanel1 agregamos el panel1
+                    p1.Controls.Add(b);// agregamos al panel el label b
+                    p1.Controls.Add(I1);// egramos al panel el pictureBox
+                    b.BringToFront();// decimos que el label estaria adelante
+                    flowyoouPanel1.Controls.Add(p1); // en el FlowyouPanel1 agregamos el panel1
 
-                b.Click += new EventHandler(mieventoLabel); // creamos evento por codigo eventoHandler llamando metodo click
-                I1.Click += new EventHandler(miEventoImagen);
+                    b.Click += new EventHandler(mieventoLabel); // creamos evento por codigo eventoHandler llamando metodo click
+                    I1.Click += new EventHandler(miEventoImagen);
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception)
+            {
+
+
+            }
         }
-           catch (Exception)
-            {
 
-               
-            }
-}
-
-    private void MOSTRAR_PERMISOS()
+        private void mostrar_roles()
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
 
             SqlCommand com = new SqlCommand("mostrar_permisos_por_usuario_ROL_UNICO", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@LOGIN", txtLogin.Text);
+            com.Parameters.AddWithValue("@idusuario", idusuariovariable);
             string importe;
 
 
@@ -105,7 +121,7 @@ namespace PUNTO_DE_VENTA.PRESENT
                 con.Open();
                 importe = Convert.ToString(com.ExecuteScalar());
                 con.Close();
-                lblRol.Text = importe;
+                lblRol = importe;
 
             }
             catch (Exception ex)
@@ -119,36 +135,32 @@ namespace PUNTO_DE_VENTA.PRESENT
         }
         private void miEventoImagen(System.Object sender, EventArgs e)
         {
-             txtLogin.Text = ((PictureBox)sender).Tag.ToString();// traemos la propiedad Tag de nuetro pictureBox
-             panelIngresoDeContrasena.Visible = true;
-             panelUsuarios.Visible = false;
-             MOSTRAR_PERMISOS();
+            txtlogin = Convert.ToString(((PictureBox)sender).Tag);
+            panelIngresoDeContrasena.Visible = true;
+            panelUsuarios.Visible = false;
 
-            
+
+
 
         }
         private void mieventoLabel(System.Object sender, EventArgs e)
         {
-              txtLogin.Text = ((Label)sender).Text; //Traemos la propiedad del texto de mi label
-              panelIngresoDeContrasena.Visible = true; // el panel lo hacemos visible
-              panelUsuarios.Visible = false;// ocultamos el panel
-              MOSTRAR_PERMISOS();
-
-
-            
+            txtlogin = ((Label)sender).Text;
+            panelIngresoDeContrasena.Visible = true; // el panel lo hacemos visible
+            panelUsuarios.Visible = false;// ocultamos el panel
         }
         private void LOGIN_Load(object sender, EventArgs e)
         {
-            DIBUJARusuarios();
-            timer1.Start();
+
+            validar_conexion();
             escalar_paneles();
         }
 
         void escalar_paneles()
         {
-            panelUsuarios.Size = new System.Drawing.Size (794, 618);
+            panelUsuarios.Size = new System.Drawing.Size(794, 618);
             panelIngresoDeContrasena.Size = new System.Drawing.Size(630, 568);
-            panelRestaurar_Cuenta.Size=new System.Drawing.Size(553, 223);
+            panelRestaurar_Cuenta.Size = new System.Drawing.Size(553, 223);
             PdCarga.Size = new System.Drawing.Size(175, 153);
 
             panelIngresoDeContrasena.Visible = false;
@@ -158,7 +170,7 @@ namespace PUNTO_DE_VENTA.PRESENT
             panelRestaurar_Cuenta.Location = new Point((Width - panelRestaurar_Cuenta.Width) / 2, (Height - panelRestaurar_Cuenta.Height) / 2);
 
         }
-        private void ListarAPERTURAS_de_detalle_de_cierres_de_caja()
+        private void ListarCierres_de_caja()
         {
             try
             {
@@ -170,7 +182,7 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
+                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPC);
                 da.Fill(dt);
                 datalistado_detalle_cierre_de_caja.DataSource = dt;
                 con.Close();
@@ -185,10 +197,10 @@ namespace PUNTO_DE_VENTA.PRESENT
         }
         private void TxtPassword_TextChanged_1(object sender, EventArgs e)
         {
-           
+
             Iniciar_sesion_correcto(); //mandamos llamar el metodo
         }
-        private void contar_aperturas_de_cierres_de_caja() // creamos un metodo para realizar un conteo
+        private void contar_cierres_de_caja() // creamos un metodo para realizar un conteo
         {
             int x;
 
@@ -213,13 +225,13 @@ namespace PUNTO_DE_VENTA.PRESENT
                 cmd.Parameters.AddWithValue("@ingresos", "0.00");
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
                 cmd.Parameters.AddWithValue("@saldo", "0.00");
-                cmd.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
+                cmd.Parameters.AddWithValue("@idusuario", idusuariovariable);
                 cmd.Parameters.AddWithValue("@totalcaluclado", "0.00");
                 cmd.Parameters.AddWithValue("@totalreal", "0.00");
 
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@id_caja", txtidcaja.Text);
+                cmd.Parameters.AddWithValue("@id_caja", idcajavariable);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -230,104 +242,79 @@ namespace PUNTO_DE_VENTA.PRESENT
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Iniciar_sesion_correcto()
+        private void obtener_idusrio()
         {
-           
-
-            cargar_Usuarios();
-            contar();
             try
             {
-                IDUSUARIO.Text = dataListado.SelectedCells[1].Value.ToString();
-                txtNombre.Text = dataListado.SelectedCells[2].Value.ToString();
-                idusuariovariable = IDUSUARIO.Text;
+                idusuariovariable = Convert.ToInt32(dataListado.SelectedCells[1].Value);
             }
             catch
             {
 
             }
+        }
+        private void Iniciar_sesion_correcto()
+        {
+            cargar_Usuarios();
+            contar();
 
-                if (contador > 0)
+            if (contador > 0)
             {
-                   ListarAPERTURAS_de_detalle_de_cierres_de_caja();
-                   contar_aperturas_de_cierres_de_caja();
-                   if (contadorCajas == 0 & lblRol.Text != "Solo Ventas(no esta autorizado para manejar dinero)")
-                    {
-                         aperturar_detalle_de_cierre_caja();
-                         lblaperturaDeCaja.Text = "Nuevo*****";
-                         timer2.Start();
-
-                     }
-                else
+                obtener_idusrio();
+                mostrar_roles();
+                if (lblRol != cajero)
                 {
-                    if (lblRol.Text != "Solo Ventas(no esta autorizado para manejar dinero)")
-                    {
-                        MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario();
-                        contar_MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario();
-                        try
-                        {
-                            lblusuario_queinicioCaja.Text = datalistado_detalle_cierre_de_caja.SelectedCells[1].Value.ToString();
-                            lblnombredeCajero.Text = datalistado_detalle_cierre_de_caja.SelectedCells[2].Value.ToString();
-                        }
-                        catch
-                        {
-
-                        }
-                        if (contador_Movimientos_de_caja == 0)
-
-                        {
-
-                            if (lblusuario_queinicioCaja.Text != "admin" & txtLogin.Text == "admin")
-                            {
-                               // MessageBox.Show("Continuaras Turno de *" + lblnombredeCajero.Text + " Todos los Registros seran con ese Usuario", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                lblpermisodeCaja.Text = "correcto";
-                            }
-                            if (lblusuario_queinicioCaja.Text == "admin" & txtLogin.Text == "admin")
-                            {
-
-                                lblpermisodeCaja.Text = "correcto";
-                            }
-
-                            else if (lblusuario_queinicioCaja.Text != txtLogin.Text)
-                            {
-                                MessageBox.Show("Para poder continuar con el Turno de *" + lblnombredeCajero.Text + "* ,Inicia sesion con el Usuario " + lblusuario_queinicioCaja.Text + " -ó-el Usuario *admin*", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                lblpermisodeCaja.Text = "vacio";
-
-                            }
-                            else if (lblusuario_queinicioCaja.Text == txtLogin.Text)
-                            {
-                                lblpermisodeCaja.Text = "correcto";
-                            }
-                        }
-                        else
-                        {
-                            lblpermisodeCaja.Text = "correcto";
-                        }
-                        if (lblpermisodeCaja.Text == "correcto")
-                        {
-                            lblaperturaDeCaja.Text = "Aperturado";
-                            timer2.Start();
-
-                        }
-
-                    }
-                    else
+                    timerValidaRol.Start();
+                }
+                else if (lblRol == cajero)
                 {
-                    timer2.Start();
+                    validar_aperturas_de_caja();
                 }
-
-
-                }
-
 
 
             }
+        } 
+        private void obtener_usuario_que_aperturo_caja()
+        {
+            try
+            {
+                lblusuario_queinicioCaja.Text = datalistado_detalle_cierre_de_caja.SelectedCells[1].Value.ToString();
+                lblnombredeCajero.Text = datalistado_detalle_cierre_de_caja.SelectedCells[2].Value.ToString();
+            }
+            catch
+            {
 
+            }
         }
+        private void validar_aperturas_de_caja()
+        {
+            ListarCierres_de_caja();
+            contar_cierres_de_caja();
+            if (contadorCajas == 0)
+            {
+                aperturar_detalle_de_cierre_caja();
+                lblaperturaDeCaja = "Nuevo*****";
+                timerValidaRol.Start();
+                
+            }
+            else
+            {
+                mostrar_movimientos_de_caja_por_serial_y_usuario();
+                contar_movimientos_de_caja_por_usuario();
+                if (contador_Movimientos_de_caja==0)
+                {
+                    obtener_usuario_que_aperturo_caja();
+                    MessageBox.Show("Para poder continuar con el Turno de *" + lblnombredeCajero.Text + "* ,Inicia sesion con el Usuario " + lblusuario_queinicioCaja.Text + " -ó-el Usuario *admin*", "Caja Iniciada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-        private void MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario()
+                }
+                else
+                {
+                    lblaperturaDeCaja = "Aperturado";
+                    timerValidaRol.Start();
+                }
+            }
+        }
+        private void mostrar_movimientos_de_caja_por_serial_y_usuario()
         {
             try
             {
@@ -339,8 +326,8 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 da = new SqlDataAdapter("MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPc.Text);
-                da.SelectCommand.Parameters.AddWithValue("@idusuario", IDUSUARIO.Text);
+                da.SelectCommand.Parameters.AddWithValue("@serial", lblSerialPC);
+                da.SelectCommand.Parameters.AddWithValue("@idusuario", idusuariovariable);
                 da.Fill(dt);
                 datalistado_movimientos_validar.DataSource = dt;
                 con.Close();
@@ -353,7 +340,7 @@ namespace PUNTO_DE_VENTA.PRESENT
             }
 
         }
-        private void contar_MOSTRAR_MOVIMIENTOS_DE_CAJA_POR_SERIAL_y_usuario()
+        private void contar_movimientos_de_caja_por_usuario()
         {
             int x;
 
@@ -387,8 +374,8 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 da = new SqlDataAdapter("validar_usuario", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@password",CONEXION.Encryptar_en_texto.Encriptar (txtPassword.Text));
-                da.SelectCommand.Parameters.AddWithValue("@login", txtLogin.Text);
+                da.SelectCommand.Parameters.AddWithValue("@password",Bases.Encriptar (txtPassword.Text));
+                da.SelectCommand.Parameters.AddWithValue("@login", txtlogin);
 
                 da.Fill(dt);
                 dataListado.DataSource = dt;
@@ -536,7 +523,7 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
+                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPC);
                 da.Fill(dt);
                 datalistado_caja.DataSource = dt;
                 con.Close();
@@ -555,21 +542,17 @@ namespace PUNTO_DE_VENTA.PRESENT
         {
             try
             {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                con.Open();
-                da = new SqlDataAdapter("select * from USUARIO2", con);
-                da.Fill(dt);
-                datalistado_USUARIOS_REGISTRADOS.DataSource = dt;
-                con.Close();
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select idUsuario from USUARIO2", CONEXIONMAESTRA.conectar);
+                idUsuarioVerificador = Convert.ToInt32( da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
                 INDICADOR = "CORRECTO";
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
                 INDICADOR = "INCORRECTO";
+                idUsuarioVerificador = 0;
             }
         }
         private void MOSTRAR_licencia_temporal()
@@ -593,33 +576,24 @@ namespace PUNTO_DE_VENTA.PRESENT
             }
         }
         int txtcontador_USUARIOS;
-        private void contar_USUARIOS()
+        private void validar_conexion()
         {
-            int x;
-            x = datalistado_USUARIOS_REGISTRADOS.Rows.Count;
-            txtcontador_USUARIOS = (x);
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Stop();
             mostrar_usuarios_registrados();
 
             if (INDICADOR == "CORRECTO")
             {
-                contar_USUARIOS();
-                if (txtcontador_USUARIOS == 0)
+                if (idUsuarioVerificador == 0)
                 {
                     Hide();
                     PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA frm = new PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA();
                     frm.ShowDialog();
                     Dispose();
                 }
-              
-
+                else
+                {
+                    DIBUJARusuarios();
+                }
             }
-
-
             if (INDICADOR == "INCORRECTO")
             {
                 Hide();
@@ -627,27 +601,21 @@ namespace PUNTO_DE_VENTA.PRESENT
                 frm.ShowDialog();
                 Dispose();
             }
-            // timer1.Stop();
+            
             try
             {
-
-                ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-               
-                    lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-                    lblSerialPc.Text = lblSerialPc.Text.Trim(); 
-
-                    MOSTRAR_CAJA_POR_SERIAL();
-                    try
-                    {
-                    txtidcaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
+                Bases.Obtener_serialPC(ref lblSerialPC);
+                MOSTRAR_CAJA_POR_SERIAL();
+                try
+                {
+                    idcajavariable =Convert.ToInt32( datalistado_caja.SelectedCells[1].Value);
                     lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
-                    idcajavariable = txtidcaja.Text;
 
                 }
-                    catch (Exception ex)
-                     {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
-                     }
+                }
             }
             catch (Exception ex)
             {
@@ -657,40 +625,40 @@ namespace PUNTO_DE_VENTA.PRESENT
             MOSTRAR_licencia_temporal();
             try
             {
-                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime( CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
-                lblSerialPCLocal.Text = (CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
-                lblEstadoLicencia.Text = (CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString()));
-                txtfecha_Inicio_licencia_temporal.Value = Convert.ToDateTime(CONEXION.Encryptar_en_texto.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
+                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime(Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
+                lblSerialPCLocal= (Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
+                lblEstadoLicencia.Text = (Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString()));
+                txtfecha_Inicio_licencia_temporal.Value = Convert.ToDateTime(Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
 
             }
             catch (Exception ex)
             {
 
-              
+
             }
             if (lblEstadoLicencia.Text != "VENCIDO")
             {
                 string fechaHOY = Convert.ToString(DateTime.Now);
                 DateTime fecha_ddmmyy = Convert.ToDateTime(fechaHOY.Split(' ')[0]);
 
-                if(txtfecha_final_licencia_temporal.Value >= fecha_ddmmyy)
+                if (txtfecha_final_licencia_temporal.Value >= fecha_ddmmyy)
                 {
 
                     if (txtfecha_Inicio_licencia_temporal.Value <= fecha_ddmmyy)
                     {
-                        if(lblEstadoLicencia.Text=="?ACTIVO?")
+                        if (lblEstadoLicencia.Text == "?ACTIVO?")
                         {
                             Ingresar_por_licencia_temporal();
                         }
                         else if (lblEstadoLicencia.Text == "?ACTIVO PRO?")
                         {
-                            Ingresaer_por_licencia_de_paga(); 
+                            Ingresaer_por_licencia_de_paga();
                         }
 
                     }
                     else
                     {
-                       Hide();
+                        Hide();
                         PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
                         frm.ShowDialog();
                         Dispose();
@@ -711,6 +679,11 @@ namespace PUNTO_DE_VENTA.PRESENT
                 frm.ShowDialog();
                 Dispose();
             }
+        }
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+           
+           
         }
         private void Ingresar_por_licencia_temporal()
         {
@@ -829,8 +802,8 @@ namespace PUNTO_DE_VENTA.PRESENT
                 cmd = new SqlCommand("editar_inicio_De_sesion", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@id_usuario", IDUSUARIO.Text);
-                cmd.Parameters.AddWithValue("@Id_serial_Pc", CONEXION.Encryptar_en_texto.Encriptar(lblSerialPc.Text));
+                cmd.Parameters.AddWithValue("@id_usuario", idusuariovariable);
+                cmd.Parameters.AddWithValue("@Id_serial_Pc", lblSerialPC);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -840,10 +813,9 @@ namespace PUNTO_DE_VENTA.PRESENT
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Timer2_Tick(object sender, EventArgs e)
+        private void TimerValidaRol_Tick(object sender, EventArgs e)
         {
-            
+
             if (progressBar1.Value < 100)
             {
                 BackColor = Color.FromArgb(218, 243, 233);
@@ -857,8 +829,8 @@ namespace PUNTO_DE_VENTA.PRESENT
             else
             {
                 progressBar1.Value = 0;
-                timer2.Stop();
-                if (txtLogin.Text == "admin")
+                timerValidaRol.Stop();
+                if (lblRol == administrador)
                 {
                     editar_inicio_De_sesion();
                     this.Hide();
@@ -868,7 +840,7 @@ namespace PUNTO_DE_VENTA.PRESENT
                 }
                 else
                 {
-                    if (lblaperturaDeCaja.Text == "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    if (lblaperturaDeCaja == "Nuevo*****" & lblRol == cajero)
                     {
                         editar_inicio_De_sesion();
                         this.Hide();
@@ -876,7 +848,7 @@ namespace PUNTO_DE_VENTA.PRESENT
                         frm.ShowDialog();
                         Dispose();
                     }
-                    else if (lblaperturaDeCaja.Text != "Nuevo*****" & lblRol.Text == "Cajero (Si esta autorizado para manejar dinero)")
+                    else if (lblaperturaDeCaja == "Aperturado" & lblRol == cajero)
                     {
                         editar_inicio_De_sesion();
                         this.Hide();
@@ -884,7 +856,7 @@ namespace PUNTO_DE_VENTA.PRESENT
                         frm.ShowDialog();
                         Dispose();
                     }
-                    else if (lblRol.Text == "Solo Ventas (no esta autorizado para manejar dinero)")
+                    else if (lblRol == vendedor)
                     {
                         editar_inicio_De_sesion();
                         this.Hide();
@@ -897,7 +869,7 @@ namespace PUNTO_DE_VENTA.PRESENT
 
             }
         }
-
+        
         private void BtnCambiarUsuarios_Click(object sender, EventArgs e)
         {
             panelIngresoDeContrasena.Visible = false;
@@ -909,6 +881,8 @@ namespace PUNTO_DE_VENTA.PRESENT
             panelIngresoDeContrasena.Visible = false;
             panelRestaurar_Cuenta.Visible = true;
         }
+
+     
     }
 
 

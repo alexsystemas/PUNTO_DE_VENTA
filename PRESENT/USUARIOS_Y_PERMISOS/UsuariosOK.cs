@@ -12,6 +12,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using PUNTO_DE_VENTA.LOGIC;
 
+
 namespace PUNTO_DE_VENTA
 {
     public partial class UsuariosOK : Form
@@ -113,7 +114,7 @@ namespace PUNTO_DE_VENTA
                         cmd.CommandType = CommandType.StoredProcedure;//insertamos parametros
                         cmd.Parameters.AddWithValue("@nombres", txtNombre.Text); //insertamos el parametro nombre de a la BD.
                         cmd.Parameters.AddWithValue("@login", txtLogin.Text);
-                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                        cmd.Parameters.AddWithValue("@Password",Bases.Encriptar( txtPassword.Text));
                         cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text);
                         cmd.Parameters.AddWithValue("@Rol", txtRol.Text);
 
