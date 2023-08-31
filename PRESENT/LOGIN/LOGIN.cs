@@ -869,6 +869,7 @@ namespace PUNTO_DE_VENTA.PRESENT
         {
             panelIngresoDeContrasena.Visible = false;
             panelUsuarios.Visible = true;
+            txtPassword.Clear();
         }
 
         private void Button15_Click(object sender, EventArgs e)

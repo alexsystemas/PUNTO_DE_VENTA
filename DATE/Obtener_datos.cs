@@ -154,5 +154,24 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
+        public static void mostrar_inio_de_secion(string serialPC,ref int idusuario)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("mostrar_inicio_De_sesion", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_serial_pc", serialPC);
+                idusuario = Convert.ToInt32(cmd.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
     }
 }

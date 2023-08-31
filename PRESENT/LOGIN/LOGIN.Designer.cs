@@ -106,6 +106,7 @@
             this.panelIngresoDeContrasena = new System.Windows.Forms.Panel();
             this.lblEstadoLicencia = new System.Windows.Forms.Label();
             this.timerValidaRol = new System.Windows.Forms.Timer(this.components);
+            this.PictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PdCarga)).BeginInit();
             this.panelUsuarios.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -123,6 +124,7 @@
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelIngresoDeContrasena.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // PdCarga
@@ -709,7 +711,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(342, 38);
+            this.panel4.Size = new System.Drawing.Size(706, 38);
             this.panel4.TabIndex = 3;
             // 
             // panel5
@@ -779,7 +781,7 @@
             this.lblInicio_de_Seccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lblInicio_de_Seccion.Location = new System.Drawing.Point(0, 0);
             this.lblInicio_de_Seccion.Name = "lblInicio_de_Seccion";
-            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(342, 42);
+            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(706, 42);
             this.lblInicio_de_Seccion.TabIndex = 1;
             this.lblInicio_de_Seccion.Text = "Inicio de Sesion";
             this.lblInicio_de_Seccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1096,6 +1098,7 @@
             // 
             // panelIngresoDeContrasena
             // 
+            this.panelIngresoDeContrasena.Controls.Add(this.PictureBox4);
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLicencia);
             this.panelIngresoDeContrasena.Controls.Add(this.btnCambiarUsuarios);
             this.panelIngresoDeContrasena.Controls.Add(this.panel4);
@@ -1107,14 +1110,14 @@
             this.panelIngresoDeContrasena.Controls.Add(this.button15);
             this.panelIngresoDeContrasena.Location = new System.Drawing.Point(272, 10);
             this.panelIngresoDeContrasena.Name = "panelIngresoDeContrasena";
-            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(342, 315);
+            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(706, 574);
             this.panelIngresoDeContrasena.TabIndex = 2;
             // 
             // lblEstadoLicencia
             // 
             this.lblEstadoLicencia.AutoSize = true;
             this.lblEstadoLicencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEstadoLicencia.Location = new System.Drawing.Point(206, 543);
+            this.lblEstadoLicencia.Location = new System.Drawing.Point(197, 537);
             this.lblEstadoLicencia.Name = "lblEstadoLicencia";
             this.lblEstadoLicencia.Size = new System.Drawing.Size(51, 13);
             this.lblEstadoLicencia.TabIndex = 20;
@@ -1124,6 +1127,17 @@
             // 
             this.timerValidaRol.Interval = 200;
             this.timerValidaRol.Tick += new System.EventHandler(this.TimerValidaRol_Tick);
+            // 
+            // PictureBox4
+            // 
+            this.PictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
+            this.PictureBox4.Location = new System.Drawing.Point(183, 537);
+            this.PictureBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.PictureBox4.Name = "PictureBox4";
+            this.PictureBox4.Size = new System.Drawing.Size(13, 14);
+            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox4.TabIndex = 622;
+            this.PictureBox4.TabStop = false;
             // 
             // LOGIN
             // 
@@ -1164,6 +1178,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panelIngresoDeContrasena.ResumeLayout(false);
             this.panelIngresoDeContrasena.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1246,5 +1261,6 @@
         private System.Windows.Forms.DateTimePicker txtfecha_Inicio_licencia_temporal;
         private System.Windows.Forms.DateTimePicker txtfecha_final_licencia_temporal;
         private System.Windows.Forms.Timer timerValidaRol;
+        internal System.Windows.Forms.PictureBox PictureBox4;
     }
 }
