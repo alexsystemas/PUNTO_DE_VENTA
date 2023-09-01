@@ -28,208 +28,704 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CIERRE_DE_CAJA));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.datalistado_caja = new System.Windows.Forms.DataGridView();
-            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDesdeHasta = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
-            this.txtfechacierre = new System.Windows.Forms.DateTimePicker();
-            this.txtIdCaja = new System.Windows.Forms.Label();
-            this.lblSerialPC = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblFondoDeCaja = new System.Windows.Forms.Label();
+            this.lblVentasEfectivo = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblIngresos = new System.Windows.Forms.Label();
+            this.lblGastos = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblEfectivoGeneral = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.lblVentasEfectivoGeneral = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.btnCobrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.lblEfectivoGeneral.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 697);
+            this.panel1.Size = new System.Drawing.Size(686, 35);
             this.panel1.TabIndex = 0;
             // 
-            // panel4
+            // label1
             // 
-            this.panel4.Controls.Add(this.txtfechacierre);
-            this.panel4.Controls.Add(this.lblSerialPC);
-            this.panel4.Controls.Add(this.txtIdCaja);
-            this.panel4.Controls.Add(this.datalistado_caja);
-            this.panel4.Location = new System.Drawing.Point(5, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(182, 166);
-            this.panel4.TabIndex = 11;
-            // 
-            // datalistado_caja
-            // 
-            this.datalistado_caja.AllowUserToAddRows = false;
-            this.datalistado_caja.AllowUserToResizeRows = false;
-            this.datalistado_caja.BackgroundColor = System.Drawing.Color.Silver;
-            this.datalistado_caja.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistado_caja.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistado_caja.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistado_caja.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datalistado_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistado_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eli});
-            this.datalistado_caja.EnableHeadersVisualStyles = false;
-            this.datalistado_caja.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.datalistado_caja.Location = new System.Drawing.Point(102, 5);
-            this.datalistado_caja.Name = "datalistado_caja";
-            this.datalistado_caja.ReadOnly = true;
-            this.datalistado_caja.RowHeadersVisible = false;
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
-            this.datalistado_caja.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistado_caja.RowTemplate.Height = 30;
-            this.datalistado_caja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado_caja.Size = new System.Drawing.Size(66, 32);
-            this.datalistado_caja.TabIndex = 10;
-            // 
-            // Eli
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.Eli.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Eli.HeaderText = "";
-            this.Eli.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
-            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eli.Name = "Eli";
-            this.Eli.ReadOnly = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 250);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(686, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cuadre de CAJA";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(193, 0);
+            this.panel2.Controls.Add(this.lblDesdeHasta);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(63, 697);
+            this.panel2.Size = new System.Drawing.Size(686, 36);
             this.panel2.TabIndex = 1;
+            // 
+            // lblDesdeHasta
+            // 
+            this.lblDesdeHasta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDesdeHasta.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblDesdeHasta.Location = new System.Drawing.Point(0, 0);
+            this.lblDesdeHasta.Name = "lblDesdeHasta";
+            this.lblDesdeHasta.Size = new System.Drawing.Size(686, 23);
+            this.lblDesdeHasta.TabIndex = 0;
+            this.lblDesdeHasta.Text = "De 12:24 pm a las 10:40 pm -(Turno Actual)";
+            this.lblDesdeHasta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 71);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(686, 66);
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(256, 0);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(544, 49);
-            this.panel3.TabIndex = 1;
+            this.panel3.Size = new System.Drawing.Size(219, 55);
+            this.panel3.TabIndex = 0;
             // 
-            // label2
+            // label3
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(544, 33);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cierre de Caja";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Efectivo en CAJA:";
             // 
-            // btnCerrarCaja
+            // label4
             // 
-            this.btnCerrarCaja.Location = new System.Drawing.Point(590, 55);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(198, 38);
-            this.btnCerrarCaja.TabIndex = 2;
-            this.btnCerrarCaja.Text = "Cerrar Caja";
-            this.btnCerrarCaja.UseVisualStyleBackColor = true;
-            this.btnCerrarCaja.Click += new System.EventHandler(this.BtnCerrarCaja_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(160, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(19, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "0";
             // 
-            // txtfechacierre
+            // panel4
             // 
-            this.txtfechacierre.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfechacierre.Location = new System.Drawing.Point(23, 143);
-            this.txtfechacierre.Name = "txtfechacierre";
-            this.txtfechacierre.Size = new System.Drawing.Size(136, 20);
-            this.txtfechacierre.TabIndex = 4;
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Location = new System.Drawing.Point(228, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(212, 55);
+            this.panel4.TabIndex = 1;
             // 
-            // txtIdCaja
+            // label5
             // 
-            this.txtIdCaja.AutoSize = true;
-            this.txtIdCaja.Location = new System.Drawing.Point(20, 8);
-            this.txtIdCaja.Name = "txtIdCaja";
-            this.txtIdCaja.Size = new System.Drawing.Size(48, 13);
-            this.txtIdCaja.TabIndex = 11;
-            this.txtIdCaja.Text = "txtIdCaja";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(147, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "0";
             // 
-            // lblSerialPC
+            // label6
             // 
-            this.lblSerialPC.AutoSize = true;
-            this.lblSerialPC.Location = new System.Drawing.Point(20, 24);
-            this.lblSerialPC.Name = "lblSerialPC";
-            this.lblSerialPC.Size = new System.Drawing.Size(57, 13);
-            this.lblSerialPC.TabIndex = 11;
-            this.lblSerialPC.Text = "lblSerialPC";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ventas Totales:";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Location = new System.Drawing.Point(446, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(201, 55);
+            this.panel5.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(112, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Ganancias:";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Silver;
+            this.panel6.Location = new System.Drawing.Point(5, 147);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(256, 1);
+            this.panel6.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(266, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 17);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Detalles";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Silver;
+            this.panel7.Location = new System.Drawing.Point(331, 147);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(256, 1);
+            this.panel7.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Controls.Add(this.label17);
+            this.panel8.Controls.Add(this.label16);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.label25);
+            this.panel8.Controls.Add(this.lblGastos);
+            this.panel8.Controls.Add(this.lblIngresos);
+            this.panel8.Controls.Add(this.label22);
+            this.panel8.Controls.Add(this.label21);
+            this.panel8.Controls.Add(this.label20);
+            this.panel8.Controls.Add(this.lblVentasEfectivo);
+            this.panel8.Controls.Add(this.lblFondoDeCaja);
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Location = new System.Drawing.Point(5, 158);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(334, 266);
+            this.panel8.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(334, 32);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Dinero de Caja";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(75, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Fondo de caja:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(75, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Ventas en efectivo:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(75, 98);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Cobros en efectivo:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(75, 126);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Cobros con Tarjeta:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(75, 151);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Pagos en efectivo:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(75, 181);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Ingresos Varios:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(75, 211);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Gastos Varios:";
+            // 
+            // lblFondoDeCaja
+            // 
+            this.lblFondoDeCaja.AutoSize = true;
+            this.lblFondoDeCaja.Location = new System.Drawing.Point(236, 47);
+            this.lblFondoDeCaja.Name = "lblFondoDeCaja";
+            this.lblFondoDeCaja.Size = new System.Drawing.Size(13, 13);
+            this.lblFondoDeCaja.TabIndex = 1;
+            this.lblFondoDeCaja.Text = "0";
+            // 
+            // lblVentasEfectivo
+            // 
+            this.lblVentasEfectivo.AutoSize = true;
+            this.lblVentasEfectivo.Location = new System.Drawing.Point(236, 72);
+            this.lblVentasEfectivo.Name = "lblVentasEfectivo";
+            this.lblVentasEfectivo.Size = new System.Drawing.Size(13, 13);
+            this.lblVentasEfectivo.TabIndex = 1;
+            this.lblVentasEfectivo.Text = "0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(236, 98);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(13, 13);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(236, 126);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(13, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "0";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(236, 151);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(13, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "0";
+            // 
+            // lblIngresos
+            // 
+            this.lblIngresos.AutoSize = true;
+            this.lblIngresos.Location = new System.Drawing.Point(236, 181);
+            this.lblIngresos.Name = "lblIngresos";
+            this.lblIngresos.Size = new System.Drawing.Size(13, 13);
+            this.lblIngresos.TabIndex = 1;
+            this.lblIngresos.Text = "0";
+            // 
+            // lblGastos
+            // 
+            this.lblGastos.AutoSize = true;
+            this.lblGastos.Location = new System.Drawing.Point(236, 211);
+            this.lblGastos.Name = "lblGastos";
+            this.lblGastos.Size = new System.Drawing.Size(13, 13);
+            this.lblGastos.TabIndex = 1;
+            this.lblGastos.Text = "0";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(236, 240);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(17, 17);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "0";
+            // 
+            // lblEfectivoGeneral
+            // 
+            this.lblEfectivoGeneral.Controls.Add(this.panel11);
+            this.lblEfectivoGeneral.Controls.Add(this.label30);
+            this.lblEfectivoGeneral.Controls.Add(this.label31);
+            this.lblEfectivoGeneral.Controls.Add(this.label32);
+            this.lblEfectivoGeneral.Controls.Add(this.label37);
+            this.lblEfectivoGeneral.Controls.Add(this.label38);
+            this.lblEfectivoGeneral.Controls.Add(this.lblVentasEfectivoGeneral);
+            this.lblEfectivoGeneral.Controls.Add(this.label40);
+            this.lblEfectivoGeneral.Controls.Add(this.label41);
+            this.lblEfectivoGeneral.Location = new System.Drawing.Point(345, 158);
+            this.lblEfectivoGeneral.Name = "lblEfectivoGeneral";
+            this.lblEfectivoGeneral.Size = new System.Drawing.Size(334, 266);
+            this.lblEfectivoGeneral.TabIndex = 7;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(75, 98);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(53, 13);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "A Credito:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(75, 72);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(61, 13);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "Con tarjeta:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(236, 126);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(17, 17);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "0";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(236, 98);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(13, 13);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "0";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(236, 72);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(13, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "0";
+            // 
+            // lblVentasEfectivoGeneral
+            // 
+            this.lblVentasEfectivoGeneral.AutoSize = true;
+            this.lblVentasEfectivoGeneral.Location = new System.Drawing.Point(236, 47);
+            this.lblVentasEfectivoGeneral.Name = "lblVentasEfectivoGeneral";
+            this.lblVentasEfectivoGeneral.Size = new System.Drawing.Size(13, 13);
+            this.lblVentasEfectivoGeneral.TabIndex = 1;
+            this.lblVentasEfectivoGeneral.Text = "0";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(75, 47);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(64, 13);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "En efectivo:";
+            // 
+            // label41
+            // 
+            this.label41.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(0, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(334, 32);
+            this.label41.TabIndex = 0;
+            this.label41.Text = "Ventas Totales";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Silver;
+            this.panel10.Location = new System.Drawing.Point(203, 232);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(77, 1);
+            this.panel10.TabIndex = 4;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Silver;
+            this.panel11.Location = new System.Drawing.Point(208, 122);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(77, 1);
+            this.panel11.TabIndex = 4;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Controls.Add(this.label34);
+            this.panel12.Controls.Add(this.label35);
+            this.panel12.Controls.Add(this.label46);
+            this.panel12.Controls.Add(this.label47);
+            this.panel12.Controls.Add(this.label48);
+            this.panel12.Controls.Add(this.label49);
+            this.panel12.Location = new System.Drawing.Point(5, 430);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(334, 133);
+            this.panel12.TabIndex = 6;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Silver;
+            this.panel13.Location = new System.Drawing.Point(203, 102);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(77, 1);
+            this.panel13.TabIndex = 4;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(75, 72);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(57, 13);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "Por Pagar:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(233, 106);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(17, 17);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "0";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(236, 72);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(13, 13);
+            this.label46.TabIndex = 1;
+            this.label46.Text = "0";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(236, 47);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(13, 13);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "0";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(75, 47);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(60, 13);
+            this.label48.TabIndex = 1;
+            this.label48.Text = "Por Cobrar:";
+            // 
+            // label49
+            // 
+            this.label49.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(0, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(334, 32);
+            this.label49.TabIndex = 0;
+            this.label49.Text = "Creditos Aperturados";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCobrar
+            // 
+            this.btnCobrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCobrar.BackgroundImage = global::PUNTO_DE_VENTA.Properties.Resources.gris_azul;
+            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
+            this.btnCobrar.Location = new System.Drawing.Point(5, 569);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(256, 46);
+            this.btnCobrar.TabIndex = 646;
+            this.btnCobrar.Text = "Cerrar Caja";
+            this.btnCobrar.UseVisualStyleBackColor = false;
             // 
             // CIERRE_DE_CAJA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(800, 697);
-            this.Controls.Add(this.btnCerrarCaja);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(686, 697);
+            this.Controls.Add(this.btnCobrar);
+            this.Controls.Add(this.lblEfectivoGeneral);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CIERRE_DE_CAJA";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "txtFechaCierre";
             this.Load += new System.EventHandler(this.CIERRE_DE_CAJA_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.lblEfectivoGeneral.ResumeLayout(false);
+            this.lblEfectivoGeneral.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblDesdeHasta;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCerrarCaja;
-        private System.Windows.Forms.DateTimePicker txtfechacierre;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView datalistado_caja;
-        private System.Windows.Forms.DataGridViewImageColumn Eli;
-        private System.Windows.Forms.Label lblSerialPC;
-        private System.Windows.Forms.Label txtIdCaja;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblGastos;
+        private System.Windows.Forms.Label lblIngresos;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblVentasEfectivo;
+        private System.Windows.Forms.Label lblFondoDeCaja;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel lblEfectivoGeneral;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblVentasEfectivoGeneral;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Button btnCobrar;
     }
 }

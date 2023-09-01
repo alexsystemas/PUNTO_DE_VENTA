@@ -44,7 +44,7 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         {
             Bases.Obtener_serialPC(ref lblSerialPc);
             Obtener_datos.obtener_id_caja_PorSerial(ref idcajavariable);
-            Obtener_datos.mostrar_inio_de_secion(lblSerialPc, ref idusuariovariable);
+            Obtener_datos.mostrar_inio_de_secion( ref idusuariovariable);
         }
 
 

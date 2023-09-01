@@ -52,8 +52,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
            
             MOSTRAR_TIPO_DE_BUSQUEDA();
             Obtener_id_de_cliente_estandar();
-            Obtener_id_de_usuario_que_inicio_sesion();
-
+            Obtener_datos.mostrar_inio_de_secion(ref idusuario_que_inicio_sesion);
             if (Tipo_de_busqueda == "TECLADO")
             {
                 lbltipodebusqueda2.Text = "Buscar con TECLADO";
@@ -347,24 +346,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        private void Obtener_id_de_usuario_que_inicio_sesion()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc",Bases.Encriptar (SerialPC));
-            try
-            {
-                con.Open();
-                idusuario_que_inicio_sesion = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
+      
         private void Obtener_id_venta_recien_Creada()
         {
             SqlConnection con = new SqlConnection();

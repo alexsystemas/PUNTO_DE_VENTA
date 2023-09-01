@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
 using System.Data.SqlClient;
-
 using System.Globalization;
 using System.Threading;
-
+using PUNTO_DE_VENTA.DATE;
 
 namespace PUNTO_DE_VENTA.PRESENT.CAJA
 {
@@ -22,76 +21,56 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         {
             InitializeComponent();
         }
-
-        private void BtnCerrarCaja_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("CERRAR_CAJA", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idcaja", txtIdCaja.Text);
-                cmd.Parameters.AddWithValue("@fechafin", txtfechacierre.Value);
-                cmd.Parameters.AddWithValue("@fechacierre", txtfechacierre.Value);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Application.Exit();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
+        int idcaja;
+        DateTime fechaInicial;
+        DateTime fechaFinal=DateTime.Now;
+        double saldoInicial;
+        double ventasEfectivo;
+        double ingresosEfectivo;
+        double gastosEfectivo;
         private void CIERRE_DE_CAJA_Load(object sender, EventArgs e)
         {
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-            lblSerialPC.Text = lblSerialPC.Text.Trim();
-                lblSerialPC.Text = MOS.Properties["SerialNumber"].Value.ToString();
-                MOSTRAR_CAJA_POR_SERIAL();
-                try
-                {
-                    txtIdCaja.Text = datalistado_caja.SelectedCells[1].Value.ToString();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
+            mostrar_cierre_de_caja_pendientes();
+            lblDesdeHasta.Text = "Corte de caja desde: " + fechaInicial + " Hasta: " + DateTime.Now;
+            obtener_saldo_inicial();
+            obtener_ventas_En_Efectivo();
+            obtener_gastos_por_turno();
+            obtener_ingresos_por_turno();
         }
 
-        private void MOSTRAR_CAJA_POR_SERIAL()
+        private void obtener_ingresos_por_turno()
         {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlDataAdapter da;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-                con.Open();
+            Obtener_datos.sumar_ingresos_por_turno(idcaja, fechaInicial, fechaFinal, ref ingresosEfectivo);
+            lblIngresos.Text = ingresosEfectivo.ToString();
+        }
+        private void obtener_gastos_por_turno()
+        {
+            Obtener_datos.sumar_gastos_por_turno(idcaja, fechaInicial, fechaFinal, ref gastosEfectivo);
+            lblGastos.Text = gastosEfectivo.ToString();
+        }
 
-                da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@Serial", lblSerialPC.Text);
-                da.Fill(dt);
-                datalistado_caja.DataSource = dt;
-                con.Close();
+        private void obtener_ventas_En_Efectivo()
+        {
+            Obtener_datos.mostrar_ventas_en_efectivo_por_turno(idcaja, fechaInicial, fechaFinal, ref ventasEfectivo);
+            lblVentasEfectivo.Text = ventasEfectivo.ToString();
+            lblVentasEfectivoGeneral.Text = ventasEfectivo.ToString();
+        }
+
+        private void obtener_saldo_inicial()
+        {
+            lblFondoDeCaja.Text = Convert.ToString(saldoInicial);
+        }
+        private void mostrar_cierre_de_caja_pendientes()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_cierre_de_caja_pendiente(ref dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                idcaja = Convert.ToInt32(dr["Id_caja"]);
+                fechaInicial = Convert.ToDateTime(dr["fechainicio"]);
+                saldoInicial = Convert.ToDouble(dr["saldoInicial"]);
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
-
-
         }
     }
 }

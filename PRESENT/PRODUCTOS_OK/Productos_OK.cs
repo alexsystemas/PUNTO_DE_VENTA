@@ -14,6 +14,7 @@ using System.IO;
 using System.Threading;
 using System.Management;
 using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.DATE;
 
 namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
 {
@@ -26,7 +27,9 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
         }
         public static int idUsuario;
         public static int idcaja;
-     
+        
+
+
 
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
@@ -75,69 +78,23 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = true;
         }
-        private void MOSTRAR_CAJA_POR_SERIAL()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
+        
 
-            SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Serial", lblSerialPc.Text);
-            try
-            {
-                con.Open();
-                idcaja = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void mostrar_inicio_de_sesion()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-
-            SqlCommand com = new SqlCommand("mostrar_inicio_De_sesion", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id_serial_pc",Bases.Encriptar( lblSerialPc.Text));
-
-            try
-            {
-                con.Open();
-                idUsuario = Convert.ToInt32(com.ExecuteScalar());
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-
-
-            }
-
-
-        }
+        
         private void Productos_OK_Load(object sender, EventArgs e)
         {
+
+
             pnlPrincipal.Visible = false;
             PANELREGISTRO.Visible = false;
             panelInventario.Visible = false;
             panelGuardar.Visible = true;
             datalistado.Visible = true;
+
+            Bases.Cambiar_idioma_regional();
             mostrar_grupos();
-
-            ManagementObject MOS = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
-
-            lblSerialPc.Text = MOS.Properties["SerialNumber"].Value.ToString();
-            lblSerialPc.Text = lblSerialPc.Text.Trim();
-            // MessageBox.Show("SERIAL" + lblSerialPc);
-
-            mostrar_inicio_de_sesion();
-            MOSTRAR_CAJA_POR_SERIAL();
-
+            Obtener_datos.mostrar_inio_de_secion(ref idUsuario);
+            Obtener_datos.obtener_id_caja_PorSerial(ref idcaja);
         }
         private void mostrar_grupos()
         {
@@ -340,7 +297,7 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, ex.StackTrace);
             }
 
         }

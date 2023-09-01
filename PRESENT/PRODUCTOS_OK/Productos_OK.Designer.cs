@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_OK));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblSerialPc = new System.Windows.Forms.Label();
             this.LBL_ESSERVICIO = new System.Windows.Forms.Label();
             this.idusuariovariable = new System.Windows.Forms.Label();
             this.txtnumeroigv = new System.Windows.Forms.Label();
@@ -147,12 +146,11 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 660);
+            this.panel1.Size = new System.Drawing.Size(256, 671);
             this.panel1.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.lblSerialPc);
             this.panel4.Controls.Add(this.LBL_ESSERVICIO);
             this.panel4.Controls.Add(this.idusuariovariable);
             this.panel4.Controls.Add(this.txtnumeroigv);
@@ -165,17 +163,8 @@
             this.panel4.Controls.Add(this.radioButton1);
             this.panel4.Location = new System.Drawing.Point(12, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(15, 19);
+            this.panel4.Size = new System.Drawing.Size(175, 191);
             this.panel4.TabIndex = 13;
-            // 
-            // lblSerialPc
-            // 
-            this.lblSerialPc.AutoSize = true;
-            this.lblSerialPc.Location = new System.Drawing.Point(13, 152);
-            this.lblSerialPc.Name = "lblSerialPc";
-            this.lblSerialPc.Size = new System.Drawing.Size(56, 13);
-            this.lblSerialPc.TabIndex = 0;
-            this.lblSerialPc.Text = "lblSerialPc";
             // 
             // LBL_ESSERVICIO
             // 
@@ -289,7 +278,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(193, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(63, 660);
+            this.panel3.Size = new System.Drawing.Size(63, 671);
             this.panel3.TabIndex = 0;
             // 
             // PANELDEPARTAMENTO
@@ -304,7 +293,7 @@
             this.PANELDEPARTAMENTO.Dock = System.Windows.Forms.DockStyle.Top;
             this.PANELDEPARTAMENTO.Location = new System.Drawing.Point(256, 0);
             this.PANELDEPARTAMENTO.Name = "PANELDEPARTAMENTO";
-            this.PANELDEPARTAMENTO.Size = new System.Drawing.Size(759, 50);
+            this.PANELDEPARTAMENTO.Size = new System.Drawing.Size(1024, 50);
             this.PANELDEPARTAMENTO.TabIndex = 2;
             // 
             // btnImportarExcel
@@ -410,9 +399,10 @@
             this.PANELREGISTRO.Controls.Add(this.label9);
             this.PANELREGISTRO.Controls.Add(this.txtPorcentajeGanancia);
             this.PANELREGISTRO.Controls.Add(this.PorUnidad);
+            this.PANELREGISTRO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PANELREGISTRO.Location = new System.Drawing.Point(0, 0);
             this.PANELREGISTRO.Name = "PANELREGISTRO";
-            this.PANELREGISTRO.Size = new System.Drawing.Size(659, 610);
+            this.PANELREGISTRO.Size = new System.Drawing.Size(1024, 621);
             this.PANELREGISTRO.TabIndex = 14;
             // 
             // panelInventario
@@ -427,9 +417,9 @@
             this.panelInventario.Controls.Add(this.txtStockMinimo);
             this.panelInventario.Controls.Add(this.txtStockHay);
             this.panelInventario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInventario.Location = new System.Drawing.Point(0, 395);
+            this.panelInventario.Location = new System.Drawing.Point(0, 406);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(659, 98);
+            this.panelInventario.Size = new System.Drawing.Size(1024, 98);
             this.panelInventario.TabIndex = 498;
             // 
             // txtfechaoka
@@ -545,9 +535,9 @@
             this.panelGuardar.Controls.Add(this.TGUARDARCAMBIOS);
             this.panelGuardar.Controls.Add(this.btnRegresar);
             this.panelGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelGuardar.Location = new System.Drawing.Point(0, 493);
+            this.panelGuardar.Location = new System.Drawing.Point(0, 504);
             this.panelGuardar.Name = "panelGuardar";
-            this.panelGuardar.Size = new System.Drawing.Size(659, 117);
+            this.panelGuardar.Size = new System.Drawing.Size(1024, 117);
             this.panelGuardar.TabIndex = 497;
             // 
             // lblcosto_inventario
@@ -1048,10 +1038,11 @@
             // pnlPrincipal
             // 
             this.pnlPrincipal.Controls.Add(this.PANELREGISTRO);
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(256, 50);
             this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(1);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(681, 610);
+            this.pnlPrincipal.Size = new System.Drawing.Size(1024, 621);
             this.pnlPrincipal.TabIndex = 3;
             // 
             // datalistado
@@ -1079,7 +1070,7 @@
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.datalistado.RowTemplate.Height = 30;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(759, 610);
+            this.datalistado.Size = new System.Drawing.Size(1024, 621);
             this.datalistado.TabIndex = 37;
             this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_CellClick);
             this.datalistado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_CellDoubleClick);
@@ -1112,7 +1103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 660);
+            this.ClientSize = new System.Drawing.Size(1280, 671);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.datalistado);
             this.Controls.Add(this.PANELDEPARTAMENTO);
@@ -1163,7 +1154,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblSerialPc;
         private System.Windows.Forms.Label LBL_ESSERVICIO;
         private System.Windows.Forms.Label idusuariovariable;
         private System.Windows.Forms.Label txtnumeroigv;
