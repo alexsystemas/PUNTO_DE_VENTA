@@ -1,6 +1,6 @@
 ﻿namespace PUNTO_DE_VENTA.PRESENT.CAJA
 {
-    partial class CIERRE_DE_CAJA
+    partial class lblVentasTotal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CIERRE_DE_CAJA));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lblVentasTotal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,9 +36,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbldineroTotalCaja = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbltotalventas = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,13 +62,12 @@
             this.label22 = new System.Windows.Forms.Label();
             this.lblIngresos = new System.Windows.Forms.Label();
             this.lblGastos = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblEfectivoGeneral = new System.Windows.Forms.Panel();
+            this.lblDineroEncaja = new System.Windows.Forms.Label();
+            this.cierre_Caja = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.lblVentasTotales = new System.Windows.Forms.Label();
+            this.lblVentas_Credito = new System.Windows.Forms.Label();
             this.lblVentasEfectivoGeneral = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
+            this.lblVentas_Tarjeta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -90,7 +90,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.lblEfectivoGeneral.SuspendLayout();
+            this.cierre_Caja.SuspendLayout();
             this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,9 +136,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 71);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -147,9 +147,9 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.lbldineroTotalCaja);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(428, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(219, 55);
             this.panel3.TabIndex = 0;
@@ -164,34 +164,34 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Efectivo en CAJA:";
             // 
-            // label4
+            // lbldineroTotalCaja
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(160, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "0";
+            this.lbldineroTotalCaja.AutoSize = true;
+            this.lbldineroTotalCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldineroTotalCaja.Location = new System.Drawing.Point(160, 14);
+            this.lbldineroTotalCaja.Name = "lbldineroTotalCaja";
+            this.lbldineroTotalCaja.Size = new System.Drawing.Size(19, 20);
+            this.lbldineroTotalCaja.TabIndex = 0;
+            this.lbldineroTotalCaja.Text = "0";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.lbltotalventas);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(228, 3);
+            this.panel4.Location = new System.Drawing.Point(210, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(212, 55);
             this.panel4.TabIndex = 1;
             // 
-            // label5
+            // lbltotalventas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(147, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "0";
+            this.lbltotalventas.AutoSize = true;
+            this.lbltotalventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotalventas.Location = new System.Drawing.Point(147, 14);
+            this.lbltotalventas.Name = "lbltotalventas";
+            this.lbltotalventas.Size = new System.Drawing.Size(19, 20);
+            this.lbltotalventas.TabIndex = 0;
+            this.lbltotalventas.Text = "0";
             // 
             // label6
             // 
@@ -207,7 +207,7 @@
             // 
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(446, 3);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(201, 55);
             this.panel5.TabIndex = 2;
@@ -268,7 +268,7 @@
             this.panel8.Controls.Add(this.label14);
             this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.label12);
-            this.panel8.Controls.Add(this.label25);
+            this.panel8.Controls.Add(this.lblDineroEncaja);
             this.panel8.Controls.Add(this.lblGastos);
             this.panel8.Controls.Add(this.lblIngresos);
             this.panel8.Controls.Add(this.label22);
@@ -420,31 +420,31 @@
             this.lblGastos.TabIndex = 1;
             this.lblGastos.Text = "0";
             // 
-            // label25
+            // lblDineroEncaja
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(236, 240);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(17, 17);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "0";
+            this.lblDineroEncaja.AutoSize = true;
+            this.lblDineroEncaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDineroEncaja.Location = new System.Drawing.Point(236, 240);
+            this.lblDineroEncaja.Name = "lblDineroEncaja";
+            this.lblDineroEncaja.Size = new System.Drawing.Size(17, 17);
+            this.lblDineroEncaja.TabIndex = 1;
+            this.lblDineroEncaja.Text = "0";
             // 
-            // lblEfectivoGeneral
+            // cierre_Caja
             // 
-            this.lblEfectivoGeneral.Controls.Add(this.panel11);
-            this.lblEfectivoGeneral.Controls.Add(this.label30);
-            this.lblEfectivoGeneral.Controls.Add(this.label31);
-            this.lblEfectivoGeneral.Controls.Add(this.label32);
-            this.lblEfectivoGeneral.Controls.Add(this.label37);
-            this.lblEfectivoGeneral.Controls.Add(this.label38);
-            this.lblEfectivoGeneral.Controls.Add(this.lblVentasEfectivoGeneral);
-            this.lblEfectivoGeneral.Controls.Add(this.label40);
-            this.lblEfectivoGeneral.Controls.Add(this.label41);
-            this.lblEfectivoGeneral.Location = new System.Drawing.Point(345, 158);
-            this.lblEfectivoGeneral.Name = "lblEfectivoGeneral";
-            this.lblEfectivoGeneral.Size = new System.Drawing.Size(334, 266);
-            this.lblEfectivoGeneral.TabIndex = 7;
+            this.cierre_Caja.Controls.Add(this.lblVentas_Tarjeta);
+            this.cierre_Caja.Controls.Add(this.panel11);
+            this.cierre_Caja.Controls.Add(this.label30);
+            this.cierre_Caja.Controls.Add(this.label31);
+            this.cierre_Caja.Controls.Add(this.lblVentasTotales);
+            this.cierre_Caja.Controls.Add(this.lblVentas_Credito);
+            this.cierre_Caja.Controls.Add(this.lblVentasEfectivoGeneral);
+            this.cierre_Caja.Controls.Add(this.label40);
+            this.cierre_Caja.Controls.Add(this.label41);
+            this.cierre_Caja.Location = new System.Drawing.Point(345, 158);
+            this.cierre_Caja.Name = "cierre_Caja";
+            this.cierre_Caja.Size = new System.Drawing.Size(334, 266);
+            this.cierre_Caja.TabIndex = 7;
             // 
             // label30
             // 
@@ -464,33 +464,24 @@
             this.label31.TabIndex = 1;
             this.label31.Text = "Con tarjeta:";
             // 
-            // label32
+            // lblVentasTotales
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(236, 126);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(17, 17);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "0";
+            this.lblVentasTotales.AutoSize = true;
+            this.lblVentasTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentasTotales.Location = new System.Drawing.Point(236, 126);
+            this.lblVentasTotales.Name = "lblVentasTotales";
+            this.lblVentasTotales.Size = new System.Drawing.Size(17, 17);
+            this.lblVentasTotales.TabIndex = 1;
+            this.lblVentasTotales.Text = "0";
             // 
-            // label37
+            // lblVentas_Credito
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(236, 98);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(13, 13);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "0";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(236, 72);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(13, 13);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "0";
+            this.lblVentas_Credito.AutoSize = true;
+            this.lblVentas_Credito.Location = new System.Drawing.Point(236, 98);
+            this.lblVentas_Credito.Name = "lblVentas_Credito";
+            this.lblVentas_Credito.Size = new System.Drawing.Size(13, 13);
+            this.lblVentas_Credito.TabIndex = 1;
+            this.lblVentas_Credito.Text = "0";
             // 
             // lblVentasEfectivoGeneral
             // 
@@ -630,14 +621,23 @@
             this.btnCobrar.Text = "Cerrar Caja";
             this.btnCobrar.UseVisualStyleBackColor = false;
             // 
-            // CIERRE_DE_CAJA
+            // lblVentas_Tarjeta
+            // 
+            this.lblVentas_Tarjeta.AutoSize = true;
+            this.lblVentas_Tarjeta.Location = new System.Drawing.Point(236, 72);
+            this.lblVentas_Tarjeta.Name = "lblVentas_Tarjeta";
+            this.lblVentas_Tarjeta.Size = new System.Drawing.Size(13, 13);
+            this.lblVentas_Tarjeta.TabIndex = 5;
+            this.lblVentas_Tarjeta.Text = "0";
+            // 
+            // lblVentasTotal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(686, 697);
             this.Controls.Add(this.btnCobrar);
-            this.Controls.Add(this.lblEfectivoGeneral);
+            this.Controls.Add(this.cierre_Caja);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -647,7 +647,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CIERRE_DE_CAJA";
+            this.Name = "lblVentasTotal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "txtFechaCierre";
             this.Load += new System.EventHandler(this.CIERRE_DE_CAJA_Load);
@@ -662,8 +662,8 @@
             this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.lblEfectivoGeneral.ResumeLayout(false);
-            this.lblEfectivoGeneral.PerformLayout();
+            this.cierre_Caja.ResumeLayout(false);
+            this.cierre_Caja.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.ResumeLayout(false);
@@ -680,9 +680,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbldineroTotalCaja;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbltotalventas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
@@ -698,7 +698,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblDineroEncaja;
         private System.Windows.Forms.Label lblGastos;
         private System.Windows.Forms.Label lblIngresos;
         private System.Windows.Forms.Label label22;
@@ -708,13 +708,12 @@
         private System.Windows.Forms.Label lblFondoDeCaja;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel lblEfectivoGeneral;
+        private System.Windows.Forms.Panel cierre_Caja;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label lblVentasTotales;
+        private System.Windows.Forms.Label lblVentas_Credito;
         private System.Windows.Forms.Label lblVentasEfectivoGeneral;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
@@ -727,5 +726,6 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Label lblVentas_Tarjeta;
     }
 }

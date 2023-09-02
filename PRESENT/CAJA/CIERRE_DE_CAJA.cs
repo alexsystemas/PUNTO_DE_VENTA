@@ -15,9 +15,9 @@ using PUNTO_DE_VENTA.DATE;
 
 namespace PUNTO_DE_VENTA.PRESENT.CAJA
 {
-    public partial class CIERRE_DE_CAJA : Form
+    public partial class lblVentasTotal : Form
     {
-        public CIERRE_DE_CAJA()
+        public lblVentasTotal()
         {
             InitializeComponent();
         }
@@ -28,6 +28,10 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         double ventasEfectivo;
         double ingresosEfectivo;
         double gastosEfectivo;
+        double ventasCredito;
+        double ventasTarjeta;
+        double efectivoEnCaja;
+        double ventastotales;
         private void CIERRE_DE_CAJA_Load(object sender, EventArgs e)
         {
             mostrar_cierre_de_caja_pendientes();
@@ -36,8 +40,21 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             obtener_ventas_En_Efectivo();
             obtener_gastos_por_turno();
             obtener_ingresos_por_turno();
+            mostrar_ventas_Tarjeta_por_turno();
+            mostrar_ventas_creadito_por_turno();
+            calcular();
         }
 
+        private void calcular()
+        {
+            efectivoEnCaja = saldoInicial + ventasEfectivo + ingresosEfectivo - gastosEfectivo;
+            ventastotales = ventasEfectivo + ventasCredito + ventasTarjeta;
+            //---Mostrar en labels
+            lblDineroEncaja.Text = efectivoEnCaja.ToString();
+            lblVentasTotales.Text = ventastotales.ToString();
+            lbltotalventas.Text = ventastotales.ToString();
+            lbldineroTotalCaja.Text = efectivoEnCaja.ToString();
+        }
         private void obtener_ingresos_por_turno()
         {
             Obtener_datos.sumar_ingresos_por_turno(idcaja, fechaInicial, fechaFinal, ref ingresosEfectivo);
@@ -71,6 +88,18 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                 saldoInicial = Convert.ToDouble(dr["saldoInicial"]);
 
             }
+        }
+
+        private void mostrar_ventas_Tarjeta_por_turno()
+        {
+            Obtener_datos.mostrar_ventas_Tarjeta_por_turno(idcaja, fechaInicial, fechaFinal, ref ventasTarjeta);
+            lblVentas_Tarjeta.Text = ventasTarjeta.ToString();
+        }
+
+        private void mostrar_ventas_creadito_por_turno()
+        {
+            Obtener_datos.mostrar_ventas_creadito_por_turno(idcaja, fechaInicial, fechaFinal, ref ventasCredito);
+            lblVentas_Credito.Text = ventasCredito.ToString();
         }
     }
 }

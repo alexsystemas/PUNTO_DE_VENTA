@@ -194,6 +194,46 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public static void mostrar_ventas_Tarjeta_por_turno(int idcaja, DateTime fi, DateTime ff, ref Double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("mostrar_ventas_Tarjeta_por_turno", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                monto = 0;
+
+            }
+        }
+
+        public static void mostrar_ventas_creadito_por_turno(int idcaja, DateTime fi, DateTime ff, ref Double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("mostrar_ventas_creadito_por_turno", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                monto = 0;
+
+            }
+        }
+
         public static void sumar_ingresos_por_turno(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
             try

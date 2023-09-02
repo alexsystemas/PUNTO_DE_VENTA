@@ -161,7 +161,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnCerrarCaja_Click(object sender, EventArgs e)
         {
-            CAJA.CIERRE_DE_CAJA frm = new CAJA.CIERRE_DE_CAJA();
+            CAJA.lblVentasTotal frm = new CAJA.lblVentasTotal();
             frm.ShowDialog();
         }
 
@@ -173,7 +173,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnCerrar_Sesion_Click(object sender, EventArgs e)
         {
-            CAJA.CIERRE_DE_CAJA frm = new CAJA.CIERRE_DE_CAJA();
+            CAJA.lblVentasTotal frm = new CAJA.lblVentasTotal();
             frm.ShowDialog();
         }
 
