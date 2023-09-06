@@ -133,6 +133,8 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
+
+
         public static void mostrar_ingresos_por_turnos(int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
         {
             try
@@ -154,6 +156,21 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
+        public static void mostrar_Proveedores(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_Proveedores", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         public static void mostrar_inio_de_secion(ref int idusuario)
         {
             Bases.Obtener_serialPC(ref serialPC);
@@ -275,6 +292,8 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
         }
+
+
 
     }
 

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using PUNTO_DE_VENTA.CONEXION;
 using System.Windows.Forms;
+using PUNTO_DE_VENTA.LOGIC;
 namespace PUNTO_DE_VENTA.DATE
 {
     class Eliminar_datos
@@ -62,6 +63,30 @@ namespace PUNTO_DE_VENTA.DATE
             {
 
                 MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public bool  eliminar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("eliminar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
             }
 
         }

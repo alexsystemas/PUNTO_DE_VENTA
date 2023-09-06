@@ -7,11 +7,14 @@ using System.Data.SqlClient;
 using System.Data;
 using PUNTO_DE_VENTA.CONEXION;
 using System.Windows.Forms;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.DATE
 {
-    class Insertar_datos
+    
+  public class Insertar_datos
     {
+        int id_caja;
         public static bool insertar_Conceptos(string descripcion)
         {
             try
@@ -82,6 +85,99 @@ namespace PUNTO_DE_VENTA.DATE
 
                 MessageBox.Show(ex.StackTrace);
                 return false;
+            }
+        }
+
+        public  bool insertar_CreditoPorPagar(LcreditosPorPagar parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_CreditoPorPagar", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Descripcion);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha_registro);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha_vencimiento);
+                cmd.Parameters.AddWithValue("@Total", parametros.Total);
+                cmd.Parameters.AddWithValue("@Saldo", parametros.Saldo);
+                cmd.Parameters.AddWithValue("@Estado", "DEBE");
+                cmd.Parameters.AddWithValue("@Id_caja", id_caja);
+                cmd.Parameters.AddWithValue("@Id_Proveedor", parametros.Id_proveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+              
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+       
+
+        public bool insertar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
+                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+                cmd.Parameters.AddWithValue("@Saldo", 0);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public bool editar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
+                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
             }
         }
 

@@ -16,7 +16,7 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            PRESENT.LOGIN frm = new PRESENT.LOGIN ();
+            PRESENT.CLIENTES_PROVEEDORES.Proveedores frm = new PRESENT.CLIENTES_PROVEEDORES.Proveedores ();
             frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
             Application.Run();
