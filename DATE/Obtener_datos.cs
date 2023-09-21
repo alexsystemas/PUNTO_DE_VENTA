@@ -171,6 +171,22 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        public static void mostrar_Clientes(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_Clientes", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         public static void mostrar_inio_de_secion(ref int idusuario)
         {
             Bases.Obtener_serialPC(ref serialPC);
@@ -293,7 +309,81 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
+        public static void buscar_Proveedores(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscar_Proveedores", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void buscar_Clientes(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscar_Clientes", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void sumar_creaditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("sumar_creaditoPorPagar", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                monto = 0;
+            }
+        }
+
+        public static void sumar_creaditoPorCobrar(int idcaja, DateTime fi, DateTime ff, ref double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("sumar_creaditoPorCobrar", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                monto = 0;
+            }
+        }
 
     }
 

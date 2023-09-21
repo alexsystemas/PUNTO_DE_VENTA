@@ -32,6 +32,9 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         double ventasTarjeta;
         double efectivoEnCaja;
         double ventastotales;
+        double creditosPorPagar;
+        double creditosPorCobrar;
+
         private void CIERRE_DE_CAJA_Load(object sender, EventArgs e)
         {
             mostrar_cierre_de_caja_pendientes();
@@ -40,6 +43,8 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             obtener_ventas_En_Efectivo();
             obtener_gastos_por_turno();
             obtener_ingresos_por_turno();
+            obtener_creditosPorPagar();
+            sumar_creaditoPorCobrar();
             mostrar_ventas_Tarjeta_por_turno();
             mostrar_ventas_creadito_por_turno();
             calcular();
@@ -76,6 +81,18 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         private void obtener_saldo_inicial()
         {
             lblFondoDeCaja.Text = Convert.ToString(saldoInicial);
+        }
+
+        private void obtener_creditosPorPagar()
+        {
+            Obtener_datos.sumar_creaditoPorPagar(idcaja, fechaInicial, fechaFinal, ref creditosPorPagar);
+            lblPorPagar.Text = creditosPorPagar.ToString();
+        }
+
+        private void sumar_creaditoPorCobrar()
+        {
+            Obtener_datos.sumar_creaditoPorCobrar(idcaja, fechaInicial, fechaFinal, ref creditosPorCobrar);
+            lblPorCobrar.Text = creditosPorCobrar.ToString();
         }
         private void mostrar_cierre_de_caja_pendientes()
         {

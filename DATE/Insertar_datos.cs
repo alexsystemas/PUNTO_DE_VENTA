@@ -120,7 +120,39 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-       
+        public bool insertar_CreditoPorCobrar(LcreditoPorCobrar parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_CreditoPorCobrar", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Descripcion", parametros.Descripcion);
+                cmd.Parameters.AddWithValue("@Fecha_registro", parametros.Fecha_registro);
+                cmd.Parameters.AddWithValue("@Fecha_vencimiento", parametros.Fecha_vencimiento);
+                cmd.Parameters.AddWithValue("@Total", parametros.Total);
+                cmd.Parameters.AddWithValue("@Saldo", parametros.Saldo);
+                cmd.Parameters.AddWithValue("@Estado", "DEBE");
+                cmd.Parameters.AddWithValue("@Id_caja", id_caja);
+                cmd.Parameters.AddWithValue("@Id_cliente", parametros.Id_cliente);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+
 
         public bool insertar_Proveedores(LProveedores parametros)
         {
@@ -152,19 +184,20 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        public bool editar_Proveedores(LProveedores parametros)
+        public bool insertar_Clientes(Lclientes parametros)
         {
             try
             {
                 Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("editar_Proveedores", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("insertar_Clientes", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
                 cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
                 cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
                 cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
                 cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+                cmd.Parameters.AddWithValue("@Saldo", 0);
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -180,6 +213,7 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.cerrar();
             }
         }
+
 
     }
 }

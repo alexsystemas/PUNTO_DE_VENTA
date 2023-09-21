@@ -7,10 +7,13 @@ using System.Data;
 using System.Data.SqlClient;
 using PUNTO_DE_VENTA.CONEXION;
 using System.Windows.Forms;
+using PUNTO_DE_VENTA.LOGIC;
+
 namespace PUNTO_DE_VENTA.DATE
 {
     class Editar_datos
     {
+        
         public static void cambio_de_caja(int idcaja, int idventa)
         {
             CONEXIONMAESTRA.abrir();
@@ -83,5 +86,112 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
         }
+
+        public bool editar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
+                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public bool editar_Clientes(Lclientes parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_Clientes", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idcliente", parametros.IdCliente);
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
+                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public bool restaurar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("restaurar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
+                
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+        public bool restaurar_Clientes(Lclientes parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("restaurar_Clientes", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idcliente", parametros.IdCliente);
+
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+
     }
 }

@@ -334,7 +334,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-            SqlCommand com = new SqlCommand("select idclientev  from clientes where Cliente='NEUTRO'", con);
+            SqlCommand com = new SqlCommand("select idclientev  from clientes where Estado=0", con);
             try
             {
                 con.Open();
@@ -1195,6 +1195,18 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         private void BtnIngresos_Click(object sender, EventArgs e)
         {
             INGRESOS_VARIOS.IngresosVarios frm = new INGRESOS_VARIOS.IngresosVarios();
+            frm.ShowDialog();
+        }
+
+        private void BtnCreditoPagar_Click(object sender, EventArgs e)
+        {
+            APERTURA_DE_CREDITO.PorPagar frm = new APERTURA_DE_CREDITO.PorPagar();
+            frm.ShowDialog();
+        }
+
+        private void BtnCreditoCobrar_Click(object sender, EventArgs e)
+        {
+            APERTURA_DE_CREDITO.PorCobrar frm = new APERTURA_DE_CREDITO.PorCobrar();
             frm.ShowDialog();
         }
     }

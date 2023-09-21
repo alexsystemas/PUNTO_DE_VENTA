@@ -12,14 +12,117 @@ using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
 {
-    public partial class Proveedores : Form
+    public partial class ClientesOk : Form
     {
-        public Proveedores()
+        public ClientesOk()
         {
             InitializeComponent();
         }
         int IdProveedor;
         string estado;
+        private void ClientesOk_Load(object sender, EventArgs e)
+        {
+            mostrar();
+        }
+        // crud-----------------------------
+        private void insertar()
+        {
+            Lclientes parametros = new Lclientes();
+            Insertar_datos funcion = new Insertar_datos();
+            parametros.Nombre = txtnombre.Text;
+            parametros.IdentificadorFiscal = txtRfc.Text;
+            parametros.Celular = txtcelular.Text;
+            parametros.Direccion = txtdireccion.Text;
+            if (funcion.insertar_Clientes(parametros) == true) ;
+            {
+                mostrar();
+            }
+        }
+        private void mostrar()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_Clientes(ref dt);
+            datalistado.DataSource = dt;
+            PANELREGISTRO.Visible = false;
+            pintarDatalistado();
+
+        }
+        private void editar()
+        {
+            Lclientes parametros = new Lclientes();
+            Editar_datos funcion = new Editar_datos();
+            parametros.IdCliente = IdProveedor;
+            parametros.Nombre = txtnombre.Text;
+            parametros.IdentificadorFiscal = txtRfc.Text;
+            parametros.Celular = txtcelular.Text;
+            parametros.Direccion = txtdireccion.Text;
+            if (funcion.editar_Clientes(parametros) == true)
+            {
+                mostrar();
+            }
+        }
+        private void eliminar()
+        {
+            try
+            {
+                Lclientes parametros = new Lclientes();
+                Eliminar_datos funcion = new Eliminar_datos();
+                parametros.IdCliente = IdProveedor;
+                if (funcion.eliminar_Clientes(parametros) == true)
+                {
+                    mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+        private void restaurar()
+        {
+            Lclientes parametros = new Lclientes();
+            Editar_datos funcion = new Editar_datos();
+            parametros.IdCliente = IdProveedor;
+            if (funcion.restaurar_Clientes(parametros) == true)
+            {
+                mostrar();
+            }
+
+        }
+        private void buscar()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.buscar_Clientes(ref dt, txtbusca.Text);
+            datalistado.DataSource = dt;
+            pintarDatalistado();
+        }
+
+        //----------------------------------
+
+        private void pintarDatalistado()
+        {
+            Bases.Multilinea(ref datalistado);
+            datalistado.Columns[2].Visible = false;
+            foreach (DataGridViewRow row in datalistado.Rows)
+            {
+                string estado = Convert.ToString(row.Cells["Estado"].Value);
+                if (estado == "ELIMINADO")
+                {
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Strikeout | FontStyle.Bold);
+                    row.DefaultCellStyle.ForeColor = Color.Red;
+                }
+            }
+
+        }
+        private void rellenarCamposVacios()
+        {
+            if (string.IsNullOrEmpty(txtcelular.Text)) { txtcelular.Text = "-"; };
+            if (string.IsNullOrEmpty(txtdireccion.Text)) { txtdireccion.Text = "-"; };
+            if (string.IsNullOrEmpty(txtRfc.Text)) { txtRfc.Text = "-"; };
+
+        }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
@@ -57,107 +160,6 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             }
         }
 
-
-        // crud-----------------------------
-        private void insertar()
-        {
-            LProveedores parametros = new LProveedores();
-            Insertar_datos funcion = new Insertar_datos();
-            parametros.Nombre = txtnombre.Text;
-            parametros.IdentificadorFiscal = txtRfc.Text;
-            parametros.Celular = txtcelular.Text;
-            parametros.Direccion = txtdireccion.Text;
-            if (funcion.insertar_Proveedores(parametros) == true) ;
-            {
-                mostrar();
-            }
-        }
-        private void mostrar()
-        {
-            DataTable dt = new DataTable();
-            Obtener_datos.mostrar_Proveedores(ref dt);
-            datalistado.DataSource = dt;
-            PANELREGISTRO.Visible = false;
-            pintarDatalistado();
-
-        }
-        private void editar()
-        {
-            LProveedores parametros = new LProveedores();
-            Editar_datos funcion = new Editar_datos();
-            parametros.IdProveedor = IdProveedor;
-            parametros.Nombre = txtnombre.Text;
-            parametros.IdentificadorFiscal = txtRfc.Text;
-            parametros.Celular = txtcelular.Text;
-            parametros.Direccion = txtdireccion.Text;
-            if (funcion.editar_Proveedores(parametros) == true)
-            {
-                mostrar();
-            }
-        }
-        private void eliminar()
-        {
-            try
-            {
-                LProveedores parametros = new LProveedores();
-                Eliminar_datos funcion = new Eliminar_datos();
-                parametros.IdProveedor = IdProveedor;
-                if (funcion.eliminar_Proveedores(parametros) == true)
-                {
-                    mostrar();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-
-            }
-        }
-        private void restaurar()
-        {
-            LProveedores parametros = new LProveedores();
-            Editar_datos funcion = new Editar_datos();
-            parametros.IdProveedor = IdProveedor;
-            if (funcion.restaurar_Proveedores(parametros) == true)
-            {
-                mostrar();
-            }
-
-        }
-        private void buscar()
-        {
-            DataTable dt = new DataTable();
-            Obtener_datos.buscar_Proveedores(ref dt, txtbusca.Text);
-            datalistado.DataSource = dt;
-            pintarDatalistado();
-        }
-
-        //----------------------------------
-
-        private void pintarDatalistado()
-        {
-            Bases.Multilinea(ref datalistado);
-            datalistado.Columns[2].Visible = false;
-            foreach(DataGridViewRow row in datalistado.Rows)
-            {
-                string estado = Convert.ToString(row.Cells["Estado"].Value);
-                if (estado=="ELIMINADO")
-                {
-                    row.DefaultCellStyle.Font=new Font("Segoe UI", 10, FontStyle.Strikeout | FontStyle.Bold);
-                    row.DefaultCellStyle.ForeColor = Color.Red;
-                }
-            }
-
-        }
-        private void rellenarCamposVacios()
-        {
-            if (string.IsNullOrEmpty(txtcelular.Text)) { txtcelular.Text = "-"; };
-            if (string.IsNullOrEmpty(txtdireccion.Text)) { txtdireccion.Text = "-"; };
-            if (string.IsNullOrEmpty(txtRfc.Text)) { txtRfc.Text = "-"; };
-
-        }
-
         private void Datalistado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == datalistado.Columns["Editar"].Index)
@@ -177,6 +179,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
                 }
             }
         }
+
         private void obtenerId_estado()
         {
             try
@@ -190,6 +193,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
 
             }
         }
+
         private void obtenerDatos()
         {
             try
@@ -229,12 +233,6 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             btnGuardarCambios.Visible = true;
         }
 
-
-        private void Proveedores_Load(object sender, EventArgs e)
-        {
-            mostrar();
-        }
-
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             PANELREGISTRO.Visible = false;
@@ -261,4 +259,3 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         }
     }
 }
-

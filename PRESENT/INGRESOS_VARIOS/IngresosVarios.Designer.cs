@@ -72,12 +72,12 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(541, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "INGRESOS(+)";
+            this.label1.Text = "INGRESOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlDetalle
             // 
-            this.pnlDetalle.BackColor = System.Drawing.Color.White;
+            this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
             this.pnlDetalle.Controls.Add(this.txtfecha);
             this.pnlDetalle.Controls.Add(this.txtDetalle);
             this.pnlDetalle.Controls.Add(this.txtImporte);
@@ -91,6 +91,7 @@
             // 
             // txtfecha
             // 
+            this.txtfecha.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
             this.txtfecha.Location = new System.Drawing.Point(98, 45);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(200, 20);
@@ -98,6 +99,7 @@
             // 
             // txtDetalle
             // 
+            this.txtDetalle.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDetalle.Location = new System.Drawing.Point(98, 71);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
@@ -106,6 +108,7 @@
             // 
             // txtImporte
             // 
+            this.txtImporte.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtImporte.Location = new System.Drawing.Point(98, 14);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(248, 20);
@@ -114,44 +117,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label4.Location = new System.Drawing.Point(30, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Detalle:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(30, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Fecha:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(30, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Monto:";
             // 
             // chSinConprobante
             // 
             this.chSinConprobante.AutoSize = true;
-            this.chSinConprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.chSinConprobante.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chSinConprobante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.chSinConprobante.Location = new System.Drawing.Point(17, 172);
             this.chSinConprobante.Name = "chSinConprobante";
-            this.chSinConprobante.Size = new System.Drawing.Size(197, 24);
+            this.chSinConprobante.Size = new System.Drawing.Size(154, 20);
             this.chSinConprobante.TabIndex = 43;
             this.chSinConprobante.Text = "SIN COMPROBANTE";
             this.chSinConprobante.UseVisualStyleBackColor = true;
@@ -168,7 +171,7 @@
             // 
             // btnGuardarRegistro
             // 
-            this.btnGuardarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnGuardarRegistro.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnGuardarRegistro.FlatAppearance.BorderSize = 0;
             this.btnGuardarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,11 +188,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(78, 3);
             this.button2.Name = "button2";
@@ -214,6 +217,7 @@
             // 
             // txtTipo_de_comprobante
             // 
+            this.txtTipo_de_comprobante.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTipo_de_comprobante.FormattingEnabled = true;
             this.txtTipo_de_comprobante.Items.AddRange(new object[] {
             "SIN COMPROBANTE",
@@ -222,19 +226,19 @@
             "FACTURA",
             "NOTA",
             "OTRO"});
-            this.txtTipo_de_comprobante.Location = new System.Drawing.Point(167, 6);
+            this.txtTipo_de_comprobante.Location = new System.Drawing.Point(178, 6);
             this.txtTipo_de_comprobante.Name = "txtTipo_de_comprobante";
-            this.txtTipo_de_comprobante.Size = new System.Drawing.Size(175, 21);
+            this.txtTipo_de_comprobante.Size = new System.Drawing.Size(164, 21);
             this.txtTipo_de_comprobante.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label6.Location = new System.Drawing.Point(21, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 17);
+            this.label6.Size = new System.Drawing.Size(149, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Nro de Comprobante:";
             // 
@@ -248,6 +252,7 @@
             // 
             // txtNroComprobante
             // 
+            this.txtNroComprobante.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNroComprobante.Location = new System.Drawing.Point(167, 43);
             this.txtNroComprobante.Name = "txtNroComprobante";
             this.txtNroComprobante.Size = new System.Drawing.Size(175, 20);
@@ -256,11 +261,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label5.Location = new System.Drawing.Point(21, 7);
+            this.label5.Location = new System.Drawing.Point(27, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 17);
+            this.label5.Size = new System.Drawing.Size(155, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tipo de Comprobante:";
             // 
@@ -268,6 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(241)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(541, 324);
             this.Controls.Add(this.chSinConprobante);
             this.Controls.Add(this.flowLayoutPanel1);

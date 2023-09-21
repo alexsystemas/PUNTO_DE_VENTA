@@ -1165,7 +1165,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         void MOSTRAR_cliente_standar()
         {
-            SqlCommand com = new SqlCommand("select idclientev from clientes where Cliente = 'NEUTRO'", CONEXION.CONEXIONMAESTRA.conectar);
+            SqlCommand com = new SqlCommand("select idclientev from clientes where Estado=0", CONEXION.CONEXIONMAESTRA.conectar);
             try
             {
                 CONEXION.CONEXIONMAESTRA.abrir();

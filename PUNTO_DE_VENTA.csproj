@@ -85,6 +85,8 @@
     <Compile Include="DATE\Insertar_datos.cs" />
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
+    <Compile Include="LOGIC\Lclientes.cs" />
+    <Compile Include="LOGIC\LcreditoPorCobrar.cs" />
     <Compile Include="LOGIC\LcreditosPorPagar.cs" />
     <Compile Include="LOGIC\LProveedores.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
@@ -153,11 +155,11 @@
     <Compile Include="PRESENT\CAJA\Listado_gastos_ingresos.Designer.cs">
       <DependentUpon>Listado_gastos_ingresos.cs</DependentUpon>
     </Compile>
-    <Compile Include="PRESENT\CLIENTES_PROVEEDORES\clientes.cs">
+    <Compile Include="PRESENT\CLIENTES_PROVEEDORES\ClientesOk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PRESENT\CLIENTES_PROVEEDORES\clientes.Designer.cs">
-      <DependentUpon>clientes.cs</DependentUpon>
+    <Compile Include="PRESENT\CLIENTES_PROVEEDORES\ClientesOk.Designer.cs">
+      <DependentUpon>ClientesOk.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.cs">
       <SubType>Form</SubType>
@@ -314,6 +316,9 @@
     <EmbeddedResource Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.resx">
       <DependentUpon>DASHBOARD_PRINCIPAL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\APERTURA_DE_CREDITO\PorCobrar.resx">
+      <DependentUpon>PorCobrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\APERTURA_DE_CREDITO\PorPagar.resx">
       <DependentUpon>PorPagar.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,8 +346,8 @@
     <EmbeddedResource Include="PRESENT\CAJA\Listado_gastos_ingresos.resx">
       <DependentUpon>Listado_gastos_ingresos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\clientes.resx">
-      <DependentUpon>clientes.cs</DependentUpon>
+    <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\ClientesOk.resx">
+      <DependentUpon>ClientesOk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>

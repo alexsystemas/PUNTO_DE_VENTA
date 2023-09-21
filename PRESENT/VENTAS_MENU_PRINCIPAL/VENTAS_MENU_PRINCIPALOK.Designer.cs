@@ -47,8 +47,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btnVerMovimientosCaja = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnCreditoPagar = new System.Windows.Forms.Button();
+            this.btnCreditoCobrar = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -196,8 +196,8 @@
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.btnVerMovimientosCaja);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btnCreditoPagar);
+            this.panel1.Controls.Add(this.btnCreditoCobrar);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.pictureBox12);
@@ -319,37 +319,39 @@
             this.btnVerMovimientosCaja.UseVisualStyleBackColor = false;
             this.btnVerMovimientosCaja.Click += new System.EventHandler(this.BtnVerMovimientosCaja_Click);
             // 
-            // button8
+            // btnCreditoPagar
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(41, 252);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(152, 38);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Aperturar Credito por Pagar";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnCreditoPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCreditoPagar.FlatAppearance.BorderSize = 0;
+            this.btnCreditoPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreditoPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreditoPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnCreditoPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreditoPagar.Location = new System.Drawing.Point(41, 252);
+            this.btnCreditoPagar.Name = "btnCreditoPagar";
+            this.btnCreditoPagar.Size = new System.Drawing.Size(152, 38);
+            this.btnCreditoPagar.TabIndex = 5;
+            this.btnCreditoPagar.Text = "Aperturar Credito por Pagar";
+            this.btnCreditoPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreditoPagar.UseVisualStyleBackColor = false;
+            this.btnCreditoPagar.Click += new System.EventHandler(this.BtnCreditoPagar_Click);
             // 
-            // button7
+            // btnCreditoCobrar
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(41, 211);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 38);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Apertura de Credito por Cobrar";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnCreditoCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCreditoCobrar.FlatAppearance.BorderSize = 0;
+            this.btnCreditoCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreditoCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreditoCobrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnCreditoCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreditoCobrar.Location = new System.Drawing.Point(41, 211);
+            this.btnCreditoCobrar.Name = "btnCreditoCobrar";
+            this.btnCreditoCobrar.Size = new System.Drawing.Size(150, 38);
+            this.btnCreditoCobrar.TabIndex = 4;
+            this.btnCreditoCobrar.Text = "Apertura de Credito por Cobrar";
+            this.btnCreditoCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreditoCobrar.UseVisualStyleBackColor = false;
+            this.btnCreditoCobrar.Click += new System.EventHandler(this.BtnCreditoCobrar_Click);
             // 
             // button6
             // 
@@ -1906,8 +1908,8 @@
         private System.Windows.Forms.Button btnGastos;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnCreditoCobrar;
+        private System.Windows.Forms.Button btnCreditoPagar;
         private UIDC.UI_TecladoBasico uI_TecladoBasico1;
         private System.Windows.Forms.Button btnVerMovimientosCaja;
         private System.Windows.Forms.Panel panel12;
