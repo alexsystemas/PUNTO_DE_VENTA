@@ -71,7 +71,7 @@
             this.pnlIzqLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlIzqLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlIzqLogo.Name = "pnlIzqLogo";
-            this.pnlIzqLogo.Size = new System.Drawing.Size(256, 450);
+            this.pnlIzqLogo.Size = new System.Drawing.Size(256, 462);
             this.pnlIzqLogo.TabIndex = 0;
             // 
             // label11
@@ -117,7 +117,7 @@
             this.pnlIzqAzul.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlIzqAzul.Location = new System.Drawing.Point(193, 0);
             this.pnlIzqAzul.Name = "pnlIzqAzul";
-            this.pnlIzqAzul.Size = new System.Drawing.Size(63, 450);
+            this.pnlIzqAzul.Size = new System.Drawing.Size(63, 462);
             this.pnlIzqAzul.TabIndex = 0;
             // 
             // pnlTop
@@ -288,7 +288,7 @@
             this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentral.Location = new System.Drawing.Point(256, 225);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(896, 225);
+            this.pnlCentral.Size = new System.Drawing.Size(896, 237);
             this.pnlCentral.TabIndex = 4;
             // 
             // BTN_SIGUIENTE
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 450);
+            this.ClientSize = new System.Drawing.Size(1152, 462);
             this.Controls.Add(this.pnlCentral);
             this.Controls.Add(this.pn1);
             this.Controls.Add(this.pnlTop);

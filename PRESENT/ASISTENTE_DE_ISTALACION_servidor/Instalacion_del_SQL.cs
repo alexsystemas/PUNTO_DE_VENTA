@@ -25,23 +25,47 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 
         private void Instalacion_del_servidorSQL_Load(object sender, EventArgs e)
         {
-            pnlInstaladoServidor.Location = new Point((Width - panel2.Width) / 2, (Height - panel2.Height) / 2);
-
-            panel4.Visible = false;
-            panel4.Dock = DockStyle.None;
-            string nombre_del_equipo_usuario;
-            nombre_del_equipo_usuario = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-           // MessageBox.Show(nombre_del_equipo_usuario);
-
-            txtEliminarBase.Text = txtEliminarBase.Text.Replace("BASEADA", txtBaseDeDatos.Text);
-            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text.Replace("BASEADA", txtBaseDeDatos.Text);
-
-            Cursor = Cursors.WaitCursor;
+            centrarPaneles();
+            remplazar();
             comprobar_si_ya_servidor_instalado_SQL_EXPRESS();
-            comprobar_si_ya_servidor_instalado_SQL_normal();
+            conectar();
+
+           
+
+           
 
           
 
+        }
+        private void conectar()
+        {
+
+            if(btnInstalarServidor.Visible==true)
+            {
+                comprobar_si_ya_servidor_instalado_SQL_normal();
+            }
+           
+        }
+        private void remplazar()
+        {
+            txtEliminarBase.Text = txtEliminarBase.Text.Replace("BASEADA", txtBaseDeDatos.Text);
+            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text.Replace("BASEADA", txtBaseDeDatos.Text);
+            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("VEGA389", txtUsuario.Text);
+            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("BASE_PUNTO_VENTA", txtBaseDeDatos.Text); 
+            txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("softwarereal", lblcontraseña.Text);
+            // Adjutando al texbox que contiene los procedimientos almacenados
+            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text + Environment.NewLine + txtCrearUsuarioDb.Text;
+
+
+        }
+        private void centrarPaneles()
+        {
+            string nombre_del_equipo_usuario;
+            nombre_del_equipo_usuario = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            pnlInstaladoServidor.Location = new Point((Width - panel2.Width) / 2, (Height - panel2.Height) / 2);
+            Cursor = Cursors.WaitCursor;
+            panel4.Visible = false;
+            panel4.Dock = DockStyle.None;
         }
         private void comprobar_si_ya_servidor_instalado_SQL_EXPRESS()
         {
@@ -79,7 +103,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
             {
                 this.Cursor = Cursors.Default;
                 panel3.Visible = true;
-                button1.Visible = true;
+                btnInstalarServidor.Visible = true;
                 pnlInstaladoServidor.Visible = false;
                 pnlInstaladoServidor.Dock = DockStyle.None;
                 lblbuscador_de_servidores.Text = "De click a Instalar Servidor, luego de click a SI cuando se le pida, luego presione ACEPTAR y espere por favor ";
@@ -206,25 +230,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                txtArgumentosini.Text = txtArgumentosini.Text.Replace("PRUEBAFINAL22", lblnombredeservicio.Text);
-                timerCRARINI.Start();
-                executa();
-                timer2.Start();
-                pnlInstaladoServidor.Visible = true;
-                pnlInstaladoServidor.Dock = DockStyle.Fill;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-           
-
-        }
+      
 
         private void  executa()
         {
@@ -388,6 +394,24 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 ejecutar_scryt_crearBase();
 
                
+            }
+        }
+
+        private void BtnInstalarServidor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtArgumentosini.Text = txtArgumentosini.Text.Replace("PRUEBAFINAL22", lblnombredeservicio.Text);
+                timerCRARINI.Start();
+                executa();
+                timer2.Start();
+                pnlInstaladoServidor.Visible = true;
+                pnlInstaladoServidor.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

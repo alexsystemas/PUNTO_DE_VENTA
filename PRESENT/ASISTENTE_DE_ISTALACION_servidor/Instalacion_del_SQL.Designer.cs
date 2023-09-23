@@ -31,9 +31,29 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instalacion_del_servidorSQL));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDerAzul = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtservidor = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.lblnombredeservicio = new System.Windows.Forms.TextBox();
+            this.txtArgumentosini = new System.Windows.Forms.RichTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCrearUsuarioDb = new System.Windows.Forms.RichTextBox();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtCrear_procedimientos = new System.Windows.Forms.RichTextBox();
+            this.txtnombre_scrypt = new System.Windows.Forms.TextBox();
+            this.txtBaseDeDatos = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblcontraseña = new System.Windows.Forms.TextBox();
+            this.nombre_del_equipo_usuario = new System.Windows.Forms.TextBox();
+            this.Nombre_Screypt = new System.Windows.Forms.Label();
+            this.BD = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ContrasenaSQL = new System.Windows.Forms.Label();
+            this.Nombre_Instancia = new System.Windows.Forms.Label();
             this.pnEliminaBD = new System.Windows.Forms.Panel();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEliminarBase = new System.Windows.Forms.RichTextBox();
@@ -47,27 +67,11 @@
             this.millseg = new System.Windows.Forms.Label();
             this.seg3 = new System.Windows.Forms.Label();
             this.mil3 = new System.Windows.Forms.Label();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.txtCrear_procedimientos = new System.Windows.Forms.RichTextBox();
-            this.txtnombre_scrypt = new System.Windows.Forms.TextBox();
-            this.txtBaseDeDatos = new System.Windows.Forms.TextBox();
-            this.lblcontraseña = new System.Windows.Forms.TextBox();
-            this.nombre_del_equipo_usuario = new System.Windows.Forms.TextBox();
-            this.Nombre_Screypt = new System.Windows.Forms.Label();
-            this.BD = new System.Windows.Forms.Label();
-            this.ContrasenaSQL = new System.Windows.Forms.Label();
-            this.Nombre_Instancia = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.lblnombredeservicio = new System.Windows.Forms.TextBox();
-            this.txtArgumentosini = new System.Windows.Forms.RichTextBox();
-            this.pnlDerAzul = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlCentral = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblbuscador_de_servidores = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInstalarServidor = new System.Windows.Forms.Button();
             this.pnlInstaladoServidor = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.seg = new System.Windows.Forms.Label();
@@ -87,12 +91,13 @@
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timerCRARINI = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.GroupBox2.SuspendLayout();
             this.pnEliminaBD.SuspendLayout();
             this.GroupBox1.SuspendLayout();
-            this.GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlCentral.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlInstaladoServidor.SuspendLayout();
@@ -114,10 +119,28 @@
             this.panel1.Size = new System.Drawing.Size(256, 644);
             this.panel1.TabIndex = 0;
             // 
+            // pnlDerAzul
+            // 
+            this.pnlDerAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.pnlDerAzul.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDerAzul.Location = new System.Drawing.Point(193, 0);
+            this.pnlDerAzul.Name = "pnlDerAzul";
+            this.pnlDerAzul.Size = new System.Drawing.Size(63, 644);
+            this.pnlDerAzul.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 250);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(188, 147);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txtservidor);
-            this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.richTextBox3);
             this.panel6.Controls.Add(this.lblnombredeservicio);
             this.panel6.Controls.Add(this.txtArgumentosini);
@@ -135,22 +158,193 @@
             this.txtservidor.TabIndex = 6;
             this.txtservidor.Text = "txtservidor";
             // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(10, 135);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(138, 20);
+            this.richTextBox3.TabIndex = 8;
+            this.richTextBox3.Text = "";
+            // 
+            // lblnombredeservicio
+            // 
+            this.lblnombredeservicio.Location = new System.Drawing.Point(10, 77);
+            this.lblnombredeservicio.Name = "lblnombredeservicio";
+            this.lblnombredeservicio.Size = new System.Drawing.Size(100, 26);
+            this.lblnombredeservicio.TabIndex = 7;
+            // 
+            // txtArgumentosini
+            // 
+            this.txtArgumentosini.Location = new System.Drawing.Point(10, 109);
+            this.txtArgumentosini.Name = "txtArgumentosini";
+            this.txtArgumentosini.Size = new System.Drawing.Size(138, 20);
+            this.txtArgumentosini.TabIndex = 8;
+            this.txtArgumentosini.Text = "";
+            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pnEliminaBD);
+            this.panel4.Controls.Add(this.groupBox3);
             this.panel4.Controls.Add(this.GroupBox2);
             this.panel4.Controls.Add(this.txtnombre_scrypt);
             this.panel4.Controls.Add(this.txtBaseDeDatos);
+            this.panel4.Controls.Add(this.txtUsuario);
             this.panel4.Controls.Add(this.lblcontraseña);
             this.panel4.Controls.Add(this.nombre_del_equipo_usuario);
             this.panel4.Controls.Add(this.Nombre_Screypt);
             this.panel4.Controls.Add(this.BD);
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ContrasenaSQL);
             this.panel4.Controls.Add(this.Nombre_Instancia);
-            this.panel4.Location = new System.Drawing.Point(42, 14);
+            this.panel4.Location = new System.Drawing.Point(184, 88);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(552, 430);
+            this.panel4.Size = new System.Drawing.Size(566, 495);
             this.panel4.TabIndex = 3;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox3.Controls.Add(this.txtCrearUsuarioDb);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.Gray;
+            this.groupBox3.Location = new System.Drawing.Point(380, 150);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.groupBox3.Size = new System.Drawing.Size(347, 292);
+            this.groupBox3.TabIndex = 624;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = " Servira para crear un usuario";
+            // 
+            // txtCrearUsuarioDb
+            // 
+            this.txtCrearUsuarioDb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCrearUsuarioDb.Location = new System.Drawing.Point(18, 23);
+            this.txtCrearUsuarioDb.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.txtCrearUsuarioDb.Name = "txtCrearUsuarioDb";
+            this.txtCrearUsuarioDb.Size = new System.Drawing.Size(303, 139);
+            this.txtCrearUsuarioDb.TabIndex = 589;
+            this.txtCrearUsuarioDb.Text = resources.GetString("txtCrearUsuarioDb.Text");
+            // 
+            // GroupBox2
+            // 
+            this.GroupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.GroupBox2.Controls.Add(this.richTextBox1);
+            this.GroupBox2.Controls.Add(this.txtCrear_procedimientos);
+            this.GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox2.ForeColor = System.Drawing.Color.Gray;
+            this.GroupBox2.Location = new System.Drawing.Point(21, 160);
+            this.GroupBox2.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Padding = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.GroupBox2.Size = new System.Drawing.Size(347, 292);
+            this.GroupBox2.TabIndex = 623;
+            this.GroupBox2.TabStop = false;
+            this.GroupBox2.Text = "PEGA TU Script para Crear las Tablas y Procedimientos";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(20, 171);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(301, 102);
+            this.richTextBox1.TabIndex = 623;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // txtCrear_procedimientos
+            // 
+            this.txtCrear_procedimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCrear_procedimientos.Location = new System.Drawing.Point(18, 23);
+            this.txtCrear_procedimientos.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
+            this.txtCrear_procedimientos.Name = "txtCrear_procedimientos";
+            this.txtCrear_procedimientos.Size = new System.Drawing.Size(303, 139);
+            this.txtCrear_procedimientos.TabIndex = 589;
+            this.txtCrear_procedimientos.Text = resources.GetString("txtCrear_procedimientos.Text");
+            // 
+            // txtnombre_scrypt
+            // 
+            this.txtnombre_scrypt.Location = new System.Drawing.Point(158, 122);
+            this.txtnombre_scrypt.Name = "txtnombre_scrypt";
+            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 26);
+            this.txtnombre_scrypt.TabIndex = 1;
+            this.txtnombre_scrypt.Text = "Script_BASE_PUNTO_VENTA";
+            // 
+            // txtBaseDeDatos
+            // 
+            this.txtBaseDeDatos.Location = new System.Drawing.Point(158, 99);
+            this.txtBaseDeDatos.Name = "txtBaseDeDatos";
+            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 26);
+            this.txtBaseDeDatos.TabIndex = 1;
+            this.txtBaseDeDatos.Text = "BASE_PUNTO_VENTA\r\n";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(158, 48);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(134, 26);
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "VEGA389";
+            // 
+            // lblcontraseña
+            // 
+            this.lblcontraseña.Location = new System.Drawing.Point(158, 77);
+            this.lblcontraseña.Name = "lblcontraseña";
+            this.lblcontraseña.Size = new System.Drawing.Size(134, 26);
+            this.lblcontraseña.TabIndex = 1;
+            this.lblcontraseña.Text = "pruebas123";
+            // 
+            // nombre_del_equipo_usuario
+            // 
+            this.nombre_del_equipo_usuario.Location = new System.Drawing.Point(205, 22);
+            this.nombre_del_equipo_usuario.Name = "nombre_del_equipo_usuario";
+            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 26);
+            this.nombre_del_equipo_usuario.TabIndex = 1;
+            this.nombre_del_equipo_usuario.Text = "MSSQL15";
+            // 
+            // Nombre_Screypt
+            // 
+            this.Nombre_Screypt.AutoSize = true;
+            this.Nombre_Screypt.Location = new System.Drawing.Point(39, 125);
+            this.Nombre_Screypt.Name = "Nombre_Screypt";
+            this.Nombre_Screypt.Size = new System.Drawing.Size(144, 20);
+            this.Nombre_Screypt.TabIndex = 0;
+            this.Nombre_Screypt.Text = "Nombre de Scrypt: ";
+            // 
+            // BD
+            // 
+            this.BD.AutoSize = true;
+            this.BD.Location = new System.Drawing.Point(39, 102);
+            this.BD.Name = "BD";
+            this.BD.Size = new System.Drawing.Size(123, 20);
+            this.BD.TabIndex = 0;
+            this.BD.Text = "Base de Datos: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario:";
+            // 
+            // ContrasenaSQL
+            // 
+            this.ContrasenaSQL.AutoSize = true;
+            this.ContrasenaSQL.Location = new System.Drawing.Point(39, 77);
+            this.ContrasenaSQL.Name = "ContrasenaSQL";
+            this.ContrasenaSQL.Size = new System.Drawing.Size(96, 20);
+            this.ContrasenaSQL.TabIndex = 0;
+            this.ContrasenaSQL.Text = "Contraseña:";
+            // 
+            // Nombre_Instancia
+            // 
+            this.Nombre_Instancia.AutoSize = true;
+            this.Nombre_Instancia.Location = new System.Drawing.Point(39, 28);
+            this.Nombre_Instancia.Name = "Nombre_Instancia";
+            this.Nombre_Instancia.Size = new System.Drawing.Size(160, 20);
+            this.Nombre_Instancia.TabIndex = 0;
+            this.Nombre_Instancia.Text = "Nombre de Instancia:";
             // 
             // pnEliminaBD
             // 
@@ -166,10 +360,10 @@
             this.pnEliminaBD.Controls.Add(this.millseg);
             this.pnEliminaBD.Controls.Add(this.seg3);
             this.pnEliminaBD.Controls.Add(this.mil3);
-            this.pnEliminaBD.Location = new System.Drawing.Point(610, 111);
+            this.pnEliminaBD.Location = new System.Drawing.Point(390, 6);
             this.pnEliminaBD.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.pnEliminaBD.Name = "pnEliminaBD";
-            this.pnEliminaBD.Size = new System.Drawing.Size(395, 263);
+            this.pnEliminaBD.Size = new System.Drawing.Size(325, 137);
             this.pnEliminaBD.TabIndex = 624;
             // 
             // GroupBox1
@@ -307,151 +501,6 @@
             this.mil3.TabIndex = 619;
             this.mil3.Text = "0";
             // 
-            // GroupBox2
-            // 
-            this.GroupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.GroupBox2.Controls.Add(this.richTextBox1);
-            this.GroupBox2.Controls.Add(this.txtCrear_procedimientos);
-            this.GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox2.ForeColor = System.Drawing.Color.Gray;
-            this.GroupBox2.Location = new System.Drawing.Point(24, 127);
-            this.GroupBox2.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Padding = new System.Windows.Forms.Padding(21, 17, 21, 17);
-            this.GroupBox2.Size = new System.Drawing.Size(347, 292);
-            this.GroupBox2.TabIndex = 623;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "PEGA TU Script para Crear las Tablas y Procedimientos";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(20, 171);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(301, 102);
-            this.richTextBox1.TabIndex = 623;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // txtCrear_procedimientos
-            // 
-            this.txtCrear_procedimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCrear_procedimientos.Location = new System.Drawing.Point(18, 23);
-            this.txtCrear_procedimientos.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
-            this.txtCrear_procedimientos.Name = "txtCrear_procedimientos";
-            this.txtCrear_procedimientos.Size = new System.Drawing.Size(303, 139);
-            this.txtCrear_procedimientos.TabIndex = 589;
-            this.txtCrear_procedimientos.Text = resources.GetString("txtCrear_procedimientos.Text");
-            // 
-            // txtnombre_scrypt
-            // 
-            this.txtnombre_scrypt.Location = new System.Drawing.Point(158, 93);
-            this.txtnombre_scrypt.Name = "txtnombre_scrypt";
-            this.txtnombre_scrypt.Size = new System.Drawing.Size(134, 26);
-            this.txtnombre_scrypt.TabIndex = 1;
-            this.txtnombre_scrypt.Text = "Script_BASE_PUNTO_VENTA";
-            // 
-            // txtBaseDeDatos
-            // 
-            this.txtBaseDeDatos.Location = new System.Drawing.Point(158, 70);
-            this.txtBaseDeDatos.Name = "txtBaseDeDatos";
-            this.txtBaseDeDatos.Size = new System.Drawing.Size(134, 26);
-            this.txtBaseDeDatos.TabIndex = 1;
-            this.txtBaseDeDatos.Text = "BASE_PUNTO_VENTA\r\n";
-            // 
-            // lblcontraseña
-            // 
-            this.lblcontraseña.Location = new System.Drawing.Point(158, 48);
-            this.lblcontraseña.Name = "lblcontraseña";
-            this.lblcontraseña.Size = new System.Drawing.Size(134, 26);
-            this.lblcontraseña.TabIndex = 1;
-            // 
-            // nombre_del_equipo_usuario
-            // 
-            this.nombre_del_equipo_usuario.Location = new System.Drawing.Point(158, 27);
-            this.nombre_del_equipo_usuario.Name = "nombre_del_equipo_usuario";
-            this.nombre_del_equipo_usuario.Size = new System.Drawing.Size(134, 26);
-            this.nombre_del_equipo_usuario.TabIndex = 1;
-            this.nombre_del_equipo_usuario.Text = "MSSQL15";
-            // 
-            // Nombre_Screypt
-            // 
-            this.Nombre_Screypt.AutoSize = true;
-            this.Nombre_Screypt.Location = new System.Drawing.Point(39, 96);
-            this.Nombre_Screypt.Name = "Nombre_Screypt";
-            this.Nombre_Screypt.Size = new System.Drawing.Size(144, 20);
-            this.Nombre_Screypt.TabIndex = 0;
-            this.Nombre_Screypt.Text = "Nombre de Scrypt: ";
-            // 
-            // BD
-            // 
-            this.BD.AutoSize = true;
-            this.BD.Location = new System.Drawing.Point(39, 73);
-            this.BD.Name = "BD";
-            this.BD.Size = new System.Drawing.Size(123, 20);
-            this.BD.TabIndex = 0;
-            this.BD.Text = "Base de Datos: ";
-            // 
-            // ContrasenaSQL
-            // 
-            this.ContrasenaSQL.AutoSize = true;
-            this.ContrasenaSQL.Location = new System.Drawing.Point(39, 52);
-            this.ContrasenaSQL.Name = "ContrasenaSQL";
-            this.ContrasenaSQL.Size = new System.Drawing.Size(96, 20);
-            this.ContrasenaSQL.TabIndex = 0;
-            this.ContrasenaSQL.Text = "Contraseña:";
-            // 
-            // Nombre_Instancia
-            // 
-            this.Nombre_Instancia.AutoSize = true;
-            this.Nombre_Instancia.Location = new System.Drawing.Point(39, 28);
-            this.Nombre_Instancia.Name = "Nombre_Instancia";
-            this.Nombre_Instancia.Size = new System.Drawing.Size(160, 20);
-            this.Nombre_Instancia.TabIndex = 0;
-            this.Nombre_Instancia.Text = "Nombre de Instancia:";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(10, 135);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(138, 20);
-            this.richTextBox3.TabIndex = 8;
-            this.richTextBox3.Text = "";
-            // 
-            // lblnombredeservicio
-            // 
-            this.lblnombredeservicio.Location = new System.Drawing.Point(10, 77);
-            this.lblnombredeservicio.Name = "lblnombredeservicio";
-            this.lblnombredeservicio.Size = new System.Drawing.Size(100, 26);
-            this.lblnombredeservicio.TabIndex = 7;
-            // 
-            // txtArgumentosini
-            // 
-            this.txtArgumentosini.Location = new System.Drawing.Point(10, 109);
-            this.txtArgumentosini.Name = "txtArgumentosini";
-            this.txtArgumentosini.Size = new System.Drawing.Size(138, 20);
-            this.txtArgumentosini.TabIndex = 8;
-            this.txtArgumentosini.Text = "";
-            // 
-            // pnlDerAzul
-            // 
-            this.pnlDerAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.pnlDerAzul.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDerAzul.Location = new System.Drawing.Point(193, 0);
-            this.pnlDerAzul.Name = "pnlDerAzul";
-            this.pnlDerAzul.Size = new System.Drawing.Size(63, 644);
-            this.pnlDerAzul.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 250);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(188, 147);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // pnlTop
             // 
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -472,9 +521,11 @@
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.Controls.Add(this.pnEliminaBD);
+            this.pnlTitulo.Controls.Add(this.panel4);
             this.pnlTitulo.Controls.Add(this.panel6);
             this.pnlTitulo.Controls.Add(this.lblbuscador_de_servidores);
-            this.pnlTitulo.Controls.Add(this.button1);
+            this.pnlTitulo.Controls.Add(this.btnInstalarServidor);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
@@ -492,18 +543,18 @@
             this.lblbuscador_de_servidores.TabIndex = 3;
             this.lblbuscador_de_servidores.Text = "Buscando servidores Instalados...\r\n";
             // 
-            // button1
+            // btnInstalarServidor
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(184, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(334, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Instalar Servidor";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnInstalarServidor.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnInstalarServidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstalarServidor.ForeColor = System.Drawing.Color.White;
+            this.btnInstalarServidor.Location = new System.Drawing.Point(184, 25);
+            this.btnInstalarServidor.Name = "btnInstalarServidor";
+            this.btnInstalarServidor.Size = new System.Drawing.Size(334, 56);
+            this.btnInstalarServidor.TabIndex = 2;
+            this.btnInstalarServidor.Text = "Instalar Servidor";
+            this.btnInstalarServidor.UseVisualStyleBackColor = false;
+            this.btnInstalarServidor.Click += new System.EventHandler(this.BtnInstalarServidor_Click);
             // 
             // pnlInstaladoServidor
             // 
@@ -677,15 +728,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Instalacion_del_servidorSQL_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.GroupBox2.ResumeLayout(false);
             this.pnEliminaBD.ResumeLayout(false);
             this.pnEliminaBD.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
-            this.GroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlCentral.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -747,7 +799,7 @@
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label lblMin;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInstalarServidor;
         private System.Windows.Forms.Label lblbuscador_de_servidores;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
@@ -758,5 +810,9 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox txtArgumentosini;
         private System.Windows.Forms.Panel panel6;
+        internal System.Windows.Forms.GroupBox groupBox3;
+        internal System.Windows.Forms.RichTextBox txtCrearUsuarioDb;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -56,7 +56,8 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                         insertar_inicio_De_sesion();
                         MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + txtUsuario.Text + " y tu Contraseña es: " + txtContraseña.Text, "Registro Exitoso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         Dispose();
-                        //Application.Restart();
+                        PRESENT.LOGIN frm = new PRESENT.LOGIN();
+                        frm.ShowDialog();
 
                     }
                     catch (Exception ex)

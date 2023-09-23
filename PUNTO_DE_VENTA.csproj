@@ -13,6 +13,22 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\PROYECTO 2022\EbasicoVega389\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +50,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>logo1-pht.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D2D528492B6FC24393AF8FAD82FCF79817C03430</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PUNTO_DE_VENTA_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
@@ -166,6 +203,18 @@
     </Compile>
     <Compile Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.Designer.cs">
+      <DependentUpon>Caja_secundaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\CONEXION_REMOTA\Conexion_secundaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\CONEXION_REMOTA\Conexion_secundaria.Designer.cs">
+      <DependentUpon>Conexion_secundaria.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CONFIGURACION\PANEL_CONFIGURACIONES.cs">
       <SubType>Form</SubType>
@@ -352,6 +401,12 @@
     <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.resx">
+      <DependentUpon>Caja_secundaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\CONEXION_REMOTA\Conexion_secundaria.resx">
+      <DependentUpon>Conexion_secundaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CONFIGURACION\PANEL_CONFIGURACIONES.resx">
       <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +491,7 @@
       <DependentUpon>UsuariosOK.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -450,6 +506,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PUNTO_DE_VENTA_TemporaryKey.pfx" />
     <None Include="Resources\gris_azul1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -507,6 +564,7 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo1-pht.ico" />
     <Content Include="PRESENT\LOGIN\HTMLPage2.html" />
     <None Include="Resources\lapiz.png" />
     <None Include="Resources\ingresos y salidas.png" />
@@ -596,6 +654,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MODULOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
