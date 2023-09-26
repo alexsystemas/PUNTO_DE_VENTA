@@ -18,47 +18,48 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
         {
             InitializeComponent();
         }
-        string serialPc;
+        string serialPC;
         public static string lblconexion;
         private void Caja_secundaria_Load(object sender, EventArgs e)
         {
-            Bases.Obtener_serialPC(ref serialPc);
+            Bases.Obtener_serialPC(ref serialPC);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtcaja.Text))
+            if (!string.IsNullOrEmpty(txtcaja.Text))
             {
                 Ingresar_caja();
             }
             else
             {
-                MessageBox.Show("Datos Incompletos");
+                MessageBox.Show("Datos incompletos");
             }
-            
+
         }
 
         private void Ingresar_caja()
         {
             try
             {
-
-
                 SqlConnection conexionExpress = new SqlConnection(lblconexion);
                 conexionExpress.Open();
+
                 SqlCommand cmd = new SqlCommand();
                 cmd = new SqlCommand("Insertar_caja", conexionExpress);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@descripcion", txtcaja.Text);
                 cmd.Parameters.AddWithValue("@Tema", "Redentor");
-                cmd.Parameters.AddWithValue("@Serial_PC", serialPc);
+                cmd.Parameters.AddWithValue("Serial_PC", serialPC);
                 cmd.Parameters.AddWithValue("@Impresora_Ticket", "Ninguna");
                 cmd.Parameters.AddWithValue("@Impresora_A4", "Ninguna");
                 cmd.Parameters.AddWithValue("@Tipo", "SECUNDARIA");
                 cmd.ExecuteNonQuery();
                 conexionExpress.Close();
-
+                insertar_inicio_De_sesion();
+                MessageBox.Show("Listo ya Tienes Esta CAJA Habilitada", "Caja Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
             }
             catch (Exception ex)
             {
@@ -66,24 +67,19 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
             }
         }
 
-        private void iniciar_inicio_de_sesion()
+        private void insertar_inicio_De_sesion()
         {
             try
             {
-
-
                 SqlConnection conexionExpress = new SqlConnection(lblconexion);
                 conexionExpress.Open();
+
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("Insertar_caja", conexionExpress);
+                cmd = new SqlCommand("insertar_inicio_De_sesion", conexionExpress);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id_serial_Pc", serialPc);
+                cmd.Parameters.AddWithValue("@Id_serial_Pc", serialPC);
                 cmd.ExecuteNonQuery();
                 conexionExpress.Close();
-                iniciar_inicio_de_sesion();
-                MessageBox.Show("Listo ya Tienes Esta CAJA Habilitada", "Caja Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dispose();
-
             }
             catch (Exception ex)
             {

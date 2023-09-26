@@ -17,6 +17,8 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
 {
     public partial class Conexion_secundaria : Form
     {
+        //conexion_secundaria_controller ctr = new conexion_secundaria_controller();
+
         public Conexion_secundaria()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
         string serialPC;
         private void Btn_Conectar_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtIp.Text))
+            if (!string.IsNullOrEmpty(txtIp.Text))
             {
                 conectar_manualmente();
 
@@ -40,54 +42,41 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
             }
 
         }
+
+
         private void comprobar_conexion()
         {
             try
             {
+                /*
+                id = conexion_secundaria_controller.comprobar_conexion(cadena_de_conexion);
+                indicador_de_conexion = "HAY CONEXION";
+                */
                 SqlConnection conexionManual = new SqlConnection(cadena_de_conexion);
                 conexionManual.Open();
                 SqlCommand da = new SqlCommand("select idUsuario from USUARIO2", conexionManual);
                 id = Convert.ToInt32(da.ExecuteScalar());
                 indicador_de_conexion = "HAY CONEXION";
+                
             }
             catch (Exception)
             {
                 indicador_de_conexion = "NO HAY CONEXION";
-
             }
         }
-        private void obtenerIdCaja()
-        {
-            try
-            {
-                Bases.Obtener_serialPC(ref serialPC);
-                SqlConnection conexionExpress = new SqlConnection(cadena_de_conexion);
-                conexionExpress.Open();
-                SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", conexionExpress);
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@Seria", serialPC);
-                idCaja =Convert.ToInt32( com.ExecuteScalar());
-                conexionExpress.Close();
 
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
         private void conectar_manualmente()
         {
             string IP = txtIp.Text;
-            cadena_de_conexion = "Data Source=" + IP + ";Initial Catalog=BASE_PUNTO_VENTA; Integrated Security=False;User Id=VEGA389;Password=pruebas123";
+            cadena_de_conexion = "Data Source =" + IP + ";Initial Catalog=BASE_PUNTO_VENTA;Integrated Security=False;User Id=conexion_remota;Password=12345678";
             comprobar_conexion();
             if (indicador_de_conexion == "HAY CONEXION")
             {
                 SavetoXML(aes.Encrypt(cadena_de_conexion, Desencryptacion.appPwdUnique, int.Parse("256")));
                 obtenerIdCaja();
-                if(idCaja>0)
+                if (idCaja > 0)
                 {
-                    MessageBox.Show("Conexion Correcta. Vuelve a Abrir el Sistema", "Conexion  Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Conexion Correcta. Vuelve a Abrir el Sistema", "Conexion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Dispose();
                 }
                 else
@@ -99,6 +88,30 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
                 }
             }
         }
+
+        private void obtenerIdCaja()
+        {
+            try
+            {
+                Bases.Obtener_serialPC(ref serialPC);
+
+                //SqlConnection conexionExpress = conexion_secundaria_controller.obtenerSQL_conexion(cadena_de_conexion);
+                SqlConnection conexionExpress = new SqlConnection(cadena_de_conexion);
+                conexionExpress.Open();
+                SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", conexionExpress);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@Serial", serialPC);
+                idCaja = Convert.ToInt32(com.ExecuteScalar());
+                conexionExpress.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+    
+       
+       
         public void SavetoXML(object dbcnString)
         {
             XmlDocument doc = new XmlDocument();
@@ -109,6 +122,11 @@ namespace PUNTO_DE_VENTA.PRESENT.CONEXION_REMOTA
             writer.Formatting = Formatting.Indented;
             doc.Save(writer);
             writer.Close();
+        }
+
+        private void Conexion_secundaria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

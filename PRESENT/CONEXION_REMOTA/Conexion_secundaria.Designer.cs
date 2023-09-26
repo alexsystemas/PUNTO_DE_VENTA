@@ -31,9 +31,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIp = new System.Windows.Forms.TextBox();
             this.pnlDetalle = new System.Windows.Forms.Panel();
+            this.btn_Conectar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Conectar = new System.Windows.Forms.Button();
             this.pnlDetalle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,17 @@
             this.pnlDetalle.Size = new System.Drawing.Size(517, 92);
             this.pnlDetalle.TabIndex = 45;
             // 
+            // btn_Conectar
+            // 
+            this.btn_Conectar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btn_Conectar.Location = new System.Drawing.Point(122, 39);
+            this.btn_Conectar.Name = "btn_Conectar";
+            this.btn_Conectar.Size = new System.Drawing.Size(248, 40);
+            this.btn_Conectar.TabIndex = 2;
+            this.btn_Conectar.Text = "Conectar";
+            this.btn_Conectar.UseVisualStyleBackColor = true;
+            this.btn_Conectar.Click += new System.EventHandler(this.Btn_Conectar_Click);
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,17 +100,6 @@
             this.panel1.Size = new System.Drawing.Size(553, 38);
             this.panel1.TabIndex = 44;
             // 
-            // btn_Conectar
-            // 
-            this.btn_Conectar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btn_Conectar.Location = new System.Drawing.Point(122, 39);
-            this.btn_Conectar.Name = "btn_Conectar";
-            this.btn_Conectar.Size = new System.Drawing.Size(248, 40);
-            this.btn_Conectar.TabIndex = 2;
-            this.btn_Conectar.Text = "Conectar";
-            this.btn_Conectar.UseVisualStyleBackColor = true;
-            this.btn_Conectar.Click += new System.EventHandler(this.Btn_Conectar_Click);
-            // 
             // Conexion_secundaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +110,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Conexion_secundaria";
             this.Text = "Conexion_secundaria";
+            this.Load += new System.EventHandler(this.Conexion_secundaria_Load);
             this.pnlDetalle.ResumeLayout(false);
             this.pnlDetalle.PerformLayout();
             this.panel1.ResumeLayout(false);

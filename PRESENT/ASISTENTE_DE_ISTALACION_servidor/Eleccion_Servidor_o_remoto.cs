@@ -59,5 +59,13 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
             frm.ShowDialog();
 
         }
+
+        private void BtnCliente_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            MessageBox.Show("Entramos");
+            CONEXION_REMOTA.Conexion_secundaria frm = new CONEXION_REMOTA.Conexion_secundaria();
+            frm.ShowDialog();
+        }
     }
 }

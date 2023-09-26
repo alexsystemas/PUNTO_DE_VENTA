@@ -310,10 +310,10 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
         }
 
         private void PictureBox4_Click(object sender, EventArgs e)
+
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if( folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                txtRuta.Text = folderBrowserDialog1.SelectedPath;
                 string ruta = txtRuta.Text;
                 if (ruta.Contains(@"C:\"))
                 {
@@ -327,6 +327,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 
 
             }
+
         }
 
         private void Label9_Click(object sender, EventArgs e)
