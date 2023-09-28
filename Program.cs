@@ -16,7 +16,7 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
+            PRESENT.LOGIN frm = new PRESENT.LOGIN();
             frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
             Application.Run();

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Management;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.DATE;
+using System.IO;
 
 namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
 {
@@ -26,6 +27,9 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         string lblSerialPc;
         int idcajavariable;
         int idusuariovariable;
+        string Base_De_datos = "BASE_PUNTO_VENTA";
+        string Servidor = @".\SQLEXPRESS";
+        string ruta;
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
             PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES frm = new PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES();
@@ -220,6 +224,81 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         {
             PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
             frm.ShowDialog();
+        }
+
+        private void BtnRestaurar_Click(object sender, EventArgs e)
+        {
+            RestaurarBdExpress();
+        }
+        private void RestaurarBdExpress()
+        {
+            dlg.InitialDirectory = "";
+            dlg.Filter = "Backup " + Base_De_datos + "|*.bak";
+            dlg.FilterIndex = 2;
+            dlg.Title = "Cargador de Backup";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                ruta = Path.GetFullPath(dlg.FileName);
+                DialogResult pregunta = MessageBox.Show("Usted está a punto de restaurar la base de datos," + "asegurese de que el archivo .bak sea reciente, de" + "lo contrario podría perder información y no podrá" + "recuperarla, ¿desea continuar?", "Restauración de base de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (pregunta == DialogResult.Yes)
+                {
+                    SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
+                    try
+                    {
+                        cnn.Open();
+                        string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+                        SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
+                        BorraRestaura.ExecuteNonQuery();
+                        MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Dispose();
+
+
+                    }
+                    catch (Exception)
+                    {
+                        RestaurarNoExpress();
+                    }
+                    finally
+                    {
+                        if (cnn.State == ConnectionState.Open)
+                        {
+                            cnn.Close();
+                        }
+
+                    }
+
+
+                }
+            }
+        }
+
+        private void RestaurarNoExpress()
+        {
+            Servidor = ".";
+            SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
+            try
+            {
+                cnn.Open();
+                string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+                SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
+                BorraRestaura.ExecuteNonQuery();
+                MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+
+            }
         }
     }
 }
