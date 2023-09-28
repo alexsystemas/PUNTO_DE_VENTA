@@ -41,8 +41,8 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.lblCopiasseguridad = new System.Windows.Forms.Label();
+            this.pckCopiasSeguridad = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -96,7 +96,7 @@
             this.panel19.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasSeguridad)).BeginInit();
             this.panel17.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -248,36 +248,38 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.label14);
-            this.panel20.Controls.Add(this.pictureBox11);
+            this.panel20.Controls.Add(this.lblCopiasseguridad);
+            this.panel20.Controls.Add(this.pckCopiasSeguridad);
             this.panel20.Location = new System.Drawing.Point(1, 1);
             this.panel20.Margin = new System.Windows.Forms.Padding(1);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(93, 128);
             this.panel20.TabIndex = 0;
             // 
-            // label14
+            // lblCopiasseguridad
             // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 64);
-            this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 48);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Respaldo de Base de datos";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCopiasseguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopiasseguridad.Location = new System.Drawing.Point(6, 64);
+            this.lblCopiasseguridad.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblCopiasseguridad.Name = "lblCopiasseguridad";
+            this.lblCopiasseguridad.Size = new System.Drawing.Size(80, 48);
+            this.lblCopiasseguridad.TabIndex = 1;
+            this.lblCopiasseguridad.Text = "Respaldo de Base de datos";
+            this.lblCopiasseguridad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCopiasseguridad.Click += new System.EventHandler(this.LblCopiasseguridad_Click);
             // 
-            // pictureBox11
+            // pckCopiasSeguridad
             // 
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox11.Image = global::PUNTO_DE_VENTA.Properties.Resources.respaldo;
-            this.pictureBox11.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(93, 63);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
+            this.pckCopiasSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pckCopiasSeguridad.Image = global::PUNTO_DE_VENTA.Properties.Resources.respaldo;
+            this.pckCopiasSeguridad.Location = new System.Drawing.Point(0, 0);
+            this.pckCopiasSeguridad.Margin = new System.Windows.Forms.Padding(1);
+            this.pckCopiasSeguridad.Name = "pckCopiasSeguridad";
+            this.pckCopiasSeguridad.Size = new System.Drawing.Size(93, 63);
+            this.pckCopiasSeguridad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pckCopiasSeguridad.TabIndex = 0;
+            this.pckCopiasSeguridad.TabStop = false;
+            this.pckCopiasSeguridad.Click += new System.EventHandler(this.PckCopiasSeguridad_Click);
             // 
             // label15
             // 
@@ -783,7 +785,7 @@
             this.panel19.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasSeguridad)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -859,8 +861,8 @@
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Label lblCopiasseguridad;
+        private System.Windows.Forms.PictureBox pckCopiasSeguridad;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;

@@ -385,7 +385,42 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-    }
+        public static void mostrar_cajas(ref DataTable dt)
+        {
+            try
+            {
+                Bases.Obtener_serialPC(ref serialPC);
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_cajas_por_Serial_de_DiscoDuro", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Serial", serialPC);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void mostrar_empresa(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("select * from EMPRESA", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
 
     }
+
+}
 

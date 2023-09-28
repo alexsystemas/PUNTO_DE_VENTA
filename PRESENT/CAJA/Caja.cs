@@ -20,7 +20,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
 
         private void Caja_Load(object sender, EventArgs e)
         {
-            dibujarCAJA_PRINCIPAL();
+           // dibujarCAJA_PRINCIPAL();
             dibujarCAJAS_REMOTAS();
         }
 
@@ -190,7 +190,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                     PictureBox I2 = new PictureBox();
                     Label L = new Label();
                     Label L2 = new Label();
-                    Label L3 = new Label();
+
                     Panel P3 = new Panel();
                     Label LABELusuario = new Label();
                     Panel PbarraArriba = new Panel();
@@ -198,38 +198,46 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
 
                     L.Text = rdr["Descripcion"].ToString();
                     L.Name = rdr["Id_Caja"].ToString();
-                    L.Size = new System.Drawing.Size(170, 25);
+                    L.Size = new System.Drawing.Size(175, 25);
                     L.Font = new System.Drawing.Font("Microsoft Sans Serif", 20);
                     L.AutoSize = false;
                     L.BackColor = Color.Transparent;
-                    L.ForeColor = Color.Black;
+                    L.ForeColor = Color.White;
                     L.Dock = DockStyle.Fill;
                     L.TextAlign = ContentAlignment.MiddleCenter;
 
+                    try
+                    {
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                     LABELusuario.Text = "Por " + rdr["Nombres_y_Apellidos"].ToString();
                     LABELusuario.Dock = DockStyle.Bottom;
                     LABELusuario.AutoSize = false;
                     LABELusuario.TextAlign = ContentAlignment.MiddleCenter;
                     LABELusuario.BackColor = Color.Transparent;
-                    LABELusuario.ForeColor = Color.Black;
+                    LABELusuario.ForeColor = Color.White;
                     LABELusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10);
                     LABELusuario.Size = new System.Drawing.Size(430, 31);
 
-                    p1.Size = new System.Drawing.Size(190, 143);
+                    p1.Size = new System.Drawing.Size(208, 143);
                     p1.BorderStyle = BorderStyle.None;
                     p1.Dock = DockStyle.Top;
-                    p1.BackColor = Color.FromArgb(169, 169, 169);
+                    p1.BackColor = Color.FromArgb(20, 20, 20);
 
-                    p2.Size = new System.Drawing.Size(190, 24);
+                    p2.Size = new System.Drawing.Size(208, 24);
                     p2.Dock = DockStyle.Top;
-                    p2.BackColor = Color.FromArgb(160, 160, 160);
+                    p2.BackColor = Color.Transparent;
 
                     L2.Text = rdr["Estado"].ToString();
                     L2.Size = new System.Drawing.Size(430, 18);
                     L2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9);
                     L2.BackColor = Color.Transparent;
                     L2.AutoSize = false;
-                    L2.ForeColor = Color.Black;
+                    L2.ForeColor = Color.Gray;
                     L2.Dock = DockStyle.Fill;
                     L2.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -255,8 +263,10 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                     ToolStripRESTAURAR.Text = "Restaurar";
                     ToolStripRESTAURAR.Tag = rdr["Id_caja"].ToString();
 
+
                     Menustrip.Items.Add(ToolStripPRINCIPAL);
-                 
+
+
 
                     if (L2.Text == "RECIEN CREADA")
                     {
@@ -281,7 +291,6 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                         I1.BackgroundImage = Properties.Resources.caja_eliminada_oficial;
                         L.ForeColor = Color.DimGray;
                     }
-
                     if (L2.Text != "Caja Eliminada")
                     {
                         ToolStripPRINCIPAL.DropDownItems.Add(ToolStripEDITAR);
@@ -293,8 +302,9 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                         ToolStripPRINCIPAL.DropDownItems.Add(ToolStripRESTAURAR);
                     }
 
+
                     I1.BackgroundImageLayout = ImageLayout.Zoom;
-                    I1.Size = new System.Drawing.Size(20, 24);
+                    I1.Size = new System.Drawing.Size(22, 24);
                     I1.Dock = DockStyle.Fill;
                     I1.BackColor = Color.Transparent;
 
@@ -317,7 +327,6 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                     p2.Controls.Add(P3);
                     p2.Controls.Add(L2);
                     p2.Controls.Add(Menustrip);
-
                     p1.Controls.Add(p2);
                     p1.Controls.Add(L);
                     p1.Controls.Add(LABELusuario);
@@ -329,7 +338,6 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                     ToolStripEDITAR.Click += new EventHandler(miEventoToolStripEDITAR);
                     ToolStripELIMINAR.Click += new EventHandler(miEventoToolStripELIMINAR);
                     ToolStripRESTAURAR.Click += new EventHandler(miEventoToolStripRESTAURAR);
-
                 }
                 con.Close();
             }
@@ -338,6 +346,8 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
                 MessageBox.Show(ex.Message);
             }
         }
+
+
 
         int idcaja;
         private void miEventoToolStripEDITAR(System.Object sender, EventArgs e)

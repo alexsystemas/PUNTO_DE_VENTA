@@ -209,5 +209,17 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
 
             }
          }
+
+        private void LblCopiaSeguridad_Click(object sender, EventArgs e)
+        {
+            PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
+            frm.ShowDialog();
+        }
+
+        private void PckSeguridad_Click(object sender, EventArgs e)
+        {
+            PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
+            frm.ShowDialog();
+        }
     }
 }

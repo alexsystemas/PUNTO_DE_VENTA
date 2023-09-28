@@ -99,5 +99,17 @@ namespace PUNTO_DE_VENTA.PRESENT.CONFIGURACION
             PRESENT.CAJA.Caja frm = new PRESENT.CAJA.Caja();
             frm.ShowDialog();
         }
+
+        private void PckCopiasSeguridad_Click(object sender, EventArgs e)
+        {
+            PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
+            frm.ShowDialog();
+        }
+
+        private void LblCopiasseguridad_Click(object sender, EventArgs e)
+        {
+            PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
+            frm.ShowDialog();
+        }
     }
 }

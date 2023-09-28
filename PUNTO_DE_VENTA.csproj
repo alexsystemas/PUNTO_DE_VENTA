@@ -126,6 +126,7 @@
     <Compile Include="LOGIC\Lclientes.cs" />
     <Compile Include="LOGIC\LcreditoPorCobrar.cs" />
     <Compile Include="LOGIC\LcreditosPorPagar.cs" />
+    <Compile Include="LOGIC\Lempresa.cs" />
     <Compile Include="LOGIC\LProveedores.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
       <SubType>Form</SubType>
@@ -222,6 +223,12 @@
     </Compile>
     <Compile Include="PRESENT\CONFIGURACION\PANEL_CONFIGURACIONES.Designer.cs">
       <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COPIAS_BD\Copias_Bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COPIAS_BD\Copias_Bd.Designer.cs">
+      <DependentUpon>Copias_Bd.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\DISEÑADOR_DE_COMPROBANTES\Ticket.cs">
       <SubType>Form</SubType>
@@ -411,6 +418,9 @@
     <EmbeddedResource Include="PRESENT\CONFIGURACION\PANEL_CONFIGURACIONES.resx">
       <DependentUpon>PANEL_CONFIGURACIONES.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COPIAS_BD\Copias_Bd.resx">
+      <DependentUpon>Copias_Bd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\DISEÑADOR_DE_COMPROBANTES\Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,6 +577,8 @@
   <ItemGroup>
     <Content Include="logo1-pht.ico" />
     <Content Include="PRESENT\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\loading-63.gif" />
+    <None Include="Resources\agrgar_documento1.png" />
     <None Include="Resources\lapiz.png" />
     <None Include="Resources\ingresos y salidas.png" />
     <None Include="Resources\teclados.png" />

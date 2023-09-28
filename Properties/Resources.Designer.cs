@@ -113,6 +113,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agrgar_documento1 {
+            get {
+                object obj = ResourceManager.GetObject("agrgar_documento1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ajustes {
             get {
                 object obj = ResourceManager.GetObject("ajustes", resourceCulture);
@@ -756,6 +766,16 @@ namespace PUNTO_DE_VENTA.Properties {
         internal static System.Drawing.Bitmap lista_de_verificacion {
             get {
                 object obj = ResourceManager.GetObject("lista-de-verificacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_63 {
+            get {
+                object obj = ResourceManager.GetObject("loading-63", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
