@@ -8,13 +8,13 @@ namespace PUNTO_DE_VENTA.LOGIC
 {
   public  class Lclientes
     {
-        public int IdCliente { set; get; }
+        public int idclientev { set; get; }
         public string Nombre { set; get; }
-        public string Direccion { set; get; }
-        public string IdentificadorFiscal { set; get; }
-        public string Celular { set; get; }
+        public string Direccion_para_factura { set; get; }
+        public string RFC { set; get; }
+        public string movil { set; get; }
         public string Estado { set; get; }
-        public double saldo { set; get; }
+        public double Saldo { set; get; }
 
     }
 }

@@ -37,7 +37,7 @@
             this.btn_Notificacion = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.volverAlAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblProveedor = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel20 = new System.Windows.Forms.Panel();
@@ -84,7 +84,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnProveedor = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,7 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.lblProveedor.SuspendLayout();
             this.panel19.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -124,7 +124,7 @@
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,7 +140,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
+            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht2;
             this.pictureBox2.Location = new System.Drawing.Point(5, 250);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(188, 147);
@@ -213,19 +213,19 @@
             this.volverAlAdministradorToolStripMenuItem.Size = new System.Drawing.Size(219, 44);
             this.volverAlAdministradorToolStripMenuItem.Text = "volver al administrador";
             // 
-            // panel4
+            // lblProveedor
             // 
-            this.panel4.Controls.Add(this.panel19);
-            this.panel4.Controls.Add(this.panel17);
-            this.panel4.Controls.Add(this.panel15);
-            this.panel4.Controls.Add(this.panel13);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(256, 49);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(757, 594);
-            this.panel4.TabIndex = 2;
+            this.lblProveedor.Controls.Add(this.panel19);
+            this.lblProveedor.Controls.Add(this.panel17);
+            this.lblProveedor.Controls.Add(this.panel15);
+            this.lblProveedor.Controls.Add(this.panel13);
+            this.lblProveedor.Controls.Add(this.panel5);
+            this.lblProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProveedor.Location = new System.Drawing.Point(256, 49);
+            this.lblProveedor.Margin = new System.Windows.Forms.Padding(1);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(757, 594);
+            this.lblProveedor.TabIndex = 2;
             // 
             // panel19
             // 
@@ -715,7 +715,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.pictureBox7);
+            this.panel12.Controls.Add(this.btnProveedor);
             this.panel12.Location = new System.Drawing.Point(571, 1);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
@@ -732,18 +732,20 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Proveedores";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.Label8_Click);
             // 
-            // pictureBox7
+            // btnProveedor
             // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox7.Image = global::PUNTO_DE_VENTA.Properties.Resources.proveedor;
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(93, 63);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
+            this.btnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedor.Image = global::PUNTO_DE_VENTA.Properties.Resources.proveedor;
+            this.btnProveedor.Location = new System.Drawing.Point(0, 0);
+            this.btnProveedor.Margin = new System.Windows.Forms.Padding(1);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(93, 63);
+            this.btnProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnProveedor.TabIndex = 0;
+            this.btnProveedor.TabStop = false;
+            this.btnProveedor.Click += new System.EventHandler(this.BtnProveedor_Click);
             // 
             // label1
             // 
@@ -761,7 +763,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 643);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.lblProveedor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -780,7 +782,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.lblProveedor.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
@@ -817,7 +819,7 @@
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -827,7 +829,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel lblProveedor;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -851,7 +853,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox btnProveedor;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel14;

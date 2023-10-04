@@ -111,7 +111,7 @@ namespace PUNTO_DE_VENTA.DATE
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -190,12 +190,12 @@ namespace PUNTO_DE_VENTA.DATE
             {
                 Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("insertar_Clientes", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("insertar_clientes", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
-                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
-                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
-                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.Parameters.AddWithValue("@Direccion_para_factura", parametros.Direccion_para_factura);
+                cmd.Parameters.AddWithValue("@RFC", parametros.RFC);
+                cmd.Parameters.AddWithValue("@movil", parametros.movil);
                 cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
                 cmd.Parameters.AddWithValue("@Saldo", 0);
                 cmd.ExecuteNonQuery();

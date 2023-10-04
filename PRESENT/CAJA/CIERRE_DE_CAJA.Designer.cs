@@ -82,7 +82,7 @@
             this.lblPorCobrar = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
-            this.btnCobrar = new System.Windows.Forms.Button();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -616,19 +616,20 @@
             this.label49.Text = "Creditos Aperturados";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnCobrar
+            // btnCerrarCaja
             // 
-            this.btnCobrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCobrar.BackgroundImage = global::PUNTO_DE_VENTA.Properties.Resources.gris_azul;
-            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.ForeColor = System.Drawing.Color.White;
-            this.btnCobrar.Location = new System.Drawing.Point(5, 569);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(256, 46);
-            this.btnCobrar.TabIndex = 646;
-            this.btnCobrar.Text = "Cerrar Caja";
-            this.btnCobrar.UseVisualStyleBackColor = false;
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarCaja.BackgroundImage = global::PUNTO_DE_VENTA.Properties.Resources.gris_azul;
+            this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarCaja.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarCaja.Location = new System.Drawing.Point(5, 569);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(256, 46);
+            this.btnCerrarCaja.TabIndex = 646;
+            this.btnCerrarCaja.Text = "Cerrar Caja";
+            this.btnCerrarCaja.UseVisualStyleBackColor = false;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.BtnCerrarCaja_Click);
             // 
             // lblVentasTotal
             // 
@@ -636,7 +637,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(686, 697);
-            this.Controls.Add(this.btnCobrar);
+            this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.cierre_Caja);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel8);
@@ -725,7 +726,7 @@
         private System.Windows.Forms.Label lblPorCobrar;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.Label lblVentas_Tarjeta;
     }
 }

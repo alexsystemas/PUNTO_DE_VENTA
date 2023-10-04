@@ -129,7 +129,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht;
             this.pictureBox2.Location = new System.Drawing.Point(5, 250);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(188, 147);

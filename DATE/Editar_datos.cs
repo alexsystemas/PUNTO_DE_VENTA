@@ -120,13 +120,13 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("editar_Clientes", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("editar_clientes", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Idcliente", parametros.IdCliente);
+                cmd.Parameters.AddWithValue("@idclientev", parametros.idclientev);
                 cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
-                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
-                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
-                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.Parameters.AddWithValue("@Direccion_para_factura", parametros.Direccion_para_factura);
+                cmd.Parameters.AddWithValue("@RFC", parametros.RFC);
+                cmd.Parameters.AddWithValue("@movil", parametros.movil);
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -151,7 +151,6 @@ namespace PUNTO_DE_VENTA.DATE
                 SqlCommand cmd = new SqlCommand("restaurar_Proveedores", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@IdProveedor", parametros.IdProveedor);
-                
                 cmd.ExecuteNonQuery();
                 return true;
 
@@ -172,9 +171,9 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("restaurar_Clientes", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("restaurar_clientes", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Idcliente", parametros.IdCliente);
+                cmd.Parameters.AddWithValue("@idclientev", parametros.idclientev);
 
                 cmd.ExecuteNonQuery();
                 return true;

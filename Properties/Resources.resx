@@ -136,6 +136,9 @@
   <data name="respaldo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\respaldo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="convertidor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\convertidor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,9 +174,6 @@
   </data>
   <data name="agregar_icono21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar_icono21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="caja_eliminada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caja_eliminada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agrgar_documento1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agrgar_documento1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -249,6 +249,9 @@
   </data>
   <data name="lapiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lapiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo1 pht1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1 pht1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="movimento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\movimento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,6 +376,9 @@
   <data name="credito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\credito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="precaucion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\precaucion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="filtro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filtro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -382,8 +388,8 @@
   <data name="gris_azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gris_azul1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregar-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agregar-producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1-pht" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1-pht.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ganancia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ganancia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,13 +451,13 @@
   <data name="wallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="precaucion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\precaucion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caja_eliminada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caja_eliminada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ligero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ligero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1-pht" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo1-pht.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1 pht2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1 pht2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

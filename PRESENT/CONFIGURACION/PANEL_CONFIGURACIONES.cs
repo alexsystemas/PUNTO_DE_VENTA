@@ -111,5 +111,20 @@ namespace PUNTO_DE_VENTA.PRESENT.CONFIGURACION
             PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD frm = new PRESENT.COPIAS_BD.COPIA_DE_SEGURIADAD();
             frm.ShowDialog();
         }
+
+        private void BtnProveedor_Click(object sender, EventArgs e)
+        {
+            provedor();
+        }
+       private void provedor()
+        {
+            PRESENT.CLIENTES_PROVEEDORES.Proveedores frm = new PRESENT.CLIENTES_PROVEEDORES.Proveedores();
+            frm.ShowDialog();
+        }
+
+        private void Label8_Click(object sender, EventArgs e)
+        {
+            provedor();
+        }
     }
 }

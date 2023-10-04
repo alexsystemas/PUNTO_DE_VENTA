@@ -128,7 +128,7 @@ namespace PUNTO_DE_VENTA.DATE
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -168,7 +168,7 @@ namespace PUNTO_DE_VENTA.DATE
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -177,7 +177,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("mostrar_Clientes", CONEXIONMAESTRA.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_clientes", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
             }
@@ -308,7 +308,44 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
         }
+        public static void sumar_CreditoPorCobrar(int idcaja, DateTime fi, DateTime ff, ref double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("sumar_CreditoPorCobrar", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
 
+                monto = 0;
+            }
+        }
+        public static void sumar_CreditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("sumar_CreditoPorPagar", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                monto = 0;
+            }
+        }
         public static void buscar_Proveedores(ref DataTable dt, string buscador)
         {
             try
@@ -322,8 +359,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -332,7 +368,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("buscar_Clientes", CONEXIONMAESTRA.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("buscar_clientes", CONEXIONMAESTRA.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
                 da.Fill(dt);
@@ -350,7 +386,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand da = new SqlCommand("sumar_creaditoPorPagar", CONEXIONMAESTRA.conectar);
+                SqlCommand da = new SqlCommand("sumar_CreditoPorPagar", CONEXIONMAESTRA.conectar);
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@idcaja", idcaja);
                 da.Parameters.AddWithValue("@fi", fi);
@@ -370,7 +406,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand da = new SqlCommand("sumar_creaditoPorCobrar", CONEXIONMAESTRA.conectar);
+                SqlCommand da = new SqlCommand("sumar_CreditoPorCobrar", CONEXIONMAESTRA.conectar);
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@idcaja", idcaja);
                 da.Parameters.AddWithValue("@fi", fi);

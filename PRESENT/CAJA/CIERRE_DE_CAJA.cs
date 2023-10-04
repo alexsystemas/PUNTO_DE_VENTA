@@ -21,6 +21,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         {
             InitializeComponent();
         }
+        public static double dineroEnCaja;
         int idcaja;
         DateTime fechaInicial;
         DateTime fechaFinal=DateTime.Now;
@@ -45,6 +46,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             obtener_ingresos_por_turno();
             obtener_creditosPorPagar();
             sumar_creaditoPorCobrar();
+            
             mostrar_ventas_Tarjeta_por_turno();
             mostrar_ventas_creadito_por_turno();
             calcular();
@@ -117,6 +119,13 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         {
             Obtener_datos.mostrar_ventas_creadito_por_turno(idcaja, fechaInicial, fechaFinal, ref ventasCredito);
             lblVentas_Credito.Text = ventasCredito.ToString();
+        }
+
+        private void BtnCerrarCaja_Click(object sender, EventArgs e)
+        {
+            CierreTurno frm = new CierreTurno();
+            dineroEnCaja =Convert.ToDouble( lblDineroEncaja.Text);
+            frm.ShowDialog();
         }
     }
 }

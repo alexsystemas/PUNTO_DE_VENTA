@@ -33,6 +33,7 @@
             this.pnl_Proveedor = new UIDC.UI_ShadowPanel();
             this.pnlCordenadas = new System.Windows.Forms.Panel();
             this.datalistado = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnl_Proveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             this.uI_ShadowPanel2.SuspendLayout();
@@ -108,8 +108,8 @@
             this.Eliminar});
             this.datalistado.EnableHeadersVisualStyles = false;
             this.datalistado.GridColor = System.Drawing.Color.YellowGreen;
-            this.datalistado.Location = new System.Drawing.Point(406, 48);
-            this.datalistado.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.datalistado.Location = new System.Drawing.Point(427, 48);
+            this.datalistado.Margin = new System.Windows.Forms.Padding(1);
             this.datalistado.Name = "datalistado";
             this.datalistado.ReadOnly = true;
             this.datalistado.RowHeadersVisible = false;
@@ -118,10 +118,19 @@
             this.datalistado.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.datalistado.RowTemplate.Height = 30;
             this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistado.Size = new System.Drawing.Size(31, 101);
+            this.datalistado.Size = new System.Drawing.Size(10, 101);
             this.datalistado.TabIndex = 39;
             this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_CellClick);
             this.datalistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_CellContentClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Visible = false;
             // 
             // button1
             // 
@@ -285,15 +294,6 @@
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Visible = false;
             // 
             // PorPagar
             // 

@@ -30,9 +30,9 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             Lclientes parametros = new Lclientes();
             Insertar_datos funcion = new Insertar_datos();
             parametros.Nombre = txtnombre.Text;
-            parametros.IdentificadorFiscal = txtRfc.Text;
-            parametros.Celular = txtcelular.Text;
-            parametros.Direccion = txtdireccion.Text;
+            parametros.RFC = txtRfc.Text;
+            parametros.movil = txtcelular.Text;
+            parametros.Direccion_para_factura = txtdireccion.Text;
             if (funcion.insertar_Clientes(parametros) == true) ;
             {
                 mostrar();
@@ -51,11 +51,11 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         {
             Lclientes parametros = new Lclientes();
             Editar_datos funcion = new Editar_datos();
-            parametros.IdCliente = IdProveedor;
+            parametros.idclientev = IdProveedor;
             parametros.Nombre = txtnombre.Text;
-            parametros.IdentificadorFiscal = txtRfc.Text;
-            parametros.Celular = txtcelular.Text;
-            parametros.Direccion = txtdireccion.Text;
+            parametros.RFC = txtRfc.Text;
+            parametros.movil = txtcelular.Text;
+            parametros.Direccion_para_factura = txtdireccion.Text;
             if (funcion.editar_Clientes(parametros) == true)
             {
                 mostrar();
@@ -67,7 +67,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
             {
                 Lclientes parametros = new Lclientes();
                 Eliminar_datos funcion = new Eliminar_datos();
-                parametros.IdCliente = IdProveedor;
+                parametros.idclientev = IdProveedor;
                 if (funcion.eliminar_Clientes(parametros) == true)
                 {
                     mostrar();
@@ -84,7 +84,7 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         {
             Lclientes parametros = new Lclientes();
             Editar_datos funcion = new Editar_datos();
-            parametros.IdCliente = IdProveedor;
+            parametros.idclientev = IdProveedor;
             if (funcion.restaurar_Clientes(parametros) == true)
             {
                 mostrar();

@@ -8,7 +8,7 @@ namespace PUNTO_DE_VENTA.LOGIC
 {
    public class LcreditoPorCobrar
     {
-        public int IdCredito { get; set; }
+        public int Id_credito { get; set; }
         public string Descripcion { get; set; }
         public DateTime Fecha_registro { get; set; }
         public DateTime Fecha_vencimiento { get; set; }

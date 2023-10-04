@@ -22,7 +22,7 @@ namespace PUNTO_DE_VENTA.PRESENT.APERTURA_DE_CREDITO
         Panel p = new Panel();
         private void PorCobrar_Load(object sender, EventArgs e)
         {
-
+            buscar_Clientes();
         }
         //crud-----------------
         private void buscar_Clientes()
@@ -82,7 +82,7 @@ namespace PUNTO_DE_VENTA.PRESENT.APERTURA_DE_CREDITO
 
         private void Btn_Agregar_Click(object sender, EventArgs e)
         {
-            CLIENTES_PROVEEDORES.Proveedores frm = new CLIENTES_PROVEEDORES.Proveedores();
+            CLIENTES_PROVEEDORES.ClientesOk frm = new CLIENTES_PROVEEDORES.ClientesOk();
             frm.ShowDialog();
         }
 
