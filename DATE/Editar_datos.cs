@@ -217,6 +217,66 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public bool editar_correo_base(Lcorreo parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_correo_base", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Correo", parametros.Correo);
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Estado_De_envio", parametros.Estado_De_envio);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public bool cerrarCaja(Lmcaja parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("cerrarCaja", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@fechafin", parametros.fechafin);
+                cmd.Parameters.AddWithValue("@fechacierre", parametros.fechacierre);
+                cmd.Parameters.AddWithValue("@ingresos", parametros.ingresos);
+                cmd.Parameters.AddWithValue("@egresos", parametros.egresos);
+                cmd.Parameters.AddWithValue("@Saldo_queda_en_caja", parametros.Saldo_queda_en_caja);
+                cmd.Parameters.AddWithValue("@Id_usuario", parametros.Id_usuario);
+                cmd.Parameters.AddWithValue("@Total_calculado", parametros.Total_calculado);
+                cmd.Parameters.AddWithValue("@Total_real", parametros.Total_real);
+                cmd.Parameters.AddWithValue("@Estado", parametros.Estado);
+                cmd.Parameters.AddWithValue("@Diferencia", parametros.Diferencia);
+                cmd.Parameters.AddWithValue("@Id_caja", parametros.Id_caja);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+
+       
 
     }
 }

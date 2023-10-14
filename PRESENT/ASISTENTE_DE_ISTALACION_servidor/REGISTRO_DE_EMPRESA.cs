@@ -168,6 +168,21 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                con.Open();
+                cmd = new SqlCommand("insertarCorreoBase", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                string correo;
+                string pass;
+                string estado;
+                correo = Bases.Encriptar("-");
+                pass = Bases.Encriptar("-");
+                estado = "Sin confirmar";
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Password", pass);
+                cmd.Parameters.AddWithValue("@Estado_De_envio", estado);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
             }
             catch (Exception ex)
             {

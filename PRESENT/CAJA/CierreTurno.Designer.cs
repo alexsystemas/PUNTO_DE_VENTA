@@ -29,34 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CierreTurno));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbldeberiaHaber = new System.Windows.Forms.Label();
+            this.lblDeberiaHaber = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtHay = new System.Windows.Forms.TextBox();
+            this.txthay = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbldiferencia = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkCorreo = new System.Windows.Forms.CheckBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblanuncio = new System.Windows.Forms.Label();
+            this.btnCobrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.htmldeEnvio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(163, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -69,16 +60,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Efectivo esperado en caja:";
             // 
-            // lbldeberiaHaber
+            // lblDeberiaHaber
             // 
-            this.lbldeberiaHaber.AutoSize = true;
-            this.lbldeberiaHaber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldeberiaHaber.ForeColor = System.Drawing.Color.Maroon;
-            this.lbldeberiaHaber.Location = new System.Drawing.Point(195, 150);
-            this.lbldeberiaHaber.Name = "lbldeberiaHaber";
-            this.lbldeberiaHaber.Size = new System.Drawing.Size(40, 18);
-            this.lbldeberiaHaber.TabIndex = 2;
-            this.lbldeberiaHaber.Text = "0.00";
+            this.lblDeberiaHaber.AutoSize = true;
+            this.lblDeberiaHaber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeberiaHaber.ForeColor = System.Drawing.Color.Maroon;
+            this.lblDeberiaHaber.Location = new System.Drawing.Point(195, 150);
+            this.lblDeberiaHaber.Name = "lblDeberiaHaber";
+            this.lblDeberiaHaber.Size = new System.Drawing.Size(40, 18);
+            this.lblDeberiaHaber.TabIndex = 2;
+            this.lblDeberiaHaber.Text = "0.00";
             // 
             // label4
             // 
@@ -91,14 +82,14 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "¿Cuanto de Efectivo hay en caja?";
             // 
-            // txtHay
+            // txthay
             // 
-            this.txtHay.Location = new System.Drawing.Point(160, 200);
-            this.txtHay.Name = "txtHay";
-            this.txtHay.Size = new System.Drawing.Size(115, 20);
-            this.txtHay.TabIndex = 3;
-            this.txtHay.Click += new System.EventHandler(this.TxtHay_Click);
-            this.txtHay.TextChanged += new System.EventHandler(this.TxtHay_TextChanged);
+            this.txthay.Location = new System.Drawing.Point(160, 200);
+            this.txthay.Name = "txthay";
+            this.txthay.Size = new System.Drawing.Size(115, 20);
+            this.txthay.TabIndex = 3;
+            this.txthay.Click += new System.EventHandler(this.TxtHay_Click);
+            this.txthay.TextChanged += new System.EventHandler(this.TxtHay_TextChanged);
             // 
             // panel1
             // 
@@ -119,24 +110,26 @@
             this.lbldiferencia.TabIndex = 2;
             this.lbldiferencia.Text = "0.00";
             // 
-            // checkBox1
+            // checkCorreo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(130)))));
-            this.checkBox1.Location = new System.Drawing.Point(40, 249);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Se enviara a: ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkCorreo.AutoSize = true;
+            this.checkCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(130)))));
+            this.checkCorreo.Location = new System.Drawing.Point(40, 249);
+            this.checkCorreo.Name = "checkCorreo";
+            this.checkCorreo.Size = new System.Drawing.Size(115, 21);
+            this.checkCorreo.TabIndex = 5;
+            this.checkCorreo.Text = "Se enviara a: ";
+            this.checkCorreo.UseVisualStyleBackColor = true;
+            this.checkCorreo.CheckedChanged += new System.EventHandler(this.CheckCorreo_CheckedChanged);
+            this.checkCorreo.Click += new System.EventHandler(this.CheckCorreo_Click);
             // 
-            // textBox1
+            // txtCorreo
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 249);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtCorreo.Location = new System.Drawing.Point(146, 249);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(271, 20);
+            this.txtCorreo.TabIndex = 6;
             // 
             // panel2
             // 
@@ -145,20 +138,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 1);
             this.panel2.TabIndex = 7;
-            // 
-            // btnCobrar
-            // 
-            this.btnCobrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCobrar.BackgroundImage = global::PUNTO_DE_VENTA.Properties.Resources.gris_azul;
-            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.ForeColor = System.Drawing.Color.White;
-            this.btnCobrar.Location = new System.Drawing.Point(146, 292);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(149, 46);
-            this.btnCobrar.TabIndex = 647;
-            this.btnCobrar.Text = "Cerrar Turno";
-            this.btnCobrar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -207,18 +186,52 @@
             // 
             this.lblanuncio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblanuncio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(84)))), ((int)(((byte)(130)))));
-            this.lblanuncio.Location = new System.Drawing.Point(102, 358);
+            this.lblanuncio.Location = new System.Drawing.Point(40, 341);
             this.lblanuncio.Name = "lblanuncio";
-            this.lblanuncio.Size = new System.Drawing.Size(283, 22);
+            this.lblanuncio.Size = new System.Drawing.Size(376, 66);
             this.lblanuncio.TabIndex = 650;
             this.lblanuncio.Text = "...";
             this.lblanuncio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCobrar
+            // 
+            this.btnCobrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCobrar.BackgroundImage = global::PUNTO_DE_VENTA.Properties.Resources.gris_azul;
+            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.ForeColor = System.Drawing.Color.White;
+            this.btnCobrar.Location = new System.Drawing.Point(146, 292);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(149, 46);
+            this.btnCobrar.TabIndex = 647;
+            this.btnCobrar.Text = "Cerrar Turno";
+            this.btnCobrar.UseVisualStyleBackColor = false;
+            this.btnCobrar.Click += new System.EventHandler(this.BtnCobrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(163, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // htmldeEnvio
+            // 
+            this.htmldeEnvio.Location = new System.Drawing.Point(1, -3);
+            this.htmldeEnvio.Multiline = true;
+            this.htmldeEnvio.Name = "htmldeEnvio";
+            this.htmldeEnvio.Size = new System.Drawing.Size(13, 15);
+            this.htmldeEnvio.TabIndex = 651;
+            this.htmldeEnvio.Text = resources.GetString("htmldeEnvio.Text");
             // 
             // CierreTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 389);
+            this.ClientSize = new System.Drawing.Size(429, 428);
             this.Controls.Add(this.lblanuncio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -226,15 +239,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.checkCorreo);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtHay);
+            this.Controls.Add(this.txthay);
             this.Controls.Add(this.lbldiferencia);
-            this.Controls.Add(this.lbldeberiaHaber);
+            this.Controls.Add(this.lblDeberiaHaber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.htmldeEnvio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -251,13 +265,13 @@
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbldeberiaHaber;
+        private System.Windows.Forms.Label lblDeberiaHaber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtHay;
+        private System.Windows.Forms.TextBox txthay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbldiferencia;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkCorreo;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.Label label1;
@@ -265,5 +279,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblanuncio;
+        private System.Windows.Forms.TextBox htmldeEnvio;
     }
 }

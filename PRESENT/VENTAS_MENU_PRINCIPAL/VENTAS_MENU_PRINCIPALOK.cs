@@ -1209,6 +1209,22 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             APERTURA_DE_CREDITO.PorCobrar frm = new APERTURA_DE_CREDITO.PorCobrar();
             frm.ShowDialog();
         }
+
+        private void VENTAS_MENU_PRINCIPALOK_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgRes = MessageBox.Show("¿Realmente desea Cerrar el Sistema ?", "Cerrando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dlgRes==DialogResult.Yes)
+            {
+                Dispose();
+                COPIAS_BD.GeneradorAutomatico frm = new COPIAS_BD.GeneradorAutomatico();
+                frm.ShowDialog();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+
+        }
     }
 }
 

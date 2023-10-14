@@ -25,16 +25,19 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         int idcaja;
         DateTime fechaInicial;
         DateTime fechaFinal=DateTime.Now;
-        double saldoInicial;
-        double ventasEfectivo;
-        double ingresosEfectivo;
-        double gastosEfectivo;
-        double ventasCredito;
-        double ventasTarjeta;
-        double efectivoEnCaja;
-        double ventastotales;
+        public static double saldoInicial;
+        public static double ventasEfectivo;
+        public static double ingresosEfectivo;
+        public static double gastosEfectivo;
+        public static double ventasCredito;
+        public static double ventasTarjeta;
+        public static double efectivoEnCaja;
+        public static double ventastotales;
         double creditosPorPagar;
         double creditosPorCobrar;
+        public static double ganancias;
+        public static double Ingresos;
+        public static double Egresos;
 
         private void CIERRE_DE_CAJA_Load(object sender, EventArgs e)
         {
@@ -61,6 +64,9 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             lblVentasTotales.Text = ventastotales.ToString();
             lbltotalventas.Text = ventastotales.ToString();
             lbldineroTotalCaja.Text = efectivoEnCaja.ToString();
+            Ingresos = saldoInicial + ventasEfectivo + ingresosEfectivo+ventasTarjeta;
+            Egresos = gastosEfectivo;
+
         }
         private void obtener_ingresos_por_turno()
         {

@@ -15,6 +15,7 @@ using System.Net;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.CONEXION;
 
+
 namespace PUNTO_DE_VENTA.PRESENT
 {
     public partial class LOGIN : Form
@@ -472,43 +473,13 @@ namespace PUNTO_DE_VENTA.PRESENT
         }
         private void BtnEnviarCorreo_Click(object sender, EventArgs e)
         {
+            enviarCorreo();
+        }
+       private void enviarCorreo()
+        {
             mostrar_usuarios_por_correo();
             richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);//nos devuelve una cadena con dichos requisitos especificados
-            enviarCorreo("pruebasalex022@gmail.com", "jnudqrccnvxyhqis", richTextBox1.Text, "Solicitud de Contraseña", txtCorreo.Text, ""); //agregamos el correo y contraseña donde enviara las respuesta requeridas
-        }
-        internal void enviarCorreo(string emisor, string password, string mensaje, string asunto, string destinatario, string ruta) // hacemos la validacion de datos para el envio de correo
-        {
-            try
-            {
-                MailMessage correos = new MailMessage();
-                SmtpClient envios = new SmtpClient();
-                correos.To.Clear();
-                correos.Body = "";
-                correos.Subject = "";
-                correos.Body = mensaje;
-                correos.Subject = asunto;
-                correos.IsBodyHtml = true;
-                correos.To.Add((destinatario));
-                correos.From = new MailAddress(emisor);
-                envios.Credentials = new NetworkCredential(emisor, password);
-
-                envios.Host = "smtp.gmail.com";
-                envios.Port = 587;
-                envios.EnableSsl = true;
-
-                envios.Send(correos);
-                lblEstado_de_envio.Text = "ENVIADO";
-                MessageBox.Show("Contraseña Enviada, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                panelRestaurar_Cuenta.Visible = false;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERROR, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                lblEstado_de_envio.Text = "Correo no registrado";
-            }
-
+            Bases.enviarCorreo("pruebasalex022@gmail.com", "ihzhwqqlzrhvxyol", richTextBox1.Text, "Solicitud de Contraseña", txtCorreo.Text, ""); //agregamos el correo y contraseña donde enviara las respuesta requeridas
         }
 
         private void MOSTRAR_CAJA_POR_SERIAL()
@@ -878,7 +849,7 @@ namespace PUNTO_DE_VENTA.PRESENT
             panelRestaurar_Cuenta.Visible = true;
         }
 
-     
+    
     }
 
 

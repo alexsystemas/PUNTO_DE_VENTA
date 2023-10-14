@@ -66,7 +66,6 @@
             this.labeldeB = new System.Windows.Forms.Label();
             this.panelRestaurar_Cuenta = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnCerrar = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnEnviarCorreo = new System.Windows.Forms.Button();
@@ -104,9 +103,9 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnCambiarUsuarios = new System.Windows.Forms.Button();
             this.panelIngresoDeContrasena = new System.Windows.Forms.Panel();
+            this.PictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblEstadoLicencia = new System.Windows.Forms.Label();
             this.timerValidaRol = new System.Windows.Forms.Timer(this.components);
-            this.PictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PdCarga)).BeginInit();
             this.panelUsuarios.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -536,7 +535,6 @@
             // panelRestaurar_Cuenta
             // 
             this.panelRestaurar_Cuenta.Controls.Add(this.richTextBox1);
-            this.panelRestaurar_Cuenta.Controls.Add(this.btnCerrar);
             this.panelRestaurar_Cuenta.Controls.Add(this.label5);
             this.panelRestaurar_Cuenta.Controls.Add(this.btnRegresar);
             this.panelRestaurar_Cuenta.Controls.Add(this.btnEnviarCorreo);
@@ -546,30 +544,19 @@
             this.panelRestaurar_Cuenta.Controls.Add(this.label6);
             this.panelRestaurar_Cuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRestaurar_Cuenta.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(815, 7);
+            this.panelRestaurar_Cuenta.Location = new System.Drawing.Point(727, 27);
             this.panelRestaurar_Cuenta.Name = "panelRestaurar_Cuenta";
-            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(10, 78);
+            this.panelRestaurar_Cuenta.Size = new System.Drawing.Size(541, 293);
             this.panelRestaurar_Cuenta.TabIndex = 5;
             this.panelRestaurar_Cuenta.Visible = false;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(50, 230);
+            this.richTextBox1.Location = new System.Drawing.Point(53, 205);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(363, 199);
+            this.richTextBox1.Size = new System.Drawing.Size(360, 45);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(521, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(29, 34);
-            this.btnCerrar.TabIndex = 7;
-            this.btnCerrar.Text = "X";
-            this.btnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // label5
             // 
@@ -578,7 +565,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 45);
+            this.label5.Size = new System.Drawing.Size(541, 45);
             this.label5.TabIndex = 0;
             this.label5.Text = "Restaurar Contraseña";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -711,7 +698,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(706, 38);
+            this.panel4.Size = new System.Drawing.Size(332, 38);
             this.panel4.TabIndex = 3;
             // 
             // panel5
@@ -781,7 +768,7 @@
             this.lblInicio_de_Seccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.lblInicio_de_Seccion.Location = new System.Drawing.Point(0, 0);
             this.lblInicio_de_Seccion.Name = "lblInicio_de_Seccion";
-            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(706, 42);
+            this.lblInicio_de_Seccion.Size = new System.Drawing.Size(332, 42);
             this.lblInicio_de_Seccion.TabIndex = 1;
             this.lblInicio_de_Seccion.Text = "Inicio de Sesion";
             this.lblInicio_de_Seccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1108,10 +1095,21 @@
             this.panelIngresoDeContrasena.Controls.Add(this.lblEstadoLocal);
             this.panelIngresoDeContrasena.Controls.Add(this.lblLicenciaPClocal);
             this.panelIngresoDeContrasena.Controls.Add(this.button15);
-            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(272, 10);
+            this.panelIngresoDeContrasena.Location = new System.Drawing.Point(281, 60);
             this.panelIngresoDeContrasena.Name = "panelIngresoDeContrasena";
-            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(706, 574);
+            this.panelIngresoDeContrasena.Size = new System.Drawing.Size(332, 456);
             this.panelIngresoDeContrasena.TabIndex = 2;
+            // 
+            // PictureBox4
+            // 
+            this.PictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
+            this.PictureBox4.Location = new System.Drawing.Point(183, 537);
+            this.PictureBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.PictureBox4.Name = "PictureBox4";
+            this.PictureBox4.Size = new System.Drawing.Size(13, 14);
+            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox4.TabIndex = 622;
+            this.PictureBox4.TabStop = false;
             // 
             // lblEstadoLicencia
             // 
@@ -1128,27 +1126,16 @@
             this.timerValidaRol.Interval = 200;
             this.timerValidaRol.Tick += new System.EventHandler(this.TimerValidaRol_Tick);
             // 
-            // PictureBox4
-            // 
-            this.PictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.circulo_verde;
-            this.PictureBox4.Location = new System.Drawing.Point(183, 537);
-            this.PictureBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.PictureBox4.Name = "PictureBox4";
-            this.PictureBox4.Size = new System.Drawing.Size(13, 14);
-            this.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox4.TabIndex = 622;
-            this.PictureBox4.TabStop = false;
-            // 
             // LOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1280, 697);
+            this.Controls.Add(this.panelRestaurar_Cuenta);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panelIngresoDeContrasena);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelRestaurar_Cuenta);
             this.Controls.Add(this.PdCarga);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1203,7 +1190,6 @@
         private System.Windows.Forms.ComboBox txtCorreo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblConElRegistro;
-        private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Label lblResultadoContraseña;
         private System.Windows.Forms.Label lblEstado_de_envio;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;

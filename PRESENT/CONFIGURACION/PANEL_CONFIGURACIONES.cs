@@ -126,5 +126,21 @@ namespace PUNTO_DE_VENTA.PRESENT.CONFIGURACION
         {
             provedor();
         }
+
+        private void configurar_correo()
+        {
+            CORREOS_BASE.ConfigurarCorreo frm = new CORREOS_BASE.ConfigurarCorreo();
+            frm.ShowDialog();
+        }
+
+        private void PckNotificacionCorreo_Click(object sender, EventArgs e)
+        {
+            configurar_correo();
+        }
+
+        private void LblNotificacionCorreo_Click(object sender, EventArgs e)
+        {
+            configurar_correo();
+        }
     }
 }

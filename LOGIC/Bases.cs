@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Net.Mail;
+using System.Net;
 
 namespace PUNTO_DE_VENTA.LOGIC
 {
@@ -117,6 +119,37 @@ namespace PUNTO_DE_VENTA.LOGIC
 
             }
             return textoEncriptado;
+        }
+
+        public static bool  enviarCorreo(string emisor, string password, string mensaje, string asunto, string destinatario, string ruta) // hacemos la validacion de datos para el envio de correo
+        {
+            try
+            {
+                MailMessage correos = new MailMessage();
+                SmtpClient envios = new SmtpClient();
+                correos.To.Clear();
+                correos.Body = "";
+                correos.Subject = "";
+                correos.Body = mensaje;
+                correos.Subject = asunto;
+                correos.IsBodyHtml = true;
+                correos.To.Add((destinatario));
+                correos.From = new MailAddress(emisor);
+                envios.Credentials = new NetworkCredential(emisor, password);
+
+                envios.Host = "smtp.gmail.com";
+                envios.Port = 587;
+                envios.EnableSsl = true;
+                envios.Send(correos);
+                return true;
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("ERROR, revisa tu correo Electronico", "Restauracion de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+
+            }
+
         }
     }
 }

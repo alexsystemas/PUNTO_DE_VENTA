@@ -123,7 +123,9 @@
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="LOGIC\conexion_secundaria_controller.cs" />
+    <Compile Include="LOGIC\Lmcaja.cs" />
     <Compile Include="LOGIC\Lclientes.cs" />
+    <Compile Include="LOGIC\Lcorreo.cs" />
     <Compile Include="LOGIC\LcreditoPorCobrar.cs" />
     <Compile Include="LOGIC\LcreditosPorPagar.cs" />
     <Compile Include="LOGIC\Lempresa.cs" />
@@ -235,6 +237,18 @@
     </Compile>
     <Compile Include="PRESENT\COPIAS_BD\Copias_Bd.Designer.cs">
       <DependentUpon>Copias_Bd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COPIAS_BD\GeneradorAutomatico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COPIAS_BD\GeneradorAutomatico.Designer.cs">
+      <DependentUpon>GeneradorAutomatico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\CORREOS_BASE\ConfigurarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\CORREOS_BASE\ConfigurarCorreo.Designer.cs">
+      <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\DISEÑADOR_DE_COMPROBANTES\Ticket.cs">
       <SubType>Form</SubType>
@@ -430,6 +444,12 @@
     <EmbeddedResource Include="PRESENT\COPIAS_BD\Copias_Bd.resx">
       <DependentUpon>Copias_Bd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COPIAS_BD\GeneradorAutomatico.resx">
+      <DependentUpon>GeneradorAutomatico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\CORREOS_BASE\ConfigurarCorreo.resx">
+      <DependentUpon>ConfigurarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\DISEÑADOR_DE_COMPROBANTES\Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,7 +605,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo1-pht.ico" />
+    <Content Include="PRESENT\CAJA\FormatoCierreCaja.html" />
     <Content Include="PRESENT\LOGIN\HTMLPage2.html" />
+    <None Include="Resources\ocultar1.png" />
+    <None Include="Resources\gmail.jpg" />
     <None Include="Resources\logo1 pht2.png" />
     <None Include="Resources\logo1 pht1.png" />
     <None Include="Resources\logo1-pht.ico" />

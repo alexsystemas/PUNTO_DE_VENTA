@@ -206,7 +206,24 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void mostrarUsuariosSesion(ref DataTable dt)
+        {
+            try
+            {
+                Bases.Obtener_serialPC(ref serialPC);
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_inicio_De_sesion", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@id_serial_pc", serialPC);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         public static void mostrar_ventas_en_efectivo_por_turno(int idcaja, DateTime fi, DateTime ff, ref Double monto)
         {
             try
@@ -446,6 +463,22 @@ namespace PUNTO_DE_VENTA.DATE
             {
                 CONEXIONMAESTRA.abrir();
                 SqlDataAdapter da = new SqlDataAdapter("select * from EMPRESA", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void mostrarCorreoBase(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("Select * from CorreoBase", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
 

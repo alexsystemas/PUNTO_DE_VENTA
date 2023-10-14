@@ -653,6 +653,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gmail {
+            get {
+                object obj = ResourceManager.GetObject("gmail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GOLLUM {
             get {
                 object obj = ResourceManager.GetObject("GOLLUM", resourceCulture);
@@ -886,6 +896,16 @@ namespace PUNTO_DE_VENTA.Properties {
         internal static System.Drawing.Bitmap ocultar {
             get {
                 object obj = ResourceManager.GetObject("ocultar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ocultar1 {
+            get {
+                object obj = ResourceManager.GetObject("ocultar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

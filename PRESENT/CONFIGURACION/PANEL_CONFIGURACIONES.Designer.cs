@@ -42,13 +42,13 @@
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.lblCopiasseguridad = new System.Windows.Forms.Label();
-            this.pckCopiasSeguridad = new System.Windows.Forms.PictureBox();
+            this.pckCopiasseguridad = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.lblNotificacionCorreo = new System.Windows.Forms.Label();
+            this.pckNotificacionCorreo = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -96,11 +96,11 @@
             this.panel19.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasSeguridad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasseguridad)).BeginInit();
             this.panel17.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckNotificacionCorreo)).BeginInit();
             this.panel15.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -249,7 +249,7 @@
             // panel20
             // 
             this.panel20.Controls.Add(this.lblCopiasseguridad);
-            this.panel20.Controls.Add(this.pckCopiasSeguridad);
+            this.panel20.Controls.Add(this.pckCopiasseguridad);
             this.panel20.Location = new System.Drawing.Point(1, 1);
             this.panel20.Margin = new System.Windows.Forms.Padding(1);
             this.panel20.Name = "panel20";
@@ -268,18 +268,18 @@
             this.lblCopiasseguridad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCopiasseguridad.Click += new System.EventHandler(this.LblCopiasseguridad_Click);
             // 
-            // pckCopiasSeguridad
+            // pckCopiasseguridad
             // 
-            this.pckCopiasSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pckCopiasSeguridad.Image = global::PUNTO_DE_VENTA.Properties.Resources.respaldo;
-            this.pckCopiasSeguridad.Location = new System.Drawing.Point(0, 0);
-            this.pckCopiasSeguridad.Margin = new System.Windows.Forms.Padding(1);
-            this.pckCopiasSeguridad.Name = "pckCopiasSeguridad";
-            this.pckCopiasSeguridad.Size = new System.Drawing.Size(93, 63);
-            this.pckCopiasSeguridad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pckCopiasSeguridad.TabIndex = 0;
-            this.pckCopiasSeguridad.TabStop = false;
-            this.pckCopiasSeguridad.Click += new System.EventHandler(this.PckCopiasSeguridad_Click);
+            this.pckCopiasseguridad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pckCopiasseguridad.Image = global::PUNTO_DE_VENTA.Properties.Resources.respaldo;
+            this.pckCopiasseguridad.Location = new System.Drawing.Point(0, 0);
+            this.pckCopiasseguridad.Margin = new System.Windows.Forms.Padding(1);
+            this.pckCopiasseguridad.Name = "pckCopiasseguridad";
+            this.pckCopiasseguridad.Size = new System.Drawing.Size(93, 63);
+            this.pckCopiasseguridad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pckCopiasseguridad.TabIndex = 0;
+            this.pckCopiasseguridad.TabStop = false;
+            this.pckCopiasseguridad.Click += new System.EventHandler(this.PckCopiasSeguridad_Click);
             // 
             // label15
             // 
@@ -313,36 +313,38 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.label12);
-            this.panel18.Controls.Add(this.pictureBox10);
+            this.panel18.Controls.Add(this.lblNotificacionCorreo);
+            this.panel18.Controls.Add(this.pckNotificacionCorreo);
             this.panel18.Location = new System.Drawing.Point(1, 1);
             this.panel18.Margin = new System.Windows.Forms.Padding(1);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(93, 128);
             this.panel18.TabIndex = 0;
             // 
-            // label12
+            // lblNotificacionCorreo
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 64);
-            this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 48);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Notificaiones por Correo Electronico";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNotificacionCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificacionCorreo.Location = new System.Drawing.Point(6, 64);
+            this.lblNotificacionCorreo.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblNotificacionCorreo.Name = "lblNotificacionCorreo";
+            this.lblNotificacionCorreo.Size = new System.Drawing.Size(80, 48);
+            this.lblNotificacionCorreo.TabIndex = 1;
+            this.lblNotificacionCorreo.Text = "Notificaiones por Correo Electronico";
+            this.lblNotificacionCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNotificacionCorreo.Click += new System.EventHandler(this.LblNotificacionCorreo_Click);
             // 
-            // pictureBox10
+            // pckNotificacionCorreo
             // 
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox10.Image = global::PUNTO_DE_VENTA.Properties.Resources.Correo;
-            this.pictureBox10.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(93, 63);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
+            this.pckNotificacionCorreo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pckNotificacionCorreo.Image = global::PUNTO_DE_VENTA.Properties.Resources.Correo;
+            this.pckNotificacionCorreo.Location = new System.Drawing.Point(0, 0);
+            this.pckNotificacionCorreo.Margin = new System.Windows.Forms.Padding(1);
+            this.pckNotificacionCorreo.Name = "pckNotificacionCorreo";
+            this.pckNotificacionCorreo.Size = new System.Drawing.Size(93, 63);
+            this.pckNotificacionCorreo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pckNotificacionCorreo.TabIndex = 0;
+            this.pckNotificacionCorreo.TabStop = false;
+            this.pckNotificacionCorreo.Click += new System.EventHandler(this.PckNotificacionCorreo_Click);
             // 
             // label13
             // 
@@ -787,12 +789,12 @@
             this.panel19.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasSeguridad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckCopiasseguridad)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pckNotificacionCorreo)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -864,13 +866,13 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label lblCopiasseguridad;
-        private System.Windows.Forms.PictureBox pckCopiasSeguridad;
+        private System.Windows.Forms.PictureBox pckCopiasseguridad;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label lblNotificacionCorreo;
+        private System.Windows.Forms.PictureBox pckNotificacionCorreo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
