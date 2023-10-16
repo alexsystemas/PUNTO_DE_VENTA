@@ -109,7 +109,7 @@ namespace PUNTO_DE_VENTA.PRESENT.COPIAS_BD
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Application.Exit();
         }
 
         private void GeneradorAutomatico_Load(object sender, EventArgs e)

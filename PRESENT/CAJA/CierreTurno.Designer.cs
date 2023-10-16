@@ -200,7 +200,7 @@
             this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCobrar.ForeColor = System.Drawing.Color.White;
-            this.btnCobrar.Location = new System.Drawing.Point(146, 292);
+            this.btnCobrar.Location = new System.Drawing.Point(160, 288);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(149, 46);
             this.btnCobrar.TabIndex = 647;
@@ -220,10 +220,10 @@
             // 
             // htmldeEnvio
             // 
-            this.htmldeEnvio.Location = new System.Drawing.Point(1, -3);
+            this.htmldeEnvio.Location = new System.Drawing.Point(264, 51);
             this.htmldeEnvio.Multiline = true;
             this.htmldeEnvio.Name = "htmldeEnvio";
-            this.htmldeEnvio.Size = new System.Drawing.Size(13, 15);
+            this.htmldeEnvio.Size = new System.Drawing.Size(10, 10);
             this.htmldeEnvio.TabIndex = 651;
             this.htmldeEnvio.Text = resources.GetString("htmldeEnvio.Text");
             // 
@@ -232,6 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 428);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblanuncio);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -247,7 +248,6 @@
             this.Controls.Add(this.lblDeberiaHaber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.htmldeEnvio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

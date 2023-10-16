@@ -173,6 +173,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnCerrar_Sesion_Click(object sender, EventArgs e)
         {
+            Dispose();
             CAJA.lblVentasTotal frm = new CAJA.lblVentasTotal();
             frm.ShowDialog();
         }

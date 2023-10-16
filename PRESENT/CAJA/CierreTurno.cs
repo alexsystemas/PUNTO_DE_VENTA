@@ -243,5 +243,14 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         {
 
         }
+
+      
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            CAJA.lblVentasTotal frm = new CAJA.lblVentasTotal();
+            frm.ShowDialog();
+        }
     }
 }

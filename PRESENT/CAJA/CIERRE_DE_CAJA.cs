@@ -129,8 +129,18 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
 
         private void BtnCerrarCaja_Click(object sender, EventArgs e)
         {
+            
             CierreTurno frm = new CierreTurno();
             dineroEnCaja =Convert.ToDouble( lblDineroEncaja.Text);
+            frm.ShowDialog();
+        }
+
+    
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
             frm.ShowDialog();
         }
     }
