@@ -30,6 +30,8 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         string Base_De_datos = "BASE_PUNTO_VENTA";
         string Servidor = @".\SQLEXPRESS";
         string ruta;
+        string ResultadoLicencia;
+        string FechaFinal;
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
             PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES frm = new PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES();
@@ -46,12 +48,39 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         }
         private void DASHBOARD_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            validarLicencia();
             Bases.Obtener_serialPC(ref lblSerialPc);
             Obtener_datos.obtener_id_caja_PorSerial(ref idcajavariable);
             Obtener_datos.mostrar_inio_de_secion( ref idusuariovariable);
         }
 
+        private void validarLicencia()
+        {
+            DLicencias funcion = new DLicencias();
+            funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
+            if (ResultadoLicencia == "?ACTIVO?")
+            {
+                lblestadoLicencia.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
+                btnLicencia.Visible = true;
+            }
+            if (ResultadoLicencia == "?ACTIVADO PRO?")
+            {
+                lblestadoLicencia.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
+                btnLicencia.Visible = false;
+            }
+            if (ResultadoLicencia == "VENCIDA")
 
+            {
+                funcion.EditarMarcanVencidas();
+                Dispose();
+                LICENCIAS_MEMBRESIAS.Membresias frm = new LICENCIAS_MEMBRESIAS.Membresias();
+                frm.ShowDialog();
+
+            }
+
+
+
+        }
         private void BtnVender_Click(object sender, EventArgs e)
         {
             validar_aperturas_de_caja();
@@ -299,6 +328,12 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
                 }
 
             }
+        }
+
+        private void BtnLicencia_Click(object sender, EventArgs e)
+        {
+            LICENCIAS_MEMBRESIAS.Membresias frm = new LICENCIAS_MEMBRESIAS.Membresias();
+            frm.ShowDialog();
         }
     }
 }

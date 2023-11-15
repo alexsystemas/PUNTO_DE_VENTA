@@ -275,8 +275,32 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public bool editarMarcan(LMarcan parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("EDITAR_marcan_a", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@e", parametros.E);
+                cmd.Parameters.AddWithValue("@fa", parametros.FA);
+                cmd.Parameters.AddWithValue("@f", parametros.F);
+                cmd.Parameters.AddWithValue("@s", parametros.S);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
-       
+
 
     }
 }

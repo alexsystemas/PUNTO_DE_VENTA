@@ -14,6 +14,7 @@ using System.Management;
 using System.Net;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.CONEXION;
+using PUNTO_DE_VENTA.DATE;
 
 
 namespace PUNTO_DE_VENTA.PRESENT
@@ -34,6 +35,8 @@ namespace PUNTO_DE_VENTA.PRESENT
         string lblRol;
         string txtlogin;
         string lblaperturaDeCaja;
+        string ResultadoLicencia;
+        string FechaFinal;
 
 
 
@@ -152,9 +155,33 @@ namespace PUNTO_DE_VENTA.PRESENT
         }
         private void LOGIN_Load(object sender, EventArgs e)
         {
-
+           
             validar_conexion();
             escalar_paneles();
+            Bases.Obtener_serialPC(ref lblSerialPC);
+        }
+        private void validarLicencia()
+        {
+            DLicencias funcion = new DLicencias();
+            funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
+            if (ResultadoLicencia == "?ACTIVO?")
+            {
+                lblEstadoLicencia.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
+            }
+            if (ResultadoLicencia == "?ACTIVADO PRO?")
+            {
+                lblEstadoLicencia.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
+            }
+            if (ResultadoLicencia == "VENCIDA")
+            {
+                funcion.EditarMarcanVencidas();
+                Dispose();
+                LICENCIAS_MEMBRESIAS.Membresias frm = new LICENCIAS_MEMBRESIAS.Membresias();
+                frm.ShowDialog();
+            }
+
+
+
         }
 
         void escalar_paneles()
@@ -551,105 +578,35 @@ namespace PUNTO_DE_VENTA.PRESENT
         {
             mostrar_usuarios_registrados();
 
+
             if (INDICADOR == "CORRECTO")
             {
+
                 if (idUsuarioVerificador == 0)
                 {
                     Dispose();
-                    PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA frm = new PRESENT.ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA();
+                    ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA frm = new ASISTENTE_DE_ISTALACION_servidor.REGISTRO_DE_EMPRESA();
                     frm.ShowDialog();
-                    
+
                 }
                 else
                 {
+                    validarLicencia();
                     DIBUJARusuarios();
                 }
             }
+
+
+
             if (INDICADOR == "INCORRECTO")
             {
                 Dispose();
-                PRESENT.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto frm = new PRESENT.ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto();
+                ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto frm = new ASISTENTE_DE_ISTALACION_servidor.Eleccion_Servidor_o_remoto();
                 frm.ShowDialog();
-                
-            }
-            
-            try
-            {
-                Bases.Obtener_serialPC(ref lblSerialPC);
-                MOSTRAR_CAJA_POR_SERIAL();
-                try
-                {
-                    idcajavariable =Convert.ToInt32( datalistado_caja.SelectedCells[1].Value);
-                    lblcaja.Text = datalistado_caja.SelectedCells[2].Value.ToString();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            MOSTRAR_licencia_temporal();
-            try
-            {
-                txtfecha_final_licencia_temporal.Value = Convert.ToDateTime(Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[3].Value.ToString()));
-                lblSerialPCLocal= (Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[2].Value.ToString()));
-                lblEstadoLicencia.Text = (Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[4].Value.ToString()));
-                txtfecha_Inicio_licencia_temporal.Value = Convert.ToDateTime(Bases.Desencriptar(datalistado_licencia_temporal.SelectedCells[5].Value.ToString()));
 
             }
-            catch (Exception ex)
-            {
 
 
-            }
-            if (lblEstadoLicencia.Text != "VENCIDO")
-            {
-                string fechaHOY = Convert.ToString(DateTime.Now);
-                DateTime fecha_ddmmyy = Convert.ToDateTime(fechaHOY.Split(' ')[0]);
-
-                if (txtfecha_final_licencia_temporal.Value >= fecha_ddmmyy)
-                {
-
-                    if (txtfecha_Inicio_licencia_temporal.Value <= fecha_ddmmyy)
-                    {
-                        if (lblEstadoLicencia.Text == "?ACTIVO?")
-                        {
-                            Ingresar_por_licencia_temporal();
-                        }
-                        else if (lblEstadoLicencia.Text == "?ACTIVO PRO?")
-                        {
-                            Ingresaer_por_licencia_de_paga();
-                        }
-
-                    }
-                    else
-                    {
-                        Dispose();
-                        PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
-                        frm.ShowDialog();
-                        
-                    }
-                }
-                else
-                {
-                    Dispose();
-                    PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
-                    frm.ShowDialog();
-                    
-                }
-            }
-            else
-            {
-                Dispose();
-                PRESENT.LICENCIAS_MEMBRESIAS.Membresias frm = new PRESENT.LICENCIAS_MEMBRESIAS.Membresias();
-                frm.ShowDialog();
-                
-            }
         }
         private void Timer1_Tick(object sender, EventArgs e)
         {

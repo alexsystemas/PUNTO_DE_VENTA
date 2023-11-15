@@ -18,7 +18,7 @@ namespace PUNTO_DE_VENTA.CONEXION
         static private AES aes = new AES();
         static public string CnString;
         static string dbcnString;
-        static public string appPwdUnique = "VEGA*PUNTO*DE*VENTA";
+        public static  string appPwdUnique = "VEGA*PUNTO*DE*VENTA";
 
 
         public static object checkServer()

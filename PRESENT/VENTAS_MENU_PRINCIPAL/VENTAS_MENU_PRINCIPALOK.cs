@@ -40,6 +40,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string txtVentaGenerada;
         double txtPrecio_Unitario;
         string usaInventarios;
+        string ResultadoLicencia;
+        string FechaFinal;
         Panel panel_mostrador_de_productos = new Panel();
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
@@ -67,7 +69,24 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
             Limpiar_para_venta_nueva();
         }
+        private void validarLicencia()
+        {
+            DLicencias funcion = new DLicencias();
+            funcion.ValidarLicencias(ref ResultadoLicencia, ref FechaFinal);
+            
+            if (ResultadoLicencia == "VENCIDA")
 
+            {
+                funcion.EditarMarcanVencidas();
+                Dispose();
+                LICENCIAS_MEMBRESIAS.Membresias frm = new LICENCIAS_MEMBRESIAS.Membresias();
+                frm.ShowDialog();
+
+            }
+
+
+
+        }
         private void Limpiar_para_venta_nueva()
         {
             idVenta = 0;

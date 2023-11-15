@@ -91,6 +91,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
             fecha_activacion = Bases.Encriptar(this.txtfechaInicio.Text.Trim());
 
 
+
             try
             {
 

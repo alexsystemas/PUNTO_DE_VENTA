@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Net;
+using PUNTO_DE_VENTA.CONEXION;
 
 namespace PUNTO_DE_VENTA.LOGIC
 {
@@ -47,12 +48,14 @@ namespace PUNTO_DE_VENTA.LOGIC
             List.ColumnHeadersDefaultCellStyle = styCabeceras;
         }
 
+        public static string appPwdUnique = Desencryptacion.appPwdUnique;
         public static string Encriptar(string texto)
+
         {
             try
             {
 
-                string key = "VEGAs4dDSdssad34sdsasf3432aaa";
+               
 
                 byte[] keyArray;
 
@@ -61,7 +64,7 @@ namespace PUNTO_DE_VENTA.LOGIC
 
                 MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
 
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(appPwdUnique));
 
                 hashmd5.Clear();
 
@@ -90,13 +93,13 @@ namespace PUNTO_DE_VENTA.LOGIC
         {
             try
             {
-                string key = "VEGAs4dDSdssad34sdsasf3432aaa";
+               
                 byte[] keyArray;
                 byte[] Array_a_Descifrar = Convert.FromBase64String(textoEncriptado);
 
                 MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
 
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(appPwdUnique));
 
                 hashmd5.Clear();
 

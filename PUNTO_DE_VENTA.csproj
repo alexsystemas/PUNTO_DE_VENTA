@@ -117,6 +117,7 @@
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
+    <Compile Include="DATE\DLicencias.cs" />
     <Compile Include="DATE\Editar_datos.cs" />
     <Compile Include="DATE\Eliminar_datos.cs" />
     <Compile Include="DATE\Insertar_datos.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="LOGIC\LcreditosPorPagar.cs" />
     <Compile Include="LOGIC\Lempresa.cs" />
     <Compile Include="LOGIC\LProveedores.cs" />
+    <Compile Include="LOGIC\LMarcan.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -604,6 +606,7 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\whatsapp.png" />
     <Content Include="logo1-pht.ico" />
     <Content Include="PRESENT\CAJA\FormatoCierreCaja.html" />
     <Content Include="PRESENT\LOGIN\HTMLPage2.html" />
