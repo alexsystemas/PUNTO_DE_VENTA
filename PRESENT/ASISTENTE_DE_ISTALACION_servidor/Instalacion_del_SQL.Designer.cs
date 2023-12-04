@@ -66,6 +66,7 @@
             this.ContrasenaSQL = new System.Windows.Forms.Label();
             this.Nombre_Instancia = new System.Windows.Forms.Label();
             this.pnlDerAzul = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlCentral = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
@@ -81,15 +82,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblInstalandoServidor = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlPrecaucion = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timerCRARINI = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtCrear_procedimientos2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -97,20 +98,21 @@
             this.GroupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlCentral.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlInstaladoServidor.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlPrecaucion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlPrecaucion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCrear_procedimientos2);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pnlDerAzul);
@@ -119,7 +121,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(683, 696);
+            this.panel1.Size = new System.Drawing.Size(683, 1046);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -185,10 +187,10 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.ContrasenaSQL);
             this.panel4.Controls.Add(this.Nombre_Instancia);
-            this.panel4.Location = new System.Drawing.Point(256, 161);
+            this.panel4.Location = new System.Drawing.Point(56, 45);
             this.panel4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(59, 217);
+            this.panel4.Size = new System.Drawing.Size(112, 119);
             this.panel4.TabIndex = 3;
             // 
             // pnEliminaBD
@@ -509,8 +511,18 @@
             this.pnlDerAzul.Location = new System.Drawing.Point(515, 0);
             this.pnlDerAzul.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlDerAzul.Name = "pnlDerAzul";
-            this.pnlDerAzul.Size = new System.Drawing.Size(168, 696);
+            this.pnlDerAzul.Size = new System.Drawing.Size(168, 1046);
             this.pnlDerAzul.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(13, 596);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(501, 351);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // pnlTop
             // 
@@ -529,7 +541,7 @@
             this.pnlCentral.Location = new System.Drawing.Point(683, 117);
             this.pnlCentral.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(1076, 579);
+            this.pnlCentral.Size = new System.Drawing.Size(1076, 929);
             this.pnlCentral.TabIndex = 2;
             // 
             // pnlTitulo
@@ -541,7 +553,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1076, 579);
+            this.pnlTitulo.Size = new System.Drawing.Size(1076, 929);
             this.pnlTitulo.TabIndex = 0;
             // 
             // lblbuscador_de_servidores
@@ -683,6 +695,17 @@
             this.panel2.Size = new System.Drawing.Size(1672, 963);
             this.panel2.TabIndex = 4;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
+            this.pictureBox4.Location = new System.Drawing.Point(1125, 41);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(475, 269);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // pnlPrecaucion
             // 
             this.pnlPrecaucion.Controls.Add(this.pictureBox1);
@@ -692,6 +715,17 @@
             this.pnlPrecaucion.Name = "pnlPrecaucion";
             this.pnlPrecaucion.Size = new System.Drawing.Size(1672, 143);
             this.pnlPrecaucion.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.precaucion;
+            this.pictureBox1.Location = new System.Drawing.Point(1280, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 103);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // timer2
             // 
@@ -717,43 +751,20 @@
             this.timerCRARINI.Interval = 10;
             this.timerCRARINI.Tick += new System.EventHandler(this.TimerCRARINI_Tick);
             // 
-            // pictureBox4
+            // txtCrear_procedimientos2
             // 
-            this.pictureBox4.Image = global::PUNTO_DE_VENTA.Properties.Resources.cargando;
-            this.pictureBox4.Location = new System.Drawing.Point(1125, 41);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(475, 269);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.precaucion;
-            this.pictureBox1.Location = new System.Drawing.Point(1280, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(13, 596);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(501, 351);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.txtCrear_procedimientos2.Location = new System.Drawing.Point(41, 360);
+            this.txtCrear_procedimientos2.Multiline = true;
+            this.txtCrear_procedimientos2.Name = "txtCrear_procedimientos2";
+            this.txtCrear_procedimientos2.Size = new System.Drawing.Size(120, 159);
+            this.txtCrear_procedimientos2.TabIndex = 6;
+            this.txtCrear_procedimientos2.Text = resources.GetString("txtCrear_procedimientos2.Text");
             // 
             // Instalacion_del_servidorSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1759, 696);
+            this.ClientSize = new System.Drawing.Size(1759, 1046);
             this.Controls.Add(this.pnlCentral);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.panel1);
@@ -765,6 +776,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Instalacion_del_servidorSQL_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -774,6 +786,7 @@
             this.GroupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.GroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlCentral.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -781,10 +794,9 @@
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.pnlPrecaucion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnlPrecaucion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -851,5 +863,6 @@
         internal System.Windows.Forms.RichTextBox txtCrearUsuarioDb;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCrear_procedimientos2;
     }
 }

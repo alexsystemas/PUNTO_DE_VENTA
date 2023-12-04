@@ -172,21 +172,6 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        public static void mostrar_Clientes(ref DataTable dt)
-        {
-            try
-            {
-                CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("mostrar_clientes", CONEXIONMAESTRA.conectar);
-                da.Fill(dt);
-                CONEXIONMAESTRA.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
         public static void mostrar_inio_de_secion(ref int idusuario)
         {
             Bases.Obtener_serialPC(ref serialPC);
@@ -380,23 +365,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        public static void buscar_Clientes(ref DataTable dt, string buscador)
-        {
-            try
-            {
-                CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("buscar_clientes", CONEXIONMAESTRA.conectar);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
-                da.Fill(dt);
-                CONEXIONMAESTRA.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.StackTrace);
-            }
-        }
+        
 
         public static void sumar_creaditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
@@ -488,6 +457,81 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        //clientes
+
+        public static void mostrar_Clientes(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_clientes", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void buscar_Clientes(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscar_clientes", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letra", buscador);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void mostrarEstadosCuentaCliente(ref DataTable dt, int idcliente)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarEstadosCuentaCliente", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idcliente", idcliente);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+
+            }
+        }
+        ///
+
+        //controlCobros
+        public static void mostrar_ControlCobros(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_ControlCobros", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+
+            }
+        }
+        //
+
 
     }
 

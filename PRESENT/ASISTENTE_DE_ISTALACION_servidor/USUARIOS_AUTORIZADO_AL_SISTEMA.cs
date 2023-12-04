@@ -132,8 +132,6 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@Direccion_para_factura", 0);
                 cmd.Parameters.AddWithValue("@RFC ", 0);
                 cmd.Parameters.AddWithValue("@movil", 0);
-                cmd.Parameters.AddWithValue("@Cliente ", "NEUTRO");
-                cmd.Parameters.AddWithValue("@Proveedor", "NEUTRO");
                 cmd.Parameters.AddWithValue("@Estado", 0);
                 cmd.Parameters.AddWithValue("@Saldo", 0);
                 cmd.ExecuteNonQuery();

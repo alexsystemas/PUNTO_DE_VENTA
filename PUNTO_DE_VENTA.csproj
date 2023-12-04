@@ -124,6 +124,7 @@
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="LOGIC\conexion_secundaria_controller.cs" />
+    <Compile Include="LOGIC\LcontrolCobros.cs" />
     <Compile Include="LOGIC\Lmcaja.cs" />
     <Compile Include="LOGIC\Lclientes.cs" />
     <Compile Include="LOGIC\Lcorreo.cs" />
@@ -215,6 +216,18 @@
     </Compile>
     <Compile Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COBROS\CobrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COBROS\CobrosForm.Designer.cs">
+      <DependentUpon>CobrosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COBROS\MediosCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COBROS\MediosCobros.Designer.cs">
+      <DependentUpon>MediosCobros.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.cs">
       <SubType>Form</SubType>
@@ -317,6 +330,12 @@
     </Compile>
     <Compile Include="PRESENT\REPORTES\Impresion_de_comprobantes\Ticket_report.Designer.cs">
       <DependentUpon>Ticket_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\RCobros\rptCobros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\RCobros\rptCobros.Designer.cs">
+      <DependentUpon>rptCobros.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.cs">
       <SubType>Form</SubType>
@@ -433,6 +452,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CLIENTES_PROVEEDORES\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COBROS\CobrosForm.resx">
+      <DependentUpon>CobrosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COBROS\MediosCobros.resx">
+      <DependentUpon>MediosCobros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.resx">
       <DependentUpon>Caja_secundaria.cs</DependentUpon>

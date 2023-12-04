@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PUNTO_DE_VENTA.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\App.config" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\packages.config" />
+  <event action="Analyze" type="Success" name="DASHBOARD_PRINCIPAL.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.resx" />
+  <event action="Analyze" type="Success" name="PorCobrar.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\APERTURA_DE_CREDITO\PorCobrar.resx" />
+  <event action="Analyze" type="Success" name="PorPagar.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\APERTURA_DE_CREDITO\PorPagar.resx" />
+  <event action="Analyze" type="Success" name="Eleccion_Servidor_o_remoto.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\ASISTENTE_DE_ISTALACION_servidor\Eleccion_Servidor_o_remoto.resx" />
+  <event action="Analyze" type="Success" name="Instalacion_del_SQL.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\ASISTENTE_DE_ISTALACION_servidor\Instalacion_del_SQL.resx" />
+  <event action="Analyze" type="Success" name="REGISTRO_DE_EMPRESA.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\ASISTENTE_DE_ISTALACION_servidor\REGISTRO_DE_EMPRESA.resx" />
+  <event action="Analyze" type="Success" name="USUARIOS_AUTORIZADO_AL_SISTEMA.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.resx" />
+  <event action="Analyze" type="Success" name="APERTURA_DE_CAJA.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\APERTURA_DE_CAJA.resx" />
+  <event action="Analyze" type="Success" name="Caja.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\Caja.resx" />
+  <event action="Analyze" type="Success" name="CIERRE_DE_CAJA.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\CIERRE_DE_CAJA.resx" />
+  <event action="Analyze" type="Success" name="CierreTurno.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\CierreTurno.resx" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="FormatoCierreCaja.html" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\FormatoCierreCaja.html" />
+  <event action="Analyze" type="Success" name="Listado_gastos_ingresos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CAJA\Listado_gastos_ingresos.resx" />
+  <event action="Analyze" type="Success" name="ClientesOk.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CLIENTES_PROVEEDORES\ClientesOk.resx" />
+  <event action="Analyze" type="Success" name="Proveedores.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CLIENTES_PROVEEDORES\Proveedores.resx" />
+  <event action="Analyze" type="Success" name="CobrosForm.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\COBROS\CobrosForm.resx" />
+  <event action="Analyze" type="Success" name="MediosCobros.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\COBROS\MediosCobros.resx" />
+  <event action="Analyze" type="Success" name="Caja_secundaria.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CONEXION_REMOTA\Caja_secundaria.resx" />
+  <event action="Analyze" type="Success" name="Conexion_secundaria.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CONEXION_REMOTA\Conexion_secundaria.resx" />
+  <event action="Analyze" type="Success" name="PANEL_CONFIGURACIONES.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CONFIGURACION\PANEL_CONFIGURACIONES.resx" />
+  <event action="Analyze" type="Success" name="Copias_Bd.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\COPIAS_BD\Copias_Bd.resx" />
+  <event action="Analyze" type="Success" name="GeneradorAutomatico.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\COPIAS_BD\GeneradorAutomatico.resx" />
+  <event action="Analyze" type="Success" name="ConfigurarCorreo.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\CORREOS_BASE\ConfigurarCorreo.resx" />
+  <event action="Analyze" type="Success" name="Ticket.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\DISEÑADOR_DE_COMPROBANTES\Ticket.resx" />
+  <event action="Analyze" type="Success" name="EMPRESA_CONFIG.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\EMPRESA_CONFIGURACION\EMPRESA_CONFIG.resx" />
+  <event action="Analyze" type="Success" name="Gastos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\GASTOS_VARIOS\Gastos.resx" />
+  <event action="Analyze" type="Success" name="IngresosVarios.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\INGRESOS_VARIOS\IngresosVarios.resx" />
+  <event action="Analyze" type="Success" name="INVENTARIO_MENU.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx" />
+  <event action="Analyze" type="Success" name="Membresias.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\LICENCIAS_MEMBRESIAS\Membresias.resx" />
+  <event action="Analyze" type="Success" />
+  <event action="Analyze" type="Success" name="Register Directives" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\LOGIN\HTMLPage2.html" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\LOGIN\HTMLPage2.html" />
+  <event action="Analyze" type="Success" name="HTMLPage2.html" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\LOGIN\HTMLPage2.html" />
+  <event action="Analyze" type="Success" name="LOGIN.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\LOGIN\LOGIN.resx" />
+  <event action="Analyze" type="Success" name="Notificaiones_Form.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\NOTIFICACIONES\Notificaiones_Form.resx" />
+  <event action="Analyze" type="Success" name="CONEXION_MANUAL.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\PANEL_DE_ADMINISTRACION _DEL_SOFTWARE\CONEXION_MANUAL.resx" />
+  <event action="Analyze" type="Success" name="Asistente_de_ImportacionExcel.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\PRODUCTOS_OK\Asistente_de_ImportacionExcel.resx" />
+  <event action="Analyze" type="Success" name="Productos_OK.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\PRODUCTOS_OK\Productos_OK.resx" />
+  <event action="Analyze" type="Success" name="Ticket_report.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\Impresion_de_comprobantes\Ticket_report.resx" />
+  <event action="Analyze" type="Success" name="FormInventariosTodos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.resx" />
+  <event action="Analyze" type="Success" name="FormMovBuscar.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.resx" />
+  <event action="Analyze" type="Success" name="ReportKARDEX_Movimientos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\Reporte_de_Kardex_diseño\ReportKARDEX_Movimientos.resx" />
+  <event action="Analyze" type="Success" name="reportInventarios_Todos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx" />
+  <event action="Analyze" type="Success" name="ReportMovBuscar.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.resx" />
+  <event action="Analyze" type="Success" name="SEREALIZACION.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.resx" />
+  <event action="Analyze" type="Success" name="UsuariosOK.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\USUARIOS_Y_PERMISOS\UsuariosOK.resx" />
+  <event action="Analyze" type="Success" name="CANTIDAD_A_GRANEL.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\VENTAS_MENU_PRINCIPAL\CANTIDAD_A_GRANEL.resx" />
+  <event action="Analyze" type="Success" name="MEDIOS_DE_PAGO.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\VENTAS_MENU_PRINCIPAL\MEDIOS_DE_PAGO.resx" />
+  <event action="Analyze" type="Success" name="Ventas_en_espera.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\VENTAS_MENU_PRINCIPAL\Ventas_en_espera.resx" />
+  <event action="Analyze" type="Success" name="VENTAS_MENU_PRINCIPALOK.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\VENTAS_MENU_PRINCIPAL\VENTAS_MENU_PRINCIPALOK.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="PUNTO_DE_VENTA" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PUNTO_DE_VENTA.csproj" />
+  <event action="Analyze" type="Success" name="PUNTO_DE_VENTA" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PUNTO_DE_VENTA.sln" />
+  <event action="Backup" type="Error" name="PUNTO_DE_VENTA" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PUNTO_DE_VENTA.csproj">System.IO.IOException: El proceso no puede obtener acceso al archivo 'C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\.vs\PUNTO_DE_VENTA\v16\Server\sqlite3\db.lock' porque está siendo utilizado en otro proceso.
+   en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   en System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.BackupDirectory(String directoryName)
+   en Telerik.Reporting.UpgradeWizard.Engine.ProjectItem.BackupInternal()
+   en Telerik.Reporting.UpgradeWizard.Engine.UpgradeItem.Backup()</event>
+  <event action="Restore" type="Success" name="PUNTO_DE_VENTA" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PUNTO_DE_VENTA.csproj" />
+  <event action="Restore" type="Error" name="reportInventarios_Todos.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx">System.IO.DirectoryNotFoundException: No se puede encontrar una parte de la ruta de acceso 'C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\Backup\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx'.
+   en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   en System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.RestoreFile(String fileName)
+   en Telerik.Reporting.UpgradeWizard.Engine.ResourceItem.RestoreInternal()
+   en Telerik.Reporting.UpgradeWizard.Engine.UpgradeItem.Restore()</event>
+  <event action="Restore" type="Error" name="ReportMovBuscar.resx" path="C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.resx">System.IO.DirectoryNotFoundException: No se puede encontrar una parte de la ruta de acceso 'C:\Users\HACKER\source\repos\Github_repo_vega\pv\PUNTO_DE_VENTA\Backup\PUNTO_DE_VENTA\PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.resx'.
+   en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   en System.IO.File.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   en Telerik.Reporting.UpgradeWizard.Engine.Services.BackupService.RestoreFile(String fileName)
+   en Telerik.Reporting.UpgradeWizard.Engine.ResourceItem.RestoreInternal()
+   en Telerik.Reporting.UpgradeWizard.Engine.UpgradeItem.Restore()</event>
+</log>

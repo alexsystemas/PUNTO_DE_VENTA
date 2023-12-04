@@ -152,38 +152,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-
-
-        public bool insertar_Proveedores(LProveedores parametros)
-        {
-            try
-            {
-                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
-                CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("insertar_Proveedores", CONEXIONMAESTRA.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
-                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
-                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
-                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
-                cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
-                cmd.Parameters.AddWithValue("@Saldo", 0);
-                cmd.ExecuteNonQuery();
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            finally
-            {
-                CONEXIONMAESTRA.cerrar();
-            }
-        }
-
+        
         public bool insertar_Clientes(Lclientes parametros)
         {
             try
@@ -214,6 +183,72 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+       
+        public bool insertar_Proveedores(LProveedores parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_Proveedores", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion", parametros.Direccion);
+                cmd.Parameters.AddWithValue("@IdentificadorFiscal", parametros.IdentificadorFiscal);
+                cmd.Parameters.AddWithValue("@Celular", parametros.Celular);
+                cmd.Parameters.AddWithValue("@Estado", "ACTIVO");
+                cmd.Parameters.AddWithValue("@Saldo", 0);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+       
+
+
+        public bool Insertar_ControlCobros(LcontrolCobros parametros)
+        {
+            try
+            {
+               
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_ControlCobros", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Monto", parametros.Monto);
+                cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Detalle", parametros.Detalle);
+                cmd.Parameters.AddWithValue("@idCliente", parametros.idCliente);
+                cmd.Parameters.AddWithValue("@idUsusario", parametros.idUsusario);
+                cmd.Parameters.AddWithValue("@idCaja", parametros.idCaja);
+                cmd.Parameters.AddWithValue("@Comprobante", parametros.Comprobante);
+                cmd.Parameters.AddWithValue("@efectivo", parametros.Efectivo);
+                cmd.Parameters.AddWithValue("@tarjeta", parametros.Tarjeta);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
     }
 }

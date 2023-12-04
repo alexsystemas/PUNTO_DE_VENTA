@@ -46,6 +46,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
         {
+            validarLicencia();
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
             // CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPc);
@@ -1244,6 +1245,12 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 e.Cancel = true;
             }
 
+        }
+
+        private void BtnCobros_Click(object sender, EventArgs e)
+        {
+            COBROS.CobrosForm frm = new COBROS.CobrosForm();
+            frm.ShowDialog();
         }
     }
 }

@@ -80,8 +80,8 @@
             this.lblProductos = new System.Windows.Forms.Label();
             this.pictureBoxProductos = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.pictureBoxClientes = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnProveedor = new System.Windows.Forms.PictureBox();
@@ -122,7 +122,7 @@
             this.pnlProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProductos)).BeginInit();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnProveedor)).BeginInit();
             this.SuspendLayout();
@@ -683,36 +683,38 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.label7);
-            this.panel11.Controls.Add(this.pictureBox6);
+            this.panel11.Controls.Add(this.lblClientes);
+            this.panel11.Controls.Add(this.pictureBoxClientes);
             this.panel11.Location = new System.Drawing.Point(476, 1);
             this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(93, 96);
             this.panel11.TabIndex = 5;
             // 
-            // label7
+            // lblClientes
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 73);
-            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Clientes";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientes.Location = new System.Drawing.Point(11, 73);
+            this.lblClientes.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(73, 15);
+            this.lblClientes.TabIndex = 1;
+            this.lblClientes.Text = "Clientes";
+            this.lblClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClientes.Click += new System.EventHandler(this.LblClientes_Click);
             // 
-            // pictureBox6
+            // pictureBoxClientes
             // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox6.Image = global::PUNTO_DE_VENTA.Properties.Resources.Clientes;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(93, 63);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.pictureBoxClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBoxClientes.Image = global::PUNTO_DE_VENTA.Properties.Resources.Clientes;
+            this.pictureBoxClientes.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxClientes.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxClientes.Name = "pictureBoxClientes";
+            this.pictureBoxClientes.Size = new System.Drawing.Size(93, 63);
+            this.pictureBoxClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClientes.TabIndex = 0;
+            this.pictureBoxClientes.TabStop = false;
+            this.pictureBoxClientes.Click += new System.EventHandler(this.PictureBoxClientes_Click);
             // 
             // panel12
             // 
@@ -819,7 +821,7 @@
             this.pnlProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProductos)).EndInit();
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClientes)).EndInit();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnProveedor)).EndInit();
             this.ResumeLayout(false);
@@ -851,8 +853,8 @@
         private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.PictureBox pictureBoxProductos;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.PictureBox pictureBoxClientes;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox btnProveedor;

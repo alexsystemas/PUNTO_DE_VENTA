@@ -114,6 +114,27 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
         }
+        public bool eliminarControlCobro(LcontrolCobros parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("eliminarControlCobro", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcontrol", parametros.idcontrolCobro);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
     }
 }

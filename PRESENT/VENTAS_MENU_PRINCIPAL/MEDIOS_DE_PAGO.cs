@@ -12,6 +12,7 @@ using System.Drawing.Printing;
 using Telerik.Reporting.Processing;
 using Telerik.Reporting.Drawing;
 using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.DATE;
 namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 {
     public partial class MEDIOS_DE_PAGO : Form
@@ -623,21 +624,19 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         void buscarclientes2()
         {
-            DataTable dt = new DataTable();
+          
 
             try
             {
+                DataTable dt = new DataTable();
                 CONEXION.CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("buscar_cliente_POR_nombre_PARA_VENTAS_todos", CONEXION.CONEXIONMAESTRA.conectar);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand.Parameters.AddWithValue("@letra", txtclientesolicitabnte2.Text);
-                da.Fill(dt);
+                Obtener_datos.buscar_Clientes(ref dt, txtclientesolicitabnte2.Text);
                 datalistadoclientes2.DataSource = dt;
-                datalistadoclientes2.Columns[2].Visible = false;
+                datalistadoclientes2.Columns[1].Visible = false;
                 datalistadoclientes2.Columns[3].Visible = false;
                 datalistadoclientes2.Columns[4].Visible = false;
                 datalistadoclientes2.Columns[5].Visible = false;
-                datalistadoclientes2.Columns[1].Width = 420;
+                datalistadoclientes2.Columns[2].Width = 420;
                 CONEXION.CONEXIONMAESTRA.cerrar();
             }
             catch (Exception ex)
@@ -648,8 +647,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void Datalistadoclientes2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[1].Value.ToString();
-            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[2].Value.ToString());
+            txtclientesolicitabnte2.Text = datalistadoclientes2.SelectedCells[2].Value.ToString();
+            idcliente = Convert.ToInt32(datalistadoclientes2.SelectedCells[1].Value.ToString());
             datalistadoclientes2.Visible = false;
         }
 

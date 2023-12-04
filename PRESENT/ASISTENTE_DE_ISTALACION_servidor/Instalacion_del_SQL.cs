@@ -49,12 +49,12 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
         private void remplazar()
         {
             txtEliminarBase.Text = txtEliminarBase.Text.Replace("BASEADA", txtBaseDeDatos.Text);
-            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text.Replace("BASEADA", txtBaseDeDatos.Text);
+            txtCrear_procedimientos2.Text = txtCrear_procedimientos2.Text.Replace("BASEADA", txtBaseDeDatos.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("VEGA389", txtUsuario.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("BASE_PUNTO_VENTA", txtBaseDeDatos.Text); 
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("softwarereal", lblcontraseña.Text);
             // Adjutando al texbox que contiene los procedimientos almacenados
-            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text + Environment.NewLine + txtCrearUsuarioDb.Text;
+            txtCrear_procedimientos2.Text = txtCrear_procedimientos2.Text + Environment.NewLine + txtCrearUsuarioDb.Text;
 
 
         }
@@ -129,7 +129,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 {
 
                     sw = File.CreateText(ruta);
-                    sw.WriteLine(txtCrear_procedimientos.Text);
+                    sw.WriteLine(txtCrear_procedimientos2.Text);
                     sw.Flush();
                     sw.Close();
                 }
@@ -137,7 +137,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 {
                     File.Delete(ruta);
                     sw = File.CreateText(ruta);
-                    sw.WriteLine(txtCrear_procedimientos.Text);
+                    sw.WriteLine(txtCrear_procedimientos2.Text);
                     sw.Flush();
                     sw.Close();
                 }

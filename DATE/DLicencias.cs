@@ -24,7 +24,6 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 Bases.Obtener_serialPC(ref SerialPC);
-                MessageBox.Show("" + SerialPC);
                 DataTable dt = new DataTable();
                 CONEXIONMAESTRA.abrir();
                 SqlDataAdapter da = new SqlDataAdapter("Select * From Marcan", CONEXIONMAESTRA.conectar);

@@ -115,33 +115,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        public bool editar_Clientes(Lclientes parametros)
-        {
-            try
-            {
-                CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("editar_clientes", CONEXIONMAESTRA.conectar);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idclientev", parametros.idclientev);
-                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
-                cmd.Parameters.AddWithValue("@Direccion_para_factura", parametros.Direccion_para_factura);
-                cmd.Parameters.AddWithValue("@RFC", parametros.RFC);
-                cmd.Parameters.AddWithValue("@movil", parametros.movil);
-                cmd.ExecuteNonQuery();
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            finally
-            {
-                CONEXIONMAESTRA.cerrar();
-            }
-        }
+       
 
         public bool restaurar_Proveedores(LProveedores parametros)
         {
@@ -299,6 +273,83 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.cerrar();
             }
         }
+
+        //Clientes
+        public bool editar_Clientes(Lclientes parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editar_clientes", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idclientev", parametros.idclientev);
+                cmd.Parameters.AddWithValue("@Nombre", parametros.Nombre);
+                cmd.Parameters.AddWithValue("@Direccion_para_factura", parametros.Direccion_para_factura);
+                cmd.Parameters.AddWithValue("@RFC", parametros.RFC);
+                cmd.Parameters.AddWithValue("@movil", parametros.movil);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+        public bool disminuirSaldocliente(Lclientes parametros, double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("disminuirSaldocliente", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcliente", parametros.idclientev);
+                cmd.Parameters.AddWithValue("@monto", monto);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+        public bool aumentarSaldocliente(Lclientes parametros, double monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aumentar_saldo_a_cliente", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcliente", parametros.idclientev);
+                cmd.Parameters.AddWithValue("@Saldo", monto);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        //
 
 
 

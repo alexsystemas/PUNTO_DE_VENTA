@@ -142,5 +142,18 @@ namespace PUNTO_DE_VENTA.PRESENT.CONFIGURACION
         {
             configurar_correo();
         }
+
+        private void PictureBoxClientes_Click(object sender, EventArgs e)
+        {
+
+            PRESENT.CLIENTES_PROVEEDORES.ClientesOk frm = new PRESENT.CLIENTES_PROVEEDORES.ClientesOk();
+            frm.ShowDialog();
+        }
+
+        private void LblClientes_Click(object sender, EventArgs e)
+        {
+            PRESENT.CLIENTES_PROVEEDORES.ClientesOk frm = new PRESENT.CLIENTES_PROVEEDORES.ClientesOk();
+            frm.ShowDialog();
+        }
     }
 }

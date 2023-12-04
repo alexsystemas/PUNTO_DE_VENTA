@@ -42,8 +42,23 @@ namespace PUNTO_DE_VENTA.LOGIC
 
             List.EnableHeadersVisualStyles = false;
             DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
-            styCabeceras.BackColor = System.Drawing.Color.White;
-            styCabeceras.ForeColor = System.Drawing.Color.Black;
+            styCabeceras.BackColor =System.Drawing.Color.White;
+            styCabeceras.ForeColor = System.Drawing.Color.FromArgb(0, 85, 128);
+            styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            List.ColumnHeadersDefaultCellStyle = styCabeceras;
+        }
+        public static void MultilineaGris(ref DataGridView List)
+        {
+            List.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //List.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders
+            List.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            List.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            List.EnableHeadersVisualStyles = false;
+            DataGridViewCellStyle styCabeceras = new DataGridViewCellStyle();
+            styCabeceras.BackColor = System.Drawing.Color.Transparent;
+            styCabeceras.ForeColor = System.Drawing.Color.White;
             styCabeceras.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             List.ColumnHeadersDefaultCellStyle = styCabeceras;
         }
