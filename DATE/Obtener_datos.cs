@@ -91,7 +91,7 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
-        public static void mostrar_gastos_por_turnos(int idcaja, DateTime fi, DateTime ff,  ref DataTable dt)
+        public static void mostrar_gastos_por_turnos(int idcaja, DateTime fi, DateTime ff, ref DataTable dt)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
-        public static void mostrar_cierre_de_caja_pendiente(  ref DataTable dt)
+        public static void mostrar_cierre_de_caja_pendiente(ref DataTable dt)
         {
             obtener_id_caja_PorSerial(ref idcaja);
             try
@@ -121,7 +121,7 @@ namespace PUNTO_DE_VENTA.DATE
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_cierre_de_caja_pendiente", CONEXIONMAESTRA.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
-             
+
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
             }
@@ -156,21 +156,6 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
-        public static void mostrar_Proveedores(ref DataTable dt)
-        {
-            try
-            {
-                CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("mostrar_Proveedores", CONEXIONMAESTRA.conectar);
-                da.Fill(dt);
-                CONEXIONMAESTRA.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         public static void mostrar_inio_de_secion(ref int idusuario)
         {
@@ -365,7 +350,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        
+
 
         public static void sumar_creaditoPorPagar(int idcaja, DateTime fi, DateTime ff, ref double monto)
         {
@@ -511,6 +496,22 @@ namespace PUNTO_DE_VENTA.DATE
 
             }
         }
+
+        public static void ReporteCantidadClientes(ref int Cantidad)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select count(idclientev) from clientes", CONEXIONMAESTRA.conectar);
+                Cantidad= Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Cantidad = 0;
+            }
+        }
         ///
 
         //controlCobros
@@ -530,8 +531,305 @@ namespace PUNTO_DE_VENTA.DATE
 
             }
         }
+
+        public static void ReportePorcobrar(ref double Monto )
+         {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da= new SqlCommand("ReportePorCobrar", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToDouble (da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+         }
         //
 
+
+        // Proveedores
+        public static void ReportePorPagar(ref double Monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReportePorPagar", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+        }
+
+        public static void mostrar_Proveedores(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_Proveedores", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //
+
+        //Ventas
+        public static void mostrarVentasGrafica(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarVentasGrafica", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void mostrarVentasGraficaFechas(ref DataTable dt, DateTime fi, DateTime ff)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarVentasGraficaFechas", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@fi", fi);
+                da.SelectCommand.Parameters.AddWithValue("@ff", ff);
+
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        //
+        //Detalle Ventas
+        public static void ReporteGanancias(ref double Monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteGanacias", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+        }
+        public static void ReporteTotalVentas(ref double Monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteTotalVentas", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+        }
+
+        public static void ReporteTotalVentasFechas(ref double Monto, DateTime fi, DateTime ff)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteTotalVentasFechas", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                Monto = 0;
+            }
+        }
+
+        public static void ReporteGananciasFecha(ref double Monto, DateTime fi, DateTime ff)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteGananciasFecha", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@fi", fi);
+                da.Parameters.AddWithValue("@ff", ff);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                Monto = 0;
+            }
+        }
+        //
+        //Productos 
+        public static void ReporteProductoBajoMinimo(ref int Monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteProductoBajoMinimo", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+        }
+
+        public static void ReporteCantProductos(ref int Cantidad)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select count(Id_Producto1) from Producto1", CONEXIONMAESTRA.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Cantidad = 0;
+            }
+        }
+
+        public static void mostrarPmasVendidos(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarPmasVendidos", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        //
+
+        //Empresa
+        public static void MostrarMoneda(ref string moneda)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select Moneda from EMPRESA", CONEXIONMAESTRA.conectar);
+                moneda =Convert.ToString( da.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        //
+
+        //Gastos
+        public static void ReporteGastosAniosCombo(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosAniosCombo", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void ReporteGastosMesCombo(ref DataTable dt, int anio)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosMesCombo", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@anio", anio);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void ReporteGastosAnio(ref DataTable dt, int año)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosAnioGrafica", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@anio", año);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+
+
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        public static void ReporteGastosAnioMesGrafica(ref DataTable dt, int año, string mes)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosAnioMesGrafica", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@anio", año);
+                da.SelectCommand.Parameters.AddWithValue("@mes", mes);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
 
     }
 

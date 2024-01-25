@@ -93,6 +93,7 @@
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -174,6 +175,12 @@
     </Compile>
     <Compile Include="PRESENT\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.Designer.cs">
       <DependentUpon>USUARIOS_AUTORIZADO_AL_SISTEMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\BALANZA_ELECTRONICA\BalanzaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\BALANZA_ELECTRONICA\BalanzaForm.Designer.cs">
+      <DependentUpon>BalanzaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CAJA\APERTURA_DE_CAJA.cs">
       <SubType>Form</SubType>
@@ -432,6 +439,9 @@
     <EmbeddedResource Include="PRESENT\ASISTENTE_DE_ISTALACION_servidor\USUARIOS_AUTORIZADO_AL_SISTEMA.resx">
       <DependentUpon>USUARIOS_AUTORIZADO_AL_SISTEMA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\BALANZA_ELECTRONICA\BalanzaForm.resx">
+      <DependentUpon>BalanzaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CAJA\APERTURA_DE_CAJA.resx">
       <DependentUpon>APERTURA_DE_CAJA.cs</DependentUpon>
     </EmbeddedResource>
@@ -631,6 +641,21 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AZULBAJO_azul2.png" />
+    <None Include="Resources\calendario.png" />
+    <None Include="Resources\CUADRO MENU-3.png" />
+    <None Include="Resources\CUADRO MENU2.png" />
+    <None Include="Resources\CUADRO MENU1.png" />
+    <None Include="Resources\CUADRO MENU.png" />
+    <None Include="Resources\PRODUCTOS-1.png" />
+    <None Include="Resources\CLIENTES-1.png" />
+    <None Include="Resources\STOCK-BAJO.png" />
+    <None Include="Resources\ganancia2.png" />
+    <None Include="Resources\cxp-1.png" />
+    <None Include="Resources\circulo-notificaiones1.png" />
+    <None Include="Resources\circulo-notificaiones.png" />
+    <None Include="Resources\cxc1.png" />
+    <None Include="Resources\6030.jpg" />
     <None Include="image\whatsapp.png" />
     <Content Include="logo1-pht.ico" />
     <Content Include="PRESENT\CAJA\FormatoCierreCaja.html" />

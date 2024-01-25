@@ -12,6 +12,7 @@ using System.Management;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.DATE;
 using System.IO;
+using System.Collections;
 
 namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
 {
@@ -32,6 +33,18 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         string ruta;
         string ResultadoLicencia;
         string FechaFinal;
+        double PorCobrar;
+        double PorPagar;
+        double GananciasGenerales;
+        int ProductoMinimo;
+        int CantCliente;
+        int CantProductos;
+        string Moneda;
+        DataTable dtVentas;
+        double totalVentas;
+        double gananciasFecha;
+        DataTable dtProductos;
+        int año;
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
             PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES frm = new PRESENT.CONFIGURACION.PANEL_CONFIGURACIONES();
@@ -52,8 +65,150 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
             Bases.Obtener_serialPC(ref lblSerialPc);
             Obtener_datos.obtener_id_caja_PorSerial(ref idcajavariable);
             Obtener_datos.mostrar_inio_de_secion( ref idusuariovariable);
+            MostrarMoneda();
+            ReportePorCobrar();
+            ReportePorPagar();
+            ReporteProductoBajoMinimo();
+            ReporteCantidadClientes();
+            ReporteCantProductos();
+            mostrarVentasGrafica();
+            checkFiltro.Checked = false;
+            ReporteTotalventas();
+            mostrarPmasVendidos();
+            ReporteGastosAniosCombo();
+            ObtenerMesAñoActual();
+        }
+        private void ObtenerMesAñoActual()
+        {
+            int año = DateTime.Today.Year;
+            DateTime fechaactual = DateTime.Now;
+            string mes = fechaactual.ToString("MMMM")+" "+ año.ToString() ;
+            lblFechaHoy.Text = mes;
+        }
+        private void ReporteGastosMesCombo()
+        {
+            DataTable dt = new DataTable();
+            año = Convert.ToInt32( txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosMesCombo(ref dt, año);
+            txtmes_gasto.DisplayMember = "mes";
+            txtmes_gasto.ValueMember = "mes";
+            txtmes_gasto.DataSource = dt;
         }
 
+        private void ReporteGastosAniosCombo()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteGastosAniosCombo(ref dt);
+            txtaño_gasto.DisplayMember = "anio";
+            txtaño_gasto.ValueMember = "anio";
+            txtaño_gasto.DataSource = dt;
+
+
+
+
+        }
+
+        private void mostrarPmasVendidos()
+        {
+            ArrayList cantidad = new ArrayList();
+            ArrayList producto = new ArrayList();
+            dtProductos = new DataTable();
+            Obtener_datos.mostrarPmasVendidos(ref dtProductos);
+            foreach(DataRow filas in dtProductos.Rows)
+            {
+                cantidad.Add(filas["Cantidad"]);
+                producto.Add(filas["Descripcion"]);
+            }
+            chartProductos.Series[0].Points.DataBindXY(producto, cantidad);
+        }
+        private void ReporteTotalVentasFechas()
+        {
+            Obtener_datos.ReporteTotalVentasFechas(ref totalVentas , txtFechaInicio.Value, txtFechaFin.Value);
+            txtVentas.Text = Moneda +" "+ totalVentas.ToString();
+        }
+        private void ReporteTotalventas()
+        {
+            Obtener_datos.ReporteTotalVentas(ref totalVentas);
+            txtVentas.Text =Moneda + " " + totalVentas.ToString();
+           
+        }
+
+        private void MostrarMoneda()
+        {
+            Obtener_datos.MostrarMoneda(ref Moneda);
+        }
+        private void ReporteCantProductos()
+        {
+            Obtener_datos.ReporteCantProductos(ref CantProductos);
+            lblProductos.Text = CantProductos.ToString();
+        }
+        private void ReporteCantidadClientes()
+        {
+            Obtener_datos.ReporteCantidadClientes(ref CantCliente);
+            lblNClientes.Text = CantCliente.ToString();
+        }
+        private void ReporteProductoBajoMinimo()
+        {
+            Obtener_datos.ReporteProductoBajoMinimo(ref ProductoMinimo);
+            lblStockBajo.Text = ProductoMinimo.ToString();
+        }
+        private void ReporteGanancias()
+        {
+            Obtener_datos.ReporteGanancias(ref GananciasGenerales);
+            lblGanancias.Text = Moneda + " " + GananciasGenerales.ToString();
+            lblGananciasOk.Text = lblGanancias.Text;
+
+        }
+
+        private void ReporteGananciasFecha()
+        {
+            Obtener_datos.ReporteGananciasFecha(ref gananciasFecha, txtFechaInicio.Value, txtFechaFin.Value);
+            lblGananciasOk.Text = Moneda + " " + gananciasFecha.ToString();
+        }
+        private void ReportePorCobrar()
+        {
+            Obtener_datos.ReportePorcobrar(ref PorCobrar);
+            lblPorCobrar.Text = Moneda + PorCobrar.ToString();
+        }
+        private void ReportePorPagar()
+        {
+            Obtener_datos.ReportePorPagar(ref PorPagar);
+            lblPorPagar.Text = Moneda + " " + PorPagar.ToString();
+        }
+        private void mostrarVentasGrafica()
+        {
+            ArrayList fecha = new ArrayList();
+            ArrayList Monto = new ArrayList();
+            dtVentas = new DataTable();
+            Obtener_datos.mostrarVentasGrafica(ref dtVentas);
+            foreach(DataRow filas in dtVentas.Rows)
+            {
+                fecha.Add(filas["Fecha"]);
+                Monto.Add(filas["Total"]);
+            }
+            chartVentas.Series[0].Points.DataBindXY(fecha, Monto);
+            ReporteTotalventas();
+            ReporteGanancias();
+
+
+        }
+        private void mostrarVentasGraficaFechas()
+        {
+            ArrayList fecha = new ArrayList();
+            ArrayList Monto = new ArrayList();
+            dtVentas = new DataTable();
+            Obtener_datos.mostrarVentasGraficaFechas(ref dtVentas, txtFechaInicio.Value, txtFechaFin.Value);
+            foreach (DataRow filas in dtVentas.Rows)
+            {
+                fecha.Add(filas["Fecha"]);
+                Monto.Add(filas["Total"]);
+            }
+            chartVentas.Series[0].Points.DataBindXY(fecha, Monto);
+            ReporteTotalVentasFechas();
+            ReporteGananciasFecha();
+
+        }
+  
         private void validarLicencia()
         {
             DLicencias funcion = new DLicencias();
@@ -81,6 +236,7 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
 
 
         }
+
         private void BtnVender_Click(object sender, EventArgs e)
         {
             validar_aperturas_de_caja();
@@ -335,5 +491,80 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
             LICENCIAS_MEMBRESIAS.Membresias frm = new LICENCIAS_MEMBRESIAS.Membresias();
             frm.ShowDialog();
         }
+
+        private void CheckFiltro_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkFiltro.Checked==true)
+            {
+                panelHoy.Visible = false;
+                panelFiltros.Visible = true;
+                mostrarVentasGraficaFechas();
+            }
+            else
+            {
+                panelHoy.Visible = true;
+                panelFiltros.Visible = false;
+                mostrarVentasGrafica();
+            }
+        }
+
+        private void TxtFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentasGraficaFechas();
+        }
+
+        private void TxtFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentasGraficaFechas();
+        }
+
+        private void PanelHoy_Click(object sender, EventArgs e)
+        {
+            mostrarVentasGrafica();
+        }
+
+        private void Txtaño_gasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReporteGastosAnio();
+            ReporteGastosMesCombo();
+        }
+        private void ReporteGastosAnio()
+        {
+            DataTable dt = new DataTable();
+            año =Convert.ToInt32( txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosAnio(ref dt, año);
+            ArrayList monto = new ArrayList();
+            ArrayList descripcion = new ArrayList();
+            foreach(DataRow filas in dt.Rows)
+            {
+                monto.Add(filas["Monto"]);
+                descripcion.Add(filas["Descripcion"]);
+            }
+            chartGatosAño.Series[0].Points.DataBindXY(descripcion, monto);
+        }
+
+        private void ReporteGastosAnioMesGrafica()
+        {
+            DataTable dt = new DataTable();
+            año = Convert.ToInt32(txtaño_gasto.Text);
+            Obtener_datos.ReporteGastosAnioMesGrafica(ref dt, año, txtmes_gasto.Text);
+            ArrayList monto = new ArrayList();
+            ArrayList descripcion = new ArrayList();
+            foreach(DataRow filas in dt.Rows)
+            {
+                monto.Add(filas["Monto"]);
+               descripcion.Add(filas["Descripcion"]);
+
+            }
+            chartGastosMes.Series[0].Points.DataBindXY(descripcion, monto);
+
+
+        }
+
+        private void Txtmes_gasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReporteGastosAnioMesGrafica();
+        }
+
     }
 }
