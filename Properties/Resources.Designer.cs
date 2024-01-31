@@ -183,6 +183,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap balanza {
+            get {
+                object obj = ResourceManager.GetObject("balanza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BART {
             get {
                 object obj = ResourceManager.GetObject("BART", resourceCulture);

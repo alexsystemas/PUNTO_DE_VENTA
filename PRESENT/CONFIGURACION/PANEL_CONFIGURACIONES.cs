@@ -155,5 +155,23 @@ namespace PUNTO_DE_VENTA.PRESENT.CONFIGURACION
             PRESENT.CLIENTES_PROVEEDORES.ClientesOk frm = new PRESENT.CLIENTES_PROVEEDORES.ClientesOk();
             frm.ShowDialog();
         }
+
+        private void BtnBalanza_Click(object sender, EventArgs e)
+        {
+            BALANZA_ELECTRONICA.BalanzaForm frm = new BALANZA_ELECTRONICA.BalanzaForm();
+            frm.ShowDialog();
+        }
+
+        private void LblBalanza_Click(object sender, EventArgs e)
+        {
+            BALANZA_ELECTRONICA.BalanzaForm frm = new BALANZA_ELECTRONICA.BalanzaForm();
+            frm.ShowDialog();
+        }
+
+        private void VolverAlAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            admin_nivel_dios.DASHBOARD_PRINCIPAL frm = new admin_nivel_dios.DASHBOARD_PRINCIPAL();
+            frm.ShowDialog();
+        }
     }
 }

@@ -642,6 +642,7 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\balanza.png" />
     <None Include="Resources\AZULBAJO_azul2.png" />
     <None Include="Resources\calendario.png" />
     <None Include="Resources\CUADRO MENU-3.png" />

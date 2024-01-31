@@ -69,20 +69,21 @@
             this.btnEnviar.Controls.Add(this.label2);
             this.btnEnviar.Controls.Add(this.pictureBox1);
             this.btnEnviar.Controls.Add(this.ListarPort);
-            this.btnEnviar.Location = new System.Drawing.Point(5, 29);
+            this.btnEnviar.Location = new System.Drawing.Point(6, 16);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(2096, 909);
+            this.btnEnviar.Size = new System.Drawing.Size(1735, 870);
             this.btnEnviar.TabIndex = 0;
             // 
             // btneviarr
             // 
-            this.btneviarr.Location = new System.Drawing.Point(1193, 805);
+            this.btneviarr.Location = new System.Drawing.Point(1279, 737);
             this.btneviarr.Name = "btneviarr";
             this.btneviarr.Size = new System.Drawing.Size(310, 81);
             this.btneviarr.TabIndex = 48;
             this.btneviarr.Text = "enviar";
             this.btneviarr.UseVisualStyleBackColor = true;
+            this.btneviarr.Visible = false;
             this.btneviarr.Click += new System.EventHandler(this.Btneviarr_Click);
             // 
             // lblEstado
@@ -90,11 +91,12 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
-            this.lblEstado.Location = new System.Drawing.Point(753, 847);
+            this.lblEstado.Location = new System.Drawing.Point(1356, 673);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(167, 39);
             this.lblEstado.TabIndex = 47;
             this.lblEstado.Text = "lblEstado";
+            this.lblEstado.Visible = false;
             // 
             // ListaPuertos
             // 
@@ -243,7 +245,7 @@
             this.ListarPort.Location = new System.Drawing.Point(0, 0);
             this.ListarPort.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.ListarPort.Name = "ListarPort";
-            this.ListarPort.Size = new System.Drawing.Size(2096, 103);
+            this.ListarPort.Size = new System.Drawing.Size(1735, 103);
             this.ListarPort.TabIndex = 0;
             this.ListarPort.Text = "Configurar Balanza Electronica";
             // 
@@ -255,13 +257,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2133, 1073);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1777, 899);
             this.Controls.Add(this.btnEnviar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "BalanzaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BalanzaForm";
             this.Load += new System.EventHandler(this.BalanzaForm_Load);
             this.btnEnviar.ResumeLayout(false);
             this.btnEnviar.PerformLayout();
