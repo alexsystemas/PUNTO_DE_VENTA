@@ -830,6 +830,25 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        //caja
+        public static void mostrarPuertos(ref DataTable dt)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref idcaja);
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrarPuertos", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idcaja", idcaja);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
 
     }
 

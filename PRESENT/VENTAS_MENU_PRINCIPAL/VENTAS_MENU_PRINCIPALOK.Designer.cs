@@ -148,6 +148,7 @@
             this.timerLABEL_Stock = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -2021,5 +2022,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.IO.Ports.SerialPort puertos;
     }
 }

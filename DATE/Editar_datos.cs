@@ -13,7 +13,8 @@ namespace PUNTO_DE_VENTA.DATE
 {
     class Editar_datos
     {
-        
+        int idcaja;
+
         public static void cambio_de_caja(int idcaja, int idventa)
         {
             CONEXIONMAESTRA.abrir();
@@ -348,6 +349,34 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.cerrar();
             }
         }
+
+        //
+        // Caja
+        public bool EditarBascula(Lcaja parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref idcaja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("EditarBascula", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcaja", parametros.Id_Caja);
+                cmd.Parameters.AddWithValue("@Puerto", parametros.PuertoBalanza);
+                cmd.Parameters.AddWithValue("@Estado", parametros.EstadoBalanza);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
 
         //
 

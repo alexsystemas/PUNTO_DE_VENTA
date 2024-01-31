@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CANTIDAD_A_GRANEL));
             this.labltxtProducto = new System.Windows.Forms.Label();
             this.lblcantidadAumentar = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.txtprecio_unitario = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // labltxtProducto
@@ -105,7 +107,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(16, 285);
+            this.label3.Location = new System.Drawing.Point(16, 324);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(542, 76);
@@ -117,7 +119,7 @@
             this.txtprecio_unitario.AutoSize = true;
             this.txtprecio_unitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprecio_unitario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.txtprecio_unitario.Location = new System.Drawing.Point(540, 285);
+            this.txtprecio_unitario.Location = new System.Drawing.Point(556, 324);
             this.txtprecio_unitario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtprecio_unitario.Name = "txtprecio_unitario";
             this.txtprecio_unitario.Size = new System.Drawing.Size(71, 76);
@@ -131,7 +133,7 @@
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(606, 218);
+            this.btnAgregar.Location = new System.Drawing.Point(640, 188);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(179, 69);
             this.btnAgregar.TabIndex = 646;
@@ -146,18 +148,22 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(606, 290);
+            this.button1.Location = new System.Drawing.Point(640, 260);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 63);
             this.button1.TabIndex = 647;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // puertos
+            // 
+            this.puertos.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.puertos_DataReceived);
+            // 
             // CANTIDAD_A_GRANEL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 367);
+            this.ClientSize = new System.Drawing.Size(896, 439);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtTotal);
@@ -194,5 +200,6 @@
         private System.Windows.Forms.Label txtprecio_unitario;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button1;
+        private System.IO.Ports.SerialPort puertos;
     }
 }

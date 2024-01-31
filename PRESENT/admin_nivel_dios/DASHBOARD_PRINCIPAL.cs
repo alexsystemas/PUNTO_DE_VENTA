@@ -566,5 +566,9 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
             ReporteGastosAnioMesGrafica();
         }
 
+        private void BtnVender_Click_1(object sender, EventArgs e)
+        {
+            validar_aperturas_de_caja();
+        }
     }
 }

@@ -125,6 +125,7 @@
     <Compile Include="DATE\Obtener_datos.cs" />
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="LOGIC\conexion_secundaria_controller.cs" />
+    <Compile Include="LOGIC\Lcaja.cs" />
     <Compile Include="LOGIC\LcontrolCobros.cs" />
     <Compile Include="LOGIC\Lmcaja.cs" />
     <Compile Include="LOGIC\Lclientes.cs" />

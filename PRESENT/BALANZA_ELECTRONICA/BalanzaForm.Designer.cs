@@ -33,12 +33,9 @@
             this.btnEnviar = new System.Windows.Forms.Panel();
             this.btneviarr = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.ListaPuertos = new System.Windows.Forms.ComboBox();
             this.btnProbar = new System.Windows.Forms.Button();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
@@ -59,12 +56,9 @@
             this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnEnviar.Controls.Add(this.btneviarr);
             this.btnEnviar.Controls.Add(this.lblEstado);
-            this.btnEnviar.Controls.Add(this.button4);
-            this.btnEnviar.Controls.Add(this.button3);
-            this.btnEnviar.Controls.Add(this.button2);
             this.btnEnviar.Controls.Add(this.ListaPuertos);
             this.btnEnviar.Controls.Add(this.btnProbar);
-            this.btnEnviar.Controls.Add(this.btn1);
+            this.btnEnviar.Controls.Add(this.btnGuardar);
             this.btnEnviar.Controls.Add(this.panel3);
             this.btnEnviar.Controls.Add(this.label6);
             this.btnEnviar.Controls.Add(this.txtResultado);
@@ -83,7 +77,7 @@
             // 
             // btneviarr
             // 
-            this.btneviarr.Location = new System.Drawing.Point(1235, 708);
+            this.btneviarr.Location = new System.Drawing.Point(1193, 805);
             this.btneviarr.Name = "btneviarr";
             this.btneviarr.Size = new System.Drawing.Size(310, 81);
             this.btneviarr.TabIndex = 48;
@@ -96,68 +90,11 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
-            this.lblEstado.Location = new System.Drawing.Point(824, 823);
+            this.lblEstado.Location = new System.Drawing.Point(753, 847);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(167, 39);
             this.lblEstado.TabIndex = 47;
             this.lblEstado.Text = "lblEstado";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(1751, 645);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 148);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "3";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(1751, 400);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 148);
-            this.button3.TabIndex = 45;
-            this.button3.Text = "2";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(1751, 128);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 148);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "1";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // ListaPuertos
             // 
@@ -187,26 +124,27 @@
             this.btnProbar.UseVisualStyleBackColor = false;
             this.btnProbar.Click += new System.EventHandler(this.BtnProbar_Click);
             // 
-            // btn1
+            // btnGuardar
             // 
-            this.btn1.BackColor = System.Drawing.Color.Transparent;
-            this.btn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn1.BackgroundImage")));
-            this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn1.FlatAppearance.BorderSize = 0;
-            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold);
-            this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(877, 708);
-            this.btn1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(256, 81);
-            this.btn1.TabIndex = 41;
-            this.btn1.Text = "Guardar";
-            this.btn1.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(877, 708);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(256, 81);
+            this.btnGuardar.TabIndex = 41;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // panel3
             // 
@@ -345,12 +283,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.Button btn1;
+        internal System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox ListaPuertos;
         private System.Windows.Forms.Button btnProbar;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.IO.Ports.SerialPort puertos;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btneviarr;

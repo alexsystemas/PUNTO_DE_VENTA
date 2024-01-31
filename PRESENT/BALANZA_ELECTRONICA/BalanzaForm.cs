@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PUNTO_DE_VENTA.DATE;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.BALANZA_ELECTRONICA
 {
@@ -101,6 +103,32 @@ namespace PUNTO_DE_VENTA.PRESENT.BALANZA_ELECTRONICA
             else
             {
                 MessageBox.Show("Fallo la conexion");
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+           if(!string.IsNullOrEmpty(txtResultado.Text))
+
+            {
+                editarBascula();
+            }
+           else
+            {
+                MessageBox.Show("El resultado tiene que ser diferente  de vacio para confirar la balanza ");
+            }
+
+
+        }
+        private void editarBascula()
+        {
+            Lcaja parametros = new Lcaja();
+            Editar_datos funcion = new Editar_datos();
+            parametros.EstadoBalanza = "CONFIRMADO";
+            parametros.PuertoBalanza = ListaPuertos.Text;
+            if (funcion.EditarBascula(parametros) == true)
+            {
+                MessageBox.Show("Balanza configurada y guardada correctameente");
             }
         }
     }

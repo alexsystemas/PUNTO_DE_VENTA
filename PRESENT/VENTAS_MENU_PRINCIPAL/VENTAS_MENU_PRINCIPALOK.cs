@@ -14,6 +14,7 @@ using System.Globalization;
 using PUNTO_DE_VENTA.LOGIC;
 using PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL;
 using PUNTO_DE_VENTA.DATE;
+using System.IO.Ports;
 
 namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 {
@@ -23,6 +24,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             InitializeComponent();
         }
+        
         int Contador_stock_detalle_de_venta;
         int idProducto;
         int idClienteEstandar;
@@ -43,6 +45,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string ResultadoLicencia;
         string FechaFinal;
         Panel panel_mostrador_de_productos = new Panel();
+      
+
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
         {
@@ -70,6 +74,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
             Limpiar_para_venta_nueva();
         }
+
+
         private void validarLicencia()
         {
             DLicencias funcion = new DLicencias();
@@ -327,11 +333,14 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void vender_a_granel()
         {
+           
             CANTIDAD_A_GRANEL frm = new CANTIDAD_A_GRANEL();
             frm.preciounitario= txtPrecio_Unitario;
             frm.FormClosing += Frm_FormClosing;
             frm.ShowDialog();
+            
         }
+    
 
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
