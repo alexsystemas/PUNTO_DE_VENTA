@@ -16,7 +16,7 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            PRESENT.BALANZA_ELECTRONICA.BalanzaForm frm = new PRESENT.BALANZA_ELECTRONICA.BalanzaForm();
+            PRESENT.LOGIN frm = new PRESENT.LOGIN();
             frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
             Application.Run();

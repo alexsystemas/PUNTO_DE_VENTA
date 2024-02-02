@@ -1261,6 +1261,27 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             COBROS.CobrosForm frm = new COBROS.CobrosForm();
             frm.ShowDialog();
         }
+
+        private void BtnMayoreo_Click(object sender, EventArgs e)
+        {
+            aplicar_precio_mayoreo();
+        }
+        private void aplicar_precio_mayoreo()
+        {
+            if(datalistadoDetalleVenta.Rows.Count>0)
+            {
+                LdetalleVenta parametros = new LdetalleVenta();
+                Editar_datos funcion = new Editar_datos();
+
+                parametros.Id_producto = idproducto;
+                parametros.iddetalle_venta = iddetalleventa;
+                if (funcion.aplicar_precio_mayoreo(parametros) == true)
+                {
+                    Listarproductosagregados();
+                }
+           
+            }
+        }
     }
 }
 

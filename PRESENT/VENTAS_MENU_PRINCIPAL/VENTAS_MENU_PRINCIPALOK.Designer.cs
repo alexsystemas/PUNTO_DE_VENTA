@@ -44,7 +44,7 @@
             this.btnGastos = new System.Windows.Forms.Button();
             this.btnIngresos = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnMayoreo = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btnVerMovimientosCaja = new System.Windows.Forms.Button();
             this.btnCreditoPagar = new System.Windows.Forms.Button();
@@ -194,7 +194,7 @@
             this.panel1.Controls.Add(this.btnGastos);
             this.panel1.Controls.Add(this.btnIngresos);
             this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.btnMayoreo);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.btnVerMovimientosCaja);
             this.panel1.Controls.Add(this.btnCreditoPagar);
@@ -275,22 +275,23 @@
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnMayoreo
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(104, 906);
-            this.button10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(395, 81);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Mayoreo";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnMayoreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnMayoreo.FlatAppearance.BorderSize = 0;
+            this.btnMayoreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMayoreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMayoreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnMayoreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMayoreo.Location = new System.Drawing.Point(104, 906);
+            this.btnMayoreo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnMayoreo.Name = "btnMayoreo";
+            this.btnMayoreo.Size = new System.Drawing.Size(395, 81);
+            this.btnMayoreo.TabIndex = 4;
+            this.btnMayoreo.Text = "Mayoreo";
+            this.btnMayoreo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMayoreo.UseVisualStyleBackColor = false;
+            this.btnMayoreo.Click += new System.EventHandler(this.BtnMayoreo_Click);
             // 
             // button9
             // 
@@ -1991,7 +1992,7 @@
         internal System.Windows.Forms.Button btnSeparador;
         internal System.Windows.Forms.Button btnborrartodo;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnMayoreo;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btnIngresos;
         private System.Windows.Forms.Button btnGastos;

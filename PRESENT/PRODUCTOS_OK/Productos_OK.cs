@@ -44,6 +44,7 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             btnCancelar.Visible = false;
             btnNuevoGrupo.Visible = true;
 
+
             mostrar_grupos();
             txtgrupo.Clear();
 
@@ -75,12 +76,33 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             txtDescripcion.Text = "";
             panelInventario.Visible = true;
 
+            LIMPIAR();
             TGUARDAR.Visible = true;
             TGUARDARCAMBIOS.Visible = true;
         }
-        
 
-        
+
+
+        internal void LIMPIAR()
+        {
+            txtbusca.Text="";
+           
+            txtDescripcion.Text = "";
+            txtcosto.Text = "0";
+            txtPorcentajeGanancia.Text = "0";
+            TXTPRECIODEVENTA2.Text = "0";
+            txtpreciomayoreo.Text = "0";
+            txtapartirde.Text = "0";
+            txtgrupo.Text = "";
+            txtcodigodebarra.Text = "";
+            Agranel.Checked = false;
+            txtStockMinimo.Text = "0";
+            txtStockHay.Text = "0";
+            
+        }
+
+
+
         private void Productos_OK_Load(object sender, EventArgs e)
         {
 

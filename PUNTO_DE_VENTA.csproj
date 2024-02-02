@@ -127,6 +127,7 @@
     <Compile Include="LOGIC\conexion_secundaria_controller.cs" />
     <Compile Include="LOGIC\Lcaja.cs" />
     <Compile Include="LOGIC\LcontrolCobros.cs" />
+    <Compile Include="LOGIC\LdetalleVenta.cs" />
     <Compile Include="LOGIC\Lmcaja.cs" />
     <Compile Include="LOGIC\Lclientes.cs" />
     <Compile Include="LOGIC\Lcorreo.cs" />

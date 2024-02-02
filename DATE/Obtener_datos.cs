@@ -848,9 +848,15 @@ namespace PUNTO_DE_VENTA.DATE
 
                 MessageBox.Show(ex.StackTrace);
             }
+           
+            
+        }
+       
         }
 
     }
 
-}
+
+
+
 

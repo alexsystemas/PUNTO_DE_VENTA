@@ -37,7 +37,7 @@ namespace PUNTO_DE_VENTA.DATE
                 cmd.ExecuteNonQuery();
                 CONEXIONMAESTRA.cerrar();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
@@ -63,7 +63,7 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.Message);
                 return false;
             }
-           
+
         }
 
         public static bool editar_dinero_caja_inicial(int Idcaja, double saldo)
@@ -116,7 +116,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-       
+
 
         public bool restaurar_Proveedores(LProveedores parametros)
         {
@@ -378,9 +378,33 @@ namespace PUNTO_DE_VENTA.DATE
         }
 
 
-        //
+
+        //Detalle_Venta
+        public bool aplicar_precio_mayoreo(LdetalleVenta parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aplicar_precio_mayoreo", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idproducto", parametros.Id_producto);
+                cmd.Parameters.AddWithValue("@iddetalleventa", parametros.iddetalle_venta);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+
+            }
 
 
-
+        }
     }
 }
