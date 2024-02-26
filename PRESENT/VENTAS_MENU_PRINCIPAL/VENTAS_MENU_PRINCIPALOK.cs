@@ -44,6 +44,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string usaInventarios;
         string ResultadoLicencia;
         string FechaFinal;
+        double cantidad;
         Panel panel_mostrador_de_productos = new Panel();
       
 
@@ -488,7 +489,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 datalistadoDetalleVenta.Columns[9].Visible = false;
                 datalistadoDetalleVenta.Columns[10].Visible = false;
                 datalistadoDetalleVenta.Columns[11].Width = datalistadoDetalleVenta.Width - (datalistadoDetalleVenta.Columns[0].Width - datalistadoDetalleVenta.Columns[1].Width - datalistadoDetalleVenta.Columns[2].Width -
-                  datalistadoDetalleVenta.Columns[4].Width - datalistadoDetalleVenta.Columns[5].Width - datalistadoDetalleVenta.Columns[6].Width - datalistadoDetalleVenta.Columns[7].Width);
+                datalistadoDetalleVenta.Columns[4].Width - datalistadoDetalleVenta.Columns[5].Width - datalistadoDetalleVenta.Columns[6].Width - datalistadoDetalleVenta.Columns[7].Width);
                 datalistadoDetalleVenta.Columns[12].Visible = false;
                 datalistadoDetalleVenta.Columns[13].Visible = false;
                 datalistadoDetalleVenta.Columns[14].Visible = false;
@@ -496,8 +497,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 datalistadoDetalleVenta.Columns[16].Visible = false;
                 datalistadoDetalleVenta.Columns[17].Visible = false;
                 datalistadoDetalleVenta.Columns[18].Visible = false;
-                sumar();
                 Bases.Multilinea(ref datalistadoDetalleVenta);
+                sumar();
             }
             catch (Exception ex)
             {
@@ -684,8 +685,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
                 sevendePor = datalistadoDetalleVenta.SelectedCells[17].Value.ToString();
                 usaInventarios = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
-                
-                
+                cantidad=Convert.ToDouble( datalistadoDetalleVenta.SelectedCells[5].Value);
+
             }
             catch (Exception ex)
             {
@@ -694,7 +695,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void editar_detalle_venta_sumar()
         {
-                txtpantalla = 1;
+               
                 if (usaInventarios == "SI")
                 {
                    lblStock_De_Productos =Convert.ToDouble( datalistadoDetalleVenta.SelectedCells[15].Value.ToString());
@@ -716,7 +717,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void editar_detalle_venta_restar()
         {
-            txtpantalla = 1;
+           
             if (usaInventarios == "SI")
             {
                 ejecutar_editar_detalle_venta_restar();
@@ -777,17 +778,15 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
             {
+                txtpantalla = 1;
                 editar_detalle_venta_sumar();
             }
             if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
             {
+                txtpantalla = 1;
                 editar_detalle_venta_restar();
                 contar_tablas_ventas();
-                if (contador == 0)
-                {
-                    eliminar_venta_al_agregar_productos();
-                    txtVentaGenerada = "VENTA NUEVA";
-                }
+                
             }
 
 
@@ -860,60 +859,59 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 }
             }
         }
-
-        private void Btn1_Click(object sender, EventArgs e)
+        private void Btn1_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "1";
         }
-
-        private void Btn2_Click(object sender, EventArgs e)
+        private void Btn2_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "2";
         }
 
-        private void Btn3_Click(object sender, EventArgs e)
+      
+          private void Btn3_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "3";
         }
 
-        private void Btn4_Click(object sender, EventArgs e)
+        private void Btn4_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "4";
         }
 
-        private void Btn5_Click(object sender, EventArgs e)
+        private void Btn5_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "5";
         }
 
-        private void Btn6_Click(object sender, EventArgs e)
+        private void Btn6_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "6";
         }
 
-        private void Btn7_Click(object sender, EventArgs e)
+        private void Btn7_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "7";
         }
 
-        private void Btn8_Click(object sender, EventArgs e)
+        private void Btn8_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "8";
         }
 
-        private void Btn9_Click(object sender, EventArgs e)
+        private void Btn9_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "9";
         }
 
-        private void Btn0_Click(object sender, EventArgs e)
+        private void Btn0_Click_1(object sender, EventArgs e)
         {
             txtmonto.Text = txtmonto.Text + "0";
         }
-        bool SECUENCIA = true;
-        private void BtnSeparador_Click(object sender, EventArgs e)
+
+        private void BtnSeparador_Click_1(object sender, EventArgs e)
         {
-            if(SECUENCIA == true)
+            if (SECUENCIA == true)
             {
                 txtmonto.Text = txtmonto.Text + ".";
                 SECUENCIA = false;
@@ -924,62 +922,14 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
         }
 
-        private void Btnborrartodo_Click(object sender, EventArgs e)
+        private void Btnborrartodo_Click_1(object sender, EventArgs e)
         {
             txtmonto.Clear();
             SECUENCIA = true;
         }
-
-        private void Txtmonto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar != '.') || (e.KeyChar != ','))
-            {
-
-
-                string CultureName = Thread.CurrentThread.CurrentCulture.Name;
-                CultureInfo ci = new CultureInfo(CultureName);
-
-
-                ci.NumberFormat.NumberDecimalSeparator = ".";
-                Thread.CurrentThread.CurrentCulture = ci;
-
-            }
-            Separador_de_Numeros(txtmonto, e);
-        }
-        public static void Separador_de_Numeros(System.Windows.Forms.TextBox CajaTexto, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-
-            else if (!(e.KeyChar == CajaTexto.Text.IndexOf('.')))
-            {
-                e.Handled = true;
-            }
-
-
-            else if (e.KeyChar == '.')
-            {
-                e.Handled = false;
-            }
-            else if (e.KeyChar == ',')
-            {
-                e.Handled = false;
-
-            }
-            else
-            {
-                e.Handled = true;
-
-            }
-
-        }
-
+        
+        bool SECUENCIA = true;
+        
         private void TimerBUSCADORcodigodebarras_Tick(object sender, EventArgs e)
         {
             timerBUSCADORcodigodebarras.Stop();
@@ -1052,46 +1002,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
         }
 
-        private void BtnCantidad_Click(object sender, EventArgs e)
-        {
-            if(datalistadoDetalleVenta.RowCount>0)
-            {
-
-            
-            if(sevendePor =="Unidad")
-            {
-                string ruta = txtmonto.Text;
-                if (ruta.Contains("."))
-                {
-                    MessageBox.Show("Este producto no acepta decimales ya que esta conigurado para ser vendido por UNIDAD", "Formato Icorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                        if(txtmonto.Text=="")
-                        {
-                            txtmonto.Text =Convert.ToString (0);
-                        }
-                        if(Convert.ToInt32( txtmonto.Text)>0)
-                        {
-                            editar_detalle_venta_CANTIDAD();
-                        }
-                        else
-                        {
-                            txtmonto.Clear();
-                            txtmonto.Focus();
-                        }
-                    
-                }
-            }
-
-          }
-            else
-            {
-                txtmonto.Clear();
-                txtmonto.Focus();
-            }
-
-        }
+       
 
     
 
@@ -1281,6 +1192,119 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 }
            
             }
+        }
+
+        private void Txtmonto_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtmonto, e);
+        }
+
+        private void BtnCantidad_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtmonto.Text))
+            {
+                if (datalistadoDetalleVenta.RowCount > 0)
+                {
+
+                    if (sevendePor == "Unidad")
+
+                    {
+                        string cadena = txtmonto.Text;
+                        if (cadena.Contains("."))
+                        {
+                            MessageBox.Show("Este Producto no acepta decimales ya que esta configurado para ser vendido por UNIDAD", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            BotonCantidad();
+
+
+                        }
+                    }
+                    else if (sevendePor == "Granel")
+                    {
+                        BotonCantidad();
+                    }
+                }
+                else
+                {
+                    txtmonto.Clear();
+                    txtmonto.Focus();
+                }
+            }
+
+        }
+        private void BotonCantidad()
+        {
+
+            double MontoaIngresar;
+            MontoaIngresar = Convert.ToDouble(txtmonto.Text);
+            double Cantidad;
+            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+
+            double stock;
+            double condicional;
+            string ControlStock;
+            ControlStock = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+            if (ControlStock == "SI")
+            {
+                stock = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[11].Value);
+                condicional = Cantidad + stock;
+                if (condicional >= MontoaIngresar)
+                {
+                    BotonCantidadEjecuta();
+                }
+                else
+                {
+                    timerLABEL_Stock.Start();
+                }
+            }
+            else
+            {
+                BotonCantidadEjecuta();
+            }
+
+
+        }
+        private void BotonCantidadEjecuta()
+        {
+            double MontoaIngresar;
+            MontoaIngresar = Convert.ToDouble(txtmonto.Text);
+            double Cantidad;
+            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+
+            if (MontoaIngresar > Cantidad)
+            {
+                txtpantalla = MontoaIngresar - Cantidad;
+                editar_detalle_venta_sumar();
+            }
+            else if (MontoaIngresar < Cantidad)
+            {
+                txtpantalla = Cantidad - MontoaIngresar;
+                editar_detalle_venta_restar();
+            }
+        }
+
+        private void BtnPrecio_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtmonto.Text))
+            {
+                LdetalleVenta parametros = new LdetalleVenta();
+                Editar_datos funcion = new Editar_datos();
+                parametros.iddetalle_venta = iddetalleventa;
+                parametros.preciounitario =Convert.ToDouble(txtmonto.Text);
+                if(funcion.editarPrecioVenta(parametros)==true)
+                {
+                    Listarproductosagregados();
+                }
+
+            }
+        }
+
+        private void BtnDevoluciones_Click(object sender, EventArgs e)
+        {
+            HISTORIAL_VENTAS.Historial_Ventas frm = new HISTORIAL_VENTAS.Historial_Ventas();
+            frm.ShowDialog();
         }
     }
 }

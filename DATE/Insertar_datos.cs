@@ -15,6 +15,7 @@ namespace PUNTO_DE_VENTA.DATE
   public class Insertar_datos
     {
         int id_caja;
+        int id_usuario;
         public static bool insertar_Conceptos(string descripcion)
         {
             try
@@ -248,6 +249,40 @@ namespace PUNTO_DE_VENTA.DATE
             {
                 CONEXIONMAESTRA.cerrar();
             }
+        }
+
+        //KArdex
+        public bool insertar_KARDEX_entrada(LKardex parametros)
+        {
+            try
+            {
+                Obtener_datos.mostrar_inio_de_secion(ref id_usuario);
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_KARDEX_entrada", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                cmd.Parameters.AddWithValue("@Motivo", parametros.Motivo);
+                cmd.Parameters.AddWithValue("@Cantidad", parametros.Cantidad);
+                cmd.Parameters.AddWithValue("@Id_producto", parametros.Id_producto);
+                cmd.Parameters.AddWithValue("@Id_usuario", id_usuario);
+                cmd.Parameters.AddWithValue("@Tipo", "ENTRADA");
+                cmd.Parameters.AddWithValue("@Estado", "DESPACHO CONFIRMADO");
+                cmd.Parameters.AddWithValue("@Id_caja",id_caja);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+
         }
 
     }

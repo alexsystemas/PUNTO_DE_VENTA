@@ -570,5 +570,12 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         {
             validar_aperturas_de_caja();
         }
+
+        private void Btn_Inventarios_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            INVENTARIOS_KARDEX.INVENTARIO_MENU frmKard = new INVENTARIOS_KARDEX.INVENTARIO_MENU();
+            frmKard.ShowDialog();
+        }
     }
 }

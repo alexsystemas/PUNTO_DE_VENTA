@@ -353,6 +353,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelado {
+            get {
+                object obj = ResourceManager.GetObject("cancelado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura2 {
             get {
                 object obj = ResourceManager.GetObject("Captura2", resourceCulture);
@@ -976,6 +986,16 @@ namespace PUNTO_DE_VENTA.Properties {
         internal static System.Drawing.Bitmap logo1_pht2 {
             get {
                 object obj = ResourceManager.GetObject("logo1 pht2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo1_pht3 {
+            get {
+                object obj = ResourceManager.GetObject("logo1 pht3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

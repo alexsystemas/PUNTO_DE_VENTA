@@ -128,14 +128,17 @@
     <Compile Include="LOGIC\Lcaja.cs" />
     <Compile Include="LOGIC\LcontrolCobros.cs" />
     <Compile Include="LOGIC\LdetalleVenta.cs" />
+    <Compile Include="LOGIC\LKardex.cs" />
     <Compile Include="LOGIC\Lmcaja.cs" />
     <Compile Include="LOGIC\Lclientes.cs" />
     <Compile Include="LOGIC\Lcorreo.cs" />
     <Compile Include="LOGIC\LcreditoPorCobrar.cs" />
     <Compile Include="LOGIC\LcreditosPorPagar.cs" />
     <Compile Include="LOGIC\Lempresa.cs" />
+    <Compile Include="LOGIC\Lproductos.cs" />
     <Compile Include="LOGIC\LProveedores.cs" />
     <Compile Include="LOGIC\LMarcan.cs" />
+    <Compile Include="LOGIC\LVentass.cs" />
     <Compile Include="PRESENT\admin_nivel_dios\DASHBOARD_PRINCIPAL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +294,12 @@
     </Compile>
     <Compile Include="PRESENT\GASTOS_VARIOS\Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\HISTORIAL_VENTAS\Historial_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\HISTORIAL_VENTAS\Historial_Ventas.Designer.cs">
+      <DependentUpon>Historial_Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\INGRESOS_VARIOS\IngresosVarios.cs">
       <SubType>Form</SubType>
@@ -498,6 +507,9 @@
     <EmbeddedResource Include="PRESENT\GASTOS_VARIOS\Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\HISTORIAL_VENTAS\Historial_Ventas.resx">
+      <DependentUpon>Historial_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\INGRESOS_VARIOS\IngresosVarios.resx">
       <DependentUpon>IngresosVarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -643,6 +655,8 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cancelado.png" />
+    <None Include="Resources\logo1 pht3.png" />
     <None Include="Resources\balanza.png" />
     <None Include="Resources\AZULBAJO_azul2.png" />
     <None Include="Resources\calendario.png" />

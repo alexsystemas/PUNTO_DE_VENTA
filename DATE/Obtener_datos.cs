@@ -512,7 +512,7 @@ namespace PUNTO_DE_VENTA.DATE
                 Cantidad = 0;
             }
         }
-        ///
+       
 
         //controlCobros
         public static void mostrar_ControlCobros(ref DataTable dt)
@@ -547,7 +547,7 @@ namespace PUNTO_DE_VENTA.DATE
                 Monto = 0;
             }
          }
-        //
+       
 
 
         // Proveedores
@@ -582,9 +582,7 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //
-
+        
         //Ventas
         public static void mostrarVentasGrafica(ref DataTable dt)
         {
@@ -620,23 +618,6 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        //
-        //Detalle Ventas
-        public static void ReporteGanancias(ref double Monto)
-        {
-            try
-            {
-                CONEXIONMAESTRA.abrir();
-                SqlCommand da = new SqlCommand("ReporteGanacias", CONEXIONMAESTRA.conectar);
-                Monto = Convert.ToDouble(da.ExecuteScalar());
-                CONEXIONMAESTRA.cerrar();
-            }
-            catch (Exception)
-            {
-
-                Monto = 0;
-            }
-        }
         public static void ReporteTotalVentas(ref double Monto)
         {
             try
@@ -652,7 +633,6 @@ namespace PUNTO_DE_VENTA.DATE
                 Monto = 0;
             }
         }
-
         public static void ReporteTotalVentasFechas(ref double Monto, DateTime fi, DateTime ff)
         {
             try
@@ -670,7 +650,41 @@ namespace PUNTO_DE_VENTA.DATE
                 Monto = 0;
             }
         }
+        public static void buscarVentas(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("buscarVentas", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@busqueda", buscador);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
 
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        //Detalle Ventas
+        public static void ReporteGanancias(ref double Monto)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("ReporteGanacias", CONEXIONMAESTRA.conectar);
+                Monto = Convert.ToDouble(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Monto = 0;
+            }
+        }
         public static void ReporteGananciasFecha(ref double Monto, DateTime fi, DateTime ff)
         {
             try
@@ -688,7 +702,24 @@ namespace PUNTO_DE_VENTA.DATE
                 Monto = 0;
             }
         }
-        //
+
+        public static void MostrarDetalleVenta(ref DataTable dt, int idventa)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da=new SqlDataAdapter("mostrar_productos_agregados_a_venta", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idventa", idventa);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         //Productos 
         public static void ReporteProductoBajoMinimo(ref int Monto)
         {
@@ -737,8 +768,7 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
-        //
-
+       
         //Empresa
         public static void MostrarMoneda(ref string moneda)
         {

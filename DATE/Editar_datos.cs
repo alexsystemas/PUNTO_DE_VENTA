@@ -350,7 +350,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
-        //
+       
         // Caja
         public bool EditarBascula(Lcaja parametros)
         {
@@ -405,6 +405,131 @@ namespace PUNTO_DE_VENTA.DATE
             }
 
 
+        }
+
+        public bool editarPrecioVenta(LdetalleVenta parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("editarPrecioVenta",CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@iddetalleventa", parametros.iddetalle_venta);
+                cmd.Parameters.AddWithValue("@precio", parametros.preciounitario);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+           
+        }
+        public bool DetalleventaDevolucion(LdetalleVenta parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("DetalleventaDevolucion", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@iddetalle", parametros.iddetalle_venta);
+                cmd.Parameters.AddWithValue("@cantidad", parametros.cantidad);
+                cmd.Parameters.AddWithValue("@cantidadMostrada", parametros.Cantidad_mostrada);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+        public bool AumentarStockDetalle(LdetalleVenta parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aumentar_stock_en_detalle_de_venta", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Producto1", parametros.Id_producto);
+                cmd.Parameters.AddWithValue("@cantidad", parametros.cantidad);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        // Productos
+        public bool aumentarStock(Lproductos parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aumentarStock", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idproducto",parametros.Id_Producto1);
+                cmd.Parameters.AddWithValue("@cantidad", parametros.Stock);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+                 
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        // Ventas
+
+        public bool EditarVenta(LVentass parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("[editarVenta]", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idventa", parametros.idventa);
+                cmd.Parameters.AddWithValue("@monto", parametros.idventa);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
         }
     }
 }
