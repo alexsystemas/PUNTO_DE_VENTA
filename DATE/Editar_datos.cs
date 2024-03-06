@@ -377,10 +377,32 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public bool EditarTemaCaja(Lcaja parametros)
+        {
+            try
+            {
+                Obtener_datos.obtener_id_caja_PorSerial(ref idcaja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("EditarTemaCaja", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idcaja", idcaja);
+                cmd.Parameters.AddWithValue("@tema", parametros.Tema);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
-
-        //Detalle_Venta
-        public bool aplicar_precio_mayoreo(LdetalleVenta parametros)
+            //Detalle_Venta
+            public bool aplicar_precio_mayoreo(LdetalleVenta parametros)
         {
             try
             {

@@ -881,10 +881,31 @@ namespace PUNTO_DE_VENTA.DATE
            
             
         }
-       
+
+        public static void mostrarTemaCaja(ref string Tema)
+        {
+            try
+            {
+                obtener_id_caja_PorSerial(ref idcaja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("mostrarTemaCaja", CONEXIONMAESTRA.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                da.Parameters.AddWithValue("@idCaja", idcaja);
+                Tema = da.ExecuteScalar().ToString();
+                CONEXIONMAESTRA.cerrar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
+
     }
+
+}
 
 
 

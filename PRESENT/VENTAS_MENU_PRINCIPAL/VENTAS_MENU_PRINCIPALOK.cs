@@ -45,6 +45,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string ResultadoLicencia;
         string FechaFinal;
         double cantidad;
+        string Tema;
         Panel panel_mostrador_de_productos = new Panel();
       
 
@@ -77,6 +78,29 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
 
 
+        private void ValidarTemaCaja()
+        {
+            Obtener_datos.mostrarTemaCaja(ref Tema);
+            if (Tema == "Redentor")
+            {
+                Temaclaro();
+                IndicadorTema.Checked = false;
+            }
+            else
+            {
+
+                oscuro();
+                IndicadorTema.Checked = true;
+            }
+        }
+
+        private void EditarTemaCaja()
+        {
+            Lcaja parametros = new Lcaja();
+            Editar_datos funcion = new Editar_datos();
+            parametros.Tema = Tema;
+            funcion.EditarTemaCaja(parametros);
+        }
         private void validarLicencia()
         {
             DLicencias funcion = new DLicencias();
@@ -1306,6 +1330,143 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             HISTORIAL_VENTAS.Historial_Ventas frm = new HISTORIAL_VENTAS.Historial_Ventas();
             frm.ShowDialog();
         }
+        private void UI_MaterialToggle1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (IndicadorTema.Checked == true)
+            {
+                Tema = "Oscuro";
+                EditarTemaCaja();
+                oscuro();
+                Listarproductosagregados();
+            }
+            else
+            {
+                Tema = "Redentor";
+                EditarTemaCaja();
+                Temaclaro();
+                Listarproductosagregados();
+            }
+        }
+        private void oscuro()
+        {
+            pnlToop.BackColor = Color.FromArgb(40, 45, 61);
+            pnlFeel.BackColor = Color.FromArgb(40, 45, 61);
+            pnlIzquierdo.BackColor = Color.FromArgb(40, 45, 61);
+            pnlizqDerecha.BackColor = Color.FromArgb(48, 61, 81);
+            pnlCentalDer.BackColor = Color.FromArgb(40, 45, 61);
+            pnlCentroIzq.BackColor = Color.FromArgb(40, 45, 61);
+            pnlLinea.BackColor = Color.FromArgb(77, 199, 201);
+            pnlDevolucion.BackColor = Color.FromArgb(40, 45, 61);
+            pnlColorTema.BackColor = Color.FromArgb(40, 45, 61);
+
+            datalistadoDetalleVenta.BackgroundColor = Color.FromArgb(40, 45, 61);
+
+            lblTotal.ForeColor = Color.FromArgb(100, 101, 108);
+            txt_total_suma.ForeColor = Color.FromArgb(100, 101, 108);
+
+            txtbuscar.BackColor = Color.FromArgb(40, 45, 61);
+            txtbuscar.ForeColor = Color.FromArgb(100, 101, 108);
+
+            pnlSuspenciones.BackColor = Color.FromArgb(40, 45, 61);
+            btnPonerEspera.BackColor = Color.FromArgb(40, 45, 61);
+            btnPonerEspera.ForeColor = Color.FromArgb(100, 101, 108);
+            btnRestaurar.BackColor = Color.FromArgb(40, 45, 61);
+            btnRestaurar.ForeColor = Color.FromArgb(100, 101, 108);
+            btnEliminar.BackColor = Color.FromArgb(40, 45, 61);
+            btnEliminar.ForeColor = Color.FromArgb(100, 101, 108);
+            btnDevoluciones.BackColor = Color.FromArgb(40, 45, 61);
+            btnDevoluciones.ForeColor = Color.FromArgb(100, 101, 108);
+            //btn_Scanner.BackColor = Color.FromArgb(40, 45, 61);
+            //btn_Teclado.BackColor = Color.FromArgb(40, 45, 61);
+
+            btnCobros.BackColor = Color.FromArgb(40, 45, 61);
+            btnCobros.ForeColor = Color.FromArgb(100, 101, 108);
+            btnPagos.BackColor = Color.FromArgb(40, 45, 61);
+            btnPagos.ForeColor = Color.FromArgb(100, 101, 108);
+            btnCreditoCobrar.BackColor = Color.FromArgb(40, 45, 61);
+            btnCreditoCobrar.ForeColor = Color.FromArgb(100, 101, 108);
+            btnCreditoPagar.BackColor = Color.FromArgb(40, 45, 61);
+            btnCreditoPagar.ForeColor = Color.FromArgb(100, 101, 108);
+            btnVerMovimientosCaja.BackColor = Color.FromArgb(40, 45, 61);
+            btnVerMovimientosCaja.ForeColor = Color.FromArgb(100, 101, 108);
+            btnVarios.BackColor = Color.FromArgb(40, 45, 61);
+            btnVarios.ForeColor = Color.FromArgb(100, 101, 108);
+            btnMayoreo.BackColor = Color.FromArgb(40, 45, 61);
+            btnMayoreo.ForeColor = Color.FromArgb(100, 101, 108);
+            btnProductoServicio.BackColor = Color.FromArgb(40, 45, 61);
+            btnProductoServicio.ForeColor = Color.FromArgb(100, 101, 108);
+            btnIngresos.BackColor = Color.FromArgb(40, 45, 61);
+            btnIngresos.ForeColor = Color.FromArgb(100, 101, 108);
+            btnGastos.BackColor = Color.FromArgb(40, 45, 61);
+            btnGastos.ForeColor = Color.FromArgb(100, 101, 108);
+
+            lblTemaOscuro.ForeColor = Color.FromArgb(100, 101, 108);
+            txtmonto.BackColor = Color.FromArgb(48, 61, 81);
+            txtmonto.ForeColor = Color.FromArgb(100, 101, 108);
+            Listarproductosagregados();
+
+        }
+        private void Temaclaro()
+        {
+            pnlToop.BackColor = Color.FromArgb(214, 250, 250);
+            pnlFeel.BackColor = Color.FromArgb(214, 250, 250);
+            pnlIzquierdo.BackColor = Color.FromArgb(214, 250, 250);
+            pnlizqDerecha.BackColor = Color.FromArgb(0, 85, 128);
+            pnlCentalDer.BackColor = Color.FromArgb(214, 250, 250);
+            pnlCentroIzq.BackColor = Color.FromArgb(214, 250, 250);
+            pnlLinea.BackColor = Color.FromArgb(0, 85, 128);
+            pnlDevolucion.BackColor = Color.FromArgb(214, 250, 250);
+            pnlColorTema.BackColor = Color.FromArgb(214, 250, 250);
+
+            datalistadoDetalleVenta.BackgroundColor = Color.FromArgb(214, 250, 250);
+
+            lblTotal.ForeColor = Color.FromArgb(0, 85, 128);
+            txt_total_suma.ForeColor = Color.FromArgb(0, 85, 128);
+
+            txtbuscar.BackColor = Color.FromArgb(214, 250, 250);
+            txtbuscar.ForeColor = Color.FromArgb(100, 101, 108);
+
+            pnlSuspenciones.BackColor = Color.FromArgb(214, 250, 250);
+            btnPonerEspera.BackColor = Color.FromArgb(214, 250, 250);
+            btnPonerEspera.ForeColor = Color.FromArgb(0, 85, 128);
+            btnRestaurar.BackColor = Color.FromArgb(214, 250, 250);
+            btnRestaurar.ForeColor = Color.FromArgb(0, 85, 128);
+            btnEliminar.BackColor = Color.FromArgb(214, 250, 250);
+            btnEliminar.ForeColor = Color.FromArgb(0, 85, 128);
+            btnDevoluciones.BackColor = Color.FromArgb(214, 250, 250);
+            btnDevoluciones.ForeColor = Color.FromArgb(0, 85, 128);
+            //btn_Scanner.BackColor = Color.FromArgb(40, 45, 61);
+            //btn_Teclado.BackColor = Color.FromArgb(40, 45, 61);
+
+            btnCobros.BackColor = Color.FromArgb(214, 250, 250);
+            btnCobros.ForeColor = Color.FromArgb(0, 85, 128);
+            btnPagos.BackColor = Color.FromArgb(214, 250, 250);
+            btnPagos.ForeColor = Color.FromArgb(0, 85, 128);
+            btnCreditoCobrar.BackColor = Color.FromArgb(214, 250, 250);
+            btnCreditoCobrar.ForeColor = Color.FromArgb(0, 85, 128);
+            btnCreditoPagar.BackColor = Color.FromArgb(214, 250, 250);
+            btnCreditoPagar.ForeColor = Color.FromArgb(0, 85, 128);
+            btnVerMovimientosCaja.BackColor = Color.FromArgb(214, 250, 250);
+            btnVerMovimientosCaja.ForeColor = Color.FromArgb(0, 85, 128);
+            btnVarios.BackColor = Color.FromArgb(214, 250, 250);
+            btnVarios.ForeColor = Color.FromArgb(0, 85, 128);
+            btnMayoreo.BackColor = Color.FromArgb(214, 250, 250);
+            btnMayoreo.ForeColor = Color.FromArgb(0, 85, 128);
+            btnProductoServicio.BackColor = Color.FromArgb(214, 250, 250);
+            btnProductoServicio.ForeColor = Color.FromArgb(0, 85, 128);
+            btnIngresos.BackColor = Color.FromArgb(214, 250, 250);
+            btnIngresos.ForeColor = Color.FromArgb(0, 85, 128);
+            btnGastos.BackColor = Color.FromArgb(214, 250, 250);
+            btnGastos.ForeColor = Color.FromArgb(0, 85, 128);
+
+            lblTemaOscuro.ForeColor = Color.FromArgb(0, 85, 128);
+            txtmonto.BackColor = Color.FromArgb(214, 250, 250);
+            txtmonto.ForeColor = Color.FromArgb(0, 85, 128);
+            Listarproductosagregados();
+        }
+
+      
     }
 }
 
