@@ -1075,8 +1075,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             panelImpresionVistaPrevia.Visible = true;
             panelImpresionVistaPrevia.Dock = DockStyle.Fill;
-            panelGuardado_de_Datos.Dock = DockStyle.None;
-            panelGuardado_de_Datos.Visible = false;
+            //panelGuardado_de_Datos.Dock = DockStyle.None;
+            //panelGuardado_de_Datos.Visible = false;
 
             PRESENT.REPORTES.Impresion_de_comprobantes.Ticket_report rpt = new PRESENT.REPORTES.Impresion_de_comprobantes.Ticket_report();
             DataTable dt = new DataTable();
@@ -1325,6 +1325,16 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             {
                 MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

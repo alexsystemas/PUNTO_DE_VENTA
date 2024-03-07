@@ -669,6 +669,22 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void contarVentasEspera(ref int contador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("contarVentasEspera", CONEXIONMAESTRA.conectar);
+                contador =Convert.ToInt32( da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                contador = 0;
+            }
+            
+        }
         //Detalle Ventas
         public static void ReporteGanancias(ref double Monto)
         {

@@ -46,6 +46,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string FechaFinal;
         double cantidad;
         string Tema;
+        int contadorVentasEspera;
         Panel panel_mostrador_de_productos = new Panel();
       
 
@@ -74,9 +75,26 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 btn_Scanner.BackColor = Color.LightGreen;
                 btn_Teclado.BackColor = Color.WhiteSmoke;
             }
+            ValidarTemaCaja();
             Limpiar_para_venta_nueva();
-        }
+            
 
+
+        }
+        private void contarVentasEspera()
+        {
+            Obtener_datos.contarVentasEspera(ref contadorVentasEspera);
+            if(contadorVentasEspera==0)
+            {
+                pnlNotificacionEspera.Visible = false;
+            }
+            else
+            {
+                pnlNotificacionEspera.Visible = true;
+                lblContador.Text = contadorVentasEspera.ToString();
+            }
+
+        }
 
         private void ValidarTemaCaja()
         {
@@ -121,11 +139,13 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void Limpiar_para_venta_nueva()
         {
+            
             idVenta = 0;
             Listarproductosagregados();
             txtVentaGenerada = "VENTA NUEVA";
             sumar();
             pnlEnEspera.Visible = false;
+            contarVentasEspera();
         }
         private void sumar()
         {

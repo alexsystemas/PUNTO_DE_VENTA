@@ -655,6 +655,15 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\circulo-notificaiones3.png" />
+    <None Include="Resources\circulo-notificaiones2.png" />
+    <None Include="Resources\cerrar.png" />
+    <None Include="Resources\IMPESORA-22.png" />
+    <None Include="Resources\tipo de comprobante2.png" />
+    <None Include="Resources\TRANSFERENCIA2.png" />
+    <None Include="Resources\CREDITO-22.png" />
+    <None Include="Resources\TARJETA2.png" />
+    <None Include="Resources\EFECTIVO2.png" />
     <None Include="Resources\cancelado.png" />
     <None Include="Resources\logo1 pht3.png" />
     <None Include="Resources\balanza.png" />

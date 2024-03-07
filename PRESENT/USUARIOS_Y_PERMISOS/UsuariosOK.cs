@@ -493,5 +493,15 @@ namespace PUNTO_DE_VENTA
         {
             Numeros(txtBuscar, e);
         }
+
+        private void PanelDatos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
