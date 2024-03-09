@@ -349,6 +349,12 @@
     <Compile Include="PRESENT\REPORTES\Impresion_de_comprobantes\Ticket_report.Designer.cs">
       <DependentUpon>Ticket_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\REPORTES\menuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\menuReportes.Designer.cs">
+      <DependentUpon>menuReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\REPORTES\RCobros\rptCobros.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -534,6 +540,9 @@
     <EmbeddedResource Include="PRESENT\REPORTES\Impresion_de_comprobantes\Ticket_report.resx">
       <DependentUpon>Ticket_report.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\menuReportes.resx">
+      <DependentUpon>menuReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.resx">
       <DependentUpon>FormInventariosTodos.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +664,8 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo1 pht4.png" />
+    <None Include="Resources\circulo-notificaiones-rojo.png" />
     <None Include="Resources\circulo-notificaiones3.png" />
     <None Include="Resources\circulo-notificaiones2.png" />
     <None Include="Resources\cerrar.png" />

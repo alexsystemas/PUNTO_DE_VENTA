@@ -35,9 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(INVENTARIO_MENU));
@@ -47,7 +47,7 @@
             this.panelVencimiento = new System.Windows.Forms.Panel();
             this.dataListadoVencimientos = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.pnlFiltrosPorVencer = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CheckProductosVencidos = new System.Windows.Forms.RadioButton();
             this.checkPorVencerEn30Dias = new System.Windows.Forms.RadioButton();
@@ -59,14 +59,14 @@
             this.panelINVENTARIObajo = new System.Windows.Forms.Panel();
             this.dataListadoInventarioBAJO = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.lblDebajoMin = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panelREPORTEInventario = new System.Windows.Forms.Panel();
             this.dataListadoInventarioReport = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.pnlReporteInvetarioBuscar = new System.Windows.Forms.Panel();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -78,17 +78,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlMovimentos = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnlDataListadoMovimientos = new System.Windows.Forms.Panel();
             this.dataListadoMovimientos = new System.Windows.Forms.DataGridView();
             this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlAcumulado = new System.Windows.Forms.Panel();
             this.dataListadoMovimimientosAcumulado_Producto = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btnImprimirAcumulado = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panelMovimientos = new System.Windows.Forms.Panel();
+            this.pnlFiltroActivdo = new System.Windows.Forms.GroupBox();
             this.txtUSUARIOS = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -114,7 +114,7 @@
             this.pnlEnt_Sal = new System.Windows.Forms.Panel();
             this.btnEntrada = new System.Windows.Forms.Button();
             this.btnSalida = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblInvetarios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -132,8 +132,7 @@
             this.btnMovimentos = new System.Windows.Forms.Button();
             this.btnKardex = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panelKardex = new System.Windows.Forms.Panel();
-            this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.datalistadoKardex = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.panelBuscar = new System.Windows.Forms.Panel();
             this.DATALISTADO_PRODUCTOS_kardex = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -142,32 +141,34 @@
             this.txtBuscarKardex_movimientos = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pnlKardex = new System.Windows.Forms.Panel();
+            this.pnlBuscar = new System.Windows.Forms.Panel();
             this.panelIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelVencimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoVencimientos)).BeginInit();
-            this.panel16.SuspendLayout();
+            this.pnlFiltrosPorVencer.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panelINVENTARIObajo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoInventarioBAJO)).BeginInit();
-            this.panel12.SuspendLayout();
+            this.lblDebajoMin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelREPORTEInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoInventarioReport)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.pnlReporteInvetarioBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.pnlMovimentos.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pnlDataListadoMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoMovimientos)).BeginInit();
-            this.panel10.SuspendLayout();
+            this.pnlAcumulado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoMovimimientosAcumulado_Producto)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panelMovimientos.SuspendLayout();
+            this.pnlFiltroActivdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -182,17 +183,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelKardex.SuspendLayout();
             this.panelBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_kardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            this.pnlKardex.SuspendLayout();
+            this.pnlBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelIzquierdo
             // 
             this.panelIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panelIzquierdo.Controls.Add(this.pictureBox1);
             this.panelIzquierdo.Controls.Add(this.panelDerecho_azulFuerte);
+            this.panelIzquierdo.Controls.Add(this.pictureBox1);
             this.panelIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelIzquierdo.Location = new System.Drawing.Point(0, 0);
             this.panelIzquierdo.Name = "panelIzquierdo";
@@ -204,7 +206,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 697);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 697);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -213,18 +215,18 @@
             // 
             this.panelDerecho_azulFuerte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.panelDerecho_azulFuerte.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelDerecho_azulFuerte.Location = new System.Drawing.Point(193, 0);
+            this.panelDerecho_azulFuerte.Location = new System.Drawing.Point(148, 0);
             this.panelDerecho_azulFuerte.Name = "panelDerecho_azulFuerte";
-            this.panelDerecho_azulFuerte.Size = new System.Drawing.Size(63, 697);
+            this.panelDerecho_azulFuerte.Size = new System.Drawing.Size(108, 697);
             this.panelDerecho_azulFuerte.TabIndex = 0;
             // 
             // panelVencimiento
             // 
             this.panelVencimiento.Controls.Add(this.dataListadoVencimientos);
-            this.panelVencimiento.Controls.Add(this.panel16);
-            this.panelVencimiento.Location = new System.Drawing.Point(607, 203);
+            this.panelVencimiento.Controls.Add(this.pnlFiltrosPorVencer);
+            this.panelVencimiento.Location = new System.Drawing.Point(1029, 166);
             this.panelVencimiento.Name = "panelVencimiento";
-            this.panelVencimiento.Size = new System.Drawing.Size(59, 65);
+            this.panelVencimiento.Size = new System.Drawing.Size(24, 35);
             this.panelVencimiento.TabIndex = 4;
             // 
             // dataListadoVencimientos
@@ -246,10 +248,9 @@
             this.dataListadoVencimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoVencimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn5});
-            this.dataListadoVencimientos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoVencimientos.EnableHeadersVisualStyles = false;
             this.dataListadoVencimientos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListadoVencimientos.Location = new System.Drawing.Point(0, 100);
+            this.dataListadoVencimientos.Location = new System.Drawing.Point(27, 139);
             this.dataListadoVencimientos.Name = "dataListadoVencimientos";
             this.dataListadoVencimientos.ReadOnly = true;
             this.dataListadoVencimientos.RowHeadersVisible = false;
@@ -258,7 +259,7 @@
             this.dataListadoVencimientos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListadoVencimientos.RowTemplate.Height = 30;
             this.dataListadoVencimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoVencimientos.Size = new System.Drawing.Size(59, 0);
+            this.dataListadoVencimientos.Size = new System.Drawing.Size(124, 46);
             this.dataListadoVencimientos.TabIndex = 10;
             // 
             // dataGridViewImageColumn5
@@ -275,19 +276,19 @@
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
-            // panel16
+            // pnlFiltrosPorVencer
             // 
-            this.panel16.Controls.Add(this.groupBox2);
-            this.panel16.Controls.Add(this.pictureBox17);
-            this.panel16.Controls.Add(this.button5);
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Controls.Add(this.pictureBox15);
-            this.panel16.Controls.Add(this.txtBuscarVencimientos);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(59, 100);
-            this.panel16.TabIndex = 0;
+            this.pnlFiltrosPorVencer.Controls.Add(this.groupBox2);
+            this.pnlFiltrosPorVencer.Controls.Add(this.pictureBox17);
+            this.pnlFiltrosPorVencer.Controls.Add(this.button5);
+            this.pnlFiltrosPorVencer.Controls.Add(this.panel17);
+            this.pnlFiltrosPorVencer.Controls.Add(this.pictureBox15);
+            this.pnlFiltrosPorVencer.Controls.Add(this.txtBuscarVencimientos);
+            this.pnlFiltrosPorVencer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFiltrosPorVencer.Location = new System.Drawing.Point(0, 0);
+            this.pnlFiltrosPorVencer.Name = "pnlFiltrosPorVencer";
+            this.pnlFiltrosPorVencer.Size = new System.Drawing.Size(24, 126);
+            this.pnlFiltrosPorVencer.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -296,9 +297,9 @@
             this.groupBox2.Controls.Add(this.checkPorVencerEn30Dias);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(332, 6);
+            this.groupBox2.Location = new System.Drawing.Point(6, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 88);
+            this.groupBox2.Size = new System.Drawing.Size(671, 60);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtros";
@@ -306,7 +307,7 @@
             // CheckProductosVencidos
             // 
             this.CheckProductosVencidos.AutoSize = true;
-            this.CheckProductosVencidos.Location = new System.Drawing.Point(6, 55);
+            this.CheckProductosVencidos.Location = new System.Drawing.Point(314, 23);
             this.CheckProductosVencidos.Name = "CheckProductosVencidos";
             this.CheckProductosVencidos.Size = new System.Drawing.Size(244, 24);
             this.CheckProductosVencidos.TabIndex = 0;
@@ -379,10 +380,10 @@
             // panelINVENTARIObajo
             // 
             this.panelINVENTARIObajo.Controls.Add(this.dataListadoInventarioBAJO);
-            this.panelINVENTARIObajo.Controls.Add(this.panel12);
-            this.panelINVENTARIObajo.Location = new System.Drawing.Point(290, 166);
+            this.panelINVENTARIObajo.Controls.Add(this.lblDebajoMin);
+            this.panelINVENTARIObajo.Location = new System.Drawing.Point(698, 172);
             this.panelINVENTARIObajo.Name = "panelINVENTARIObajo";
-            this.panelINVENTARIObajo.Size = new System.Drawing.Size(41, 45);
+            this.panelINVENTARIObajo.Size = new System.Drawing.Size(10, 10);
             this.panelINVENTARIObajo.TabIndex = 4;
             // 
             // dataListadoInventarioBAJO
@@ -404,10 +405,9 @@
             this.dataListadoInventarioBAJO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoInventarioBAJO.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn3});
-            this.dataListadoInventarioBAJO.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoInventarioBAJO.EnableHeadersVisualStyles = false;
             this.dataListadoInventarioBAJO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListadoInventarioBAJO.Location = new System.Drawing.Point(0, 69);
+            this.dataListadoInventarioBAJO.Location = new System.Drawing.Point(61, 79);
             this.dataListadoInventarioBAJO.Name = "dataListadoInventarioBAJO";
             this.dataListadoInventarioBAJO.ReadOnly = true;
             this.dataListadoInventarioBAJO.RowHeadersVisible = false;
@@ -416,7 +416,7 @@
             this.dataListadoInventarioBAJO.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListadoInventarioBAJO.RowTemplate.Height = 30;
             this.dataListadoInventarioBAJO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoInventarioBAJO.Size = new System.Drawing.Size(41, 0);
+            this.dataListadoInventarioBAJO.Size = new System.Drawing.Size(66, 50);
             this.dataListadoInventarioBAJO.TabIndex = 9;
             // 
             // dataGridViewImageColumn3
@@ -433,16 +433,16 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
             // 
-            // panel12
+            // lblDebajoMin
             // 
-            this.panel12.Controls.Add(this.pictureBox13);
-            this.panel12.Controls.Add(this.button1);
-            this.panel12.Controls.Add(this.label5);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(41, 69);
-            this.panel12.TabIndex = 0;
+            this.lblDebajoMin.Controls.Add(this.pictureBox13);
+            this.lblDebajoMin.Controls.Add(this.button1);
+            this.lblDebajoMin.Controls.Add(this.label5);
+            this.lblDebajoMin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDebajoMin.Location = new System.Drawing.Point(0, 0);
+            this.lblDebajoMin.Name = "lblDebajoMin";
+            this.lblDebajoMin.Size = new System.Drawing.Size(10, 69);
+            this.lblDebajoMin.TabIndex = 0;
             // 
             // pictureBox13
             // 
@@ -478,10 +478,10 @@
             // panelREPORTEInventario
             // 
             this.panelREPORTEInventario.Controls.Add(this.dataListadoInventarioReport);
-            this.panelREPORTEInventario.Controls.Add(this.panel13);
-            this.panelREPORTEInventario.Location = new System.Drawing.Point(382, 179);
+            this.panelREPORTEInventario.Controls.Add(this.pnlReporteInvetarioBuscar);
+            this.panelREPORTEInventario.Location = new System.Drawing.Point(939, 166);
             this.panelREPORTEInventario.Name = "panelREPORTEInventario";
-            this.panelREPORTEInventario.Size = new System.Drawing.Size(136, 106);
+            this.panelREPORTEInventario.Size = new System.Drawing.Size(10, 44);
             this.panelREPORTEInventario.TabIndex = 4;
             // 
             // dataListadoInventarioReport
@@ -503,10 +503,9 @@
             this.dataListadoInventarioReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoInventarioReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewImageColumn4});
-            this.dataListadoInventarioReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoInventarioReport.EnableHeadersVisualStyles = false;
             this.dataListadoInventarioReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListadoInventarioReport.Location = new System.Drawing.Point(0, 85);
+            this.dataListadoInventarioReport.Location = new System.Drawing.Point(61, 111);
             this.dataListadoInventarioReport.Name = "dataListadoInventarioReport";
             this.dataListadoInventarioReport.ReadOnly = true;
             this.dataListadoInventarioReport.RowHeadersVisible = false;
@@ -532,28 +531,28 @@
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.ReadOnly = true;
             // 
-            // panel13
+            // pnlReporteInvetarioBuscar
             // 
-            this.panel13.Controls.Add(this.pictureBox16);
-            this.panel13.Controls.Add(this.button4);
-            this.panel13.Controls.Add(this.button2);
-            this.panel13.Controls.Add(this.panel14);
-            this.panel13.Controls.Add(this.pictureBox14);
-            this.panel13.Controls.Add(this.txtbuscar_inventarios);
-            this.panel13.Controls.Add(this.lblcosotoInventario);
-            this.panel13.Controls.Add(this.lblcantidaddeProductosEnInventario);
-            this.panel13.Controls.Add(this.label7);
-            this.panel13.Controls.Add(this.label6);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(136, 85);
-            this.panel13.TabIndex = 0;
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.pictureBox16);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.button4);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.button2);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.panel14);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.pictureBox14);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.txtbuscar_inventarios);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.lblcosotoInventario);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.lblcantidaddeProductosEnInventario);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.label7);
+            this.pnlReporteInvetarioBuscar.Controls.Add(this.label6);
+            this.pnlReporteInvetarioBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlReporteInvetarioBuscar.Location = new System.Drawing.Point(0, 0);
+            this.pnlReporteInvetarioBuscar.Name = "pnlReporteInvetarioBuscar";
+            this.pnlReporteInvetarioBuscar.Size = new System.Drawing.Size(10, 103);
+            this.pnlReporteInvetarioBuscar.TabIndex = 0;
             // 
             // pictureBox16
             // 
             this.pictureBox16.Image = global::PUNTO_DE_VENTA.Properties.Resources.imprimir2;
-            this.pictureBox16.Location = new System.Drawing.Point(630, 50);
+            this.pictureBox16.Location = new System.Drawing.Point(517, 65);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(21, 21);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -563,7 +562,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(628, 48);
+            this.button4.Location = new System.Drawing.Point(553, 59);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(109, 28);
             this.button4.TabIndex = 11;
@@ -575,7 +574,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.button2.Location = new System.Drawing.Point(405, 48);
+            this.button2.Location = new System.Drawing.Point(348, 63);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 28);
             this.button2.TabIndex = 9;
@@ -586,7 +585,7 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel14.Location = new System.Drawing.Point(51, 79);
+            this.panel14.Location = new System.Drawing.Point(51, 90);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(268, 3);
             this.panel14.TabIndex = 8;
@@ -594,7 +593,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::PUNTO_DE_VENTA.Properties.Resources.lupa;
-            this.pictureBox14.Location = new System.Drawing.Point(24, 55);
+            this.pictureBox14.Location = new System.Drawing.Point(29, 66);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(21, 21);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -604,7 +603,7 @@
             // txtbuscar_inventarios
             // 
             this.txtbuscar_inventarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar_inventarios.Location = new System.Drawing.Point(51, 55);
+            this.txtbuscar_inventarios.Location = new System.Drawing.Point(51, 66);
             this.txtbuscar_inventarios.Name = "txtbuscar_inventarios";
             this.txtbuscar_inventarios.Size = new System.Drawing.Size(268, 21);
             this.txtbuscar_inventarios.TabIndex = 6;
@@ -655,10 +654,8 @@
             // 
             // pnlMovimentos
             // 
-            this.pnlMovimentos.BackColor = System.Drawing.Color.PaleGreen;
-            this.pnlMovimentos.Controls.Add(this.panel9);
-            this.pnlMovimentos.Controls.Add(this.panel10);
-            this.pnlMovimentos.Controls.Add(this.panel7);
+            this.pnlMovimentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlMovimentos.Controls.Add(this.panelMovimientos);
             this.pnlMovimentos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMovimentos.ForeColor = System.Drawing.Color.Gray;
             this.pnlMovimentos.Location = new System.Drawing.Point(256, 160);
@@ -666,14 +663,13 @@
             this.pnlMovimentos.Size = new System.Drawing.Size(1024, 537);
             this.pnlMovimentos.TabIndex = 4;
             // 
-            // panel9
+            // pnlDataListadoMovimientos
             // 
-            this.panel9.Controls.Add(this.dataListadoMovimientos);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 86);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(654, 451);
-            this.panel9.TabIndex = 2;
+            this.pnlDataListadoMovimientos.Controls.Add(this.dataListadoMovimientos);
+            this.pnlDataListadoMovimientos.Location = new System.Drawing.Point(16, 168);
+            this.pnlDataListadoMovimientos.Name = "pnlDataListadoMovimientos";
+            this.pnlDataListadoMovimientos.Size = new System.Drawing.Size(346, 166);
+            this.pnlDataListadoMovimientos.TabIndex = 2;
             // 
             // dataListadoMovimientos
             // 
@@ -683,21 +679,20 @@
             this.dataListadoMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListadoMovimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataListadoMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListadoMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListadoMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataListadoMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eli});
-            this.dataListadoMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoMovimientos.EnableHeadersVisualStyles = false;
             this.dataListadoMovimientos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListadoMovimientos.Location = new System.Drawing.Point(0, 0);
+            this.dataListadoMovimientos.Location = new System.Drawing.Point(102, 28);
             this.dataListadoMovimientos.Name = "dataListadoMovimientos";
             this.dataListadoMovimientos.ReadOnly = true;
             this.dataListadoMovimientos.RowHeadersVisible = false;
@@ -706,34 +701,34 @@
             this.dataListadoMovimientos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListadoMovimientos.RowTemplate.Height = 30;
             this.dataListadoMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoMovimientos.Size = new System.Drawing.Size(654, 451);
+            this.dataListadoMovimientos.Size = new System.Drawing.Size(120, 146);
             this.dataListadoMovimientos.TabIndex = 8;
             // 
             // Eli
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.NullValue = null;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.Eli.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.NullValue = null;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.Eli.DefaultCellStyle = dataGridViewCellStyle9;
             this.Eli.HeaderText = "";
             this.Eli.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
             this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Eli.Name = "Eli";
             this.Eli.ReadOnly = true;
             // 
-            // panel10
+            // pnlAcumulado
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.panel10.Controls.Add(this.dataListadoMovimimientosAcumulado_Producto);
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(654, 86);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(370, 451);
-            this.panel10.TabIndex = 3;
-            this.panel10.Visible = false;
+            this.pnlAcumulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.pnlAcumulado.Controls.Add(this.panel11);
+            this.pnlAcumulado.Controls.Add(this.dataListadoMovimimientosAcumulado_Producto);
+            this.pnlAcumulado.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlAcumulado.Location = new System.Drawing.Point(654, 119);
+            this.pnlAcumulado.Name = "pnlAcumulado";
+            this.pnlAcumulado.Size = new System.Drawing.Size(370, 418);
+            this.pnlAcumulado.TabIndex = 3;
+            this.pnlAcumulado.Visible = false;
             // 
             // dataListadoMovimimientosAcumulado_Producto
             // 
@@ -743,19 +738,19 @@
             this.dataListadoMovimimientosAcumulado_Producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataListadoMovimimientosAcumulado_Producto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataListadoMovimimientosAcumulado_Producto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListadoMovimimientosAcumulado_Producto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListadoMovimimientosAcumulado_Producto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataListadoMovimimientosAcumulado_Producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoMovimimientosAcumulado_Producto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoMovimimientosAcumulado_Producto.EnableHeadersVisualStyles = false;
             this.dataListadoMovimimientosAcumulado_Producto.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataListadoMovimimientosAcumulado_Producto.Location = new System.Drawing.Point(0, 66);
+            this.dataListadoMovimimientosAcumulado_Producto.Location = new System.Drawing.Point(0, 0);
             this.dataListadoMovimimientosAcumulado_Producto.Name = "dataListadoMovimimientosAcumulado_Producto";
             this.dataListadoMovimimientosAcumulado_Producto.ReadOnly = true;
             this.dataListadoMovimimientosAcumulado_Producto.RowHeadersVisible = false;
@@ -765,7 +760,7 @@
             this.dataListadoMovimimientosAcumulado_Producto.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataListadoMovimimientosAcumulado_Producto.RowTemplate.Height = 30;
             this.dataListadoMovimimientosAcumulado_Producto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoMovimimientosAcumulado_Producto.Size = new System.Drawing.Size(370, 385);
+            this.dataListadoMovimimientosAcumulado_Producto.Size = new System.Drawing.Size(370, 418);
             this.dataListadoMovimimientosAcumulado_Producto.TabIndex = 9;
             // 
             // panel11
@@ -811,44 +806,38 @@
             this.btnImprimirAcumulado.Text = "Imprimir";
             this.btnImprimirAcumulado.UseVisualStyleBackColor = true;
             // 
-            // panel7
+            // panelMovimientos
             // 
-            this.panel7.Controls.Add(this.groupBox1);
-            this.panel7.Controls.Add(this.txtIdusuarios);
-            this.panel7.Controls.Add(this.txtBuscarMovimiento);
-            this.panel7.Controls.Add(this.pictureBox11);
-            this.panel7.Controls.Add(this.pictureBox10);
-            this.panel7.Controls.Add(this.pictureBox9);
-            this.panel7.Controls.Add(this.btnImprimir);
-            this.panel7.Controls.Add(this.btnFiltroAvanzado);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.DATALISTADO_PRODUCTOS_Movimientos);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1024, 86);
-            this.panel7.TabIndex = 1;
+            this.panelMovimientos.BackColor = System.Drawing.Color.PeachPuff;
+            this.panelMovimientos.Controls.Add(this.pnlAcumulado);
+            this.panelMovimientos.Controls.Add(this.pnlDataListadoMovimientos);
+            this.panelMovimientos.Controls.Add(this.pnlBuscar);
+            this.panelMovimientos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMovimientos.Location = new System.Drawing.Point(0, 0);
+            this.panelMovimientos.Name = "panelMovimientos";
+            this.panelMovimientos.Size = new System.Drawing.Size(1024, 537);
+            this.panelMovimientos.TabIndex = 1;
             // 
-            // groupBox1
+            // pnlFiltroActivdo
             // 
-            this.groupBox1.Controls.Add(this.txtUSUARIOS);
-            this.groupBox1.Controls.Add(this.pictureBox8);
-            this.groupBox1.Controls.Add(this.pictureBox7);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.btnImprimirGrup);
-            this.groupBox1.Controls.Add(this.txtTipoMovi);
-            this.groupBox1.Controls.Add(this.txtfechaM);
-            this.groupBox1.Controls.Add(this.lblVendedor);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(5, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(933, 86);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtro Activado";
-            this.groupBox1.Visible = false;
+            this.pnlFiltroActivdo.Controls.Add(this.txtUSUARIOS);
+            this.pnlFiltroActivdo.Controls.Add(this.pictureBox8);
+            this.pnlFiltroActivdo.Controls.Add(this.pictureBox7);
+            this.pnlFiltroActivdo.Controls.Add(this.button3);
+            this.pnlFiltroActivdo.Controls.Add(this.btnImprimirGrup);
+            this.pnlFiltroActivdo.Controls.Add(this.txtTipoMovi);
+            this.pnlFiltroActivdo.Controls.Add(this.txtfechaM);
+            this.pnlFiltroActivdo.Controls.Add(this.lblVendedor);
+            this.pnlFiltroActivdo.Controls.Add(this.label3);
+            this.pnlFiltroActivdo.Controls.Add(this.label2);
+            this.pnlFiltroActivdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlFiltroActivdo.Location = new System.Drawing.Point(564, 9);
+            this.pnlFiltroActivdo.Name = "pnlFiltroActivdo";
+            this.pnlFiltroActivdo.Size = new System.Drawing.Size(374, 106);
+            this.pnlFiltroActivdo.TabIndex = 0;
+            this.pnlFiltroActivdo.TabStop = false;
+            this.pnlFiltroActivdo.Text = "Filtro Activado";
+            this.pnlFiltroActivdo.Visible = false;
             // 
             // txtUSUARIOS
             // 
@@ -953,7 +942,7 @@
             // txtIdusuarios
             // 
             this.txtIdusuarios.FormattingEnabled = true;
-            this.txtIdusuarios.Location = new System.Drawing.Point(307, 14);
+            this.txtIdusuarios.Location = new System.Drawing.Point(330, 26);
             this.txtIdusuarios.Name = "txtIdusuarios";
             this.txtIdusuarios.Size = new System.Drawing.Size(40, 21);
             this.txtIdusuarios.TabIndex = 498;
@@ -961,7 +950,7 @@
             // txtBuscarMovimiento
             // 
             this.txtBuscarMovimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarMovimiento.Location = new System.Drawing.Point(33, 12);
+            this.txtBuscarMovimiento.Location = new System.Drawing.Point(56, 24);
             this.txtBuscarMovimiento.Name = "txtBuscarMovimiento";
             this.txtBuscarMovimiento.Size = new System.Drawing.Size(268, 21);
             this.txtBuscarMovimiento.TabIndex = 5;
@@ -971,7 +960,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::PUNTO_DE_VENTA.Properties.Resources.imprimir2;
-            this.pictureBox11.Location = new System.Drawing.Point(382, 61);
+            this.pictureBox11.Location = new System.Drawing.Point(405, 73);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(21, 21);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -981,17 +970,18 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::PUNTO_DE_VENTA.Properties.Resources.filtro;
-            this.pictureBox10.Location = new System.Drawing.Point(382, 34);
+            this.pictureBox10.Location = new System.Drawing.Point(405, 46);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(21, 21);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 4;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.PictureBox10_Click);
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PUNTO_DE_VENTA.Properties.Resources.lupa;
-            this.pictureBox9.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox9.Location = new System.Drawing.Point(29, 26);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(21, 21);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1001,7 +991,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(376, 58);
+            this.btnImprimir.Location = new System.Drawing.Point(432, 75);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(165, 28);
             this.btnImprimir.TabIndex = 0;
@@ -1012,7 +1002,7 @@
             // btnFiltroAvanzado
             // 
             this.btnFiltroAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltroAvanzado.Location = new System.Drawing.Point(376, 29);
+            this.btnFiltroAvanzado.Location = new System.Drawing.Point(432, 46);
             this.btnFiltroAvanzado.Name = "btnFiltroAvanzado";
             this.btnFiltroAvanzado.Size = new System.Drawing.Size(165, 28);
             this.btnFiltroAvanzado.TabIndex = 0;
@@ -1023,7 +1013,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel8.Location = new System.Drawing.Point(33, 34);
+            this.panel8.Location = new System.Drawing.Point(56, 46);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(268, 3);
             this.panel8.TabIndex = 4;
@@ -1041,7 +1031,7 @@
             this.DATALISTADO_PRODUCTOS_Movimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1});
             this.DATALISTADO_PRODUCTOS_Movimientos.EnableHeadersVisualStyles = false;
-            this.DATALISTADO_PRODUCTOS_Movimientos.Location = new System.Drawing.Point(0, 37);
+            this.DATALISTADO_PRODUCTOS_Movimientos.Location = new System.Drawing.Point(23, 49);
             this.DATALISTADO_PRODUCTOS_Movimientos.Name = "DATALISTADO_PRODUCTOS_Movimientos";
             this.DATALISTADO_PRODUCTOS_Movimientos.ReadOnly = true;
             this.DATALISTADO_PRODUCTOS_Movimientos.RowHeadersVisible = false;
@@ -1075,7 +1065,7 @@
             // panelInvenarios
             // 
             this.panelInvenarios.Controls.Add(this.pnlEnt_Sal);
-            this.panelInvenarios.Controls.Add(this.label1);
+            this.panelInvenarios.Controls.Add(this.lblInvetarios);
             this.panelInvenarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInvenarios.Location = new System.Drawing.Point(256, 50);
             this.panelInvenarios.Name = "panelInvenarios";
@@ -1111,16 +1101,16 @@
             this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblInvetarios
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1024, 50);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Inentarios";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblInvetarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblInvetarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvetarios.Location = new System.Drawing.Point(0, 0);
+            this.lblInvetarios.Name = "lblInvetarios";
+            this.lblInvetarios.Size = new System.Drawing.Size(1024, 50);
+            this.lblInvetarios.TabIndex = 0;
+            this.lblInvetarios.Text = "Inentarios";
+            this.lblInvetarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -1296,23 +1286,13 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // panelKardex
+            // datalistadoKardex
             // 
-            this.panelKardex.Controls.Add(this.reportViewer1);
-            this.panelKardex.Controls.Add(this.panelBuscar);
-            this.panelKardex.Location = new System.Drawing.Point(807, 177);
-            this.panelKardex.Name = "panelKardex";
-            this.panelKardex.Size = new System.Drawing.Size(276, 202);
-            this.panelKardex.TabIndex = 4;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.AccessibilityKeyMap = null;
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 100);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(276, 102);
-            this.reportViewer1.TabIndex = 1;
+            this.datalistadoKardex.AccessibilityKeyMap = null;
+            this.datalistadoKardex.Location = new System.Drawing.Point(121, 131);
+            this.datalistadoKardex.Name = "datalistadoKardex";
+            this.datalistadoKardex.Size = new System.Drawing.Size(36, 87);
+            this.datalistadoKardex.TabIndex = 1;
             // 
             // panelBuscar
             // 
@@ -1320,10 +1300,9 @@
             this.panelBuscar.Controls.Add(this.panel3);
             this.panelBuscar.Controls.Add(this.pictureBox18);
             this.panelBuscar.Controls.Add(this.txtBuscarKardex_movimientos);
-            this.panelBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBuscar.Location = new System.Drawing.Point(0, 0);
+            this.panelBuscar.Location = new System.Drawing.Point(46, 17);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(276, 100);
+            this.panelBuscar.Size = new System.Drawing.Size(397, 98);
             this.panelBuscar.TabIndex = 0;
             // 
             // DATALISTADO_PRODUCTOS_kardex
@@ -1417,20 +1396,48 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
+            // pnlKardex
+            // 
+            this.pnlKardex.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlKardex.Controls.Add(this.datalistadoKardex);
+            this.pnlKardex.Controls.Add(this.panelBuscar);
+            this.pnlKardex.Location = new System.Drawing.Point(282, 169);
+            this.pnlKardex.Name = "pnlKardex";
+            this.pnlKardex.Size = new System.Drawing.Size(10, 10);
+            this.pnlKardex.TabIndex = 4;
+            // 
+            // pnlBuscar
+            // 
+            this.pnlBuscar.Controls.Add(this.pnlFiltroActivdo);
+            this.pnlBuscar.Controls.Add(this.DATALISTADO_PRODUCTOS_Movimientos);
+            this.pnlBuscar.Controls.Add(this.txtIdusuarios);
+            this.pnlBuscar.Controls.Add(this.pictureBox9);
+            this.pnlBuscar.Controls.Add(this.panel8);
+            this.pnlBuscar.Controls.Add(this.btnFiltroAvanzado);
+            this.pnlBuscar.Controls.Add(this.txtBuscarMovimiento);
+            this.pnlBuscar.Controls.Add(this.btnImprimir);
+            this.pnlBuscar.Controls.Add(this.pictureBox11);
+            this.pnlBuscar.Controls.Add(this.pictureBox10);
+            this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
+            this.pnlBuscar.Name = "pnlBuscar";
+            this.pnlBuscar.Size = new System.Drawing.Size(1024, 119);
+            this.pnlBuscar.TabIndex = 499;
+            // 
             // INVENTARIO_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 697);
+            this.Controls.Add(this.pnlKardex);
+            this.Controls.Add(this.panelINVENTARIObajo);
             this.Controls.Add(this.pnlMovimentos);
-            this.Controls.Add(this.panelVencimiento);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelREPORTEInventario);
+            this.Controls.Add(this.panelVencimiento);
             this.Controls.Add(this.panelInvenarios);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelIzquierdo);
-            this.Controls.Add(this.panelREPORTEInventario);
-            this.Controls.Add(this.panelKardex);
-            this.Controls.Add(this.panelINVENTARIObajo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "INVENTARIO_MENU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1439,35 +1446,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelVencimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoVencimientos)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
+            this.pnlFiltrosPorVencer.ResumeLayout(false);
+            this.pnlFiltrosPorVencer.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panelINVENTARIObajo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoInventarioBAJO)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.lblDebajoMin.ResumeLayout(false);
+            this.lblDebajoMin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelREPORTEInventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoInventarioReport)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
+            this.pnlReporteInvetarioBuscar.ResumeLayout(false);
+            this.pnlReporteInvetarioBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.pnlMovimentos.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.pnlDataListadoMovimientos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoMovimientos)).EndInit();
-            this.panel10.ResumeLayout(false);
+            this.pnlAcumulado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoMovimimientosAcumulado_Producto)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panelMovimientos.ResumeLayout(false);
+            this.pnlFiltroActivdo.ResumeLayout(false);
+            this.pnlFiltroActivdo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -1482,11 +1488,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelKardex.ResumeLayout(false);
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DATALISTADO_PRODUCTOS_kardex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            this.pnlKardex.ResumeLayout(false);
+            this.pnlBuscar.ResumeLayout(false);
+            this.pnlBuscar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1498,7 +1506,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelInvenarios;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInvetarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSalida;
         private System.Windows.Forms.Button btnEntrada;
@@ -1520,20 +1528,20 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel pnlEnt_Sal;
         private System.Windows.Forms.Panel pnlMovimentos;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox pnlFiltroActivdo;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.ComboBox txtTipoMovi;
         private System.Windows.Forms.DateTimePicker txtfechaM;
         private System.Windows.Forms.Label lblVendedor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelMovimientos;
         private System.Windows.Forms.TextBox txtBuscarMovimiento;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlDataListadoMovimientos;
+        private System.Windows.Forms.Panel pnlAcumulado;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnFiltroAvanzado;
         private System.Windows.Forms.Panel panel8;
@@ -1555,14 +1563,14 @@
         private System.Windows.Forms.Panel panelINVENTARIObajo;
         private System.Windows.Forms.DataGridView dataListadoInventarioBAJO;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel lblDebajoMin;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelREPORTEInventario;
         private System.Windows.Forms.DataGridView dataListadoInventarioReport;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel pnlReporteInvetarioBuscar;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
@@ -1576,7 +1584,7 @@
         private System.Windows.Forms.Panel panelVencimiento;
         private System.Windows.Forms.DataGridView dataListadoVencimientos;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel pnlFiltrosPorVencer;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel17;
@@ -1585,14 +1593,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton CheckProductosVencidos;
         private System.Windows.Forms.RadioButton checkPorVencerEn30Dias;
-        private System.Windows.Forms.Panel panelKardex;
         private System.Windows.Forms.Panel panelBuscar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.TextBox txtBuscarKardex_movimientos;
-        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer1;
+        private Telerik.ReportViewer.WinForms.ReportViewer datalistadoKardex;
         internal System.Windows.Forms.DataGridView DATALISTADO_PRODUCTOS_kardex;
         internal System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         public System.Windows.Forms.ComboBox txtIdusuarios;
+        private System.Windows.Forms.Panel pnlKardex;
+        private System.Windows.Forms.Panel pnlBuscar;
     }
 }

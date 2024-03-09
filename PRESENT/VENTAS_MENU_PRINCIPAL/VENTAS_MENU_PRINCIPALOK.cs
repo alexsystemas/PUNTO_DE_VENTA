@@ -1486,7 +1486,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             Listarproductosagregados();
         }
 
-      
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            INVENTARIOS_KARDEX.INVENTARIO_MENU frm = new INVENTARIOS_KARDEX.INVENTARIO_MENU();
+            frm.ShowDialog();
+        }
     }
 }
 

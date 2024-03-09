@@ -240,20 +240,22 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = true;
+            pnlFiltroActivdo.Visible = true;
             DATALISTADO_PRODUCTOS_Movimientos.Visible = false;
             txtTipoMovi.Text = "-Todos-";
             buscar_MOVIMIENTOS_FILTROS();
             buscar_MOVIMIENTOS_FILTROS_ACUMULADO();
-            panel10.Visible = true;
+            pnlAcumulado.Visible = true;
             btnImprimirGrup.Visible = false;
             btnFiltroAvanzado.Visible = false;
+
+
         }
 
 
         private void TxtfechaM_ValueChanged(object sender, EventArgs e)
         {
-            if (groupBox1.Visible == true)
+            if (pnlFiltroActivdo.Visible == true)
             {
                 buscar_MOVIMIENTOS_FILTROS();
                 buscar_MOVIMIENTOS_FILTROS_ACUMULADO();
@@ -262,7 +264,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void TxtTipoMovi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (groupBox1.Visible == true)
+            if (pnlFiltroActivdo.Visible == true)
             {
                 buscar_MOVIMIENTOS_FILTROS();
                 buscar_MOVIMIENTOS_FILTROS_ACUMULADO();
@@ -271,7 +273,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void TxtUSUARIOS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (groupBox1.Visible == true)
+            if (pnlFiltroActivdo.Visible == true)
             {
                 Buscar_id_USUARIOS();
                 buscar_MOVIMIENTOS_FILTROS();
@@ -340,8 +342,8 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            panel10.Visible = false;
-            groupBox1.Visible = false;
+            pnlAcumulado.Visible = false;
+            pnlFiltroActivdo.Visible = false;
             buscar_MOVIMIENTOS_DE_KARDEX();
             txtTipoMovi.Text = "Todos-";
             txtBuscarMovimiento.Text = "Buscar Producto";
@@ -353,23 +355,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void BtnInventario_Click(object sender, EventArgs e)
         {
-            pnlMovimentos.Dock = DockStyle.None;
-            panelREPORTEInventario.Dock = DockStyle.None;
-            panelINVENTARIObajo.Dock = DockStyle.Fill;
-            panelVencimiento.Dock = DockStyle.None;
-            pnlMovimentos.Visible = false;
-            panelREPORTEInventario.Visible = false;
-            panelINVENTARIObajo.Visible = true;
-            panelVencimiento.Visible = false;
-            panelKardex.Visible = false;
-            panelKardex.Dock = DockStyle.None;
-
-            pnKardex.Visible = false;
-            pnMovimientos.Visible = false;
-            pnInventariosBajos.Visible = true;
-            pnReporteDeInventarios.Visible = false;
-            pnVencimientos.Visible = false;
-
+            btnInvetariosBajos();
             MOSTRAR_Inventarios_bajo_minimo();
         }
 
@@ -485,24 +471,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void BtnReportInventarios_Click(object sender, EventArgs e)
         {
-
-            pnlMovimentos.Dock = DockStyle.None;
-            panelREPORTEInventario.Dock = DockStyle.Fill;
-            panelINVENTARIObajo.Dock = DockStyle.None;
-            panelVencimiento.Dock = DockStyle.None;
-            pnlMovimentos.Visible = false;
-            panelREPORTEInventario.Visible = true;
-            panelINVENTARIObajo.Visible = false;
-            panelVencimiento.Visible = false;
-            panelKardex.Visible = false;
-            panelKardex.Dock = DockStyle.None;
-
-            pnKardex.Visible = false;
-            pnMovimientos.Visible = false;
-            pnInventariosBajos.Visible = false;
-            pnReporteDeInventarios.Visible = true;
-            pnVencimientos.Visible = false;
-
+            ReporteInvetario();
             sumar_costo_de_inventario_CONTAR_PRODUCTOS();
         }
 
@@ -664,8 +633,8 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                 rptReport2 = new REPORTES.REPORTES_DE_KARDEX_listo.Reporte_de_Kardex_diseño.ReportKARDEX_Movimientos();
                 rptReport2.DataSource = dt;
                 rptReport2.table1.DataSource = dt;
-                reportViewer1.Report = rptReport2;
-                reportViewer1.RefreshReport();
+                datalistadoKardex.Report = rptReport2;
+                datalistadoKardex.RefreshReport();
 
             }
             catch (Exception ex)
@@ -678,93 +647,101 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         }
         private void INVENTARIO_MENU_Load(object sender, EventArgs e)
         {
-            pnlMovimentos.Dock = DockStyle.None;
-            panelREPORTEInventario.Dock = DockStyle.None;
-            panelINVENTARIObajo.Dock = DockStyle.None;
-            panelVencimiento.Dock = DockStyle.None;
-            pnlMovimentos.Visible = false;
-            panelREPORTEInventario.Visible = false;
-            panelINVENTARIObajo.Visible = false;
-            panelVencimiento.Visible = false;
-            panelKardex.Visible = true;
-            panelKardex.Dock = DockStyle.Fill;
-            panelBuscar.Visible = true;
+            btnKardexx();
 
-            pnKardex.Visible = true;
-            pnMovimientos.Visible = false;
-            pnInventariosBajos.Visible = false;
-            pnReporteDeInventarios.Visible = false;
-            pnVencimientos.Visible = false;
+        }
+        private void btnKardexx()
+        {
+            pnlKardex.Visible = true;
+            pnlMovimentos.Visible = false;
+            pnlKardex.Dock = DockStyle.Fill;
+            panelBuscar.Visible = true;
+            panelBuscar.Dock = DockStyle.Top;
+            datalistadoKardex.Dock = DockStyle.Fill;
+
+
+            txtBuscarKardex_movimientos.Text = "Buscar Producto";
+        }
+        private void BtnMovimentos_Click(object sender, EventArgs e)
+        {
+
+
+            pnlMovimientos();
+
+        }
+        private void pnlMovimientos()
+        {
+            pnlKardex.Visible = false;
+            pnlMovimentos.Visible = true;
+            panelINVENTARIObajo.Visible = false;
+            panelREPORTEInventario.Visible = false;
+            panelVencimiento.Visible = false;
+            pnlMovimentos.Dock = DockStyle.Fill;
+            pnlBuscar.Visible = true;
+            pnlBuscar.Dock = DockStyle.Top;
+            pnlFiltroActivdo.Dock = DockStyle.Fill;
+            panelMovimientos.Visible = true;
+            pnlDataListadoMovimientos.Dock = DockStyle.Fill;
+            dataListadoMovimientos.Dock = DockStyle.Fill;
+
+
+
 
             txtBuscarKardex_movimientos.Text = "Buscar Producto";
 
-
-
         }
-
-        private void BtnMovimentos_Click(object sender, EventArgs e)
-        {
-            pnlMovimentos.Dock = DockStyle.Fill;
-            panelREPORTEInventario.Dock = DockStyle.None;
-            panelINVENTARIObajo.Dock = DockStyle.None;
-            panelVencimiento.Dock = DockStyle.None;
-            pnlMovimentos.Visible = true;
-            panel7.Visible = true;
-            panelREPORTEInventario.Visible = false;
-            panelINVENTARIObajo.Visible = false;
-            panelVencimiento.Visible = false;
-            panelKardex.Visible = false;
-            panelKardex.Dock = DockStyle.None;
-
-            pnKardex.Visible = false;
-            pnMovimientos.Visible = true;
-            pnInventariosBajos.Visible = false;
-            pnReporteDeInventarios.Visible = false;
-            pnVencimientos.Visible = false;
-
-
-
-
-        }
-
         private void BtnKardex_Click(object sender, EventArgs e)
         {
-            pnlMovimentos.Dock = DockStyle.None;
-            panelREPORTEInventario.Dock = DockStyle.None;
-            panelINVENTARIObajo.Dock = DockStyle.None;
-            panelVencimiento.Dock = DockStyle.None;
-            pnlMovimentos.Visible = false;
-            panelREPORTEInventario.Visible = false;
-            panelINVENTARIObajo.Visible = false;
-            panelVencimiento.Visible = false;
-            panelKardex.Visible = true;
-            panelKardex.Dock = DockStyle.Fill;
-
-            pnKardex.Visible = true;
-            pnMovimientos.Visible = false;
-            pnInventariosBajos.Visible = false;
-            pnReporteDeInventarios.Visible = false;
-            pnVencimientos.Visible = false;
+            btnKardexx();
         }
 
-        private void BtnVencimentos_Click(object sender, EventArgs e)
+       private void  btnInvetariosBajos()
         {
-            pnlMovimentos.Dock = DockStyle.None;
-            panelREPORTEInventario.Dock = DockStyle.None;
-            panelINVENTARIObajo.Dock = DockStyle.None;
-            panelVencimiento.Dock = DockStyle.Fill;
+            pnInventariosBajos.Visible = true;
+            pnlKardex.Visible = false;
             pnlMovimentos.Visible = false;
+            panelINVENTARIObajo.Visible = true;
+            lblDebajoMin.Visible = true;
+
+            panelINVENTARIObajo.Visible = true;
+            panelINVENTARIObajo.Dock = DockStyle.Fill;
+            lblDebajoMin.Visible = true;
+            lblDebajoMin.Dock = DockStyle.Top;
+            dataListadoInventarioBAJO.Dock = DockStyle.Fill;
+
+        }
+        private void ReporteInvetario()
+        {
+            panelREPORTEInventario.Visible = true;
+            panelINVENTARIObajo.Visible = false;
+            pnlKardex.Visible = false;
+            pnlMovimentos.Visible = false;
+
+            panelREPORTEInventario.Dock = DockStyle.Fill;
+            pnlReporteInvetarioBuscar.Visible = true;
+            pnlReporteInvetarioBuscar.Dock = DockStyle.Top;
+            dataListadoInventarioReport.Dock = DockStyle.Fill;
+        }
+        public void Vencimientos()
+        {
+            panelVencimiento.Visible = true;
             panelREPORTEInventario.Visible = false;
             panelINVENTARIObajo.Visible = false;
-            panelVencimiento.Visible = true;
-            panelKardex.Visible = false;
-            panelKardex.Dock = DockStyle.None;
+            pnlKardex.Visible = false;
+            pnlMovimentos.Visible = false;
 
-            pnKardex.Visible = false;
-            pnMovimientos.Visible = false;
-            pnInventariosBajos.Visible = false;
-            pnReporteDeInventarios.Visible = false;
-            pnVencimientos.Visible = true;
+            panelVencimiento.Visible = true;
+            panelVencimiento.Dock = DockStyle.Fill;
+            pnlFiltrosPorVencer.Visible = true;
+            pnlFiltrosPorVencer.Dock = DockStyle.Top;
+            dataListadoVencimientos.Dock = DockStyle.Fill;
+
+           
+
+        }
+        private void BtnVencimentos_Click(object sender, EventArgs e)
+        {
+            Vencimientos();
         }
 
         private void TxtBuscarKardex_movimientos_TextChanged(object sender, EventArgs e)
@@ -849,6 +826,11 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         {
             PRESENT.REPORTES.REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.FormMovBuscar frm = new PRESENT.REPORTES.REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.FormMovBuscar();
             frm.ShowDialog();
+        }
+
+        private void PictureBox10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
