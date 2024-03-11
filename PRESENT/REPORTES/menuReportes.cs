@@ -16,5 +16,11 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
         {
             InitializeComponent();
         }
+
+        private void MenuReportes_Load(object sender, EventArgs e)
+        {
+            pnlBienvenida.Visible = true;
+            pnlBienvenida.Dock = DockStyle.Fill;
+        }
     }
 }
