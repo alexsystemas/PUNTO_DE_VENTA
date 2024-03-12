@@ -391,6 +391,12 @@
     <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.Designer.cs">
       <DependentUpon>ReportMovBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\REPORTES\ReporteVentas\resumenVentas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\ReporteVentas\resumenVentas.Designer.cs">
+      <DependentUpon>resumenVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -557,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportMovBuscar.resx">
       <DependentUpon>ReportMovBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\ReporteVentas\resumenVentas.resx">
+      <DependentUpon>resumenVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\SEREALIZACION_DE_COMPROBANTES\SEREALIZACION.resx">
       <DependentUpon>SEREALIZACION.cs</DependentUpon>

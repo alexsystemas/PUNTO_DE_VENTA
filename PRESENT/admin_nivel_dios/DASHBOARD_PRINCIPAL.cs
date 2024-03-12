@@ -577,5 +577,11 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
             INVENTARIOS_KARDEX.INVENTARIO_MENU frmKard = new INVENTARIOS_KARDEX.INVENTARIO_MENU();
             frmKard.ShowDialog();
         }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            REPORTES.menuReportes frm = new REPORTES.menuReportes();
+            frm.ShowDialog();
+        }
     }
 }

@@ -53,7 +53,7 @@
             this.btn_Inventarios = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Notificacion = new System.Windows.Forms.PictureBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
@@ -185,7 +185,7 @@
             this.panel1.Controls.Add(this.btn_Inventarios);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnVender);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnReportes);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.IDUSUARIO);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -253,24 +253,25 @@
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.BtnVender_Click_1);
             // 
-            // button1
+            // btnReportes
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(237, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 47);
-            this.button1.TabIndex = 543;
-            this.button1.Text = "Reportes";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnReportes.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReportes.BackgroundImage")));
+            this.btnReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReportes.Location = new System.Drawing.Point(237, 12);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(125, 47);
+            this.btnReportes.TabIndex = 543;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // panel2
             // 
@@ -309,7 +310,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(136, 7);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(57, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -409,7 +410,7 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 486);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1160, 74);
             this.panel4.TabIndex = 549;
@@ -655,7 +656,7 @@
             // 
             this.panel10.Controls.Add(this.chartProductos);
             this.panel10.Location = new System.Drawing.Point(620, 44);
-            this.panel10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(399, 234);
             this.panel10.TabIndex = 547;
@@ -1327,7 +1328,7 @@
             this.panel17.Controls.Add(this.pictureBox12);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel17.Location = new System.Drawing.Point(0, 0);
-            this.panel17.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel17.Margin = new System.Windows.Forms.Padding(1);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(103, 638);
             this.panel17.TabIndex = 3;
@@ -1401,7 +1402,7 @@
             // 
             this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
             this.pictureBox24.Location = new System.Drawing.Point(4, 590);
-            this.pictureBox24.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(68, 58);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1412,7 +1413,7 @@
             // 
             this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
             this.pictureBox21.Location = new System.Drawing.Point(98, 447);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(0, 0);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1423,7 +1424,7 @@
             // 
             this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
             this.pictureBox22.Location = new System.Drawing.Point(1, 494);
-            this.pictureBox22.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(68, 58);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1434,7 +1435,7 @@
             // 
             this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
             this.pictureBox20.Location = new System.Drawing.Point(1, 377);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(68, 58);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1445,7 +1446,7 @@
             // 
             this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
             this.pictureBox18.Location = new System.Drawing.Point(0, 265);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(68, 58);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1456,7 +1457,7 @@
             // 
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
             this.pictureBox16.Location = new System.Drawing.Point(-1, 149);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(68, 58);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1467,7 +1468,7 @@
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(0, 37);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(68, 58);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1483,7 +1484,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel17);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "DASHBOARD_PRINCIPAL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashbord (Bienvenidos al panel de control)";
@@ -1628,7 +1629,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btn_Inventarios;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnVender;

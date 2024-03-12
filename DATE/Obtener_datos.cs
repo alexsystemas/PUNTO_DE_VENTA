@@ -685,6 +685,20 @@ namespace PUNTO_DE_VENTA.DATE
             }
             
         }
+        public static void ReporteResumenVentasHoy(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteResumenVentasHoy", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
         //Detalle Ventas
         public static void ReporteGanancias(ref double Monto)
         {

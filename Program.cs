@@ -16,7 +16,7 @@ namespace PUNTO_DE_VENTA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            PRESENT.INVENTARIOS_KARDEX.INVENTARIO_MENU frm = new PRESENT.INVENTARIOS_KARDEX.INVENTARIO_MENU();
+            PRESENT.LOGIN frm = new PRESENT.LOGIN();
             frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
             Application.Run();
