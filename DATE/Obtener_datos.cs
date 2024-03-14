@@ -599,7 +599,6 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
-
         public static void mostrarVentasGraficaFechas(ref DataTable dt, DateTime fi, DateTime ff)
         {
             try
@@ -699,6 +698,59 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        public static void ReporteResumenVentasFechas(ref DataTable dt, DateTime fi, DateTime ff)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteResumenVentasFechas", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@fi",fi);
+                da.SelectCommand.Parameters.AddWithValue("@ff", ff);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void ReporteResumenVentasHoyEmpleado(ref DataTable dt, int idEmpleado)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteResumenVentasHoyEmpleado", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void ReporteResumenVentasEmpleadoFechas(ref DataTable dt, int idEmpleado, DateTime fi, DateTime ff)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteResumenVentasEmpleadoFechas", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+                da.SelectCommand.Parameters.AddWithValue("@fi", fi);
+                da.SelectCommand.Parameters.AddWithValue("@ff", ff);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
         //Detalle Ventas
         public static void ReporteGanancias(ref double Monto)
         {
@@ -882,6 +934,25 @@ namespace PUNTO_DE_VENTA.DATE
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
 
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+            
+            
+        }
+        //Usuarios
+        public static void mostrarUsuarios(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("select * from USUARIO2",CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
 
             }
             catch (Exception ex)

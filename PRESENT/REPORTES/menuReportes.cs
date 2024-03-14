@@ -16,13 +16,16 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
         {
             InitializeComponent();
         }
-
+        int idUsuario;
         private void MenuReportes_Load(object sender, EventArgs e)
         {
             pnlBienvenida.Visible = true;
             pnlBienvenida.Dock = DockStyle.Fill;
             PnResumenVentas.Visible = false;
             pnVentasEmpleado.Visible = false;
+            pnlFiltros.Visible = false;
+            btnHastaHoy.ForeColor = Color.OrangeRed;
+
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
@@ -32,8 +35,8 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlBienvenida.Visible = false;
             pnlProductos.Visible = false;
             pnlCxCobraryPagar.Visible = false;
-           //------------------paneles
-            pnlFiltros.Enabled = false;
+            //------------------paneles
+            pnlFechas.Enabled = false;
             pnlFechas.Visible = false;
             pnlEmpleados.Visible = false;
             //Botones
@@ -60,7 +63,28 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlEmpleados.Visible = false;
             checkFiltros.Checked = false;
             checkFiltros.ForeColor = Color.FromArgb(0, 60, 103);
+            btnHastaHoy.ForeColor=Color.OrangeRed;
             ReporteResumenVentasHoy();
+        }
+        private void ReporteResumenVentasHoyEmpleado()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteResumenVentasHoyEmpleado(ref dt, idUsuario);
+            ReporteVentas.resumenVentas rpt = new ReporteVentas.resumenVentas();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer1.Report = rpt;
+            reportViewer1.RefreshReport();
+        }
+        private void ReporteResumenVentasFechas()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteResumenVentasFechas(ref dt, dtpFecIni.Value, dtpFecFin.Value);
+            ReporteVentas.resumenVentas rpt = new ReporteVentas.resumenVentas();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer1.Report = rpt;
+            reportViewer1.RefreshReport();
         }
         private void ReporteResumenVentasHoy()
         {
@@ -73,10 +97,133 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             reportViewer1.RefreshReport();
 
         }
+        private void ReporteResumenVentasEmpleadoFechas()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteResumenVentasEmpleadoFechas(ref dt, idUsuario, dtpFecIni.Value, dtpFecFin.Value);
+            ReporteVentas.resumenVentas rpt = new ReporteVentas.resumenVentas();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer1.Report = rpt;
+            reportViewer1.RefreshReport();
+        }
 
         private void BtnHastaHoy_Click(object sender, EventArgs e)
         {
-            reportViewer1.RefreshReport();
+            if (PnResumenVentas.Visible == true)
+            {
+                ReporteResumenVentasHoy();
+            }
+            if (pnVentasEmpleado.Visible == true)
+            {
+                ReporteResumenVentasHoyEmpleado();
+            }
+            btnHastaHoy.ForeColor = Color.OrangeRed;
+            checkFiltros.Checked = false;
+            pnlFiltros.Visible = true;
+            ReporteResumenVentasHoy();
+        }
+
+        private void CheckFiltros_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkFiltros.Checked == true)
+            {
+                if (PnResumenVentas.Visible == true)
+                {
+                    pnlFechas.Enabled = true;
+                    pnlFechas.Visible = true;
+                    ReporteResumenVentasFechas();
+                }
+                if (pnVentasEmpleado.Visible == true)
+                {
+                    pnlFechas.Enabled = true;
+                    pnlFechas.Visible = true;
+                    ReporteResumenVentasEmpleadoFechas();
+                }
+                btnHastaHoy.ForeColor = Color.DimGray;
+                pnlFechas.Visible = true;
+                // TFILTROS.ForeColor = Color.OrangeRed;
+            }
+            else
+            {
+                if (PnResumenVentas.Visible == true)
+                {
+                    ReporteResumenVentasHoy();
+                }
+                if( pnVentasEmpleado.Visible == true)
+                {
+                    ReporteResumenVentasHoyEmpleado();
+                }
+                btnHastaHoy.ForeColor = Color.OrangeRed;
+                pnlFechas.Visible = false;
+                
+
+            }
+        }
+       
+
+        private void BtnVentasEmpleado_Click(object sender, EventArgs e)
+        {
+            PnResumenVentas.Visible = false;
+            pnVentasEmpleado.Visible = true;
+            pnlFiltros.Visible = true;
+            pnlFechas.Enabled = false;
+            btnResumenVentas.ForeColor = Color.FromArgb(0, 60, 103);
+            pnlEmpleados.Visible = false;
+            checkFiltros.Checked = false;
+            checkFiltros.ForeColor = Color.FromArgb(0, 60, 103);
+            pnlEmpleados.Visible = true;
+            mostrarUsuarios();
+            ReporteResumenVentasHoyEmpleado();
+        }
+       
+       
+        private void mostrarUsuarios()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrarUsuarios(ref dt);
+            txtEmpleado.DisplayMember = "Nombres_y_Apellidos";
+            txtEmpleado.ValueMember = "idUsuario";
+            txtEmpleado.DataSource = dt;
+        }
+
+        private void TxtEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idUsuario = Convert.ToInt32(txtEmpleado.SelectedValue);
+            if(checkFiltros.Checked==true)
+            {
+                ReporteResumenVentasEmpleadoFechas();
+            }
+            else
+            {
+                ReporteResumenVentasHoyEmpleado();
+            }
+        }
+        
+
+        private void validarFiltros()
+        {
+            if (checkFiltros.Checked == true)
+            {
+                if (PnResumenVentas.Visible == true)
+                {
+                    ReporteResumenVentasFechas();
+                }
+                if (pnVentasEmpleado.Visible == true)
+                {
+                    ReporteResumenVentasEmpleadoFechas();
+                }
+            }
+        }
+
+        private void DtpFecIni_ValueChanged(object sender, EventArgs e)
+        {
+            validarFiltros();
+        }
+
+        private void DtpFecFin_ValueChanged(object sender, EventArgs e)
+        {
+            validarFiltros();
         }
     }
 }

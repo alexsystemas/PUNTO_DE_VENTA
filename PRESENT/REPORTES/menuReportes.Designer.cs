@@ -41,13 +41,11 @@
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.pnlEmpleados = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtEmpleado = new System.Windows.Forms.ComboBox();
             this.pnlFiltros = new System.Windows.Forms.Panel();
             this.btnHastaHoy = new System.Windows.Forms.Button();
             this.pnlFechas = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkFiltros = new System.Windows.Forms.CheckBox();
@@ -64,6 +62,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pnlCxCobraryPagar = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.pnlBienvenida = new System.Windows.Forms.Label();
+            this.dtpFecFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecIni = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -192,7 +192,6 @@
             // pnlVentas
             // 
             this.pnlVentas.Controls.Add(this.reportViewer1);
-            this.pnlVentas.Controls.Add(this.pnlEmpleados);
             this.pnlVentas.Controls.Add(this.pnlFiltros);
             this.pnlVentas.Controls.Add(this.flowLayoutPanel1);
             this.pnlVentas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,50 +205,51 @@
             // 
             this.reportViewer1.AccessibilityKeyMap = null;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 148);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 132);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(613, 302);
+            this.reportViewer1.Size = new System.Drawing.Size(613, 318);
             this.reportViewer1.TabIndex = 2;
             // 
             // pnlEmpleados
             // 
             this.pnlEmpleados.Controls.Add(this.label5);
-            this.pnlEmpleados.Controls.Add(this.comboBox1);
-            this.pnlEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEmpleados.Location = new System.Drawing.Point(0, 120);
+            this.pnlEmpleados.Controls.Add(this.txtEmpleado);
+            this.pnlEmpleados.Location = new System.Drawing.Point(18, 57);
             this.pnlEmpleados.Name = "pnlEmpleados";
-            this.pnlEmpleados.Size = new System.Drawing.Size(613, 28);
+            this.pnlEmpleados.Size = new System.Drawing.Size(356, 32);
             this.pnlEmpleados.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
-            this.label5.Location = new System.Drawing.Point(3, 8);
+            this.label5.Location = new System.Drawing.Point(1, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Empleados:";
             // 
-            // comboBox1
+            // txtEmpleado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 21);
-            this.comboBox1.TabIndex = 4;
+            this.txtEmpleado.FormattingEnabled = true;
+            this.txtEmpleado.Location = new System.Drawing.Point(71, 5);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(248, 21);
+            this.txtEmpleado.TabIndex = 4;
+            this.txtEmpleado.SelectedIndexChanged += new System.EventHandler(this.TxtEmpleado_SelectedIndexChanged);
             // 
             // pnlFiltros
             // 
-            this.pnlFiltros.Controls.Add(this.btnHastaHoy);
             this.pnlFiltros.Controls.Add(this.pnlFechas);
+            this.pnlFiltros.Controls.Add(this.btnHastaHoy);
+            this.pnlFiltros.Controls.Add(this.pnlEmpleados);
             this.pnlFiltros.Controls.Add(this.pictureBox2);
             this.pnlFiltros.Controls.Add(this.checkFiltros);
             this.pnlFiltros.Controls.Add(this.label2);
             this.pnlFiltros.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFiltros.Location = new System.Drawing.Point(0, 44);
             this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(613, 76);
+            this.pnlFiltros.Size = new System.Drawing.Size(613, 88);
             this.pnlFiltros.TabIndex = 1;
             // 
             // btnHastaHoy
@@ -269,46 +269,31 @@
             // 
             // pnlFechas
             // 
-            this.pnlFechas.Controls.Add(this.dateTimePicker2);
+            this.pnlFechas.Controls.Add(this.dtpFecFin);
             this.pnlFechas.Controls.Add(this.label3);
-            this.pnlFechas.Controls.Add(this.dateTimePicker1);
             this.pnlFechas.Controls.Add(this.label4);
-            this.pnlFechas.Location = new System.Drawing.Point(139, 6);
+            this.pnlFechas.Controls.Add(this.dtpFecIni);
+            this.pnlFechas.Location = new System.Drawing.Point(144, 6);
             this.pnlFechas.Name = "pnlFechas";
-            this.pnlFechas.Size = new System.Drawing.Size(198, 55);
+            this.pnlFechas.Size = new System.Drawing.Size(411, 48);
             this.pnlFechas.TabIndex = 2;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(59, 29);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker2.TabIndex = 3;
+            this.pnlFechas.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
-            this.label3.Location = new System.Drawing.Point(12, 8);
+            this.label3.Location = new System.Drawing.Point(12, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Desde:";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(59, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
-            this.label4.Location = new System.Drawing.Point(12, 34);
+            this.label4.Location = new System.Drawing.Point(197, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 0;
@@ -317,9 +302,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.filtro;
-            this.pictureBox2.Location = new System.Drawing.Point(64, 43);
+            this.pictureBox2.Location = new System.Drawing.Point(101, 41);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 11);
+            this.pictureBox2.Size = new System.Drawing.Size(19, 14);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -330,16 +315,16 @@
             this.checkFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
             this.checkFiltros.Location = new System.Drawing.Point(80, 41);
             this.checkFiltros.Name = "checkFiltros";
-            this.checkFiltros.Size = new System.Drawing.Size(53, 17);
+            this.checkFiltros.Size = new System.Drawing.Size(15, 14);
             this.checkFiltros.TabIndex = 1;
-            this.checkFiltros.Text = "Filtros";
             this.checkFiltros.UseVisualStyleBackColor = true;
+            this.checkFiltros.CheckedChanged += new System.EventHandler(this.CheckFiltros_CheckedChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
-            this.label2.Location = new System.Drawing.Point(3, 41);
+            this.label2.Location = new System.Drawing.Point(16, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 0;
@@ -407,6 +392,7 @@
             this.btnVentasEmpleado.TabIndex = 0;
             this.btnVentasEmpleado.Text = "Ventas Por Empleado";
             this.btnVentasEmpleado.UseVisualStyleBackColor = true;
+            this.btnVentasEmpleado.Click += new System.EventHandler(this.BtnVentasEmpleado_Click);
             // 
             // pnlProductos
             // 
@@ -453,6 +439,30 @@
             this.pnlBienvenida.Size = new System.Drawing.Size(97, 300);
             this.pnlBienvenida.TabIndex = 0;
             this.pnlBienvenida.Text = "Seleccione un Grupo de Reportes Para Empezar";
+            // 
+            // dtpFecFin
+            // 
+            this.dtpFecFin.Font = new System.Drawing.Font("Consolas", 14F);
+            this.dtpFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecFin.Location = new System.Drawing.Point(249, 10);
+            this.dtpFecFin.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dtpFecFin.Name = "dtpFecFin";
+            this.dtpFecFin.Size = new System.Drawing.Size(128, 29);
+            this.dtpFecFin.TabIndex = 2;
+            this.dtpFecFin.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
+            this.dtpFecFin.ValueChanged += new System.EventHandler(this.DtpFecFin_ValueChanged);
+            // 
+            // dtpFecIni
+            // 
+            this.dtpFecIni.Font = new System.Drawing.Font("Consolas", 14F);
+            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecIni.Location = new System.Drawing.Point(55, 10);
+            this.dtpFecIni.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dtpFecIni.Name = "dtpFecIni";
+            this.dtpFecIni.Size = new System.Drawing.Size(128, 29);
+            this.dtpFecIni.TabIndex = 2;
+            this.dtpFecIni.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
+            this.dtpFecIni.ValueChanged += new System.EventHandler(this.DtpFecIni_ValueChanged);
             // 
             // menuReportes
             // 
@@ -502,12 +512,10 @@
         private System.Windows.Forms.Panel pnlVentas;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel pnlFiltros;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtEmpleado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlFechas;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox checkFiltros;
@@ -524,5 +532,7 @@
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.Panel pnlEmpleados;
         private System.Windows.Forms.Button btnHastaHoy;
+        internal System.Windows.Forms.DateTimePicker dtpFecFin;
+        internal System.Windows.Forms.DateTimePicker dtpFecIni;
     }
 }
