@@ -23,6 +23,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlBienvenida.Dock = DockStyle.Fill;
             PnResumenVentas.Visible = false;
             pnVentasEmpleado.Visible = false;
+            pnlProductos.Visible = false;
             pnlFiltros.Visible = false;
             btnHastaHoy.ForeColor = Color.OrangeRed;
 
@@ -33,12 +34,12 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlVentas.Visible = true;
             pnlVentas.Dock = DockStyle.Fill;
             pnlBienvenida.Visible = false;
-            pnlProductos.Visible = false;
-            pnlCxCobraryPagar.Visible = false;
+            reportCobrar_Y_Pagar.Visible = false;
             //------------------paneles
             pnlFechas.Enabled = false;
             pnlFechas.Visible = false;
             pnlEmpleados.Visible = false;
+            pnlProductos.Visible = false;
             //Botones
             btnVentas.BackColor = Color.FromArgb(0, 85, 128);
             btnVentas.ForeColor = Color.White;
@@ -63,7 +64,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlEmpleados.Visible = false;
             checkFiltros.Checked = false;
             checkFiltros.ForeColor = Color.FromArgb(0, 60, 103);
-            btnHastaHoy.ForeColor=Color.OrangeRed;
+            btnHastaHoy.ForeColor = Color.OrangeRed;
             ReporteResumenVentasHoy();
         }
         private void ReporteResumenVentasHoyEmpleado()
@@ -142,7 +143,6 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
                 }
                 btnHastaHoy.ForeColor = Color.DimGray;
                 pnlFechas.Visible = true;
-                // TFILTROS.ForeColor = Color.OrangeRed;
             }
             else
             {
@@ -150,17 +150,17 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
                 {
                     ReporteResumenVentasHoy();
                 }
-                if( pnVentasEmpleado.Visible == true)
+                if (pnVentasEmpleado.Visible == true)
                 {
                     ReporteResumenVentasHoyEmpleado();
                 }
                 btnHastaHoy.ForeColor = Color.OrangeRed;
                 pnlFechas.Visible = false;
-                
+
 
             }
         }
-       
+
 
         private void BtnVentasEmpleado_Click(object sender, EventArgs e)
         {
@@ -176,8 +176,8 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             mostrarUsuarios();
             ReporteResumenVentasHoyEmpleado();
         }
-       
-       
+
+
         private void mostrarUsuarios()
         {
             DataTable dt = new DataTable();
@@ -190,7 +190,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
         private void TxtEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
             idUsuario = Convert.ToInt32(txtEmpleado.SelectedValue);
-            if(checkFiltros.Checked==true)
+            if (checkFiltros.Checked == true)
             {
                 ReporteResumenVentasEmpleadoFechas();
             }
@@ -199,7 +199,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
                 ReporteResumenVentasHoyEmpleado();
             }
         }
-        
+
 
         private void validarFiltros()
         {
@@ -225,5 +225,160 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
         {
             validarFiltros();
         }
+
+        private void BtnCxC_Click(object sender, EventArgs e)
+        {
+            pnlVentas.Visible = false;
+            pnlBienvenida.Visible = false;
+            reportCobrar_Y_Pagar.Visible = true;
+            pnlProductos.Visible = false;
+            reportCobrar_Y_Pagar.Dock = DockStyle.Fill;
+
+            //Botones
+            btnVentas.BackColor = Color.FromArgb(214, 250, 250);
+            btnVentas.ForeColor = Color.FromArgb(131, 135, 146);
+            btnCxC.BackColor = Color.FromArgb(0, 85, 128);
+            btnCxC.ForeColor = Color.White;
+            btnCxP.BackColor = Color.FromArgb(214, 250, 250);
+            btnCxP.ForeColor = Color.FromArgb(131, 135, 146);
+            btnProductos.BackColor = Color.FromArgb(214, 250, 250);
+            btnProductos.ForeColor = Color.FromArgb(131, 135, 146);
+            ReporteCuentasPorCobrar();
+        }
+
+
+        private void ReporteCuentasPorCobrar()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteCuentasPorCobrar(ref dt);
+            ReportesCobros.ReporteCobros rpt = new ReportesCobros.ReporteCobros();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportCobrar_Y_Pagar.Report = rpt;
+            reportCobrar_Y_Pagar.RefreshReport();
+
+
+        }
+
+
+        private void BtnCxP_Click(object sender, EventArgs e)
+        {
+            pnlVentas.Visible = false;
+            pnlBienvenida.Visible = false;
+            reportCobrar_Y_Pagar.Visible = true;
+            pnlProductos.Visible = false;
+            reportCobrar_Y_Pagar.Dock = DockStyle.Fill;
+
+            //Botones
+            btnVentas.BackColor = Color.FromArgb(214, 250, 250);
+            btnVentas.ForeColor = Color.FromArgb(131, 135, 146);
+            btnCxC.BackColor = Color.FromArgb(214, 250, 250);
+            btnCxC.ForeColor = Color.FromArgb(131, 135, 146);
+            btnCxP.BackColor = Color.FromArgb(0, 85, 128);
+            btnCxP.ForeColor = Color.White;
+            btnProductos.BackColor = Color.FromArgb(214, 250, 250);
+            btnProductos.ForeColor = Color.FromArgb(131, 135, 146);
+            ReporteCuentasPorPagar();
+        }
+        private void ReporteCuentasPorPagar()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.ReporteCuentasPorPagar(ref dt);
+            ReportesPagos.ReportesPagos rpt = new ReportesPagos.ReportesPagos();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportCobrar_Y_Pagar.Report = rpt;
+            reportCobrar_Y_Pagar.RefreshReport();
+
+
+        }
+
+        private void BtnProductos_Click(object sender, EventArgs e)
+        {
+            pnlVentas.Visible = false;
+            pnlBienvenida.Visible = false;
+            reportCobrar_Y_Pagar.Visible = true;
+            pnlProductos.Visible = true;
+            pnlProductos.Dock = DockStyle.Fill;
+
+            //Botones
+            btnVentas.BackColor = Color.FromArgb(214, 250, 250);
+            btnVentas.ForeColor = Color.FromArgb(131, 135, 146);
+            btnCxC.BackColor = Color.FromArgb(214, 250, 250);
+            btnCxC.ForeColor = Color.FromArgb(131, 135, 146);
+            btnCxP.BackColor = Color.FromArgb(214, 250, 250);
+            btnCxP.ForeColor = Color.FromArgb(131, 135, 146);
+            btnProductos.BackColor = Color.FromArgb(0, 85, 128);
+            btnProductos.ForeColor = Color.White;
+
+            //Paneles
+            pnInventarios.Visible = false;
+            pnProductosVencidos.Visible = false;
+            pnStockBajo.Visible = false;
+            reportViewer2.Visible = false;
+
+           
+        }
+
+        private void BtnInventarios_Click(object sender, EventArgs e)
+        {
+            pnInventarios.Visible = true;
+            pnProductosVencidos.Visible = false;
+            pnStockBajo.Visible = false;
+            reportViewer2.Visible = true;
+            reportViewer2.Dock = DockStyle.Fill;
+            imprimir_inventarios_todos();
+        }
+        private void imprimir_inventarios_todos()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.imprimir_inventarios_todos(ref dt);
+            REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.reportInventarios_Todos rpt = new REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.reportInventarios_Todos();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer2.Report = rpt;
+            reportViewer2.RefreshReport();
+        }
+
+        private void BtnInventariosVencidos_Click(object sender, EventArgs e)
+        {
+            pnInventarios.Visible = false;
+            pnProductosVencidos.Visible = true;
+            pnStockBajo.Visible = false;
+            reportViewer2.Visible = true;
+            reportViewer2.Dock = DockStyle.Fill;
+            mostrar_productos_vencidos();
+        }
+        private void mostrar_productos_vencidos()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.mostrar_productos_vencidos(ref dt);
+            REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.ReportePVencidos rpt = new REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.ReportePVencidos();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer2.Report = rpt;
+            reportViewer2.RefreshReport();
+        }
+
+        private void BtnStockBajo_Click(object sender, EventArgs e)
+        {
+            pnInventarios.Visible = false;
+            pnProductosVencidos.Visible = false;
+            pnStockBajo.Visible = true;
+            reportViewer2.Visible = true;
+            reportViewer2.Dock = DockStyle.Fill;
+            MOSTRAR_Producto_Minimo();
+        }
+        private void MOSTRAR_Producto_Minimo()
+        {
+            DataTable dt = new DataTable();
+            Obtener_datos.MOSTRAR_Inventarios_bajo_minimo(ref dt);
+            REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.ReportePBajoMinimo rpt = new REPORTES_DE_KARDEX_listo.REPORTE_DE_INVENTARIOS_todos.ReportePBajoMinimo();
+            rpt.table1.DataSource = dt;
+            rpt.DataSource = dt;
+            reportViewer2.Report = rpt;
+            reportViewer2.RefreshReport();
+        }
+
     }
 }

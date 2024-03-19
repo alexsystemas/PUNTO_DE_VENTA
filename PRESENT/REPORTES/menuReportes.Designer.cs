@@ -37,16 +37,29 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl2 = new System.Windows.Forms.Panel();
+            this.pnlProductos = new System.Windows.Forms.Panel();
+            this.reportViewer2 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInventarios = new System.Windows.Forms.Button();
+            this.btnInventariosVencidos = new System.Windows.Forms.Button();
+            this.btnStockBajo = new System.Windows.Forms.Button();
+            this.pnInventarios = new System.Windows.Forms.Panel();
+            this.pnStockBajo = new System.Windows.Forms.Panel();
+            this.pnProductosVencidos = new System.Windows.Forms.Panel();
+            this.reportCobrar_Y_Pagar = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.pnlBienvenida = new System.Windows.Forms.Label();
             this.pnlVentas = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.pnlFechas = new System.Windows.Forms.Panel();
+            this.dtpFecFin = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFecIni = new System.Windows.Forms.DateTimePicker();
+            this.btnHastaHoy = new System.Windows.Forms.Button();
             this.pnlEmpleados = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmpleado = new System.Windows.Forms.ComboBox();
-            this.pnlFiltros = new System.Windows.Forms.Panel();
-            this.btnHastaHoy = new System.Windows.Forms.Button();
-            this.pnlFechas = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkFiltros = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,27 +70,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnVentasEmpleado = new System.Windows.Forms.Panel();
             this.btnVentasEmpleado = new System.Windows.Forms.Button();
-            this.pnlProductos = new System.Windows.Forms.Panel();
-            this.reportViewer2 = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pnlCxCobraryPagar = new Telerik.ReportViewer.WinForms.ReportViewer();
-            this.pnlBienvenida = new System.Windows.Forms.Label();
-            this.dtpFecFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpFecIni = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl2.SuspendLayout();
+            this.pnlProductos.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.pnlVentas.SuspendLayout();
-            this.pnlEmpleados.SuspendLayout();
             this.pnlFiltros.SuspendLayout();
             this.pnlFechas.SuspendLayout();
+            this.pnlEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.pnlProductos.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,6 +114,7 @@
             this.btnProductos.TabIndex = 4;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
             // 
             // btnCxP
             // 
@@ -123,6 +130,7 @@
             this.btnCxP.TabIndex = 3;
             this.btnCxP.Text = "Cuentas x Pagar";
             this.btnCxP.UseVisualStyleBackColor = false;
+            this.btnCxP.Click += new System.EventHandler(this.BtnCxP_Click);
             // 
             // btnCxC
             // 
@@ -138,6 +146,7 @@
             this.btnCxC.TabIndex = 2;
             this.btnCxC.Text = "Cuentas x Cobrar";
             this.btnCxC.UseVisualStyleBackColor = false;
+            this.btnCxC.Click += new System.EventHandler(this.BtnCxC_Click);
             // 
             // btnVentas
             // 
@@ -179,25 +188,133 @@
             // pnl2
             // 
             this.pnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.pnl2.Controls.Add(this.pnlVentas);
             this.pnl2.Controls.Add(this.pnlProductos);
-            this.pnl2.Controls.Add(this.panel9);
+            this.pnl2.Controls.Add(this.reportCobrar_Y_Pagar);
             this.pnl2.Controls.Add(this.pnlBienvenida);
+            this.pnl2.Controls.Add(this.pnlVentas);
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl2.Location = new System.Drawing.Point(187, 0);
             this.pnl2.Name = "pnl2";
             this.pnl2.Size = new System.Drawing.Size(613, 450);
             this.pnl2.TabIndex = 1;
             // 
+            // pnlProductos
+            // 
+            this.pnlProductos.Controls.Add(this.reportViewer2);
+            this.pnlProductos.Controls.Add(this.flowLayoutPanel2);
+            this.pnlProductos.Controls.Add(this.pnInventarios);
+            this.pnlProductos.Controls.Add(this.pnStockBajo);
+            this.pnlProductos.Controls.Add(this.pnProductosVencidos);
+            this.pnlProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProductos.Location = new System.Drawing.Point(0, 0);
+            this.pnlProductos.Name = "pnlProductos";
+            this.pnlProductos.Size = new System.Drawing.Size(613, 450);
+            this.pnlProductos.TabIndex = 3;
+            // 
+            // reportViewer2
+            // 
+            this.reportViewer2.AccessibilityKeyMap = null;
+            this.reportViewer2.Location = new System.Drawing.Point(161, 73);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(150, 150);
+            this.reportViewer2.TabIndex = 6;
+            this.reportViewer2.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnInventarios);
+            this.flowLayoutPanel2.Controls.Add(this.btnInventariosVencidos);
+            this.flowLayoutPanel2.Controls.Add(this.btnStockBajo);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(613, 34);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // btnInventarios
+            // 
+            this.btnInventarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventarios.Location = new System.Drawing.Point(3, 3);
+            this.btnInventarios.Name = "btnInventarios";
+            this.btnInventarios.Size = new System.Drawing.Size(161, 30);
+            this.btnInventarios.TabIndex = 0;
+            this.btnInventarios.Text = "Inventarios";
+            this.btnInventarios.UseVisualStyleBackColor = true;
+            this.btnInventarios.Click += new System.EventHandler(this.BtnInventarios_Click);
+            // 
+            // btnInventariosVencidos
+            // 
+            this.btnInventariosVencidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventariosVencidos.Location = new System.Drawing.Point(170, 3);
+            this.btnInventariosVencidos.Name = "btnInventariosVencidos";
+            this.btnInventariosVencidos.Size = new System.Drawing.Size(161, 31);
+            this.btnInventariosVencidos.TabIndex = 1;
+            this.btnInventariosVencidos.Text = "Productos Vencidos";
+            this.btnInventariosVencidos.UseVisualStyleBackColor = true;
+            this.btnInventariosVencidos.Click += new System.EventHandler(this.BtnInventariosVencidos_Click);
+            // 
+            // btnStockBajo
+            // 
+            this.btnStockBajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockBajo.Location = new System.Drawing.Point(337, 3);
+            this.btnStockBajo.Name = "btnStockBajo";
+            this.btnStockBajo.Size = new System.Drawing.Size(161, 30);
+            this.btnStockBajo.TabIndex = 2;
+            this.btnStockBajo.Text = "Stock Bajo";
+            this.btnStockBajo.UseVisualStyleBackColor = true;
+            this.btnStockBajo.Click += new System.EventHandler(this.BtnStockBajo_Click);
+            // 
+            // pnInventarios
+            // 
+            this.pnInventarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
+            this.pnInventarios.Location = new System.Drawing.Point(3, 34);
+            this.pnInventarios.Name = "pnInventarios";
+            this.pnInventarios.Size = new System.Drawing.Size(160, 2);
+            this.pnInventarios.TabIndex = 3;
+            // 
+            // pnStockBajo
+            // 
+            this.pnStockBajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
+            this.pnStockBajo.Location = new System.Drawing.Point(337, 34);
+            this.pnStockBajo.Name = "pnStockBajo";
+            this.pnStockBajo.Size = new System.Drawing.Size(160, 2);
+            this.pnStockBajo.TabIndex = 5;
+            // 
+            // pnProductosVencidos
+            // 
+            this.pnProductosVencidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(103)))));
+            this.pnProductosVencidos.Location = new System.Drawing.Point(171, 34);
+            this.pnProductosVencidos.Name = "pnProductosVencidos";
+            this.pnProductosVencidos.Size = new System.Drawing.Size(160, 2);
+            this.pnProductosVencidos.TabIndex = 4;
+            // 
+            // reportCobrar_Y_Pagar
+            // 
+            this.reportCobrar_Y_Pagar.AccessibilityKeyMap = null;
+            this.reportCobrar_Y_Pagar.Location = new System.Drawing.Point(173, 37);
+            this.reportCobrar_Y_Pagar.Name = "reportCobrar_Y_Pagar";
+            this.reportCobrar_Y_Pagar.Size = new System.Drawing.Size(142, 162);
+            this.reportCobrar_Y_Pagar.TabIndex = 2;
+            this.reportCobrar_Y_Pagar.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // pnlBienvenida
+            // 
+            this.pnlBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlBienvenida.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pnlBienvenida.Location = new System.Drawing.Point(504, 22);
+            this.pnlBienvenida.Name = "pnlBienvenida";
+            this.pnlBienvenida.Size = new System.Drawing.Size(97, 300);
+            this.pnlBienvenida.TabIndex = 0;
+            this.pnlBienvenida.Text = "Seleccione un Grupo de Reportes Para Empezar";
+            // 
             // pnlVentas
             // 
             this.pnlVentas.Controls.Add(this.reportViewer1);
             this.pnlVentas.Controls.Add(this.pnlFiltros);
             this.pnlVentas.Controls.Add(this.flowLayoutPanel1);
-            this.pnlVentas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlVentas.Location = new System.Drawing.Point(0, 0);
+            this.pnlVentas.Location = new System.Drawing.Point(47, 34);
             this.pnlVentas.Name = "pnlVentas";
-            this.pnlVentas.Size = new System.Drawing.Size(613, 450);
+            this.pnlVentas.Size = new System.Drawing.Size(86, 150);
             this.pnlVentas.TabIndex = 1;
             this.pnlVentas.Visible = false;
             // 
@@ -207,8 +324,94 @@
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 132);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(613, 318);
+            this.reportViewer1.Size = new System.Drawing.Size(86, 18);
             this.reportViewer1.TabIndex = 2;
+            this.reportViewer1.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
+            // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.Controls.Add(this.pnlFechas);
+            this.pnlFiltros.Controls.Add(this.btnHastaHoy);
+            this.pnlFiltros.Controls.Add(this.pnlEmpleados);
+            this.pnlFiltros.Controls.Add(this.pictureBox2);
+            this.pnlFiltros.Controls.Add(this.checkFiltros);
+            this.pnlFiltros.Controls.Add(this.label2);
+            this.pnlFiltros.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFiltros.Location = new System.Drawing.Point(0, 44);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(86, 88);
+            this.pnlFiltros.TabIndex = 1;
+            // 
+            // pnlFechas
+            // 
+            this.pnlFechas.Controls.Add(this.dtpFecFin);
+            this.pnlFechas.Controls.Add(this.label3);
+            this.pnlFechas.Controls.Add(this.label4);
+            this.pnlFechas.Controls.Add(this.dtpFecIni);
+            this.pnlFechas.Location = new System.Drawing.Point(144, 6);
+            this.pnlFechas.Name = "pnlFechas";
+            this.pnlFechas.Size = new System.Drawing.Size(411, 48);
+            this.pnlFechas.TabIndex = 2;
+            this.pnlFechas.Visible = false;
+            // 
+            // dtpFecFin
+            // 
+            this.dtpFecFin.Font = new System.Drawing.Font("Consolas", 14F);
+            this.dtpFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecFin.Location = new System.Drawing.Point(249, 10);
+            this.dtpFecFin.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dtpFecFin.Name = "dtpFecFin";
+            this.dtpFecFin.Size = new System.Drawing.Size(128, 29);
+            this.dtpFecFin.TabIndex = 2;
+            this.dtpFecFin.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
+            this.dtpFecFin.ValueChanged += new System.EventHandler(this.DtpFecFin_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
+            this.label3.Location = new System.Drawing.Point(12, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Desde:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
+            this.label4.Location = new System.Drawing.Point(197, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Hasta:";
+            // 
+            // dtpFecIni
+            // 
+            this.dtpFecIni.Font = new System.Drawing.Font("Consolas", 14F);
+            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecIni.Location = new System.Drawing.Point(55, 10);
+            this.dtpFecIni.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.dtpFecIni.Name = "dtpFecIni";
+            this.dtpFecIni.Size = new System.Drawing.Size(128, 29);
+            this.dtpFecIni.TabIndex = 2;
+            this.dtpFecIni.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
+            this.dtpFecIni.ValueChanged += new System.EventHandler(this.DtpFecIni_ValueChanged);
+            // 
+            // btnHastaHoy
+            // 
+            this.btnHastaHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnHastaHoy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHastaHoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHastaHoy.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnHastaHoy.Location = new System.Drawing.Point(18, 3);
+            this.btnHastaHoy.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHastaHoy.Name = "btnHastaHoy";
+            this.btnHastaHoy.Size = new System.Drawing.Size(93, 35);
+            this.btnHastaHoy.TabIndex = 6;
+            this.btnHastaHoy.Text = "Hasta Hoy";
+            this.btnHastaHoy.UseVisualStyleBackColor = false;
+            this.btnHastaHoy.Click += new System.EventHandler(this.BtnHastaHoy_Click);
             // 
             // pnlEmpleados
             // 
@@ -237,67 +440,6 @@
             this.txtEmpleado.Size = new System.Drawing.Size(248, 21);
             this.txtEmpleado.TabIndex = 4;
             this.txtEmpleado.SelectedIndexChanged += new System.EventHandler(this.TxtEmpleado_SelectedIndexChanged);
-            // 
-            // pnlFiltros
-            // 
-            this.pnlFiltros.Controls.Add(this.pnlFechas);
-            this.pnlFiltros.Controls.Add(this.btnHastaHoy);
-            this.pnlFiltros.Controls.Add(this.pnlEmpleados);
-            this.pnlFiltros.Controls.Add(this.pictureBox2);
-            this.pnlFiltros.Controls.Add(this.checkFiltros);
-            this.pnlFiltros.Controls.Add(this.label2);
-            this.pnlFiltros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFiltros.Location = new System.Drawing.Point(0, 44);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(613, 88);
-            this.pnlFiltros.TabIndex = 1;
-            // 
-            // btnHastaHoy
-            // 
-            this.btnHastaHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnHastaHoy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHastaHoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHastaHoy.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnHastaHoy.Location = new System.Drawing.Point(18, 3);
-            this.btnHastaHoy.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHastaHoy.Name = "btnHastaHoy";
-            this.btnHastaHoy.Size = new System.Drawing.Size(93, 35);
-            this.btnHastaHoy.TabIndex = 6;
-            this.btnHastaHoy.Text = "Hasta Hoy";
-            this.btnHastaHoy.UseVisualStyleBackColor = false;
-            this.btnHastaHoy.Click += new System.EventHandler(this.BtnHastaHoy_Click);
-            // 
-            // pnlFechas
-            // 
-            this.pnlFechas.Controls.Add(this.dtpFecFin);
-            this.pnlFechas.Controls.Add(this.label3);
-            this.pnlFechas.Controls.Add(this.label4);
-            this.pnlFechas.Controls.Add(this.dtpFecIni);
-            this.pnlFechas.Location = new System.Drawing.Point(144, 6);
-            this.pnlFechas.Name = "pnlFechas";
-            this.pnlFechas.Size = new System.Drawing.Size(411, 48);
-            this.pnlFechas.TabIndex = 2;
-            this.pnlFechas.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
-            this.label3.Location = new System.Drawing.Point(12, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Desde:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(110)))), ((int)(((byte)(136)))));
-            this.label4.Location = new System.Drawing.Point(197, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Hasta:";
             // 
             // pictureBox2
             // 
@@ -337,7 +479,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(613, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(86, 44);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel4
@@ -371,7 +513,7 @@
             // 
             this.panel5.Controls.Add(this.pnVentasEmpleado);
             this.panel5.Controls.Add(this.btnVentasEmpleado);
-            this.panel5.Location = new System.Drawing.Point(167, 3);
+            this.panel5.Location = new System.Drawing.Point(3, 50);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(158, 41);
             this.panel5.TabIndex = 1;
@@ -394,76 +536,6 @@
             this.btnVentasEmpleado.UseVisualStyleBackColor = true;
             this.btnVentasEmpleado.Click += new System.EventHandler(this.BtnVentasEmpleado_Click);
             // 
-            // pnlProductos
-            // 
-            this.pnlProductos.Controls.Add(this.reportViewer2);
-            this.pnlProductos.Location = new System.Drawing.Point(418, 172);
-            this.pnlProductos.Name = "pnlProductos";
-            this.pnlProductos.Size = new System.Drawing.Size(35, 154);
-            this.pnlProductos.TabIndex = 2;
-            this.pnlProductos.Visible = false;
-            // 
-            // reportViewer2
-            // 
-            this.reportViewer2.AccessibilityKeyMap = null;
-            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer2.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(35, 154);
-            this.reportViewer2.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.pnlCxCobraryPagar);
-            this.panel9.Location = new System.Drawing.Point(401, 12);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(35, 154);
-            this.panel9.TabIndex = 2;
-            this.panel9.Visible = false;
-            // 
-            // pnlCxCobraryPagar
-            // 
-            this.pnlCxCobraryPagar.AccessibilityKeyMap = null;
-            this.pnlCxCobraryPagar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCxCobraryPagar.Location = new System.Drawing.Point(0, 0);
-            this.pnlCxCobraryPagar.Name = "pnlCxCobraryPagar";
-            this.pnlCxCobraryPagar.Size = new System.Drawing.Size(35, 154);
-            this.pnlCxCobraryPagar.TabIndex = 0;
-            // 
-            // pnlBienvenida
-            // 
-            this.pnlBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlBienvenida.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlBienvenida.Location = new System.Drawing.Point(504, 22);
-            this.pnlBienvenida.Name = "pnlBienvenida";
-            this.pnlBienvenida.Size = new System.Drawing.Size(97, 300);
-            this.pnlBienvenida.TabIndex = 0;
-            this.pnlBienvenida.Text = "Seleccione un Grupo de Reportes Para Empezar";
-            // 
-            // dtpFecFin
-            // 
-            this.dtpFecFin.Font = new System.Drawing.Font("Consolas", 14F);
-            this.dtpFecFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecFin.Location = new System.Drawing.Point(249, 10);
-            this.dtpFecFin.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.dtpFecFin.Name = "dtpFecFin";
-            this.dtpFecFin.Size = new System.Drawing.Size(128, 29);
-            this.dtpFecFin.TabIndex = 2;
-            this.dtpFecFin.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
-            this.dtpFecFin.ValueChanged += new System.EventHandler(this.DtpFecFin_ValueChanged);
-            // 
-            // dtpFecIni
-            // 
-            this.dtpFecIni.Font = new System.Drawing.Font("Consolas", 14F);
-            this.dtpFecIni.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecIni.Location = new System.Drawing.Point(55, 10);
-            this.dtpFecIni.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.dtpFecIni.Name = "dtpFecIni";
-            this.dtpFecIni.Size = new System.Drawing.Size(128, 29);
-            this.dtpFecIni.TabIndex = 2;
-            this.dtpFecIni.Value = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
-            this.dtpFecIni.ValueChanged += new System.EventHandler(this.DtpFecIni_ValueChanged);
-            // 
             // menuReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,19 +552,19 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl2.ResumeLayout(false);
+            this.pnlProductos.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.pnlVentas.ResumeLayout(false);
-            this.pnlEmpleados.ResumeLayout(false);
-            this.pnlEmpleados.PerformLayout();
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             this.pnlFechas.ResumeLayout(false);
             this.pnlFechas.PerformLayout();
+            this.pnlEmpleados.ResumeLayout(false);
+            this.pnlEmpleados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.pnlProductos.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -507,8 +579,6 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnCxP;
         private System.Windows.Forms.Button btnCxC;
-        private System.Windows.Forms.Panel panel9;
-        private Telerik.ReportViewer.WinForms.ReportViewer pnlCxCobraryPagar;
         private System.Windows.Forms.Panel pnlVentas;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel pnlFiltros;
@@ -528,11 +598,19 @@
         private System.Windows.Forms.Panel pnVentasEmpleado;
         private System.Windows.Forms.Button btnVentasEmpleado;
         private System.Windows.Forms.Label pnlBienvenida;
-        private System.Windows.Forms.Panel pnlProductos;
-        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.Panel pnlEmpleados;
         private System.Windows.Forms.Button btnHastaHoy;
         internal System.Windows.Forms.DateTimePicker dtpFecFin;
         internal System.Windows.Forms.DateTimePicker dtpFecIni;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportCobrar_Y_Pagar;
+        private System.Windows.Forms.Panel pnlProductos;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button btnInventarios;
+        private System.Windows.Forms.Button btnInventariosVencidos;
+        private System.Windows.Forms.Button btnStockBajo;
+        public System.Windows.Forms.Panel pnInventarios;
+        public System.Windows.Forms.Panel pnProductosVencidos;
+        public System.Windows.Forms.Panel pnStockBajo;
+        private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
     }
 }

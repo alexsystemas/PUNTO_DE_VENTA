@@ -512,7 +512,24 @@ namespace PUNTO_DE_VENTA.DATE
                 Cantidad = 0;
             }
         }
-       
+        public static void ReporteCuentasPorCobrar(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteCuentasPorCobrar", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+
+
 
         //controlCobros
         public static void mostrar_ControlCobros(ref DataTable dt)
@@ -582,7 +599,26 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        public static void ReporteCuentasPorPagar(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("ReporteCuentasPorPagar", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+
+
+
         //Ventas
         public static void mostrarVentasGrafica(ref DataTable dt)
         {
@@ -850,7 +886,54 @@ namespace PUNTO_DE_VENTA.DATE
                 MessageBox.Show(ex.StackTrace);
             }
         }
-       
+        public static void imprimir_inventarios_todos(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("imprimir_inventarios_todos", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        public static void mostrar_productos_vencidos(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("mostrar_productos_vencidos", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+
+            }
+        }
+        public static void MOSTRAR_Inventarios_bajo_minimo(ref DataTable dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("MOSTRAR_Inventarios_bajo_minimo", CONEXIONMAESTRA.conectar);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+
+            }
+        }
+
         //Empresa
         public static void MostrarMoneda(ref string moneda)
         {

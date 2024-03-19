@@ -1130,5 +1130,10 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             CONFIGURACION.PANEL_CONFIGURACIONES frm = new CONFIGURACION.PANEL_CONFIGURACIONES();
             frm.ShowDialog();
         }
+
+        private void PanelGuardar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

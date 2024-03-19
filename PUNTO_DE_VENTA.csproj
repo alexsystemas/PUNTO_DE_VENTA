@@ -361,6 +361,18 @@
     <Compile Include="PRESENT\REPORTES\RCobros\rptCobros.Designer.cs">
       <DependentUpon>rptCobros.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\REPORTES\ReportesCobros\ReporteCobros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\ReportesCobros\ReporteCobros.Designer.cs">
+      <DependentUpon>ReporteCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\ReportesPagos\ReportesPagos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\ReportesPagos\ReportesPagos.Designer.cs">
+      <DependentUpon>ReportesPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +384,18 @@
     </Compile>
     <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.Designer.cs">
       <DependentUpon>FormMovBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePBajoMinimo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePBajoMinimo.Designer.cs">
+      <DependentUpon>ReportePBajoMinimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePVencidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePVencidos.Designer.cs">
+      <DependentUpon>ReportePVencidos.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.cs">
       <SubType>Component</SubType>
@@ -455,6 +479,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\ASISTENTE_DE_ISTALACION_servidor\Instalacion_del_SQL.resx">
       <DependentUpon>Instalacion_del_SQL.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\ASISTENTE_DE_ISTALACION_servidor\REGISTRO_DE_EMPRESA.resx">
       <DependentUpon>REGISTRO_DE_EMPRESA.cs</DependentUpon>
@@ -549,11 +574,23 @@
     <EmbeddedResource Include="PRESENT\REPORTES\menuReportes.resx">
       <DependentUpon>menuReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\ReportesCobros\ReporteCobros.resx">
+      <DependentUpon>ReporteCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\ReportesPagos\ReportesPagos.resx">
+      <DependentUpon>ReportesPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormInventariosTodos.resx">
       <DependentUpon>FormInventariosTodos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\FormMovBuscar.resx">
       <DependentUpon>FormMovBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePBajoMinimo.resx">
+      <DependentUpon>ReportePBajoMinimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\ReportePVencidos.resx">
+      <DependentUpon>ReportePVencidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\REPORTES\REPORTES_DE_KARDEX_listo\REPORTE_DE_INVENTARIOS_todos\reportInventarios_Todos.resx">
       <DependentUpon>reportInventarios_Todos.cs</DependentUpon>

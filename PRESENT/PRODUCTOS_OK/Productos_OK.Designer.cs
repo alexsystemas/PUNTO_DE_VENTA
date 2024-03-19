@@ -162,7 +162,7 @@
             this.panel4.Controls.Add(this.radioButton1);
             this.panel4.Location = new System.Drawing.Point(12, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(175, 191);
+            this.panel4.Size = new System.Drawing.Size(10, 10);
             this.panel4.TabIndex = 13;
             // 
             // LBL_ESSERVICIO
@@ -523,6 +523,7 @@
             this.panelGuardar.Name = "panelGuardar";
             this.panelGuardar.Size = new System.Drawing.Size(1024, 176);
             this.panelGuardar.TabIndex = 497;
+            this.panelGuardar.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGuardar_Paint);
             // 
             // lblcosto_inventario
             // 
@@ -805,7 +806,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(404, 179);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.menuStrip3.Size = new System.Drawing.Size(551, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(671, 24);
             this.menuStrip3.TabIndex = 33;
             this.menuStrip3.Text = "menuStrip3";
             // 
