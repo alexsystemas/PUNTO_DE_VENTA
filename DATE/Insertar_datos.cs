@@ -261,7 +261,7 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.abrir();
                 SqlCommand cmd = new SqlCommand("insertar_KARDEX_entrada", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
                 cmd.Parameters.AddWithValue("@Motivo", parametros.Motivo);
                 cmd.Parameters.AddWithValue("@Cantidad", parametros.Cantidad);
                 cmd.Parameters.AddWithValue("@Id_producto", parametros.Id_producto);

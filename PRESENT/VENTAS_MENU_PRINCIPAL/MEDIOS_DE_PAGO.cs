@@ -1336,6 +1336,26 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             Close();
         }
+
+        private void Txtefectivo2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtefectivo2, e);
+        }
+
+        private void Txttarjeta2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txttarjeta2, e);
+        }
+
+        private void Txtcredito2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtcredito2, e);
+        }
+
+        private void TxtTrasferencia2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtTrasferencia2, e);
+        }
     }
 }
 

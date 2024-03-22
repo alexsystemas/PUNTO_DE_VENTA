@@ -78,6 +78,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelImpresionVistaPrevia = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -101,7 +102,7 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTrasferencia2 = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dtComprobantes = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -122,7 +123,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PANELREGISTRO.SuspendLayout();
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoDetalleVenta)).BeginInit();
@@ -133,6 +133,7 @@
             this.panel1.SuspendLayout();
             this.panelImpresionVistaPrevia.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -145,7 +146,6 @@
             this.PANEL_CLIENTE_FACTURA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtnumeroconvertidoenletra
@@ -619,6 +619,7 @@
             this.txtcredito2.TabIndex = 1;
             this.txtcredito2.Click += new System.EventHandler(this.Txtcredito2_Click);
             this.txtcredito2.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
+            this.txtcredito2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcredito2_KeyPress);
             // 
             // panel6
             // 
@@ -639,6 +640,7 @@
             this.txttarjeta2.TabIndex = 1;
             this.txttarjeta2.Click += new System.EventHandler(this.Txttarjeta2_Click);
             this.txttarjeta2.TextChanged += new System.EventHandler(this.Txttarjeta2_TextChanged);
+            this.txttarjeta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttarjeta2_KeyPress);
             // 
             // panel5
             // 
@@ -660,6 +662,7 @@
             this.txtefectivo2.TabIndex = 1;
             this.txtefectivo2.Click += new System.EventHandler(this.Txtefectivo2_Click);
             this.txtefectivo2.TextChanged += new System.EventHandler(this.Txtefectivo2_TextChanged);
+            this.txtefectivo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtefectivo2_KeyPress);
             // 
             // panel1
             // 
@@ -697,7 +700,7 @@
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtTrasferencia2);
             this.panel1.Controls.Add(this.txtcredito2);
             this.panel1.Controls.Add(this.TXTTOTAL);
             this.panel1.Controls.Add(this.txtefectivo2);
@@ -731,6 +734,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(125, 10);
             this.panel4.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.cerrar;
+            this.pictureBox2.Location = new System.Drawing.Point(98, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 627;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // panel2
             // 
@@ -967,16 +981,17 @@
             this.textBox2.Click += new System.EventHandler(this.Txtcredito2_Click);
             this.textBox2.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
             // 
-            // textBox1
+            // txtTrasferencia2
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(410, 195);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 13);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Click += new System.EventHandler(this.Txtcredito2_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
+            this.txtTrasferencia2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTrasferencia2.Location = new System.Drawing.Point(410, 195);
+            this.txtTrasferencia2.Margin = new System.Windows.Forms.Padding(1);
+            this.txtTrasferencia2.Name = "txtTrasferencia2";
+            this.txtTrasferencia2.Size = new System.Drawing.Size(53, 13);
+            this.txtTrasferencia2.TabIndex = 1;
+            this.txtTrasferencia2.Click += new System.EventHandler(this.Txtcredito2_Click);
+            this.txtTrasferencia2.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
+            this.txtTrasferencia2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTrasferencia2_KeyPress);
             // 
             // panel12
             // 
@@ -1230,17 +1245,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Direccion:";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(98, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 627;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
-            // 
             // MEDIOS_DE_PAGO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1270,6 +1274,7 @@
             this.panel1.PerformLayout();
             this.panelImpresionVistaPrevia.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1286,7 +1291,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1372,7 +1376,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTrasferencia2;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel13;

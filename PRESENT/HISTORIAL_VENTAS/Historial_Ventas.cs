@@ -184,6 +184,7 @@ namespace PUNTO_DE_VENTA.PRESENT.HISTORIAL_VENTAS
         {
             LKardex parametros = new LKardex();
             Insertar_datos funcion = new Insertar_datos();
+            parametros.Fecha = DateTime.Now;
             parametros.Motivo = "Devolucion de producto Venta #" + lblComprobante.Text;
             parametros.Cantidad =Convert.ToDouble( txtcantidad.Text);
             parametros.Id_producto = idproducto;

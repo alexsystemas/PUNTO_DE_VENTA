@@ -933,6 +933,26 @@ namespace PUNTO_DE_VENTA.DATE
 
             }
         }
+        public static void BUSCAR_PRODUCTOS_KARDEX(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("BUSCAR_PRODUCTOS_KARDEX", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@letrab", buscador);
+                da.Fill(dt);
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+
+            }
+        }
+        
+
 
         //Empresa
         public static void MostrarMoneda(ref string moneda)

@@ -527,6 +527,33 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.cerrar();
             }
         }
+        public bool EditarPreciosProductos(Lproductos parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("EditarPreciosProductos", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idproducto", parametros.Id_Producto1);
+                cmd.Parameters.AddWithValue("@precioventa", parametros.Precio_de_venta);
+                cmd.Parameters.AddWithValue("@costo", parametros.Precio_de_compra);
+                cmd.Parameters.AddWithValue("@preciomayoreo", parametros.Precio_mayoreo);
+                cmd.Parameters.AddWithValue("@cantidadAgregada", parametros.Stock);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
         // Ventas
 

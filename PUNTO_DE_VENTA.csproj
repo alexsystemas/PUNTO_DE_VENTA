@@ -313,6 +313,12 @@
     <Compile Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.Designer.cs">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\INVENTARIOS_KARDEX\Kardex_Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\INVENTARIOS_KARDEX\Kardex_Entrada.Designer.cs">
+      <DependentUpon>Kardex_Entrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\LICENCIAS_MEMBRESIAS\Membresias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -553,6 +559,9 @@
     <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\Kardex_Entrada.resx">
+      <DependentUpon>Kardex_Entrada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\LICENCIAS_MEMBRESIAS\Membresias.resx">
       <DependentUpon>Membresias.cs</DependentUpon>
     </EmbeddedResource>
@@ -710,6 +719,7 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo1 pht5.png" />
     <None Include="Resources\logo1 pht4.png" />
     <None Include="Resources\circulo-notificaiones-rojo.png" />
     <None Include="Resources\circulo-notificaiones3.png" />

@@ -55,5 +55,10 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
             frm.ShowDialog();
             
         }
+
+        private void Txtmontos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtmontos, e);
+        }
     }
 }

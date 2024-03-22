@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(APERTURA_DE_CAJA));
             this.pnl_Izq_azulClaro = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.datalistado_caja = new System.Windows.Forms.DataGridView();
-            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtMonto = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDineroEnCaja = new System.Windows.Forms.Label();
@@ -45,12 +44,15 @@
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnOmitir = new System.Windows.Forms.Button();
             this.pnlCaja = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eli = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_Izq_azulClaro.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlCaja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Izq_azulClaro
@@ -70,7 +72,7 @@
             this.panel2.Controls.Add(this.txtMonto);
             this.panel2.Location = new System.Drawing.Point(5, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 108);
+            this.panel2.Size = new System.Drawing.Size(10, 10);
             this.panel2.TabIndex = 3;
             // 
             // datalistado_caja
@@ -106,20 +108,6 @@
             this.datalistado_caja.Size = new System.Drawing.Size(66, 32);
             this.datalistado_caja.TabIndex = 9;
             // 
-            // Eli
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.Eli.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Eli.HeaderText = "";
-            this.Eli.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
-            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eli.Name = "Eli";
-            this.Eli.ReadOnly = true;
-            // 
             // txtMonto
             // 
             this.txtMonto.AutoSize = true;
@@ -128,15 +116,6 @@
             this.txtMonto.Size = new System.Drawing.Size(48, 13);
             this.txtMonto.TabIndex = 0;
             this.txtMonto.Text = "txtMonto";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(5, 250);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -188,6 +167,7 @@
             this.txtmontos.Name = "txtmontos";
             this.txtmontos.Size = new System.Drawing.Size(240, 23);
             this.txtmontos.TabIndex = 3;
+            this.txtmontos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmontos_KeyPress);
             // 
             // btnIniciar
             // 
@@ -225,6 +205,43 @@
             this.pnlCaja.Size = new System.Drawing.Size(1024, 153);
             this.pnlCaja.TabIndex = 5;
             // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // Eli
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.Eli.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Eli.HeaderText = "";
+            this.Eli.Image = global::PUNTO_DE_VENTA.Properties.Resources.btn_eli;
+            this.Eli.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eli.Name = "Eli";
+            this.Eli.ReadOnly = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo1_pht5;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 250);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // APERTURA_DE_CAJA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,10 +260,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_caja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pnlCaja.ResumeLayout(false);
             this.pnlCaja.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,5 +285,6 @@
         private System.Windows.Forms.DataGridView datalistado_caja;
         private System.Windows.Forms.DataGridViewImageColumn Eli;
         private System.Windows.Forms.Panel pnlCaja;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
