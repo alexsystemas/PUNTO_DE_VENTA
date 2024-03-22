@@ -838,5 +838,11 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
             kardex_entrada frm = new kardex_entrada();
             frm.ShowDialog();
         }
+
+        private void BtnSalida_Click(object sender, EventArgs e)
+        {
+            KardexSalida frm = new KardexSalida();
+            frm.ShowDialog();
+        }
     }
 }

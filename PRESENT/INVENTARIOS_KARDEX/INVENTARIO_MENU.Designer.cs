@@ -1190,6 +1190,7 @@
             this.btnSalida.TabIndex = 0;
             this.btnSalida.Text = "Salida";
             this.btnSalida.UseVisualStyleBackColor = true;
+            this.btnSalida.Click += new System.EventHandler(this.BtnSalida_Click);
             // 
             // lblInvetarios
             // 

@@ -208,5 +208,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         {
             lblAnuciosNuevosPrecios.Text = "";
         }
+
+      
     }
 }

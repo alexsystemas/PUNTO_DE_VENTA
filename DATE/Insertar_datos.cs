@@ -285,5 +285,37 @@ namespace PUNTO_DE_VENTA.DATE
 
         }
 
+        public bool insertar_KARDEX_SALIDA(LKardex parametros)
+        {
+            try
+            {
+                Obtener_datos.mostrar_inio_de_secion(ref id_usuario);
+                Obtener_datos.obtener_id_caja_PorSerial(ref id_caja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("insertar_KARDEX_SALIDA", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Fecha", parametros.Fecha);
+                cmd.Parameters.AddWithValue("@Motivo", parametros.Motivo);
+                cmd.Parameters.AddWithValue("@Cantidad", parametros.Cantidad);
+                cmd.Parameters.AddWithValue("@Id_producto", parametros.Id_producto);
+                cmd.Parameters.AddWithValue("@Id_usuario", id_usuario);
+                cmd.Parameters.AddWithValue("@Tipo", "SALIDA");
+                cmd.Parameters.AddWithValue("@Estado", "DESPACHO CONFIRMADO");
+                cmd.Parameters.AddWithValue("@Id_caja", id_caja);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return true;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
     }
 }

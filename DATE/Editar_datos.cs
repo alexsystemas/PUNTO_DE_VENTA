@@ -555,6 +555,31 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public bool disminuir_stock(Lproductos parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("disminuir_stock", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Producto1", parametros.Id_Producto1);
+                cmd.Parameters.AddWithValue("@cantidad", parametros.Stock);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
         // Ventas
 
         public bool EditarVenta(LVentass parametros)

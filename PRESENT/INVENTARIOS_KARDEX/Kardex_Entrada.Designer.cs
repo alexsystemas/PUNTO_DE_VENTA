@@ -34,7 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kardex_entrada));
             this.panelAgregarDat = new System.Windows.Forms.Panel();
             this.pnletiqueta = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblAnuciosNuevosPrecios = new System.Windows.Forms.Label();
             this.DatalistadoProductos = new System.Windows.Forms.DataGridView();
             this.txtFecha = new System.Windows.Forms.DateTimePicker();
@@ -57,11 +56,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelAgregarDat.SuspendLayout();
             this.pnletiqueta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatalistadoProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAgregarDat
@@ -105,15 +105,6 @@
             this.pnletiqueta.Size = new System.Drawing.Size(1219, 119);
             this.pnletiqueta.TabIndex = 491;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 105);
-            this.pictureBox1.TabIndex = 491;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblAnuciosNuevosPrecios
             // 
             this.lblAnuciosNuevosPrecios.BackColor = System.Drawing.Color.NavajoWhite;
@@ -153,7 +144,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DatalistadoProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DatalistadoProductos.EnableHeadersVisualStyles = false;
-            this.DatalistadoProductos.Location = new System.Drawing.Point(51, 169);
+            this.DatalistadoProductos.Location = new System.Drawing.Point(1065, 169);
             this.DatalistadoProductos.Margin = new System.Windows.Forms.Padding(21, 17, 21, 17);
             this.DatalistadoProductos.Name = "DatalistadoProductos";
             this.DatalistadoProductos.ReadOnly = true;
@@ -170,7 +161,7 @@
             this.DatalistadoProductos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
             this.DatalistadoProductos.RowTemplate.Height = 33;
             this.DatalistadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatalistadoProductos.Size = new System.Drawing.Size(1215, 834);
+            this.DatalistadoProductos.Size = new System.Drawing.Size(201, 834);
             this.DatalistadoProductos.TabIndex = 489;
             this.DatalistadoProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatalistadoProductos_CellClick_1);
             // 
@@ -267,6 +258,7 @@
             this.lblcantidadActual.Size = new System.Drawing.Size(36, 39);
             this.lblcantidadActual.TabIndex = 1;
             this.lblcantidadActual.Text = "0";
+          
             // 
             // label9
             // 
@@ -376,6 +368,15 @@
             this.DataGridViewCheckBoxColumn1.ReadOnly = true;
             this.DataGridViewCheckBoxColumn1.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 105);
+            this.pictureBox1.TabIndex = 491;
+            this.pictureBox1.TabStop = false;
+            // 
             // kardex_entrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -392,9 +393,9 @@
             this.panelAgregarDat.ResumeLayout(false);
             this.panelAgregarDat.PerformLayout();
             this.pnletiqueta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatalistadoProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

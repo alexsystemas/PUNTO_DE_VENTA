@@ -313,6 +313,12 @@
     <Compile Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.Designer.cs">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRESENT\INVENTARIOS_KARDEX\KardexSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\INVENTARIOS_KARDEX\KardexSalida.Designer.cs">
+      <DependentUpon>KardexSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENT\INVENTARIOS_KARDEX\Kardex_Entrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -558,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\INVENTARIO_MENU.resx">
       <DependentUpon>INVENTARIO_MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\KardexSalida.resx">
+      <DependentUpon>KardexSalida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\INVENTARIOS_KARDEX\Kardex_Entrada.resx">
       <DependentUpon>Kardex_Entrada.cs</DependentUpon>
