@@ -51,10 +51,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
             Bases.Multilinea(ref DatalistadoProductos);
 
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            validaciones();
-        }
+   
 
         private void validaciones()
         {
@@ -126,6 +123,11 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
             DatalistadoProductos.Visible = false;
 
 
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            validaciones();
         }
     }     
 }

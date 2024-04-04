@@ -102,6 +102,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         private void TxtBuscarMovimiento_TextChanged(object sender, EventArgs e)
         {
+            
             if (txtBuscarMovimiento.Text == "Buscar Producto" | txtBuscarMovimiento.Text == "")
             {
                 DATALISTADO_PRODUCTOS_Movimientos.Visible = false;
@@ -652,6 +653,11 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         }
         private void btnKardexx()
         {
+            pnKardex.Visible = true;
+            pnMovimientos.Visible = false;
+            pnInventariosBajos.Visible = false;
+            pnReporteDeInventarios.Visible = false;
+            pnVencimientos.Visible = false;
             pnlKardex.Visible = true;
             pnlMovimentos.Visible = false;
             pnlKardex.Dock = DockStyle.Fill;
@@ -661,6 +667,8 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
 
             txtBuscarKardex_movimientos.Text = "Buscar Producto";
+
+
         }
         private void BtnMovimentos_Click(object sender, EventArgs e)
         {
@@ -671,6 +679,13 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         }
         private void pnlMovimientos()
         {
+
+            pnKardex.Visible = false;
+            pnMovimientos.Visible = true;
+            pnInventariosBajos.Visible = false;
+            pnReporteDeInventarios.Visible = false;
+            pnVencimientos.Visible = false;
+
             pnlKardex.Visible = false;
             pnlMovimentos.Visible = true;
             panelINVENTARIObajo.Visible = false;
@@ -687,7 +702,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
 
 
-            txtBuscarKardex_movimientos.Text = "Buscar Producto";
+           txtBuscarKardex_movimientos.Text = "Buscar Producto";
 
         }
         private void BtnKardex_Click(object sender, EventArgs e)
@@ -697,6 +712,13 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
        private void  btnInvetariosBajos()
         {
+
+            pnKardex.Visible = false;
+            pnMovimientos.Visible = false;
+            pnInventariosBajos.Visible = true;
+            pnReporteDeInventarios.Visible = false;
+            pnVencimientos.Visible = false;
+
             pnInventariosBajos.Visible = true;
             pnlKardex.Visible = false;
             pnlMovimentos.Visible = false;
@@ -712,6 +734,13 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         }
         private void ReporteInvetario()
         {
+
+            pnKardex.Visible = false;
+            pnMovimientos.Visible = false;
+            pnInventariosBajos.Visible = false;
+            pnReporteDeInventarios.Visible = true;
+            pnVencimientos.Visible = false;
+
             panelREPORTEInventario.Visible = true;
             panelINVENTARIObajo.Visible = false;
             pnlKardex.Visible = false;
@@ -724,6 +753,13 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
         }
         public void Vencimientos()
         {
+
+            pnKardex.Visible = false;
+            pnMovimientos.Visible = false;
+            pnInventariosBajos.Visible = false;
+            pnReporteDeInventarios.Visible = false;
+            pnVencimientos.Visible = true;
+
             panelVencimiento.Visible = true;
             panelREPORTEInventario.Visible = false;
             panelINVENTARIObajo.Visible = false;
@@ -801,12 +837,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         }
 
-        private void DATALISTADO_PRODUCTOS_kardex_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
 
-
-        }
         
         private void DATALISTADO_PRODUCTOS_kardex_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -844,5 +875,9 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
             KardexSalida frm = new KardexSalida();
             frm.ShowDialog();
         }
+
+    
+
+       
     }
 }

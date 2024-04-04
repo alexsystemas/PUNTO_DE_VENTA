@@ -55,9 +55,7 @@
             this.btnVender = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Notificacion = new System.Windows.Forms.PictureBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.IDUSUARIO = new System.Windows.Forms.Label();
@@ -141,9 +139,7 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menuStrip4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -275,9 +271,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btn_Notificacion);
             this.panel2.Controls.Add(this.btn_Configuracion);
-            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.menuStrip4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(967, 0);
@@ -285,37 +279,16 @@
             this.panel2.Size = new System.Drawing.Size(210, 62);
             this.panel2.TabIndex = 1;
             // 
-            // btn_Notificacion
-            // 
-            this.btn_Notificacion.Image = ((System.Drawing.Image)(resources.GetObject("btn_Notificacion.Image")));
-            this.btn_Notificacion.Location = new System.Drawing.Point(85, 12);
-            this.btn_Notificacion.Name = "btn_Notificacion";
-            this.btn_Notificacion.Size = new System.Drawing.Size(47, 42);
-            this.btn_Notificacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_Notificacion.TabIndex = 638;
-            this.btn_Notificacion.TabStop = false;
-            // 
             // btn_Configuracion
             // 
             this.btn_Configuracion.Image = ((System.Drawing.Image)(resources.GetObject("btn_Configuracion.Image")));
-            this.btn_Configuracion.Location = new System.Drawing.Point(35, 12);
+            this.btn_Configuracion.Location = new System.Drawing.Point(159, 11);
             this.btn_Configuracion.Name = "btn_Configuracion";
             this.btn_Configuracion.Size = new System.Drawing.Size(45, 42);
             this.btn_Configuracion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Configuracion.TabIndex = 637;
             this.btn_Configuracion.TabStop = false;
             this.btn_Configuracion.Click += new System.EventHandler(this.Btn_Configuracion_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(136, 7);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
             // 
             // menuStrip4
             // 
@@ -383,7 +356,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(103, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1177, 576);
+            this.panel3.Size = new System.Drawing.Size(1177, 635);
             this.panel3.TabIndex = 2;
             // 
             // panel14
@@ -397,7 +370,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 68);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1177, 508);
+            this.panel14.Size = new System.Drawing.Size(1177, 567);
             this.panel14.TabIndex = 549;
             // 
             // panel4
@@ -409,10 +382,10 @@
             this.panel4.Controls.Add(this.btnRestaurar);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 486);
+            this.panel4.Location = new System.Drawing.Point(0, 493);
             this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1160, 74);
+            this.panel4.Size = new System.Drawing.Size(1177, 74);
             this.panel4.TabIndex = 549;
             // 
             // PckSeguridad
@@ -1221,7 +1194,7 @@
             this.lblProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(164)))), ((int)(((byte)(230)))));
             this.lblProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
-            this.lblProductos.Location = new System.Drawing.Point(73, 586);
+            this.lblProductos.Location = new System.Drawing.Point(73, 582);
             this.lblProductos.Name = "lblProductos";
             this.lblProductos.Size = new System.Drawing.Size(14, 15);
             this.lblProductos.TabIndex = 1;
@@ -1258,7 +1231,7 @@
             this.lblNClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(164)))), ((int)(((byte)(230)))));
             this.lblNClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
-            this.lblNClientes.Location = new System.Drawing.Point(68, 489);
+            this.lblNClientes.Location = new System.Drawing.Point(68, 481);
             this.lblNClientes.Name = "lblNClientes";
             this.lblNClientes.Size = new System.Drawing.Size(14, 15);
             this.lblNClientes.TabIndex = 1;
@@ -1330,7 +1303,7 @@
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Margin = new System.Windows.Forms.Padding(1);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(103, 638);
+            this.panel17.Size = new System.Drawing.Size(103, 697);
             this.panel17.TabIndex = 3;
             // 
             // label25
@@ -1339,7 +1312,7 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
             this.label25.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label25.Location = new System.Drawing.Point(9, 657);
+            this.label25.Location = new System.Drawing.Point(9, 649);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 13);
             this.label25.TabIndex = 21;
@@ -1365,7 +1338,7 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(87)))), ((int)(((byte)(128)))));
             this.label22.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label22.Location = new System.Drawing.Point(9, 554);
+            this.label22.Location = new System.Drawing.Point(9, 542);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(59, 13);
             this.label22.TabIndex = 19;
@@ -1401,7 +1374,7 @@
             // pictureBox24
             // 
             this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
-            this.pictureBox24.Location = new System.Drawing.Point(4, 590);
+            this.pictureBox24.Location = new System.Drawing.Point(4, 580);
             this.pictureBox24.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(68, 58);
@@ -1423,7 +1396,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
-            this.pictureBox22.Location = new System.Drawing.Point(1, 494);
+            this.pictureBox22.Location = new System.Drawing.Point(1, 482);
             this.pictureBox22.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(68, 58);
@@ -1479,7 +1452,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 638);
+            this.ClientSize = new System.Drawing.Size(1280, 697);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel17);
@@ -1493,9 +1466,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1545,7 +1516,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.MenuStrip menuStrip4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.Panel panel3;
@@ -1594,7 +1564,6 @@
         private System.Windows.Forms.Label lblNClientes;
         private System.Windows.Forms.Label lblStockBajo;
         private System.Windows.Forms.PictureBox btn_Configuracion;
-        private System.Windows.Forms.PictureBox btn_Notificacion;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Button lblCopiaSeguridad;
         private System.Windows.Forms.PictureBox pictureBox2;

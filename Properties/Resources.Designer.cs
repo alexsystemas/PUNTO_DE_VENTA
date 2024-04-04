@@ -973,6 +973,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap informacion {
+            get {
+                object obj = ResourceManager.GetObject("informacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ingresos_y_salidas {
             get {
                 object obj = ResourceManager.GetObject("ingresos y salidas", resourceCulture);
@@ -1086,6 +1096,16 @@ namespace PUNTO_DE_VENTA.Properties {
         internal static System.Drawing.Bitmap logo1_pht5 {
             get {
                 object obj = ResourceManager.GetObject("logo1 pht5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo1_pht6 {
+            get {
+                object obj = ResourceManager.GetObject("logo1 pht6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

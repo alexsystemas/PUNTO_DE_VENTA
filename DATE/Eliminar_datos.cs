@@ -96,9 +96,9 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("eliminar_clientes", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("eliminar_cliente", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idclientev", parametros.idclientev);
+                cmd.Parameters.AddWithValue("@idcliente", parametros.idclientev);
                 cmd.ExecuteNonQuery();
                 return true;
             }

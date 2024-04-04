@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.pnlProductos = new System.Windows.Forms.Panel();
-            this.reportViewer2 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnInventarios = new System.Windows.Forms.Button();
             this.btnInventariosVencidos = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.pnInventarios = new System.Windows.Forms.Panel();
             this.pnStockBajo = new System.Windows.Forms.Panel();
             this.pnProductosVencidos = new System.Windows.Forms.Panel();
+            this.reportViewer2 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.reportCobrar_Y_Pagar = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.pnlBienvenida = new System.Windows.Forms.Label();
             this.pnlVentas = new System.Windows.Forms.Panel();
@@ -70,6 +70,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnVentasEmpleado = new System.Windows.Forms.Panel();
             this.btnVentasEmpleado = new System.Windows.Forms.Button();
+            this.pnlBienvidad = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +87,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pnlBienvidad.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,9 +192,9 @@
             // pnl2
             // 
             this.pnl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnl2.Controls.Add(this.pnlBienvidad);
             this.pnl2.Controls.Add(this.pnlProductos);
             this.pnl2.Controls.Add(this.reportCobrar_Y_Pagar);
-            this.pnl2.Controls.Add(this.pnlBienvenida);
             this.pnl2.Controls.Add(this.pnlVentas);
             this.pnl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl2.Location = new System.Drawing.Point(187, 0);
@@ -200,25 +204,15 @@
             // 
             // pnlProductos
             // 
-            this.pnlProductos.Controls.Add(this.reportViewer2);
             this.pnlProductos.Controls.Add(this.flowLayoutPanel2);
             this.pnlProductos.Controls.Add(this.pnInventarios);
             this.pnlProductos.Controls.Add(this.pnStockBajo);
             this.pnlProductos.Controls.Add(this.pnProductosVencidos);
-            this.pnlProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProductos.Location = new System.Drawing.Point(0, 0);
+            this.pnlProductos.Controls.Add(this.reportViewer2);
+            this.pnlProductos.Location = new System.Drawing.Point(344, 166);
             this.pnlProductos.Name = "pnlProductos";
-            this.pnlProductos.Size = new System.Drawing.Size(613, 450);
+            this.pnlProductos.Size = new System.Drawing.Size(269, 284);
             this.pnlProductos.TabIndex = 3;
-            // 
-            // reportViewer2
-            // 
-            this.reportViewer2.AccessibilityKeyMap = null;
-            this.reportViewer2.Location = new System.Drawing.Point(161, 73);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(150, 150);
-            this.reportViewer2.TabIndex = 6;
-            this.reportViewer2.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
             // 
             // flowLayoutPanel2
             // 
@@ -228,7 +222,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(613, 34);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(269, 34);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // btnInventarios
@@ -245,7 +239,7 @@
             // btnInventariosVencidos
             // 
             this.btnInventariosVencidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventariosVencidos.Location = new System.Drawing.Point(170, 3);
+            this.btnInventariosVencidos.Location = new System.Drawing.Point(3, 39);
             this.btnInventariosVencidos.Name = "btnInventariosVencidos";
             this.btnInventariosVencidos.Size = new System.Drawing.Size(161, 31);
             this.btnInventariosVencidos.TabIndex = 1;
@@ -256,7 +250,7 @@
             // btnStockBajo
             // 
             this.btnStockBajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockBajo.Location = new System.Drawing.Point(337, 3);
+            this.btnStockBajo.Location = new System.Drawing.Point(3, 76);
             this.btnStockBajo.Name = "btnStockBajo";
             this.btnStockBajo.Size = new System.Drawing.Size(161, 30);
             this.btnStockBajo.TabIndex = 2;
@@ -288,24 +282,33 @@
             this.pnProductosVencidos.Size = new System.Drawing.Size(160, 2);
             this.pnProductosVencidos.TabIndex = 4;
             // 
+            // reportViewer2
+            // 
+            this.reportViewer2.AccessibilityKeyMap = null;
+            this.reportViewer2.Location = new System.Drawing.Point(3, 34);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(241, 165);
+            this.reportViewer2.TabIndex = 6;
+            // 
             // reportCobrar_Y_Pagar
             // 
             this.reportCobrar_Y_Pagar.AccessibilityKeyMap = null;
-            this.reportCobrar_Y_Pagar.Location = new System.Drawing.Point(173, 37);
+            this.reportCobrar_Y_Pagar.Location = new System.Drawing.Point(191, 76);
             this.reportCobrar_Y_Pagar.Name = "reportCobrar_Y_Pagar";
             this.reportCobrar_Y_Pagar.Size = new System.Drawing.Size(142, 162);
             this.reportCobrar_Y_Pagar.TabIndex = 2;
-            this.reportCobrar_Y_Pagar.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
             // 
             // pnlBienvenida
             // 
+            this.pnlBienvenida.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBienvenida.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pnlBienvenida.Location = new System.Drawing.Point(504, 22);
+            this.pnlBienvenida.Location = new System.Drawing.Point(0, 0);
             this.pnlBienvenida.Name = "pnlBienvenida";
-            this.pnlBienvenida.Size = new System.Drawing.Size(97, 300);
+            this.pnlBienvenida.Size = new System.Drawing.Size(613, 450);
             this.pnlBienvenida.TabIndex = 0;
-            this.pnlBienvenida.Text = "Seleccione un Grupo de Reportes Para Empezar";
+            this.pnlBienvenida.Text = "Seleccione un Grupo de \r\nReportes Para Empezar";
+            this.pnlBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlVentas
             // 
@@ -326,7 +329,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(86, 18);
             this.reportViewer1.TabIndex = 2;
-            this.reportViewer1.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview;
             // 
             // pnlFiltros
             // 
@@ -536,6 +538,33 @@
             this.btnVentasEmpleado.UseVisualStyleBackColor = true;
             this.btnVentasEmpleado.Click += new System.EventHandler(this.BtnVentasEmpleado_Click);
             // 
+            // pnlBienvidad
+            // 
+            this.pnlBienvidad.Controls.Add(this.panel6);
+            this.pnlBienvidad.Controls.Add(this.panel3);
+            this.pnlBienvidad.Controls.Add(this.pnlBienvenida);
+            this.pnlBienvidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBienvidad.Location = new System.Drawing.Point(0, 0);
+            this.pnlBienvidad.Name = "pnlBienvidad";
+            this.pnlBienvidad.Size = new System.Drawing.Size(613, 450);
+            this.pnlBienvidad.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(72, 450);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(541, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(72, 450);
+            this.panel6.TabIndex = 2;
+            // 
             // menuReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,6 +594,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.pnlBienvidad.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -612,5 +642,8 @@
         public System.Windows.Forms.Panel pnProductosVencidos;
         public System.Windows.Forms.Panel pnStockBajo;
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.Panel pnlBienvidad;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -57,11 +57,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.txtDescripcionConcepto = new System.Windows.Forms.TextBox();
-            this.datalistado_conceptos = new System.Windows.Forms.DataGridView();
-            this.chSinConprobante = new System.Windows.Forms.CheckBox();
             this.btnGuardarCambiosConceptos = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datalistado_conceptos = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.chSinConprobante = new System.Windows.Forms.CheckBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.pnlDetalle.SuspendLayout();
             this.pnlComprobantes.SuspendLayout();
@@ -93,7 +93,7 @@
             // 
             // pnlDetalle
             // 
-            this.pnlDetalle.BackColor = System.Drawing.Color.White;
+            this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.pnlDetalle.Controls.Add(this.txtfecha);
             this.pnlDetalle.Controls.Add(this.txtDetalle);
             this.pnlDetalle.Controls.Add(this.txtImporte);
@@ -389,6 +389,19 @@
             this.txtDescripcionConcepto.Size = new System.Drawing.Size(335, 21);
             this.txtDescripcionConcepto.TabIndex = 1;
             // 
+            // btnGuardarCambiosConceptos
+            // 
+            this.btnGuardarCambiosConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnGuardarCambiosConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGuardarCambiosConceptos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnGuardarCambiosConceptos.Location = new System.Drawing.Point(22, 85);
+            this.btnGuardarCambiosConceptos.Name = "btnGuardarCambiosConceptos";
+            this.btnGuardarCambiosConceptos.Size = new System.Drawing.Size(147, 40);
+            this.btnGuardarCambiosConceptos.TabIndex = 6;
+            this.btnGuardarCambiosConceptos.Text = "Guardar Cambios";
+            this.btnGuardarCambiosConceptos.UseVisualStyleBackColor = false;
+            this.btnGuardarCambiosConceptos.Click += new System.EventHandler(this.BtnGuardarCambiosConceptos_Click);
+            // 
             // datalistado_conceptos
             // 
             this.datalistado_conceptos.AllowUserToAddRows = false;
@@ -416,6 +429,14 @@
             this.datalistado_conceptos.TabIndex = 39;
             this.datalistado_conceptos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_conceptos_CellClick);
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::PUNTO_DE_VENTA.Properties.Resources.lapiz;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
             // chSinConprobante
             // 
             this.chSinConprobante.AutoSize = true;
@@ -429,19 +450,6 @@
             this.chSinConprobante.UseVisualStyleBackColor = true;
             this.chSinConprobante.CheckedChanged += new System.EventHandler(this.ChSinConprobante_CheckedChanged);
             // 
-            // btnGuardarCambiosConceptos
-            // 
-            this.btnGuardarCambiosConceptos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnGuardarCambiosConceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGuardarCambiosConceptos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.btnGuardarCambiosConceptos.Location = new System.Drawing.Point(22, 85);
-            this.btnGuardarCambiosConceptos.Name = "btnGuardarCambiosConceptos";
-            this.btnGuardarCambiosConceptos.Size = new System.Drawing.Size(147, 40);
-            this.btnGuardarCambiosConceptos.TabIndex = 6;
-            this.btnGuardarCambiosConceptos.Text = "Guardar Cambios";
-            this.btnGuardarCambiosConceptos.UseVisualStyleBackColor = false;
-            this.btnGuardarCambiosConceptos.Click += new System.EventHandler(this.BtnGuardarCambiosConceptos_Click);
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
@@ -451,18 +459,11 @@
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Visible = false;
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::PUNTO_DE_VENTA.Properties.Resources.lapiz;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
             // Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(541, 370);
             this.Controls.Add(this.chSinConprobante);
             this.Controls.Add(this.pnlConceptos);

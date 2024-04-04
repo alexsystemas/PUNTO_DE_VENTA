@@ -528,6 +528,36 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public static void contar_Clientes_Activos(ref int Cantidad)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select COUNT(idclientev) as Id from clientes where Estado = 'ACTIVO' ", CONEXIONMAESTRA.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Cantidad = 0;
+            }
+        }
+        public static void contar_Clientes_Eliminados(ref int Cantidad)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select COUNT(idclientev) as Id from clientes where Estado = 'ELIMINADO' ", CONEXIONMAESTRA.conectar);
+                Cantidad = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                Cantidad = 0;
+            }
+        }
 
 
 
@@ -1106,10 +1136,27 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+      
+        public static void mostrarIdCaja(ref int id)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("select Id_Caja from Caja", CONEXIONMAESTRA.conectar);
+                id = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+            }
+            catch (Exception)
+            {
+
+                id = 0;
+            }
+        }
 
     }
 
-}
+ }
+
 
 
 

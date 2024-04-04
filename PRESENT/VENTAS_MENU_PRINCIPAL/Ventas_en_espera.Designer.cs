@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas_en_espera));
             this.panel1 = new System.Windows.Forms.Panel();
             this.datalistado_ventas_en_espera = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,6 @@
             this.btn_restaurar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado_ventas_en_espera)).BeginInit();
             this.panel3.SuspendLayout();
@@ -73,7 +73,7 @@
             // 
             this.datalistado_ventas_en_espera.AllowUserToAddRows = false;
             this.datalistado_ventas_en_espera.AllowUserToResizeRows = false;
-            this.datalistado_ventas_en_espera.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.datalistado_ventas_en_espera.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.datalistado_ventas_en_espera.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado_ventas_en_espera.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistado_ventas_en_espera.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -97,8 +97,18 @@
             this.datalistado_ventas_en_espera.TabIndex = 38;
             this.datalistado_ventas_en_espera.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datalistado_ventas_en_espera_CellClick);
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Visible = false;
+            // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtbusca);
@@ -155,7 +165,7 @@
             // 
             this.dataGridView_detalle_ventas_restaurar.AllowUserToAddRows = false;
             this.dataGridView_detalle_ventas_restaurar.AllowUserToResizeRows = false;
-            this.dataGridView_detalle_ventas_restaurar.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.dataGridView_detalle_ventas_restaurar.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView_detalle_ventas_restaurar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_detalle_ventas_restaurar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_detalle_ventas_restaurar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -207,6 +217,7 @@
             // 
             // lblFecha_venta
             // 
+            this.lblFecha_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.lblFecha_venta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFecha_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha_venta.Location = new System.Drawing.Point(139, 0);
@@ -218,6 +229,7 @@
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
@@ -291,15 +303,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 389);
             this.panel6.TabIndex = 40;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Visible = false;
             // 
             // Ventas_en_espera
             // 

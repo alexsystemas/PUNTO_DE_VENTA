@@ -98,10 +98,7 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
 
         }
 
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            validaciones();
-        }
+      
         private void EditarPreciosProductos()
         {
             Lproductos parametros = new Lproductos();
@@ -193,7 +190,8 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
                     cantidadAgregar = Convert.ToDouble(txtAgregar.Text);
                     CostoAgregado = Convert.ToDouble(txtCosto.Text);
                     CostoNuevo = ((costoActual * cantidadActual) + (CostoAgregado * cantidadAgregar)) / (cantidadActual + cantidadAgregar);
-                    lblAnuciosNuevosPrecios.Text = "Se recibiran" + txtAgregar.Text + "de stock, el nuevo costo sera de: " + CostoNuevo.ToString();
+                    pictboxNotificcion.Visible = true;
+                    lblAnuciosNuevosPrecios.Text = " Se recibiran " + txtAgregar.Text + " de stock, el nuevo costo sera de: " + CostoNuevo.ToString();
                 }
             }
                 
@@ -209,6 +207,9 @@ namespace PUNTO_DE_VENTA.PRESENT.INVENTARIOS_KARDEX
             lblAnuciosNuevosPrecios.Text = "";
         }
 
-      
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            validaciones();
+        }
     }
 }

@@ -125,6 +125,9 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             VENTAS_MENU_PRINCIPALOK.txtpantalla=Convert.ToDouble( txtCantidad.Text);
             Dispose();
         }
+
+       
+
     }
    
 }

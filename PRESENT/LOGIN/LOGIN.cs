@@ -26,6 +26,7 @@ namespace PUNTO_DE_VENTA.PRESENT
         int contador_Movimientos_de_caja;
         public static int idusuariovariable;
         public static int idcajavariable;
+        public  int idcajavariable2;
         int idUsuarioVerificador;
         string lblSerialPC;
         string lblSerialPCLocal;
@@ -37,6 +38,7 @@ namespace PUNTO_DE_VENTA.PRESENT
         string lblaperturaDeCaja;
         string ResultadoLicencia;
         string FechaFinal;
+        string ip;
 
 
 
@@ -116,7 +118,7 @@ namespace PUNTO_DE_VENTA.PRESENT
 
             SqlCommand com = new SqlCommand("mostrar_permisos_por_usuario_ROL_UNICO", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@idusuario", idusuariovariable);
+            com.Parameters.AddWithValue("@idusuario",idusuariovariable);
             
 
 
@@ -159,6 +161,12 @@ namespace PUNTO_DE_VENTA.PRESENT
             validar_conexion();
             escalar_paneles();
             Bases.Obtener_serialPC(ref lblSerialPC);
+            ObtenerIPlocal();
+        }
+        private void ObtenerIPlocal()
+        {
+            
+            this.Text = Bases.ObtenerIP(ref ip);
         }
         private void validarLicencia()
         {
@@ -235,10 +243,16 @@ namespace PUNTO_DE_VENTA.PRESENT
             x = datalistado_detalle_cierre_de_caja.Rows.Count;
             contadorCajas = (x);
         }
+        private void obtener_Id_caja()
+        {
+            Obtener_datos.mostrarIdCaja(ref idcajavariable2);
+        }
         private void aperturar_detalle_de_cierre_caja()
         {
             try
             {
+
+
 
 
                 SqlConnection con = new SqlConnection();
@@ -249,6 +263,8 @@ namespace PUNTO_DE_VENTA.PRESENT
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@fechaini", DateTime.Now);
                 cmd.Parameters.AddWithValue("@fechafin", DateTime.Now);
+                //cmd.Parameters.AddWithValue("@fecha", DateTime.Today);
+
                 cmd.Parameters.AddWithValue("@fechacierre", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ingresos", "0.00");
                 cmd.Parameters.AddWithValue("@egresos", "0.00");
@@ -259,7 +275,8 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@id_caja", idcajavariable);
+                cmd.Parameters.AddWithValue("@id_caja", idcajavariable2);
+                MessageBox.Show(""+ idcajavariable);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -505,7 +522,7 @@ namespace PUNTO_DE_VENTA.PRESENT
        private void enviarCorreo()
         {
             mostrar_usuarios_por_correo();
-            richTextBox1.Text = richTextBox1.Text.Replace("@pass", lblResultadoContraseña.Text);//nos devuelve una cadena con dichos requisitos especificados
+            richTextBox1.Text = richTextBox1.Text.Replace("@pass", Bases.Desencriptar( lblResultadoContraseña.Text));//nos devuelve una cadena con dichos requisitos especificados
             Bases.enviarCorreo("pruebasalex022@gmail.com", "ihzhwqqlzrhvxyol", richTextBox1.Text, "Solicitud de Contraseña", txtCorreo.Text, ""); //agregamos el correo y contraseña donde enviara las respuesta requeridas
         }
 

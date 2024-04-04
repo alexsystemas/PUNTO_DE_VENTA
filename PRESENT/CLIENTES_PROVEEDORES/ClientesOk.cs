@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         }
         int IdProveedor;
         string estado;
+        private string querycontar;
+        int numClientes;
         private void ClientesOk_Load(object sender, EventArgs e)
         {
             mostrar();
+            contar_clientes_activos();
+            contar_clientes_Eliminados();
         }
         // crud-----------------------------
         private void insertar()
@@ -105,11 +110,13 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         {
             Bases.Multilinea(ref datalistado);
             datalistado.Columns[2].Visible = false;
+            contar_clientes_activos(); 
             foreach (DataGridViewRow row in datalistado.Rows)
             {
                 string estado = Convert.ToString(row.Cells["Estado"].Value);
                 if (estado == "ELIMINADO")
                 {
+                    contar_clientes_Eliminados();
                     row.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Strikeout | FontStyle.Bold);
                     row.DefaultCellStyle.ForeColor = Color.Red;
                 }
@@ -257,5 +264,17 @@ namespace PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES
         {
             buscar();
         }
+        private void contar_clientes_activos()
+        {
+            Obtener_datos.contar_Clientes_Activos(ref numClientes);
+            lblClientesActivos.Text = numClientes.ToString();
+        }
+        private void contar_clientes_Eliminados()
+        {
+            Obtener_datos.contar_Clientes_Eliminados(ref numClientes);
+            lblClientesEliminados.Text = numClientes.ToString();
+        }
+
+
     }
 }

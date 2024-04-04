@@ -18,6 +18,7 @@ namespace PUNTO_DE_VENTA.LOGIC
 {
     class Bases
     {
+       
        public static void Obtener_serialPC(ref string serial)
         {
             ManagementObject serialPC = new ManagementObject(@"Win32_PhysicalMedia='\\.\PHYSICALDRIVE0'");
@@ -208,6 +209,12 @@ namespace PUNTO_DE_VENTA.LOGIC
 
             }
             return null;
+        }
+
+        public static string ObtenerIP(ref string valorIP)
+        {
+            valorIP = Dns.GetHostEntry(Environment.MachineName).AddressList.FirstOrDefault((i) => i.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+            return valorIP;
         }
 
     }

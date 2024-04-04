@@ -45,5 +45,10 @@ namespace PUNTO_DE_VENTA.PRESENT.CORREOS_BASE
             parametros.Estado_De_envio = Bases.Encriptar("Sincronizado");
             funcion.editar_correo_base(parametros);
         }
+
+        private void ConfigurarCorreo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

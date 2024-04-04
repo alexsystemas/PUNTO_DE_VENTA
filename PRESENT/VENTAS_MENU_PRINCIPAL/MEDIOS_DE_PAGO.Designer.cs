@@ -78,7 +78,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelImpresionVistaPrevia = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Telerik.ReportViewer.WinForms.ReportViewer();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -132,8 +131,6 @@
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelImpresionVistaPrevia.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -720,31 +717,19 @@
             this.panelImpresionVistaPrevia.Controls.Add(this.panel4);
             this.panelImpresionVistaPrevia.Controls.Add(this.panel2);
             this.panelImpresionVistaPrevia.Controls.Add(this.reportViewer1);
-            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(0, 4);
+            this.panelImpresionVistaPrevia.Location = new System.Drawing.Point(3, 3);
             this.panelImpresionVistaPrevia.Name = "panelImpresionVistaPrevia";
-            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(10, 10);
+            this.panelImpresionVistaPrevia.Size = new System.Drawing.Size(14, 10);
             this.panelImpresionVistaPrevia.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(-115, 0);
+            this.panel4.Location = new System.Drawing.Point(-111, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(125, 10);
             this.panel4.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PUNTO_DE_VENTA.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(98, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 627;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // panel2
             // 
@@ -1273,8 +1258,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelImpresionVistaPrevia.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1389,6 +1372,5 @@
         private Telerik.ReportViewer.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

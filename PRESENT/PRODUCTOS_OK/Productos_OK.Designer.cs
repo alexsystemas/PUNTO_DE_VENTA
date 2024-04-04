@@ -48,8 +48,6 @@
             this.btnImportarExcel = new System.Windows.Forms.PictureBox();
             this.btn_Agregar_Producto = new System.Windows.Forms.PictureBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
-            this.btn_Notificacion = new System.Windows.Forms.PictureBox();
-            this.btnCerrar_Sesion = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtbusca = new System.Windows.Forms.TextBox();
             this.PANELREGISTRO = new System.Windows.Forms.Panel();
@@ -118,8 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnImportarExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar_Producto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PANELREGISTRO.SuspendLayout();
             this.panelInventario.SuspendLayout();
@@ -139,6 +135,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.panel3);
@@ -282,11 +279,10 @@
             // 
             // PANELDEPARTAMENTO
             // 
+            this.PANELDEPARTAMENTO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.PANELDEPARTAMENTO.Controls.Add(this.btnImportarExcel);
             this.PANELDEPARTAMENTO.Controls.Add(this.btn_Agregar_Producto);
             this.PANELDEPARTAMENTO.Controls.Add(this.btn_Configuracion);
-            this.PANELDEPARTAMENTO.Controls.Add(this.btn_Notificacion);
-            this.PANELDEPARTAMENTO.Controls.Add(this.btnCerrar_Sesion);
             this.PANELDEPARTAMENTO.Controls.Add(this.pictureBox1);
             this.PANELDEPARTAMENTO.Controls.Add(this.txtbusca);
             this.PANELDEPARTAMENTO.Dock = System.Windows.Forms.DockStyle.Top;
@@ -298,7 +294,7 @@
             // btnImportarExcel
             // 
             this.btnImportarExcel.Image = global::PUNTO_DE_VENTA.Properties.Resources.excel;
-            this.btnImportarExcel.Location = new System.Drawing.Point(732, 5);
+            this.btnImportarExcel.Location = new System.Drawing.Point(873, 5);
             this.btnImportarExcel.Name = "btnImportarExcel";
             this.btnImportarExcel.Size = new System.Drawing.Size(45, 42);
             this.btnImportarExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -309,7 +305,7 @@
             // btn_Agregar_Producto
             // 
             this.btn_Agregar_Producto.Image = ((System.Drawing.Image)(resources.GetObject("btn_Agregar_Producto.Image")));
-            this.btn_Agregar_Producto.Location = new System.Drawing.Point(782, 5);
+            this.btn_Agregar_Producto.Location = new System.Drawing.Point(923, 5);
             this.btn_Agregar_Producto.Name = "btn_Agregar_Producto";
             this.btn_Agregar_Producto.Size = new System.Drawing.Size(45, 42);
             this.btn_Agregar_Producto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -320,33 +316,13 @@
             // btn_Configuracion
             // 
             this.btn_Configuracion.Image = ((System.Drawing.Image)(resources.GetObject("btn_Configuracion.Image")));
-            this.btn_Configuracion.Location = new System.Drawing.Point(833, 5);
+            this.btn_Configuracion.Location = new System.Drawing.Point(974, 5);
             this.btn_Configuracion.Name = "btn_Configuracion";
             this.btn_Configuracion.Size = new System.Drawing.Size(45, 42);
             this.btn_Configuracion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Configuracion.TabIndex = 637;
             this.btn_Configuracion.TabStop = false;
             this.btn_Configuracion.Click += new System.EventHandler(this.Btn_Configuracion_Click);
-            // 
-            // btn_Notificacion
-            // 
-            this.btn_Notificacion.Image = ((System.Drawing.Image)(resources.GetObject("btn_Notificacion.Image")));
-            this.btn_Notificacion.Location = new System.Drawing.Point(884, 5);
-            this.btn_Notificacion.Name = "btn_Notificacion";
-            this.btn_Notificacion.Size = new System.Drawing.Size(47, 42);
-            this.btn_Notificacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_Notificacion.TabIndex = 635;
-            this.btn_Notificacion.TabStop = false;
-            // 
-            // btnCerrar_Sesion
-            // 
-            this.btnCerrar_Sesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar_Sesion.Image")));
-            this.btnCerrar_Sesion.Location = new System.Drawing.Point(969, 5);
-            this.btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            this.btnCerrar_Sesion.Size = new System.Drawing.Size(50, 42);
-            this.btnCerrar_Sesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar_Sesion.TabIndex = 634;
-            this.btnCerrar_Sesion.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -370,6 +346,7 @@
             // 
             // PANELREGISTRO
             // 
+            this.PANELREGISTRO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.PANELREGISTRO.Controls.Add(this.panelInventario);
             this.PANELREGISTRO.Controls.Add(this.panelGuardar);
             this.PANELREGISTRO.Controls.Add(this.generarCodigo);
@@ -409,6 +386,7 @@
             // 
             // panelInventario
             // 
+            this.panelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panelInventario.Controls.Add(this.txtfechaoka);
             this.panelInventario.Controls.Add(this.No_aplica_fecha);
             this.panelInventario.Controls.Add(this.label4);
@@ -523,7 +501,6 @@
             this.panelGuardar.Name = "panelGuardar";
             this.panelGuardar.Size = new System.Drawing.Size(1024, 176);
             this.panelGuardar.TabIndex = 497;
-            this.panelGuardar.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelGuardar_Paint);
             // 
             // lblcosto_inventario
             // 
@@ -731,7 +708,7 @@
             // 
             this.datalistadoGrupos.AllowUserToAddRows = false;
             this.datalistadoGrupos.AllowUserToResizeRows = false;
-            this.datalistadoGrupos.BackgroundColor = System.Drawing.Color.LightCoral;
+            this.datalistadoGrupos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.datalistadoGrupos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistadoGrupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistadoGrupos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -806,7 +783,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(404, 179);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
-            this.menuStrip3.Size = new System.Drawing.Size(671, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(551, 24);
             this.menuStrip3.TabIndex = 33;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -935,6 +912,7 @@
             this.txtpreciomayoreo.Size = new System.Drawing.Size(150, 24);
             this.txtpreciomayoreo.TabIndex = 16;
             this.txtpreciomayoreo.Text = "0";
+            this.txtpreciomayoreo.Click += new System.EventHandler(this.Txtpreciomayoreo_Click);
             // 
             // txtapartirde
             // 
@@ -1004,7 +982,9 @@
             this.txtPorcentajeGanancia.Size = new System.Drawing.Size(150, 24);
             this.txtPorcentajeGanancia.TabIndex = 12;
             this.txtPorcentajeGanancia.Text = "0";
+            this.txtPorcentajeGanancia.Click += new System.EventHandler(this.TxtPorcentajeGanancia_Click);
             this.txtPorcentajeGanancia.TextChanged += new System.EventHandler(this.TxtPorcentajeGanancia_TextChanged);
+            this.txtPorcentajeGanancia.DoubleClick += new System.EventHandler(this.TxtPorcentajeGanancia_DoubleClick);
             // 
             // PorUnidad
             // 
@@ -1110,8 +1090,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnImportarExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Agregar_Producto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Notificacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PANELREGISTRO.ResumeLayout(false);
             this.PANELREGISTRO.PerformLayout();
@@ -1155,8 +1133,6 @@
         private System.Windows.Forms.PictureBox btnImportarExcel;
         private System.Windows.Forms.PictureBox btn_Agregar_Producto;
         private System.Windows.Forms.PictureBox btn_Configuracion;
-        private System.Windows.Forms.PictureBox btn_Notificacion;
-        private System.Windows.Forms.PictureBox btnCerrar_Sesion;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtbusca;
         private System.Windows.Forms.Panel PANELREGISTRO;

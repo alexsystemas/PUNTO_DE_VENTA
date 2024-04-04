@@ -728,6 +728,8 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo1 pht6.png" />
+    <None Include="Resources\informacion.png" />
     <None Include="Resources\logo1 pht5.png" />
     <None Include="Resources\logo1 pht4.png" />
     <None Include="Resources\circulo-notificaiones-rojo.png" />

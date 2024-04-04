@@ -19,13 +19,18 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
         int idUsuario;
         private void MenuReportes_Load(object sender, EventArgs e)
         {
+            reportViewer2.Visible = false;
+            reportCobrar_Y_Pagar.Visible = false;
             pnlBienvenida.Visible = true;
+            pnlBienvidad.Dock = DockStyle.Fill;
+            pnlBienvidad.Visible = true;
             pnlBienvenida.Dock = DockStyle.Fill;
             PnResumenVentas.Visible = false;
             pnVentasEmpleado.Visible = false;
             pnlProductos.Visible = false;
             pnlFiltros.Visible = false;
             btnHastaHoy.ForeColor = Color.OrangeRed;
+            
 
         }
 
@@ -40,6 +45,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlFechas.Visible = false;
             pnlEmpleados.Visible = false;
             pnlProductos.Visible = false;
+            pnlBienvidad.Visible = false;
             //Botones
             btnVentas.BackColor = Color.FromArgb(0, 85, 128);
             btnVentas.ForeColor = Color.White;
@@ -232,6 +238,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlBienvenida.Visible = false;
             reportCobrar_Y_Pagar.Visible = true;
             pnlProductos.Visible = false;
+            pnlBienvidad.Visible = false;
             reportCobrar_Y_Pagar.Dock = DockStyle.Fill;
 
             //Botones
@@ -267,6 +274,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlBienvenida.Visible = false;
             reportCobrar_Y_Pagar.Visible = true;
             pnlProductos.Visible = false;
+            pnlBienvidad.Visible = false;
             reportCobrar_Y_Pagar.Dock = DockStyle.Fill;
 
             //Botones
@@ -299,6 +307,7 @@ namespace PUNTO_DE_VENTA.PRESENT.REPORTES
             pnlBienvenida.Visible = false;
             reportCobrar_Y_Pagar.Visible = true;
             pnlProductos.Visible = true;
+            pnlBienvidad.Visible = false;
             pnlProductos.Dock = DockStyle.Fill;
 
             //Botones

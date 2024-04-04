@@ -503,5 +503,12 @@ namespace PUNTO_DE_VENTA
         {
             Close();
         }
+
+        private void LblidUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }

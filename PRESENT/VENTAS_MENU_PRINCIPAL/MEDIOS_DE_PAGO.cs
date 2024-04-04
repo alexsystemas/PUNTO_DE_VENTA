@@ -975,7 +975,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 double cantidad = Convert.ToInt32(row.Cells["Cant"].Value);
                 try
                 {
-                    MessageBox.Show("entramos");
+                    
                     CONEXION.CONEXIONMAESTRA.abrir();
                     SqlCommand cmd = new SqlCommand("disminuir_stock", CONEXION.CONEXIONMAESTRA.conectar);
                     cmd.CommandType = CommandType.StoredProcedure;

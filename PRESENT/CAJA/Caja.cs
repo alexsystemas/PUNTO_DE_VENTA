@@ -450,6 +450,11 @@ namespace PUNTO_DE_VENTA.PRESENT.CAJA
         {
             panel16.Visible = false;
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

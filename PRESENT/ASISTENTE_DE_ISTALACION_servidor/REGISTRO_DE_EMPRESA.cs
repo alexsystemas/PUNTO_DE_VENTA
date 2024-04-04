@@ -380,6 +380,8 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
             BTN_SIGUIENTE_Y_GUARDAR.Visible = true;
 
         }
+
+       
     }
 }
 

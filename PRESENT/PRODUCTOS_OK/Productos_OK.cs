@@ -634,6 +634,7 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
                     }
                     else
                     {
+                        TXTPRECIODEVENTA2.Text = "";
                         //Me.txtPorcentajeGanancia.Text = 0
                     }
 
@@ -886,6 +887,10 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
 
                 conteoresultado = "";
                 lblcantidad_productos.Text = "0";
+                if(lblcantidad_productos.Text=="0")
+                {
+
+                }
             }
 
         }
@@ -921,7 +926,7 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
                 }
                 else
                 {
-                    //Me.txtPorcentajeGanancia.Text = 0
+
                 }
             }
             catch (Exception ex)
@@ -1131,9 +1136,20 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             frm.ShowDialog();
         }
 
-        private void PanelGuardar_Paint(object sender, PaintEventArgs e)
+        private void TxtPorcentajeGanancia_Click(object sender, EventArgs e)
         {
+            TXTPRECIODEVENTA2.Text = "";
+        }
 
+        private void Txtpreciomayoreo_Click(object sender, EventArgs e)
+        {
+            TXTPRECIODEVENTA2.Text = "";
+        }
+
+        private void TxtPorcentajeGanancia_DoubleClick(object sender, EventArgs e)
+        {
+            txtPorcentajeGanancia.Text = "";
+            TXTPRECIODEVENTA2.Text = "";
         }
     }
 }

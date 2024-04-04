@@ -45,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panelEdicion_de_caja = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -199,12 +199,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(5, 250);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(188, 147);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // panel2
             // 
@@ -241,6 +243,14 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1024, 648);
             this.panel4.TabIndex = 2;
+            // 
+            // panel17
+            // 
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel17.Location = new System.Drawing.Point(0, 599);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(1024, 49);
+            this.panel17.TabIndex = 6;
             // 
             // panel16
             // 
@@ -393,14 +403,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(166, 137);
             this.panel5.TabIndex = 0;
-            // 
-            // panel17
-            // 
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(0, 599);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(1024, 49);
-            this.panel17.TabIndex = 6;
             // 
             // Caja
             // 

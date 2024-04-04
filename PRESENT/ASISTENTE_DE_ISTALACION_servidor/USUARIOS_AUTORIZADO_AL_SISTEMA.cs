@@ -199,5 +199,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
         {
             Bases.Obtener_serialPC(ref lblIDSERIAL);
         }
+               
+        }
     }
-}
+

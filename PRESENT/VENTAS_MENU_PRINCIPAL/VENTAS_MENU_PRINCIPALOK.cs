@@ -46,6 +46,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string FechaFinal;
         double cantidad;
         string Tema;
+        string ip;
         int contadorVentasEspera;
         Panel panel_mostrador_de_productos = new Panel();
       
@@ -77,9 +78,17 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
             ValidarTemaCaja();
             Limpiar_para_venta_nueva();
-            
+            ObtenerIPlocal();
 
 
+
+
+        }
+
+        private void ObtenerIPlocal()
+        {
+
+            this.Text = Bases.ObtenerIP(ref ip);
         }
         private void contarVentasEspera()
         {
@@ -238,7 +247,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void Btn_Agregar_Producto_Click(object sender, EventArgs e)
         {
-            PRESENT.PRODUCTOS_OK.Productos_OK frm = new PRESENT.PRODUCTOS_OK.Productos_OK();
+            PRODUCTOS_OK.Productos_OK frm = new PRODUCTOS_OK.Productos_OK();
             frm.ShowDialog();
         }
 
@@ -249,10 +258,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             frm.ShowDialog();
         }
 
-        private void Txt_total_suma_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Btn_Configuracion_Click(object sender, EventArgs e)
         {
@@ -327,11 +333,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             DATALISTADO_PRODUCTOS_OKA.Visible = false;
             lbltipodebusqueda2.Visible = true;
         }
-        private void DATALISTADO_PRODUCTOS_OKA_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
+    
 
         private void DATALISTADO_PRODUCTOS_OKA_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -433,7 +435,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             {
                 con.Open();
                 idVenta = Convert.ToInt32(com.ExecuteScalar());
-                MessageBox.Show("idVenta:" + idVenta);
+               // MessageBox.Show("idVenta:" + idVenta);
                 con.Close();
             }
             catch (Exception ex)
@@ -1410,12 +1412,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             btnCreditoPagar.ForeColor = Color.FromArgb(100, 101, 108);
             btnVerMovimientosCaja.BackColor = Color.FromArgb(40, 45, 61);
             btnVerMovimientosCaja.ForeColor = Color.FromArgb(100, 101, 108);
-            btnVarios.BackColor = Color.FromArgb(40, 45, 61);
-            btnVarios.ForeColor = Color.FromArgb(100, 101, 108);
-            btnMayoreo.BackColor = Color.FromArgb(40, 45, 61);
-            btnMayoreo.ForeColor = Color.FromArgb(100, 101, 108);
-            btnProductoServicio.BackColor = Color.FromArgb(40, 45, 61);
-            btnProductoServicio.ForeColor = Color.FromArgb(100, 101, 108);
+          
             btnIngresos.BackColor = Color.FromArgb(40, 45, 61);
             btnIngresos.ForeColor = Color.FromArgb(100, 101, 108);
             btnGastos.BackColor = Color.FromArgb(40, 45, 61);
@@ -1469,12 +1466,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             btnCreditoPagar.ForeColor = Color.FromArgb(0, 85, 128);
             btnVerMovimientosCaja.BackColor = Color.FromArgb(214, 250, 250);
             btnVerMovimientosCaja.ForeColor = Color.FromArgb(0, 85, 128);
-            btnVarios.BackColor = Color.FromArgb(214, 250, 250);
-            btnVarios.ForeColor = Color.FromArgb(0, 85, 128);
-            btnMayoreo.BackColor = Color.FromArgb(214, 250, 250);
-            btnMayoreo.ForeColor = Color.FromArgb(0, 85, 128);
-            btnProductoServicio.BackColor = Color.FromArgb(214, 250, 250);
-            btnProductoServicio.ForeColor = Color.FromArgb(0, 85, 128);
+           
+         
             btnIngresos.BackColor = Color.FromArgb(214, 250, 250);
             btnIngresos.ForeColor = Color.FromArgb(0, 85, 128);
             btnGastos.BackColor = Color.FromArgb(214, 250, 250);
@@ -1490,6 +1483,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             INVENTARIOS_KARDEX.INVENTARIO_MENU frm = new INVENTARIOS_KARDEX.INVENTARIO_MENU();
             frm.ShowDialog();
+        }
+
+        private void DatalistadoDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
