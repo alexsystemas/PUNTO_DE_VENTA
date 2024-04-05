@@ -381,7 +381,10 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 
         }
 
-       
+        private void TxtCaja_Click(object sender, EventArgs e)
+        {
+            txtCaja.Clear();
+        }
     }
 }
 

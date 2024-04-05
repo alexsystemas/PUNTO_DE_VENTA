@@ -206,7 +206,7 @@
             this.panel4.Controls.Add(this.Nombre_Instancia);
             this.panel4.Location = new System.Drawing.Point(58, 49);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 104);
+            this.panel4.Size = new System.Drawing.Size(10, 125);
             this.panel4.TabIndex = 3;
             // 
             // checkBox1

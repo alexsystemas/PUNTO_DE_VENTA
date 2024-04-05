@@ -126,7 +126,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
-                cmd = new SqlCommand("insertar_cliente", con);
+                cmd = new SqlCommand("insertar_clientes", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nombre", "GENERICO");
                 cmd.Parameters.AddWithValue("@Direccion_para_factura", 0);

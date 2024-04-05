@@ -253,7 +253,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.Silver;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -449,12 +449,13 @@
             // txtCaja
             // 
             this.txtCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCaja.ForeColor = System.Drawing.Color.Silver;
+            this.txtCaja.ForeColor = System.Drawing.Color.Black;
             this.txtCaja.Location = new System.Drawing.Point(101, 6);
             this.txtCaja.Name = "txtCaja";
             this.txtCaja.Size = new System.Drawing.Size(264, 21);
             this.txtCaja.TabIndex = 4;
             this.txtCaja.Text = "NOMBRE DE CAJA";
+            this.txtCaja.Click += new System.EventHandler(this.TxtCaja_Click);
             // 
             // panel5
             // 

@@ -115,14 +115,10 @@ namespace PUNTO_DE_VENTA.PRESENT
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
-
             SqlCommand com = new SqlCommand("mostrar_permisos_por_usuario_ROL_UNICO", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@idusuario",idusuariovariable);
-            
-
-
-
+            MessageBox.Show("" + idusuariovariable);
             try
             {
                 con.Open();
@@ -251,10 +247,7 @@ namespace PUNTO_DE_VENTA.PRESENT
         {
             try
             {
-
-
-
-
+                obtener_Id_caja();
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = CONEXION.CONEXIONMAESTRA.conexion;
                 con.Open();
@@ -275,7 +268,7 @@ namespace PUNTO_DE_VENTA.PRESENT
 
                 cmd.Parameters.AddWithValue("@estado", "CAJA APERTURADA");
                 cmd.Parameters.AddWithValue("@diferencia", "0.00");
-                cmd.Parameters.AddWithValue("@id_caja", idcajavariable2);
+                cmd.Parameters.AddWithValue("@id_caja", idcajavariable);
                 MessageBox.Show(""+ idcajavariable);
 
                 cmd.ExecuteNonQuery();

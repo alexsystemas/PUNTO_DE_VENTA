@@ -61,7 +61,7 @@ namespace PUNTO_DE_VENTA.PRESENT.APERTURA_DE_CREDITO
             datalistado.Visible = true;
             p.Controls.Add(datalistado);
             p.Location = new Point(pnlCordenadas.Location.X, pnlCordenadas.Location.Y + pnl_Proveedor.Location.Y);
-            p.Size = new System.Drawing.Size(404, 239);
+            p.Size = new System.Drawing.Size(400, 102);
             Controls.Add(p);
             p.BringToFront();
 

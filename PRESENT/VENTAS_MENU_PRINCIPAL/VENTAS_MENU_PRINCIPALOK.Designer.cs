@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VENTAS_MENU_PRINCIPALOK));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VENTAS_MENU_PRINCIPALOK));
             this.pnlIzquierdo = new System.Windows.Forms.Panel();
             this.btnGastos = new System.Windows.Forms.Button();
             this.btnIngresos = new System.Windows.Forms.Button();
@@ -143,6 +143,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btnPrecioMayoreo = new System.Windows.Forms.Button();
             this.pnlIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -176,11 +178,13 @@
             this.pnlColorTema.SuspendLayout();
             this.pnlNotificacionEspera.SuspendLayout();
             this.pnlSuspenciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIzquierdo
             // 
             this.pnlIzquierdo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pnlIzquierdo.Controls.Add(this.btnPrecioMayoreo);
             this.pnlIzquierdo.Controls.Add(this.btnGastos);
             this.pnlIzquierdo.Controls.Add(this.btnIngresos);
             this.pnlIzquierdo.Controls.Add(this.btnVerMovimientosCaja);
@@ -188,6 +192,7 @@
             this.pnlIzquierdo.Controls.Add(this.btnCreditoCobrar);
             this.pnlIzquierdo.Controls.Add(this.btnPagos);
             this.pnlIzquierdo.Controls.Add(this.btnCobros);
+            this.pnlIzquierdo.Controls.Add(this.pictureBox8);
             this.pnlIzquierdo.Controls.Add(this.pictureBox12);
             this.pnlIzquierdo.Controls.Add(this.pictureBox11);
             this.pnlIzquierdo.Controls.Add(this.pictureBox7);
@@ -305,6 +310,7 @@
             this.btnPagos.Text = "Pagos";
             this.btnPagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.BtnPagos_Click);
             // 
             // btnCobros
             // 
@@ -408,10 +414,10 @@
             this.uI_UserPasswordTextBox1.BorderColour = System.Drawing.Color.DodgerBlue;
             this.uI_UserPasswordTextBox1.BorderSize = 3;
             this.uI_UserPasswordTextBox1.ForeColor = System.Drawing.Color.White;
-            this.uI_UserPasswordTextBox1.Location = new System.Drawing.Point(21, 425);
+            this.uI_UserPasswordTextBox1.Location = new System.Drawing.Point(3, 516);
             this.uI_UserPasswordTextBox1.Name = "uI_UserPasswordTextBox1";
             this.uI_UserPasswordTextBox1.Radio = 12;
-            this.uI_UserPasswordTextBox1.Size = new System.Drawing.Size(35, 29);
+            this.uI_UserPasswordTextBox1.Size = new System.Drawing.Size(23, 29);
             this.uI_UserPasswordTextBox1.TabIndex = 640;
             this.uI_UserPasswordTextBox1.Text = "uI_UserPasswordTextBox1";
             this.uI_UserPasswordTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1678,6 +1684,32 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(0, 421);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(37, 41);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 641;
+            this.pictureBox8.TabStop = false;
+            // 
+            // btnPrecioMayoreo
+            // 
+            this.btnPrecioMayoreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnPrecioMayoreo.FlatAppearance.BorderSize = 0;
+            this.btnPrecioMayoreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrecioMayoreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrecioMayoreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
+            this.btnPrecioMayoreo.Location = new System.Drawing.Point(41, 421);
+            this.btnPrecioMayoreo.Name = "btnPrecioMayoreo";
+            this.btnPrecioMayoreo.Size = new System.Drawing.Size(150, 41);
+            this.btnPrecioMayoreo.TabIndex = 642;
+            this.btnPrecioMayoreo.Text = "Mayoreo";
+            this.btnPrecioMayoreo.UseVisualStyleBackColor = false;
+            this.btnPrecioMayoreo.Click += new System.EventHandler(this.BtnPrecioMayoreo_Click);
+            // 
             // VENTAS_MENU_PRINCIPALOK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1731,6 +1763,7 @@
             this.pnlColorTema.PerformLayout();
             this.pnlNotificacionEspera.ResumeLayout(false);
             this.pnlSuspenciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1842,5 +1875,7 @@
         private System.Windows.Forms.Panel pnlLinea;
         private System.Windows.Forms.Panel pnlNotificacionEspera;
         private System.Windows.Forms.Label lblContador;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button btnPrecioMayoreo;
     }
 }

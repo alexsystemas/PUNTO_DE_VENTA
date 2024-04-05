@@ -98,7 +98,7 @@
             // 
             this.datalistado.AllowUserToAddRows = false;
             this.datalistado.AllowUserToResizeRows = false;
-            this.datalistado.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.datalistado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.datalistado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datalistado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datalistado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -1489,6 +1489,16 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
 
         }
+
+        private void BtnPagos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPrecioMayoreo_Click(object sender, EventArgs e)
+        {
+            aplicar_precio_mayoreo();
+        }
     }
 }
 

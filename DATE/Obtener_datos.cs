@@ -1006,7 +1006,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosAniosCombo", CONEXIONMAESTRA.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("ReporteGastosAnioCombo", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
                 CONEXIONMAESTRA.cerrar();
             }
@@ -1124,7 +1124,7 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.abrir();
                 SqlCommand da = new SqlCommand("mostrarTemaCaja", CONEXIONMAESTRA.conectar);
                 da.CommandType = CommandType.StoredProcedure;
-                da.Parameters.AddWithValue("@idCaja", idcaja);
+                da.Parameters.AddWithValue("@idcaja", idcaja);
                 Tema = da.ExecuteScalar().ToString();
                 CONEXIONMAESTRA.cerrar();
 
@@ -1142,7 +1142,7 @@ namespace PUNTO_DE_VENTA.DATE
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlCommand da = new SqlCommand("select Id_Caja from Caja", CONEXIONMAESTRA.conectar);
+                SqlCommand da = new SqlCommand("select idUsuario from USUARIO2", CONEXIONMAESTRA.conectar);
                 id = Convert.ToInt32(da.ExecuteScalar());
                 CONEXIONMAESTRA.cerrar();
             }
