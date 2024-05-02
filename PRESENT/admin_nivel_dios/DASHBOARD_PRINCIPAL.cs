@@ -566,10 +566,7 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
             ReporteGastosAnioMesGrafica();
         }
 
-        private void BtnVender_Click_1(object sender, EventArgs e)
-        {
-            validar_aperturas_de_caja();
-        }
+    
 
         private void Btn_Inventarios_Click(object sender, EventArgs e)
         {
@@ -581,6 +578,18 @@ namespace PUNTO_DE_VENTA.PRESENT.admin_nivel_dios
         private void BtnReportes_Click(object sender, EventArgs e)
         {
             REPORTES.menuReportes frm = new REPORTES.menuReportes();
+            frm.ShowDialog();
+        }
+
+        private void BtnVender_Click_1(object sender, EventArgs e)
+        {
+            var frm = new VENTAS_MENU_PRINCIPAL.VENTAS_MENU_PRINCIPALOK();
+            frm.ShowDialog();
+        }
+
+        private void BtnComprar_Click(object sender, EventArgs e)
+        {
+            var frm = new COMPRAS.adminCompras();
             frm.ShowDialog();
         }
     }

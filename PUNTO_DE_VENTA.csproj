@@ -119,6 +119,7 @@
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
     <Compile Include="DATE\DLicencias.cs" />
+    <Compile Include="DATE\Dproveedores.cs" />
     <Compile Include="DATE\Editar_datos.cs" />
     <Compile Include="DATE\Eliminar_datos.cs" />
     <Compile Include="DATE\Insertar_datos.cs" />
@@ -240,6 +241,24 @@
     </Compile>
     <Compile Include="PRESENT\COBROS\MediosCobros.Designer.cs">
       <DependentUpon>MediosCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\adminCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\adminCompras.Designer.cs">
+      <DependentUpon>adminCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\HistorialCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\HistorialCompras.Designer.cs">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\relizarCompra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRESENT\COMPRAS\relizarCompra.Designer.cs">
+      <DependentUpon>relizarCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.cs">
       <SubType>Form</SubType>
@@ -528,6 +547,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\COBROS\MediosCobros.resx">
       <DependentUpon>MediosCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COMPRAS\adminCompras.resx">
+      <DependentUpon>adminCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COMPRAS\HistorialCompras.resx">
+      <DependentUpon>HistorialCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENT\COMPRAS\relizarCompra.resx">
+      <DependentUpon>relizarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENT\CONEXION_REMOTA\Caja_secundaria.resx">
       <DependentUpon>Caja_secundaria.cs</DependentUpon>
