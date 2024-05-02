@@ -12,7 +12,7 @@ using PUNTO_DE_VENTA.CONEXION;
 
 namespace PUNTO_DE_VENTA.DATE
 {
-    class Dproveedores
+    public class Dproveedores
     {
         public bool Insertar_Proveedores(LProveedores parametros)
         {

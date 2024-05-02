@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Management;
 using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.DATE;
+
 namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
 {
     public partial class USUARIOS_AUTORIZADO_AL_SISTEMA : Form
@@ -53,6 +55,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                         Insertar_licencia_de_prueba_30_dias();
                         insertar_cliente_standar();
                         insertar_grupo_por_defecto();
+                        insertar_proveedor_estandar();
                         insertar_inicio_De_sesion();
                         MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + txtUsuario.Text + " y tu Contraseña es: " + txtContraseña.Text, "Registro Exitoso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         Dispose();
@@ -194,6 +197,19 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 MessageBox.Show(ex.Message);
             }
         }
+        private void insertar_proveedor_estandar()
+        {
+            var funcion = new Dproveedores();
+            var parametros = new LProveedores();
+            parametros.Nombre = "GENERICO";
+            parametros.Direccion = "0";
+            parametros.IdentificadorFiscal = "0";
+            parametros.Celular = "0";
+            parametros.Estado = "0";
+            parametros.Saldo = 0;
+            funcion.Insertar_Proveedores(parametros);
+
+        }
 
         private void USUARIOS_AUTORIZADO_AL_SISTEMA_Load(object sender, EventArgs e)
         {
@@ -201,5 +217,6 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
         }
                
         }
+      
     }
 

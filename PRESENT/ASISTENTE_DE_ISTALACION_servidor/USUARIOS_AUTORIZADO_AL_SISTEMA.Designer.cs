@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USUARIOS_AUTORIZADO_AL_SISTEMA));
             this.pnlIzqLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.txtfechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtfechaFinalOK = new System.Windows.Forms.Label();
+            this.txtfechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtfechaFinal = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlIzqAzul = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -86,6 +86,15 @@
             this.panel1.Size = new System.Drawing.Size(10, 14);
             this.panel1.TabIndex = 599;
             // 
+            // txtfechaFinalOK
+            // 
+            this.txtfechaFinalOK.AutoSize = true;
+            this.txtfechaFinalOK.Location = new System.Drawing.Point(27, 19);
+            this.txtfechaFinalOK.Name = "txtfechaFinalOK";
+            this.txtfechaFinalOK.Size = new System.Drawing.Size(41, 13);
+            this.txtfechaFinalOK.TabIndex = 4;
+            this.txtfechaFinalOK.Text = "label11";
+            // 
             // txtfechaInicio
             // 
             this.txtfechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -93,14 +102,6 @@
             this.txtfechaInicio.Name = "txtfechaInicio";
             this.txtfechaInicio.Size = new System.Drawing.Size(84, 20);
             this.txtfechaInicio.TabIndex = 598;
-            // 
-            // txtfechaFinal
-            // 
-            this.txtfechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtfechaFinal.Location = new System.Drawing.Point(29, 146);
-            this.txtfechaFinal.Name = "txtfechaFinal";
-            this.txtfechaFinal.Size = new System.Drawing.Size(84, 20);
-            this.txtfechaFinal.TabIndex = 597;
             // 
             // label11
             // 
@@ -111,14 +112,13 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "label11";
             // 
-            // txtfechaFinalOK
+            // txtfechaFinal
             // 
-            this.txtfechaFinalOK.AutoSize = true;
-            this.txtfechaFinalOK.Location = new System.Drawing.Point(27, 19);
-            this.txtfechaFinalOK.Name = "txtfechaFinalOK";
-            this.txtfechaFinalOK.Size = new System.Drawing.Size(41, 13);
-            this.txtfechaFinalOK.TabIndex = 4;
-            this.txtfechaFinalOK.Text = "label11";
+            this.txtfechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtfechaFinal.Location = new System.Drawing.Point(29, 146);
+            this.txtfechaFinal.Name = "txtfechaFinal";
+            this.txtfechaFinal.Size = new System.Drawing.Size(84, 20);
+            this.txtfechaFinal.TabIndex = 597;
             // 
             // pictureBox2
             // 
@@ -144,7 +144,7 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(256, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(421, 49);
+            this.pnlTop.Size = new System.Drawing.Size(780, 49);
             this.pnlTop.TabIndex = 1;
             // 
             // pn1
@@ -165,7 +165,7 @@
             this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn1.Location = new System.Drawing.Point(256, 49);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(421, 176);
+            this.pn1.Size = new System.Drawing.Size(780, 176);
             this.pn1.TabIndex = 2;
             // 
             // txtConfirmaContraseña
@@ -307,16 +307,16 @@
             this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentral.Location = new System.Drawing.Point(256, 225);
             this.pnlCentral.Name = "pnlCentral";
-            this.pnlCentral.Size = new System.Drawing.Size(421, 334);
+            this.pnlCentral.Size = new System.Drawing.Size(780, 334);
             this.pnlCentral.TabIndex = 4;
             // 
             // BTN_SIGUIENTE
             // 
             this.BTN_SIGUIENTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.BTN_SIGUIENTE.ForeColor = System.Drawing.Color.White;
-            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(727, 184);
+            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(588, 226);
             this.BTN_SIGUIENTE.Name = "BTN_SIGUIENTE";
-            this.BTN_SIGUIENTE.Size = new System.Drawing.Size(75, 23);
+            this.BTN_SIGUIENTE.Size = new System.Drawing.Size(79, 23);
             this.BTN_SIGUIENTE.TabIndex = 2;
             this.BTN_SIGUIENTE.Text = "Siguiente";
             this.BTN_SIGUIENTE.UseVisualStyleBackColor = false;
@@ -347,7 +347,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 559);
+            this.ClientSize = new System.Drawing.Size(1036, 559);
             this.Controls.Add(this.pnlCentral);
             this.Controls.Add(this.pn1);
             this.Controls.Add(this.pnlTop);
