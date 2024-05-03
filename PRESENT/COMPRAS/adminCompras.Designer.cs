@@ -34,7 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlizqDerecha = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlDerecho = new System.Windows.Forms.Panel();
+            this.pnlVisor = new System.Windows.Forms.Panel();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.pnlIzquierdo.SuspendLayout();
@@ -94,13 +94,13 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 582);
             this.flowLayoutPanel1.TabIndex = 623;
             // 
-            // pnlDerecho
+            // pnlVisor
             // 
-            this.pnlDerecho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDerecho.Location = new System.Drawing.Point(256, 0);
-            this.pnlDerecho.Name = "pnlDerecho";
-            this.pnlDerecho.Size = new System.Drawing.Size(562, 697);
-            this.pnlDerecho.TabIndex = 2;
+            this.pnlVisor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVisor.Location = new System.Drawing.Point(256, 0);
+            this.pnlVisor.Name = "pnlVisor";
+            this.pnlVisor.Size = new System.Drawing.Size(562, 697);
+            this.pnlVisor.TabIndex = 2;
             // 
             // btnCompras
             // 
@@ -117,6 +117,7 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.BtnCompras_Click);
             // 
             // btnHistorial
             // 
@@ -133,17 +134,21 @@
             this.btnHistorial.Text = "Historial de Compras";
             this.btnHistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHistorial.UseVisualStyleBackColor = false;
+            this.btnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
             // 
             // adminCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 697);
-            this.Controls.Add(this.pnlDerecho);
+            this.Controls.Add(this.pnlVisor);
             this.Controls.Add(this.pnlIzquierdo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "adminCompras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminCompras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlIzquierdo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -158,7 +163,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlizqDerecha;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel pnlDerecho;
+        private System.Windows.Forms.Panel pnlVisor;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnHistorial;
     }

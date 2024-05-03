@@ -17,6 +17,22 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             InitializeComponent();
         }
 
-     
+        private void BtnCompras_Click(object sender, EventArgs e)
+        {
+            pnlVisor.Controls.Clear();
+            var frm = new relizarCompra();
+            frm.Dock = DockStyle.Fill;
+            pnlVisor.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void BtnHistorial_Click(object sender, EventArgs e)
+        {
+            pnlVisor.Controls.Clear();
+            var frm = new HistorialCompras();
+            frm.Dock = DockStyle.Fill;
+            pnlVisor.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

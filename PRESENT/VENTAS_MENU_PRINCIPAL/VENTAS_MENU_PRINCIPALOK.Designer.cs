@@ -143,6 +143,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_Scanner = new System.Windows.Forms.PictureBox();
+            this.Button23 = new System.Windows.Forms.Button();
             this.pnlIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -176,6 +178,7 @@
             this.pnlColorTema.SuspendLayout();
             this.pnlNotificacionEspera.SuspendLayout();
             this.pnlSuspenciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIzquierdo
@@ -655,6 +658,7 @@
             this.pnlToop.Controls.Add(this.txtbuscar);
             this.pnlToop.Controls.Add(this.btn_Configuracion);
             this.pnlToop.Controls.Add(this.btnCerrar_Sesion);
+            this.pnlToop.Controls.Add(this.btn_Scanner);
             this.pnlToop.Controls.Add(this.btn_Teclado);
             this.pnlToop.Controls.Add(this.pictureBox2);
             this.pnlToop.Controls.Add(this.lbltipodebusqueda2);
@@ -1039,6 +1043,7 @@
             this.pnlCentalDer.Controls.Add(this.txtmonto);
             this.pnlCentalDer.Controls.Add(this.Label36);
             this.pnlCentalDer.Controls.Add(this.label27);
+            this.pnlCentalDer.Controls.Add(this.Button23);
             this.pnlCentalDer.Controls.Add(this.btnPrecio);
             this.pnlCentalDer.Controls.Add(this.flowLayoutPanel5);
             this.pnlCentalDer.Dock = System.Windows.Forms.DockStyle.Right;
@@ -1674,6 +1679,37 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
             // 
+            // btn_Scanner
+            // 
+            this.btn_Scanner.Image = ((System.Drawing.Image)(resources.GetObject("btn_Scanner.Image")));
+            this.btn_Scanner.Location = new System.Drawing.Point(373, 13);
+            this.btn_Scanner.Name = "btn_Scanner";
+            this.btn_Scanner.Size = new System.Drawing.Size(32, 26);
+            this.btn_Scanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Scanner.TabIndex = 631;
+            this.btn_Scanner.TabStop = false;
+            this.btn_Scanner.Click += new System.EventHandler(this.Btn_Scanner_Click);
+            // 
+            // Button23
+            // 
+            this.Button23.BackColor = System.Drawing.Color.Transparent;
+            this.Button23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button23.BackgroundImage")));
+            this.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Button23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button23.FlatAppearance.BorderSize = 0;
+            this.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button23.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
+            this.Button23.ForeColor = System.Drawing.Color.White;
+            this.Button23.Location = new System.Drawing.Point(209, 245);
+            this.Button23.Name = "Button23";
+            this.Button23.Size = new System.Drawing.Size(109, 60);
+            this.Button23.TabIndex = 641;
+            this.Button23.Text = "DESC";
+            this.Button23.UseVisualStyleBackColor = false;
+            // 
             // VENTAS_MENU_PRINCIPALOK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1727,6 +1763,7 @@
             this.pnlColorTema.PerformLayout();
             this.pnlNotificacionEspera.ResumeLayout(false);
             this.pnlSuspenciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1838,5 +1875,7 @@
         private System.Windows.Forms.Label lblContador;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnPrecioMayoreo;
+        private System.Windows.Forms.PictureBox btn_Scanner;
+        internal System.Windows.Forms.Button Button23;
     }
 }

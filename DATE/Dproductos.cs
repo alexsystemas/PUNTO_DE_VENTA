@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace PUNTO_DE_VENTA.DATE
 {
-  public  class Dproductos
+   public class Dproductos
     {
         public void buscarProductos(ref DataTable dt, string buscador)
         {

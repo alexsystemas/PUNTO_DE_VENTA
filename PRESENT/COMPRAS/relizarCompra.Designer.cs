@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(relizarCompra));
             this.pnlToop = new System.Windows.Forms.Panel();
+            this.dgProducctos = new System.Windows.Forms.DataGridView();
+            this.EL = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlLinea = new System.Windows.Forms.Panel();
             this.panelReferencia = new System.Windows.Forms.Panel();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
             this.btnCerrar_Sesion = new System.Windows.Forms.PictureBox();
-            this.btn_Scanner = new System.Windows.Forms.PictureBox();
             this.btn_Teclado = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbltipodebusqueda2 = new System.Windows.Forms.Label();
@@ -66,44 +67,95 @@
             this.btnSeparador = new System.Windows.Forms.Button();
             this.btnborrartodo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.datalistadoDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.EL = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlToop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducctos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Teclado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlCentalDer.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistadoDetalleVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlToop
             // 
             this.pnlToop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.pnlToop.Controls.Add(this.datalistadoDetalleVenta);
+            this.pnlToop.Controls.Add(this.lbltipodebusqueda2);
+            this.pnlToop.Controls.Add(this.dgProducctos);
+            this.pnlToop.Controls.Add(this.txtbuscar);
             this.pnlToop.Controls.Add(this.pnlLinea);
             this.pnlToop.Controls.Add(this.panelReferencia);
-            this.pnlToop.Controls.Add(this.txtbuscar);
             this.pnlToop.Controls.Add(this.btn_Configuracion);
             this.pnlToop.Controls.Add(this.btnCerrar_Sesion);
-            this.pnlToop.Controls.Add(this.btn_Scanner);
             this.pnlToop.Controls.Add(this.btn_Teclado);
             this.pnlToop.Controls.Add(this.pictureBox2);
-            this.pnlToop.Controls.Add(this.lbltipodebusqueda2);
             this.pnlToop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToop.Location = new System.Drawing.Point(0, 0);
             this.pnlToop.Name = "pnlToop";
             this.pnlToop.Size = new System.Drawing.Size(1053, 58);
             this.pnlToop.TabIndex = 2;
+            // 
+            // dgProducctos
+            // 
+            this.dgProducctos.AllowUserToAddRows = false;
+            this.dgProducctos.AllowUserToDeleteRows = false;
+            this.dgProducctos.AllowUserToResizeRows = false;
+            this.dgProducctos.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgProducctos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgProducctos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgProducctos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgProducctos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgProducctos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProducctos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EL});
+            this.dgProducctos.EnableHeadersVisualStyles = false;
+            this.dgProducctos.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgProducctos.Location = new System.Drawing.Point(516, 3);
+            this.dgProducctos.Name = "dgProducctos";
+            this.dgProducctos.ReadOnly = true;
+            this.dgProducctos.RowHeadersVisible = false;
+            this.dgProducctos.RowHeadersWidth = 9;
+            this.dgProducctos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgProducctos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgProducctos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgProducctos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            this.dgProducctos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgProducctos.RowTemplate.Height = 36;
+            this.dgProducctos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgProducctos.Size = new System.Drawing.Size(95, 41);
+            this.dgProducctos.TabIndex = 644;
+            // 
+            // EL
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            this.EL.DefaultCellStyle = dataGridViewCellStyle14;
+            this.EL.HeaderText = "";
+            this.EL.Image = ((System.Drawing.Image)(resources.GetObject("EL.Image")));
+            this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EL.Name = "EL";
+            this.EL.ReadOnly = true;
+            this.EL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EL.ToolTipText = "Opcional \"Supr\" para Eliminar";
             // 
             // pnlLinea
             // 
@@ -123,43 +175,36 @@
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(58, 13);
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.Location = new System.Drawing.Point(58, 10);
             this.txtbuscar.Margin = new System.Windows.Forms.Padding(1);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(266, 19);
+            this.txtbuscar.Size = new System.Drawing.Size(266, 22);
             this.txtbuscar.TabIndex = 628;
             this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
             // 
             // btn_Configuracion
             // 
             this.btn_Configuracion.Image = ((System.Drawing.Image)(resources.GetObject("btn_Configuracion.Image")));
-            this.btn_Configuracion.Location = new System.Drawing.Point(954, 2);
+            this.btn_Configuracion.Location = new System.Drawing.Point(927, 2);
             this.btn_Configuracion.Name = "btn_Configuracion";
             this.btn_Configuracion.Size = new System.Drawing.Size(45, 42);
             this.btn_Configuracion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Configuracion.TabIndex = 636;
             this.btn_Configuracion.TabStop = false;
+            this.btn_Configuracion.Click += new System.EventHandler(this.BtnCerrar_Sesion_Click);
             // 
             // btnCerrar_Sesion
             // 
             this.btnCerrar_Sesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar_Sesion.Image")));
-            this.btnCerrar_Sesion.Location = new System.Drawing.Point(1001, 2);
+            this.btnCerrar_Sesion.Location = new System.Drawing.Point(974, 2);
             this.btnCerrar_Sesion.Name = "btnCerrar_Sesion";
             this.btnCerrar_Sesion.Size = new System.Drawing.Size(50, 42);
             this.btnCerrar_Sesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar_Sesion.TabIndex = 634;
             this.btnCerrar_Sesion.TabStop = false;
-            // 
-            // btn_Scanner
-            // 
-            this.btn_Scanner.Image = ((System.Drawing.Image)(resources.GetObject("btn_Scanner.Image")));
-            this.btn_Scanner.Location = new System.Drawing.Point(373, 13);
-            this.btn_Scanner.Name = "btn_Scanner";
-            this.btn_Scanner.Size = new System.Drawing.Size(32, 26);
-            this.btn_Scanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_Scanner.TabIndex = 631;
-            this.btn_Scanner.TabStop = false;
+            this.btnCerrar_Sesion.Click += new System.EventHandler(this.BtnCerrar_Sesion_Click);
             // 
             // btn_Teclado
             // 
@@ -183,12 +228,15 @@
             // 
             // lbltipodebusqueda2
             // 
-            this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipodebusqueda2.BackColor = System.Drawing.Color.Transparent;
+            this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltipodebusqueda2.ForeColor = System.Drawing.Color.Gray;
-            this.lbltipodebusqueda2.Location = new System.Drawing.Point(72, 15);
+            this.lbltipodebusqueda2.Location = new System.Drawing.Point(91, 36);
             this.lbltipodebusqueda2.Name = "lbltipodebusqueda2";
-            this.lbltipodebusqueda2.Size = new System.Drawing.Size(230, 20);
+            this.lbltipodebusqueda2.Size = new System.Drawing.Size(204, 16);
             this.lbltipodebusqueda2.TabIndex = 629;
+            this.lbltipodebusqueda2.Text = "Buscar por Teclado\r\n";
+            this.lbltipodebusqueda2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnlCentalDer
             // 
@@ -624,15 +672,27 @@
             this.panel1.Size = new System.Drawing.Size(720, 172);
             this.panel1.TabIndex = 643;
             // 
-            // label1
+            // flowLayoutPanel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Proveedor:";
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 57);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(668, 97);
+            this.flowLayoutPanel1.TabIndex = 647;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(101)))), ((int)(((byte)(108)))));
+            this.button1.Location = new System.Drawing.Point(467, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 31);
+            this.button1.TabIndex = 646;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -662,82 +722,15 @@
             this.label2.Size = new System.Drawing.Size(230, 20);
             this.label2.TabIndex = 641;
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(101)))), ((int)(((byte)(108)))));
-            this.button1.Location = new System.Drawing.Point(467, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 31);
-            this.button1.TabIndex = 646;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 57);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(668, 97);
-            this.flowLayoutPanel1.TabIndex = 647;
-            // 
-            // datalistadoDetalleVenta
-            // 
-            this.datalistadoDetalleVenta.AllowUserToAddRows = false;
-            this.datalistadoDetalleVenta.AllowUserToDeleteRows = false;
-            this.datalistadoDetalleVenta.AllowUserToResizeRows = false;
-            this.datalistadoDetalleVenta.BackgroundColor = System.Drawing.Color.Silver;
-            this.datalistadoDetalleVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.datalistadoDetalleVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.datalistadoDetalleVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datalistadoDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.datalistadoDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datalistadoDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EL});
-            this.datalistadoDetalleVenta.EnableHeadersVisualStyles = false;
-            this.datalistadoDetalleVenta.GridColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoDetalleVenta.Location = new System.Drawing.Point(516, 3);
-            this.datalistadoDetalleVenta.Name = "datalistadoDetalleVenta";
-            this.datalistadoDetalleVenta.ReadOnly = true;
-            this.datalistadoDetalleVenta.RowHeadersVisible = false;
-            this.datalistadoDetalleVenta.RowHeadersWidth = 9;
-            this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            this.datalistadoDetalleVenta.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.datalistadoDetalleVenta.RowTemplate.Height = 36;
-            this.datalistadoDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datalistadoDetalleVenta.Size = new System.Drawing.Size(95, 41);
-            this.datalistadoDetalleVenta.TabIndex = 644;
-            // 
-            // EL
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.EL.DefaultCellStyle = dataGridViewCellStyle4;
-            this.EL.HeaderText = "";
-            this.EL.Image = ((System.Drawing.Image)(resources.GetObject("EL.Image")));
-            this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EL.Name = "EL";
-            this.EL.ReadOnly = true;
-            this.EL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EL.ToolTipText = "Opcional \"Supr\" para Eliminar";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(96, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Proveedor:";
             // 
             // relizarCompra
             // 
@@ -746,15 +739,15 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlCentalDer);
             this.Controls.Add(this.pnlToop);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "relizarCompra";
             this.Size = new System.Drawing.Size(1053, 854);
             this.Load += new System.EventHandler(this.RelizarCompra_Load);
             this.pnlToop.ResumeLayout(false);
             this.pnlToop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducctos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Teclado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlCentalDer.ResumeLayout(false);
@@ -762,7 +755,6 @@
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datalistadoDetalleVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,7 +767,6 @@
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.PictureBox btn_Configuracion;
         private System.Windows.Forms.PictureBox btnCerrar_Sesion;
-        private System.Windows.Forms.PictureBox btn_Scanner;
         private System.Windows.Forms.PictureBox btn_Teclado;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbltipodebusqueda2;
@@ -810,7 +801,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.DataGridView datalistadoDetalleVenta;
+        internal System.Windows.Forms.DataGridView dgProducctos;
         private System.Windows.Forms.DataGridViewImageColumn EL;
     }
 }

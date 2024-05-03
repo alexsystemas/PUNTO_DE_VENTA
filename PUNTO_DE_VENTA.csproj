@@ -119,6 +119,7 @@
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
     <Compile Include="DATE\DLicencias.cs" />
+    <Compile Include="DATE\Dproductos.cs" />
     <Compile Include="DATE\Dproveedores.cs" />
     <Compile Include="DATE\Editar_datos.cs" />
     <Compile Include="DATE\Eliminar_datos.cs" />
