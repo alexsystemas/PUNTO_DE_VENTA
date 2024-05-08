@@ -31,7 +31,54 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         {
             ocultar_mostrar_productos();
             estadocompra = "COMPRA NUEVA";
+            dibujar_proveedores();
 
+        }
+        private void dibujar_proveedores()
+        {
+            var funcion = new Dproveedores();
+            DataTable dt = new DataTable();
+            funcion.buscar_proveedores(ref dt, txtBuscarProveedor.Text);
+            flowPanelProveedor.Controls.Clear();
+            foreach(DataRow rdr in dt.Rows)
+            {
+                Button b = new Button();
+                b.Size = new Size(149, 65);
+                b.Text = rdr["Nombre"].ToString();
+                b.Name = rdr["IdProveedor"].ToString();
+                b.BackColor = Color.FromArgb(43, 43, 43);
+                b.Font = new Font("Microsoft Sans Serif", 12);
+                b.FlatStyle = FlatStyle.Flat;
+                b.FlatAppearance.BorderSize = 0;
+                b.ForeColor = Color.White;
+                flowPanelProveedor.Controls.Add(b);
+                b.Click += B_Click;
+            }
+        }
+
+        private void B_Click(object sender, EventArgs e)
+        {
+            idproveedor = Convert.ToInt32(((Button)sender).Name);
+            // deseleccionar button 
+            foreach(Button b in flowPanelProveedor.Controls)
+            {
+                if(b is Button)
+                {
+                    b.BackColor = Color.FromArgb(43,43,43);
+                }
+            }
+            //seleccionar button 
+            foreach (Button b2 in flowPanelProveedor.Controls)
+            {
+                if (b2 is Button)
+                {
+                    if (b2.Name == idproveedor.ToString())
+                    {
+                        b2.BackColor = Color.FromArgb(0, 60, 103);
+                    }
+                   
+                }
+            }
         }
 
         private void Txtbuscar_TextChanged(object sender, EventArgs e)
@@ -88,6 +135,11 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         private void BtnCerrar_Sesion_Click(object sender, EventArgs e)
         {
             lbltipodebusqueda2.Visible = false;
+        }
+
+        private void TxtBuscarProveedor_TextChanged(object sender, EventArgs e)
+        {
+            dibujar_proveedores();
         }
     }
 }
