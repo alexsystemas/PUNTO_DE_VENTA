@@ -32,18 +32,14 @@ namespace PUNTO_DE_VENTA.DATE
                 foreach (DataRow rdr in dt.Rows)
                 {
 
-
                     estado = Bases.Desencriptar(rdr["E"].ToString());
+                  //  MessageBox.Show("" + estado);
 
                     fechaFinal = Convert.ToDateTime(Bases.Desencriptar(rdr["F"].ToString()));
 
                     FechaInicial = Convert.ToDateTime(Bases.Desencriptar(rdr["FA"].ToString())).Date;
 
                     SerialPcLicencia = (rdr["S"].ToString());
-
-
-
-
 
                 }
 

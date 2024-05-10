@@ -173,7 +173,9 @@ namespace PUNTO_DE_VENTA.PRESENT
                 lblEstadoLicencia.Text = "Licencia de Prueba Activada hasta el: " + FechaFinal;
             }
             if (ResultadoLicencia == "?ACTIVADO PRO?")
+               // MessageBox.Show("" + ResultadoLicencia);
             {
+              //  MessageBox.Show("" + ResultadoLicencia);
                 lblEstadoLicencia.Text = "Licencia PROFESIONAL Activada hasta el: " + FechaFinal;
             }
             if (ResultadoLicencia == "VENCIDA")

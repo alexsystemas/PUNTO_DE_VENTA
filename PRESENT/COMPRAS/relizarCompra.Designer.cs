@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(relizarCompra));
             this.pnlToop = new System.Windows.Forms.Panel();
+            this.lbltipodebusqueda2 = new System.Windows.Forms.Label();
             this.dgProducctos = new System.Windows.Forms.DataGridView();
             this.EL = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.pnlLinea = new System.Windows.Forms.Panel();
             this.panelReferencia = new System.Windows.Forms.Panel();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
             this.btnCerrar_Sesion = new System.Windows.Forms.PictureBox();
             this.btn_Teclado = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbltipodebusqueda2 = new System.Windows.Forms.Label();
             this.pnlCentalDer = new System.Windows.Forms.Panel();
             this.txt_total_suma = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -102,6 +102,18 @@
             this.pnlToop.Size = new System.Drawing.Size(1053, 58);
             this.pnlToop.TabIndex = 2;
             // 
+            // lbltipodebusqueda2
+            // 
+            this.lbltipodebusqueda2.BackColor = System.Drawing.Color.Transparent;
+            this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipodebusqueda2.ForeColor = System.Drawing.Color.Gray;
+            this.lbltipodebusqueda2.Location = new System.Drawing.Point(91, 36);
+            this.lbltipodebusqueda2.Name = "lbltipodebusqueda2";
+            this.lbltipodebusqueda2.Size = new System.Drawing.Size(204, 16);
+            this.lbltipodebusqueda2.TabIndex = 629;
+            this.lbltipodebusqueda2.Text = "Buscar por Teclado\r\n";
+            this.lbltipodebusqueda2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // dgProducctos
             // 
             this.dgProducctos.AllowUserToAddRows = false;
@@ -111,14 +123,14 @@
             this.dgProducctos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgProducctos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgProducctos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgProducctos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgProducctos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgProducctos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProducctos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EL});
@@ -138,17 +150,18 @@
             this.dgProducctos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProducctos.Size = new System.Drawing.Size(95, 41);
             this.dgProducctos.TabIndex = 644;
+            this.dgProducctos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgProducctos_CellClick);
             // 
             // EL
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.EL.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.EL.DefaultCellStyle = dataGridViewCellStyle2;
             this.EL.HeaderText = "";
             this.EL.Image = ((System.Drawing.Image)(resources.GetObject("EL.Image")));
             this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -156,6 +169,18 @@
             this.EL.ReadOnly = true;
             this.EL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EL.ToolTipText = "Opcional \"Supr\" para Eliminar";
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.Location = new System.Drawing.Point(58, 10);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(1);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(266, 22);
+            this.txtbuscar.TabIndex = 628;
+            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
             // 
             // pnlLinea
             // 
@@ -171,18 +196,6 @@
             this.panelReferencia.Name = "panelReferencia";
             this.panelReferencia.Size = new System.Drawing.Size(10, 10);
             this.panelReferencia.TabIndex = 638;
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(58, 10);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(1);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(266, 22);
-            this.txtbuscar.TabIndex = 628;
-            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.Txtbuscar_TextChanged);
             // 
             // btn_Configuracion
             // 
@@ -225,18 +238,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 630;
             this.pictureBox2.TabStop = false;
-            // 
-            // lbltipodebusqueda2
-            // 
-            this.lbltipodebusqueda2.BackColor = System.Drawing.Color.Transparent;
-            this.lbltipodebusqueda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltipodebusqueda2.ForeColor = System.Drawing.Color.Gray;
-            this.lbltipodebusqueda2.Location = new System.Drawing.Point(91, 36);
-            this.lbltipodebusqueda2.Name = "lbltipodebusqueda2";
-            this.lbltipodebusqueda2.Size = new System.Drawing.Size(204, 16);
-            this.lbltipodebusqueda2.TabIndex = 629;
-            this.lbltipodebusqueda2.Text = "Buscar por Teclado\r\n";
-            this.lbltipodebusqueda2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnlCentalDer
             // 

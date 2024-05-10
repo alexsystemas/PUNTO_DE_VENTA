@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PUNTO_DE_VENTA.DATE;
+using PUNTO_DE_VENTA.LOGIC;
 
 namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
 {
@@ -140,6 +141,82 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         private void TxtBuscarProveedor_TextChanged(object sender, EventArgs e)
         {
             dibujar_proveedores();
+        }
+
+        private void DgProducctos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtbuscar.Text = dgProducctos.SelectedCells[9].Value.ToString();
+            idproducto =Convert.ToInt32( dgProducctos.SelectedCells[1].Value.ToString());
+            panel_mostrador_de_productos.Visible = false;
+            insertar_compra();
+
+        }
+
+        private void insertar_compra()
+        {
+            var funcion = new Dcompras();
+            var parametros = new LDetalleCompra();
+            parametros.Estado = estadocompra;
+            parametros.Cantidad = 1;
+            parametros.Costo = 1;
+            parametros.Moneda = "-";
+            parametros.Descripcion = txtbuscar.Text;
+            parametros.IdProducto = idproducto;
+            if(funcion.Insertar_Compras(parametros)==true)
+            {
+                estadocompra = "COMPRA GENERADA";
+                mostar_ultimoIdCompra();
+                mostrarDetalleCompra();
+            }
+
+        }
+
+        private void mostar_ultimoIdCompra()
+        {
+            var funcion = new Dcompras();
+            funcion.MostrarUltimoIdcompra(ref idcompra);
+        }
+
+        private void mostrarDetalleCompra()
+        {
+            var dt = new DataTable();
+            var funcion = new DdetalleCompra();
+            var parametros = new LDetalleCompra();
+            parametros.IdCompra = idcompra;
+            funcion.mostrar_DetalleCompra(ref dt, parametros);
+            dgProducctos.DataSource = dt;
+            dgProducctos.Columns[1].Visible = false;
+            dgProducctos.Columns[2].Visible = false;
+            dgProducctos.Columns[3].Visible = false;
+            dgProducctos.Columns[1].Visible = false;
+            dgProducctos.Columns[1].Visible = false;
+            Bases.Multilinea(ref dgProducctos);
+            sumar();
+        }
+
+        private void sumar()
+        {
+            try
+            {
+                int x;
+                x = dgProducctos.Rows.Count;
+                if(x==0)
+                {
+                    txt_total_suma.Text="0.00";
+                }
+                double totalApagar;
+                totalApagar = 0;
+                foreach(DataGridViewRow fila in dgProducctos.Rows)
+                {
+                    totalApagar +=Convert.ToDouble( fila.Cells["Total"].Value);
+                    txt_total_suma.Text = totalApagar.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.StackTrace);
+            }
         }
     }
 }

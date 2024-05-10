@@ -118,6 +118,9 @@
     <Compile Include="CONEXION\WinAutoComplete.cs" />
     <Compile Include="CONEXION\Desencryptacion.cs" />
     <Compile Include="CONEXION\Encryptacion.cs" />
+    <Compile Include="DATE\Dcaja.cs" />
+    <Compile Include="DATE\Dcompras.cs" />
+    <Compile Include="DATE\DdetalleCompra.cs" />
     <Compile Include="DATE\DLicencias.cs" />
     <Compile Include="DATE\Dproductos.cs" />
     <Compile Include="DATE\Dproveedores.cs" />
@@ -128,7 +131,9 @@
     <Compile Include="LOGIC\Bases.cs" />
     <Compile Include="LOGIC\conexion_secundaria_controller.cs" />
     <Compile Include="LOGIC\Lcaja.cs" />
+    <Compile Include="LOGIC\Lcompras.cs" />
     <Compile Include="LOGIC\LcontrolCobros.cs" />
+    <Compile Include="LOGIC\LDetalleCompra.cs" />
     <Compile Include="LOGIC\LdetalleVenta.cs" />
     <Compile Include="LOGIC\LKardex.cs" />
     <Compile Include="LOGIC\Lmcaja.cs" />

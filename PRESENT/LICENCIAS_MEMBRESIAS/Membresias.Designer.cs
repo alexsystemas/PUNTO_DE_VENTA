@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 306);
+            this.panel1.Size = new System.Drawing.Size(256, 697);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -71,18 +71,18 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(193, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(63, 306);
+            this.panel2.Size = new System.Drawing.Size(63, 697);
             this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(256, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(367, 49);
+            this.panel3.Size = new System.Drawing.Size(781, 49);
             this.panel3.TabIndex = 1;
             // 
             // panel4
@@ -101,16 +101,16 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(256, 49);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(367, 257);
+            this.panel4.Size = new System.Drawing.Size(781, 648);
             this.panel4.TabIndex = 2;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PUNTO_DE_VENTA.Properties.Resources.whatsapp;
             this.pictureBox3.Location = new System.Drawing.Point(40, 530);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(38, 42);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             this.label1.Location = new System.Drawing.Point(0, 242);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 69);
+            this.label1.Size = new System.Drawing.Size(781, 69);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sigue usando \"VEGA\" por Solo $100 dolares americanos por Todo 1 AÑO";
             // 
@@ -148,34 +148,34 @@
             this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(367, 242);
+            this.panel6.Size = new System.Drawing.Size(781, 242);
             this.panel6.TabIndex = 6;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel8.Location = new System.Drawing.Point(0, 219);
-            this.panel8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(367, 23);
+            this.panel8.Size = new System.Drawing.Size(781, 23);
             this.panel8.TabIndex = 2;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(367, 23);
+            this.panel7.Size = new System.Drawing.Size(781, 23);
             this.panel7.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PUNTO_DE_VENTA.Properties.Resources.logo_vega;
             this.pictureBox1.Location = new System.Drawing.Point(201, -26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(187, 313);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +188,7 @@
             this.btnActivarManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivarManual.ForeColor = System.Drawing.Color.Black;
             this.btnActivarManual.Location = new System.Drawing.Point(443, 450);
-            this.btnActivarManual.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnActivarManual.Margin = new System.Windows.Forms.Padding(1);
             this.btnActivarManual.Name = "btnActivarManual";
             this.btnActivarManual.Size = new System.Drawing.Size(203, 37);
             this.btnActivarManual.TabIndex = 5;
@@ -202,7 +202,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(228, 450);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(203, 37);
             this.button2.TabIndex = 5;
@@ -215,7 +215,7 @@
             this.btnCopiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopiar.ForeColor = System.Drawing.Color.White;
             this.btnCopiar.Location = new System.Drawing.Point(551, 343);
-            this.btnCopiar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnCopiar.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopiar.Name = "btnCopiar";
             this.btnCopiar.Size = new System.Drawing.Size(84, 37);
             this.btnCopiar.TabIndex = 5;
@@ -229,7 +229,7 @@
             this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprar.ForeColor = System.Drawing.Color.White;
             this.btnComprar.Location = new System.Drawing.Point(98, 450);
-            this.btnComprar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(1);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(113, 37);
             this.btnComprar.TabIndex = 5;
@@ -241,7 +241,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.panel5.Location = new System.Drawing.Point(226, 370);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(322, 1);
             this.panel5.TabIndex = 4;
@@ -250,7 +250,7 @@
             // 
             this.txtSerial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSerial.Location = new System.Drawing.Point(228, 355);
-            this.txtSerial.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtSerial.Margin = new System.Windows.Forms.Padding(1);
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Size = new System.Drawing.Size(324, 13);
             this.txtSerial.TabIndex = 3;
@@ -287,12 +287,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 306);
+            this.ClientSize = new System.Drawing.Size(1037, 697);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Membresias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Membresias";

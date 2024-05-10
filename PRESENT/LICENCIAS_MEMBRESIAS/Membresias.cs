@@ -86,8 +86,9 @@ namespace PUNTO_DE_VENTA.PRESENT.LICENCIAS_MEMBRESIAS
         private void activarLicenciaManual()
         {
             Bases.Obtener_serialPC(ref serialPc);
-            string fechaFin = Bases.Encriptar(FechaFinLicencia);
+            string fechaFin = (FechaFinLicencia);
             string estado = Bases.Encriptar("?ACTIVADO PRO?");
+           
             string fechaActivacion = Bases.Encriptar(DateTime.Now.ToString());
             LMarcan parametros = new LMarcan();
             Editar_datos funcion = new Editar_datos();
