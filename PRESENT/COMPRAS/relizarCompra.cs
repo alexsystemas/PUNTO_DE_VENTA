@@ -22,11 +22,14 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         int idproducto;
         Panel panel_mostrador_de_productos = new Panel();
         string tipo_de_busqueda;
-        int idcompra=0;
+        int idcompra = 0;
         int idproveedor;
         string seveendepor;
         double txtpantalla;
         int iddetallecompra;
+        string sevendePor;
+        bool SECUENCIA = true;
+        
 
         private void Txtbuscar_TextChanged(object sender, EventArgs e)
         {
@@ -82,7 +85,8 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         {
             estadocompra = "COMPRA NUEVA";
             dibujar_proveedores();
-            //eliminarComprasvacias();
+            eliminarComprasvacias();
+
 
         }
         private void dibujar_proveedores()
@@ -91,7 +95,7 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             DataTable dt = new DataTable();
             funcion.buscar_proveedores(ref dt, txtBuscarProveedor.Text);
             flowPanelProveedor.Controls.Clear();
-            foreach(DataRow rdr in dt.Rows)
+            foreach (DataRow rdr in dt.Rows)
             {
                 Button b = new Button();
                 b.Size = new Size(149, 65);
@@ -111,11 +115,11 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         {
             idproveedor = Convert.ToInt32(((Button)sender).Name);
             // deseleccionar button 
-            foreach(Button b in flowPanelProveedor.Controls)
+            foreach (Button b in flowPanelProveedor.Controls)
             {
-                if(b is Button)
+                if (b is Button)
                 {
-                    b.BackColor = Color.FromArgb(43,43,43);
+                    b.BackColor = Color.FromArgb(43, 43, 43);
                 }
             }
             //seleccionar button 
@@ -127,15 +131,15 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
                     {
                         b2.BackColor = Color.FromArgb(0, 60, 103);
                     }
-                   
+
                 }
             }
         }
 
-      
-        
-          
-       
+
+
+
+
 
         private void BtnCerrar_Sesion_Click(object sender, EventArgs e)
         {
@@ -152,7 +156,7 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             txtbuscar.Text = dgProducctos.SelectedCells[9].Value.ToString();
 
             idproducto = Convert.ToInt32(dgProducctos.SelectedCells[1].Value);
-           
+
             panel_mostrador_de_productos.Visible = false;
             insertar_compra();
         }
@@ -174,6 +178,13 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
                 mostrarDetalleCompra();
             }
 
+
+        }
+
+        private void eliminarComprasvacias()
+        {
+            var funcion = new Dcompras();
+            funcion.eliminarComprasvacias();
 
         }
 
@@ -225,6 +236,200 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             }
         }
 
+        private void DgDetalleCompra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            iddetallecompra = Convert.ToInt32(dgDetalleCompra.SelectedCells[1].Value);
+            idproducto = Convert.ToInt32(dgDetalleCompra.SelectedCells[3].Value);
+            sevendePor = (dgDetalleCompra.SelectedCells[8].Value.ToString());
+            if (e.ColumnIndex == dgDetalleCompra.Columns["EL"].Index)
+            {
+                eliminar_detalle_compra();
+            }
+        }
 
+        private void eliminar_detalle_compra()
+        {
+            var funcion = new DdetalleCompra();
+            var parametros = new LDetalleCompra();
+            parametros.IdDetallecompra = iddetallecompra;
+            funcion.eliminar_detalle_compra(parametros);
+            mostrarDetalleCompra();
+
+        }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "1";
+        }
+
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "2";
+        }
+
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "3";
+        }
+
+        private void Btn4_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "4";
+        }
+
+        private void Btn5_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "5";
+        }
+
+        private void Btn6_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "6";
+        }
+
+        private void Btn7_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "7";
+        }
+
+        private void Btn8_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "8";
+        }
+
+        private void Btn9_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "9";
+        }
+
+        private void Btn0_Click(object sender, EventArgs e)
+        {
+            txtmonto.Text = txtmonto.Text + "0";
+        }
+
+        private void Btnborrartodo_Click(object sender, EventArgs e)
+        {
+            txtmonto.Clear();
+            SECUENCIA = true;
+        }
+
+        private void BtnSeparador_Click(object sender, EventArgs e)
+        {
+            if (SECUENCIA == true)
+            {
+                txtmonto.Text = txtmonto.Text + ".";
+                SECUENCIA = false;
+
+
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
+        private void Txtmonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Bases.Separador_de_Numeros(txtmonto, e);
+        }
+
+        private void BtnCantidad_Click(object sender, EventArgs e)
+        {
+
+            if (!string.IsNullOrEmpty(txtmonto.Text))
+            {
+                if (dgDetalleCompra.RowCount > 0)
+                {
+                    if (sevendePor == "Unidad")
+                    {
+                        string cadena = txtmonto.Text;
+                        if (cadena.Contains("."))
+                        {
+                            MessageBox.Show("Este Producto no acepta decimales ya que esta configurado para ser vendido por UNIDAD", "Formato Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        }
+                        else
+                        {
+                            BotonCantidad();
+                        }
+
+
+                    }
+                    else
+                    {
+                        BotonCantidad();
+                    }
+
+                }
+                else
+                {
+                    txtmonto.Clear();
+                    txtmonto.Focus();
+                }
+
+            }
+        }
+
+        private void BotonCantidad()
+        {
+            txtpantalla = Convert.ToDouble(txtmonto.Text);
+            double Cantidad;
+            Cantidad = Convert.ToDouble(dgDetalleCompra.SelectedCells[5].Value);
+            string ControlStock;
+            ControlStock = dgDetalleCompra.SelectedCells[9].Value.ToString();
+            if (ControlStock == "SI")
+            {
+                editar_detalle_compra_Cantidad();
+                txtmonto.Clear();
+            }
+
+        }
+        private void editar_detalle_compra_Cantidad()
+        {
+            var funcion = new DdetalleCompra();
+            var parametros = new LDetalleCompra();
+            parametros.IdCompra = idcompra;
+            parametros.IdProducto = idproducto;
+            parametros.Cantidad = txtpantalla;
+            funcion.editar_detalle_compra_Cantidad(parametros);
+            mostrarDetalleCompra();
+
+        }
+        private void BtnPrecio_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtmonto.Text))
+            {
+                editar_detalle_compra_Precio();
+            }
+            else
+            {
+                txtmonto.Clear();
+                txtmonto.Focus();
+            }
+        }
+
+        private void BtnComprar_Click(object sender, EventArgs e)
+        {
+         
+
+        }
+        private void editar_detalle_compra_Precio()
+        {
+            txtpantalla = Convert.ToDouble(txtmonto.Text);
+            var funcion = new DdetalleCompra();
+            var parametros = new LDetalleCompra();
+            parametros.IdCompra = idcompra;
+            parametros.IdProducto = idproducto;
+            parametros.Costo = txtpantalla;
+            funcion.editar_detalle_compra_Precio(parametros);
+            mostrarDetalleCompra();
+            txtmonto.Clear();
+
+
+
+        }
+
+       
     }
 }
