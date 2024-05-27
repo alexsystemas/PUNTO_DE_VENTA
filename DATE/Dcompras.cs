@@ -21,7 +21,7 @@ namespace PUNTO_DE_VENTA.DATE
                 var funcion = new Dcaja();
                 funcion.ObtenerIdCaja(ref Idcaja);
                 CONEXIONMAESTRA.abrir();
-                SqlCommand cmd = new SqlCommand("Insertar_Compras", CONEXIONMAESTRA.conectar);
+                SqlCommand cmd = new SqlCommand("insertar_Compras", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@fechacompra", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Cantidad", parametros.Cantidad);
@@ -36,7 +36,7 @@ namespace PUNTO_DE_VENTA.DATE
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
                 return false;
             }
             finally

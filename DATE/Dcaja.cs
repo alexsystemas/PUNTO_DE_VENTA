@@ -20,10 +20,12 @@ namespace PUNTO_DE_VENTA.DATE
             {
                 Bases.Obtener_serialPC(ref serialPC);
                 CONEXIONMAESTRA.abrir();
-                SqlCommand con = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", CONEXIONMAESTRA.conectar);
-                con.CommandType = CommandType.StoredProcedure;
-                con.Parameters.AddWithValue("@Serial", serialPC);
-                idcaja = Convert.ToInt32(con.ExecuteScalar());
+                SqlCommand com = new SqlCommand("mostrar_cajas_por_Serial_de_DiscoDuro", CONEXIONMAESTRA.conectar);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@Serial", serialPC);
+                idcaja = Convert.ToInt32(com.ExecuteScalar());
+
+
 
             }
             catch (Exception ex)
@@ -34,6 +36,7 @@ namespace PUNTO_DE_VENTA.DATE
             finally
             {
                 CONEXIONMAESTRA.cerrar();
+
             }
         }
     }

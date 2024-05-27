@@ -79,6 +79,7 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btn_Configuracion = new System.Windows.Forms.PictureBox();
             this.btnCerrar_Sesion = new System.Windows.Forms.PictureBox();
+            this.btn_Scanner = new System.Windows.Forms.PictureBox();
             this.btn_Teclado = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbltipodebusqueda2 = new System.Windows.Forms.Label();
@@ -109,6 +110,7 @@
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.Label36 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.Button23 = new System.Windows.Forms.Button();
             this.btnPrecio = new System.Windows.Forms.Button();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn1 = new System.Windows.Forms.Button();
@@ -143,8 +145,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.puertos = new System.IO.Ports.SerialPort(this.components);
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_Scanner = new System.Windows.Forms.PictureBox();
-            this.Button23 = new System.Windows.Forms.Button();
             this.pnlIzquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -163,6 +163,7 @@
             this.pnlToop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Teclado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlCentroIzq.SuspendLayout();
@@ -178,7 +179,6 @@
             this.pnlColorTema.SuspendLayout();
             this.pnlNotificacionEspera.SuspendLayout();
             this.pnlSuspenciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlIzquierdo
@@ -718,6 +718,17 @@
             this.btnCerrar_Sesion.TabStop = false;
             this.btnCerrar_Sesion.Click += new System.EventHandler(this.BtnCerrar_Sesion_Click);
             // 
+            // btn_Scanner
+            // 
+            this.btn_Scanner.Image = ((System.Drawing.Image)(resources.GetObject("btn_Scanner.Image")));
+            this.btn_Scanner.Location = new System.Drawing.Point(373, 13);
+            this.btn_Scanner.Name = "btn_Scanner";
+            this.btn_Scanner.Size = new System.Drawing.Size(32, 26);
+            this.btn_Scanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Scanner.TabIndex = 631;
+            this.btn_Scanner.TabStop = false;
+            this.btn_Scanner.Click += new System.EventHandler(this.Btn_Scanner_Click);
+            // 
             // btn_Teclado
             // 
             this.btn_Teclado.Image = ((System.Drawing.Image)(resources.GetObject("btn_Teclado.Image")));
@@ -1158,6 +1169,26 @@
             this.label27.Size = new System.Drawing.Size(112, 25);
             this.label27.TabIndex = 635;
             this.label27.Text = "Descuento:";
+            // 
+            // Button23
+            // 
+            this.Button23.BackColor = System.Drawing.Color.Transparent;
+            this.Button23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button23.BackgroundImage")));
+            this.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Button23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Button23.FlatAppearance.BorderSize = 0;
+            this.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button23.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
+            this.Button23.ForeColor = System.Drawing.Color.White;
+            this.Button23.Location = new System.Drawing.Point(209, 245);
+            this.Button23.Name = "Button23";
+            this.Button23.Size = new System.Drawing.Size(109, 60);
+            this.Button23.TabIndex = 641;
+            this.Button23.Text = "DESC";
+            this.Button23.UseVisualStyleBackColor = false;
             // 
             // btnPrecio
             // 
@@ -1679,37 +1710,6 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.ToolTipText = "Opcional \"Supr\" para Eliminar";
             // 
-            // btn_Scanner
-            // 
-            this.btn_Scanner.Image = ((System.Drawing.Image)(resources.GetObject("btn_Scanner.Image")));
-            this.btn_Scanner.Location = new System.Drawing.Point(373, 13);
-            this.btn_Scanner.Name = "btn_Scanner";
-            this.btn_Scanner.Size = new System.Drawing.Size(32, 26);
-            this.btn_Scanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_Scanner.TabIndex = 631;
-            this.btn_Scanner.TabStop = false;
-            this.btn_Scanner.Click += new System.EventHandler(this.Btn_Scanner_Click);
-            // 
-            // Button23
-            // 
-            this.Button23.BackColor = System.Drawing.Color.Transparent;
-            this.Button23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Button23.BackgroundImage")));
-            this.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button23.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Button23.FlatAppearance.BorderSize = 0;
-            this.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button23.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
-            this.Button23.ForeColor = System.Drawing.Color.White;
-            this.Button23.Location = new System.Drawing.Point(209, 245);
-            this.Button23.Name = "Button23";
-            this.Button23.Size = new System.Drawing.Size(109, 60);
-            this.Button23.TabIndex = 641;
-            this.Button23.Text = "DESC";
-            this.Button23.UseVisualStyleBackColor = false;
-            // 
             // VENTAS_MENU_PRINCIPALOK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1744,6 +1744,7 @@
             this.pnlToop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Configuracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar_Sesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Teclado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlCentroIzq.ResumeLayout(false);
@@ -1763,7 +1764,6 @@
             this.pnlColorTema.PerformLayout();
             this.pnlNotificacionEspera.ResumeLayout(false);
             this.pnlSuspenciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Scanner)).EndInit();
             this.ResumeLayout(false);
 
         }
