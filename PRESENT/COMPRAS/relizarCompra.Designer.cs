@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(relizarCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlToop = new System.Windows.Forms.Panel();
             this.dgProducctos = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -49,10 +49,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnComprar = new System.Windows.Forms.Button();
             this.btnCantidad = new System.Windows.Forms.Button();
-            this.labeligv = new System.Windows.Forms.Label();
             this.txtmonto = new System.Windows.Forms.TextBox();
-            this.Label36 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.Button23 = new System.Windows.Forms.Button();
             this.btnPrecio = new System.Windows.Forms.Button();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -132,11 +129,11 @@
             this.dgProducctos.ReadOnly = true;
             this.dgProducctos.RowHeadersVisible = false;
             this.dgProducctos.RowHeadersWidth = 9;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgProducctos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgProducctos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgProducctos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.dgProducctos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgProducctos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -248,10 +245,7 @@
             this.pnlCentalDer.Controls.Add(this.lblTotal);
             this.pnlCentalDer.Controls.Add(this.btnComprar);
             this.pnlCentalDer.Controls.Add(this.btnCantidad);
-            this.pnlCentalDer.Controls.Add(this.labeligv);
             this.pnlCentalDer.Controls.Add(this.txtmonto);
-            this.pnlCentalDer.Controls.Add(this.Label36);
-            this.pnlCentalDer.Controls.Add(this.label27);
             this.pnlCentalDer.Controls.Add(this.Button23);
             this.pnlCentalDer.Controls.Add(this.btnPrecio);
             this.pnlCentalDer.Controls.Add(this.flowLayoutPanel5);
@@ -296,10 +290,10 @@
             this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(101)))), ((int)(((byte)(108)))));
-            this.btnComprar.Location = new System.Drawing.Point(272, 1121);
+            this.btnComprar.Location = new System.Drawing.Point(140, 1121);
             this.btnComprar.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(392, 145);
+            this.btnComprar.Size = new System.Drawing.Size(524, 145);
             this.btnComprar.TabIndex = 645;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = false;
@@ -327,19 +321,6 @@
             this.btnCantidad.UseVisualStyleBackColor = false;
             this.btnCantidad.Click += new System.EventHandler(this.BtnCantidad_Click);
             // 
-            // labeligv
-            // 
-            this.labeligv.AutoSize = true;
-            this.labeligv.BackColor = System.Drawing.Color.Transparent;
-            this.labeligv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.labeligv.ForeColor = System.Drawing.Color.DimGray;
-            this.labeligv.Location = new System.Drawing.Point(-8, 978);
-            this.labeligv.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.labeligv.Name = "labeligv";
-            this.labeligv.Size = new System.Drawing.Size(279, 58);
-            this.labeligv.TabIndex = 633;
-            this.labeligv.Text = "IVA (16%) :";
-            // 
             // txtmonto
             // 
             this.txtmonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
@@ -350,32 +331,6 @@
             this.txtmonto.TabIndex = 644;
             this.txtmonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtmonto_KeyPress);
-            // 
-            // Label36
-            // 
-            this.Label36.AutoSize = true;
-            this.Label36.BackColor = System.Drawing.Color.Transparent;
-            this.Label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.Label36.ForeColor = System.Drawing.Color.DimGray;
-            this.Label36.Location = new System.Drawing.Point(24, 918);
-            this.Label36.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.Label36.Name = "Label36";
-            this.Label36.Size = new System.Drawing.Size(253, 58);
-            this.Label36.TabIndex = 634;
-            this.Label36.Text = "Sub Total:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(0, 1037);
-            this.label27.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(279, 58);
-            this.label27.TabIndex = 635;
-            this.label27.Text = "Descuento:";
             // 
             // Button23
             // 
@@ -793,14 +748,14 @@
             this.dgDetalleCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgDetalleCompra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgDetalleCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDetalleCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EL});
@@ -826,14 +781,14 @@
             // 
             // EL
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.EL.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = null;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.EL.DefaultCellStyle = dataGridViewCellStyle7;
             this.EL.HeaderText = "";
             this.EL.Image = ((System.Drawing.Image)(resources.GetObject("EL.Image")));
             this.EL.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -851,14 +806,14 @@
             // 
             // dataGridViewImageColumn2
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -911,10 +866,7 @@
         internal System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnComprar;
         internal System.Windows.Forms.Button btnCantidad;
-        internal System.Windows.Forms.Label labeligv;
         internal System.Windows.Forms.TextBox txtmonto;
-        internal System.Windows.Forms.Label Label36;
-        internal System.Windows.Forms.Label label27;
         internal System.Windows.Forms.Button Button23;
         internal System.Windows.Forms.Button btnPrecio;
         internal System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;

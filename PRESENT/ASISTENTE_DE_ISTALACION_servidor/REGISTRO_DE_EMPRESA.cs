@@ -148,7 +148,7 @@ namespace PUNTO_DE_VENTA.PRESENT.ASISTENTE_DE_ISTALACION_servidor
                 cmd.Parameters.AddWithValue("@numerofin", 0);
 
                 cmd.Parameters.AddWithValue("@Destino", "COMPRAS");
-                cmd.Parameters.AddWithValue("@tipodoc", "TICKET");
+                cmd.Parameters.AddWithValue("@tipodoc", "TICKETC");
                 cmd.Parameters.AddWithValue("@Por_defecto", "-");
                 cmd.ExecuteNonQuery();
                 con.Close();

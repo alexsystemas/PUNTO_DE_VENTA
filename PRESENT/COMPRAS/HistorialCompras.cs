@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.DATE;
 
 namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
 {
@@ -15,6 +17,54 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
         public HistorialCompras()
         {
             InitializeComponent();
+        }
+        int idcompra;
+        private void Txtbusca_TextChanged(object sender, EventArgs e)
+        {
+            buscarCompras();
+        }
+
+        private void buscarCompras()
+        {
+            var dt = new DataTable();
+            var funcion = new Dcompras();
+            funcion.buscarCompras(ref dt, txtbusca.Text);
+            datalistadoCompras.DataSource = dt;
+            Bases.Multilinea(ref datalistadoCompras);
+            datalistadoCompras.Columns[1].Visible = false;
+            datalistadoCompras.Columns[5].Visible = false;
+            datalistadoCompras.Columns[6].Visible = false;
+
+        }
+
+        private void HistorialCompras_Load(object sender, EventArgs e)
+        {
+            buscarCompras();
+        }
+
+        private void DatalistadoCompras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idcompra = Convert.ToInt32(datalistadoCompras.SelectedCells[1].Value);
+            lblTotal.Text = datalistadoCompras.SelectedCells[3].Value.ToString();
+            mostrarDetalleventa();
+        }
+
+        private void mostrarDetalleventa()
+        {
+            DataTable dt = new DataTable();
+            var funcion = new DdetalleCompra();
+            var parametros = new LDetalleCompra();
+            parametros.IdCompra = idcompra;
+            funcion.mostrar_DetalleCompra(ref dt, parametros);
+            dgDetallecompra.DataSource = dt;
+            Bases.Multilinea(ref dgDetallecompra);
+            dgDetallecompra.Columns[1].Visible = false;
+            dgDetallecompra.Columns[2].Visible = false;
+            dgDetallecompra.Columns[3].Visible = false;
+            dgDetallecompra.Columns[8].Visible = false;
+            dgDetallecompra.Columns[9].Visible = false;
+
+
         }
     }
 }
