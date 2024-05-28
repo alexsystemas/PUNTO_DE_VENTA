@@ -121,6 +121,8 @@
     <Compile Include="DATE\Dcaja.cs" />
     <Compile Include="DATE\Dcompras.cs" />
     <Compile Include="DATE\DdetalleCompra.cs" />
+    <Compile Include="DATE\DIniciosSeccion.cs" />
+    <Compile Include="DATE\DKardex.cs" />
     <Compile Include="DATE\DLicencias.cs" />
     <Compile Include="DATE\Dproductos.cs" />
     <Compile Include="DATE\Dproveedores.cs" />

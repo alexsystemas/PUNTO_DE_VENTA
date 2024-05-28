@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PUNTO_DE_VENTA.DATE
 {
-   public class Dcompras
+    public class Dcompras
     {
         int Idcaja;
         public bool Insertar_Compras(LDetalleCompra parametros)
@@ -92,34 +92,11 @@ namespace PUNTO_DE_VENTA.DATE
             {
                 CONEXIONMAESTRA.cerrar();
             }
+
+
         }
-        //public bool confirmarCompra(Lcompras parametros)
-        //{
-        //    try
-        //    {
-        //        var funcion = new Dcaja();
-        //        funcion.ObtenerIdCaja(ref Idcaja);
-        //        CONEXIONMAESTRA.abrir();
-        //        SqlCommand cmd = new SqlCommand("confirmarCompra", CONEXIONMAESTRA.conectar);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@Idcompra", parametros.Idcompra);
-        //        cmd.Parameters.AddWithValue("@Total", parametros.Total);
-        //        cmd.Parameters.AddWithValue("@Idcaja", Idcaja);
-        //        cmd.Parameters.AddWithValue("@Idproveedor", parametros.IdProveedor);
-        //        cmd.Parameters.AddWithValue("@fechacompra", DateTime.Now);
-        //        cmd.ExecuteNonQuery();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return false;
-        //    }
-        //    finally
-        //    {
-        //        CONEXIONMAESTRA.cerrar();
-        //    }
-        //}
+    
+    
         public void buscarCompras(ref DataTable dt, string buscador)
         {
 
@@ -142,6 +119,32 @@ namespace PUNTO_DE_VENTA.DATE
                 CONEXIONMAESTRA.cerrar();
             }
         }
-
+        public bool confirmarCompra(Lcompras parametros)
+        {
+            try
+            {
+                var funcion = new Dcaja();
+                funcion.ObtenerIdCaja(ref Idcaja);
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("confirmarCompra", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idcompra", parametros.Idcompra);
+                cmd.Parameters.AddWithValue("@Total", parametros.Total);
+                cmd.Parameters.AddWithValue("@Idcaja", Idcaja);
+                cmd.Parameters.AddWithValue("@Idproveedor", parametros.IdProveedor);
+                cmd.Parameters.AddWithValue("@fechacompra", DateTime.Now);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
     }
 }

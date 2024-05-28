@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PUNTO_DE_VENTA.DATE;
 using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.PRESENT.CLIENTES_PROVEEDORES;
 
 namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
 {
@@ -409,11 +410,7 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             }
         }
 
-        private void BtnComprar_Click(object sender, EventArgs e)
-        {
-         
-
-        }
+       
         private void editar_detalle_compra_Precio()
         {
             txtpantalla = Convert.ToDouble(txtmonto.Text);
@@ -426,10 +423,85 @@ namespace PUNTO_DE_VENTA.PRESENT.COMPRAS
             mostrarDetalleCompra();
             txtmonto.Clear();
 
+        }
 
+        private void insertarKardex()
+        {
+            var parametros = new LKardex();
+            var funcion = new DKardex();
+            parametros.Fecha = DateTime.Now;
+            parametros.Motivo = "COMPRAS";
+            foreach (DataGridViewRow rdr in dgDetalleCompra.Rows)
+            {
+                double cantidad = Convert.ToDouble(rdr.Cells["Cantidad"].Value);
+                int idproducto = Convert.ToInt32(rdr.Cells["Id_Producto1"].Value);
+                parametros.Cantidad = cantidad;
+                parametros.Id_producto = idproducto;
+                funcion.insertar_KARDEX_Entrada(parametros);
+
+            }
+
+        }
+        private void insertarStock()
+        {
+            var parametros = new Lproductos();
+            var funcion = new Dproductos();
+            foreach (DataGridViewRow rdr in dgDetalleCompra.Rows)
+            {
+                double cantidad = Convert.ToDouble(rdr.Cells["Cantidad"].Value);
+                int idproducto = Convert.ToInt32(rdr.Cells["Id_Producto1"].Value);
+                parametros.Stock = cantidad.ToString();
+                parametros.Id_Producto1 = idproducto;
+                funcion.aumentarStock(parametros);
+
+            }
 
         }
 
-       
+        private void Txtbuscar_Click(object sender, EventArgs e)
+        {
+            txtbuscar.SelectAll();
+        }
+
+        private void BtnAgregarPro_Click(object sender, EventArgs e)
+        {
+            var frm = new Proveedores();
+            frm.FormClosed += Frm_FormClosed;
+            frm.ShowDialog();
+        }
+
+        private void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dibujar_proveedores();
+        }
+        private void BtnComprar_Click(object sender, EventArgs e)
+        {
+
+            confirmarCompra();
+        }
+        private void confirmarCompra()
+        {
+            var funcion = new Dcompras();
+            var parametros = new Lcompras();
+            parametros.Idcompra = idcompra;
+            parametros.Total = Convert.ToDouble(txt_total_suma.Text);
+            parametros.IdProveedor = idproveedor;
+            if (funcion.confirmarCompra(parametros) == true)
+            {
+                insertarKardex();
+                insertarStock();
+                MessageBox.Show("Compra realizada correctamente");
+                Limpiar();
+            }
+
+        }
+        private void Limpiar()
+        {
+            txtmonto.Clear();
+            txtbuscar.Clear();
+            idcompra = 0;
+            mostrarDetalleCompra();
+            estadocompra = "COMPRA NUEVA";
+        }
     }
 }

@@ -35,5 +35,29 @@ namespace PUNTO_DE_VENTA.DATE
             }
         }
 
+        public bool aumentarStock(Lproductos parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("aumentarStock", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idproducto", parametros.Id_Producto1);
+                cmd.Parameters.AddWithValue("@cantidad", parametros.Stock);
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
     }
 }

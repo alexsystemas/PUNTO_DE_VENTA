@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PUNTO_DE_VENTA.LOGIC
 {
-    class Lcompras
+   public class Lcompras
     {
         public int Idcompra { get; set; }
         public DateTime fechacompra { get; set; }
