@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using PUNTO_DE_VENTA.DATE;
 using PUNTO_DE_VENTA.LOGIC;
+using PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL;
 namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 {
     public partial class Ventas_en_espera : Form
@@ -74,6 +75,9 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             idventa = 0;
             mostrar_ventas_en_espera_con_fecha_y_monto();
             mostrar_detalle_venta();
+            
+
+
         }
 
         private void Btn_restaurar_Click(object sender, EventArgs e)

@@ -142,8 +142,8 @@
   <data name="restaurar-base-de-datos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restaurar-base-de-datos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregar-icono2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agregar-icono2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1 pht3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo1 pht3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BART" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BART.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +274,8 @@
   <data name="TU LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TU LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boton-x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton-x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boton-x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton-x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -327,6 +327,9 @@
   </data>
   <data name="cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teclado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teclado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ocultar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ocultar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -384,6 +387,9 @@
   </data>
   <data name="flecha-verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha-verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gris_azul1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gris_azul2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -517,8 +523,8 @@
   <data name="carpeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carpeta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agregar-icono2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar-icono2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo1-pht" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo1-pht.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -529,8 +535,8 @@
   <data name="AZULBAJO_azul1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AZULBAJO_azul1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1 pht3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo1 pht3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boton-x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boton-x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GOLLUM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GOLLUM.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -571,7 +577,7 @@
   <data name="credito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\credito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="boton-x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\boton-x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="scanner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scanner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

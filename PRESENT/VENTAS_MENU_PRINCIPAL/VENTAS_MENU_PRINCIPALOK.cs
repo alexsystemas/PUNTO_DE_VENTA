@@ -54,35 +54,57 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void VENTAS_MENU_PRINCIPALOK_Load(object sender, EventArgs e)
         {
+
             validarLicencia();
+
             Bases.Cambiar_idioma_regional();
             Bases.Obtener_serialPC(ref SerialPC);
             // CONEXION.Obtener_serial_de_PC.ObtenerSerialPC(ref lblSerialPc);
 
             Obtener_datos.obtener_id_caja_PorSerial(ref Id_caja);
            
-            MOSTRAR_TIPO_DE_BUSQUEDA();
+          
             Obtener_id_de_cliente_estandar();
             Obtener_datos.mostrar_inio_de_secion(ref idusuario_que_inicio_sesion);
+            txtbuscar.Focus();
             if (Tipo_de_busqueda == "TECLADO")
             {
                 lbltipodebusqueda2.Text = "Buscar con TECLADO";
-                btn_Scanner.BackColor = Color.WhiteSmoke;
-                btn_Teclado.BackColor = Color.LightGreen;
+                btnScanner.BackColor = Color.WhiteSmoke;
+                btnTeclado.BackColor = Color.LightGreen;
             }
             else
             {
                 lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
-                btn_Scanner.BackColor = Color.LightGreen;
-                btn_Teclado.BackColor = Color.WhiteSmoke;
+                btnScanner.BackColor = Color.LightGreen;
+                btnTeclado.BackColor = Color.WhiteSmoke;
             }
             ValidarTemaCaja();
             Limpiar_para_venta_nueva();
             ObtenerIPlocal();
+            contarVentasEspera();
 
 
 
 
+        }
+        private void validarTiposDeBusquedas()
+        {
+            MOSTRAR_TIPO_DE_BUSQUEDA();
+            if (Tipo_de_busqueda == "TECLADO")
+            {
+                lbltipodebusqueda2.Text = "Buscar con TECLADO";
+                btnScanner.BackColor = Color.WhiteSmoke;
+                btnTeclado.BackColor = Color.LightGreen;
+                txtbuscar.Focus();
+            }
+            else
+            {
+                lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
+                btnScanner.BackColor = Color.LightGreen;
+                btnTeclado.BackColor = Color.WhiteSmoke;
+                txtbuscar.Focus();
+            }
         }
 
         private void ObtenerIPlocal()
@@ -90,7 +112,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
             this.Text = Bases.ObtenerIP(ref ip);
         }
-        private void contarVentasEspera()
+        public void contarVentasEspera()
         {
             Obtener_datos.contarVentasEspera(ref contadorVentasEspera);
             if(contadorVentasEspera==0)
@@ -174,7 +196,9 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 {
 
                     totalpagar += Convert.ToDouble(fila.Cells["Importe"].Value);
+                    Math.Round(totalpagar);
                     txt_total_suma.Text = Convert.ToString(totalpagar);
+                    
 
                 }
             }
@@ -235,7 +259,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+               // MessageBox.Show(ex.StackTrace);
             }
         }
 
@@ -268,26 +292,39 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
 
 
-        private void Btn_Teclado_Click(object sender, EventArgs e)
+     
+      
+        private void BtnTeclado_Click_1(object sender, EventArgs e)
         {
+            modoTeclado();
+        }
+        private void modoTeclado()
+        {
+            ocultar_productos();
             lbltipodebusqueda2.Text = "Buscar con  TECLADO";
             Tipo_de_busqueda = "TECLADO";
-            btn_Teclado.BackColor = Color.LightGreen;
-            btn_Scanner.BackColor = Color.WhiteSmoke;
+            btnTeclado.BackColor = Color.LightGreen;
+            btnScanner.BackColor = Color.WhiteSmoke;
             txtbuscar.Clear();
             txtbuscar.Focus();
         }
 
-        private void Btn_Scanner_Click(object sender, EventArgs e)
+        private void BtnScanner_Click(object sender, EventArgs e)
         {
+            modoScanner();
+        }
+
+
+        private void modoScanner()
+        {
+            ocultar_productos();
             lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
             Tipo_de_busqueda = "LECTORA";
-            btn_Scanner.BackColor = Color.LightGreen;
-            btn_Teclado.BackColor = Color.WhiteSmoke;
+            btnScanner.BackColor = Color.LightGreen;
+            btnTeclado.BackColor = Color.WhiteSmoke;
             txtbuscar.Clear();
             txtbuscar.Focus();
         }
-
         private void Txtbuscar_TextChanged(object sender, EventArgs e)
         {
             if (Tipo_de_busqueda == "LECTORA")
@@ -1498,6 +1535,52 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         private void BtnPrecioMayoreo_Click(object sender, EventArgs e)
         {
             aplicar_precio_mayoreo();
+        }
+
+        private void Txtbuscar_DoubleClick(object sender, EventArgs e)
+        {
+            txtbuscar.SelectAll();
+        }
+
+    
+
+      
+
+        private void BtnTeclado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.K))
+            {
+                MessageBox.Show(" Enter pressed ");
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.L))
+            {
+                MessageBox.Show(" Enter pressed ");
+            }
+        }
+
+        private void Txtbuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            tiposDeBusquedas(e);
+        }
+
+        private void DatalistadoDetalleVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            tiposDeBusquedas(e);
+        }
+        private void tiposDeBusquedas(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                modoTeclado();
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                modoScanner();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                validarTiposDeBusquedas();
+            }
         }
     }
 }

@@ -1373,6 +1373,16 @@ namespace PUNTO_DE_VENTA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap scanner1 {
+            get {
+                object obj = ResourceManager.GetObject("scanner1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap servicio {
             get {
                 object obj = ResourceManager.GetObject("servicio", resourceCulture);
@@ -1426,6 +1436,16 @@ namespace PUNTO_DE_VENTA.Properties {
         internal static System.Drawing.Bitmap teclado {
             get {
                 object obj = ResourceManager.GetObject("teclado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap teclado1 {
+            get {
+                object obj = ResourceManager.GetObject("teclado1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

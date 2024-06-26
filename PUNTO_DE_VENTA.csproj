@@ -764,6 +764,8 @@
     <None Include="Resources\btn-eli.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\scanner1.png" />
+    <None Include="Resources\teclado1.png" />
     <None Include="Resources\boton-x1.png" />
     <None Include="Resources\logo1 pht6.png" />
     <None Include="Resources\informacion.png" />

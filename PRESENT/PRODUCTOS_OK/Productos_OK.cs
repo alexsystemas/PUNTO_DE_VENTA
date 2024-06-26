@@ -43,6 +43,8 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             BtnGuardarCambios.Visible = false;
             btnCancelar.Visible = false;
             btnNuevoGrupo.Visible = true;
+            pictureBox1.Visible = false;
+            txtbusca.Visible = false;
 
 
             mostrar_grupos();
@@ -252,6 +254,8 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
         }
         private void insertar_productos()
         {
+            txtbusca.Visible = true;
+            pictureBox1.Visible = true;
             if (txtpreciomayoreo.Text == "0" | txtpreciomayoreo.Text == "") txtapartirde.Text = "0";
 
             try
@@ -1052,6 +1056,8 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             pnlPrincipal.Visible = false;
             PANELREGISTRO.Visible = false;
             datalistado.Visible = true;
+            pictureBox1.Visible = true;
+            txtbusca.Visible = true;
         }
 
         private void Btn_Configuracion_Click(object sender, EventArgs e)
@@ -1150,6 +1156,16 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
         {
             txtPorcentajeGanancia.Text = "";
             TXTPRECIODEVENTA2.Text = "";
+        }
+
+        private void TxtDescripcion_DoubleClick(object sender, EventArgs e)
+        {
+            txtDescripcion.SelectAll();
+        }
+
+        private void Txtbusca_DoubleClick(object sender, EventArgs e)
+        {
+            txtbusca.SelectAll();
         }
     }
 }
