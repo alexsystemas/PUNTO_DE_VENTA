@@ -67,6 +67,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             Obtener_id_de_cliente_estandar();
             Obtener_datos.mostrar_inio_de_secion(ref idusuario_que_inicio_sesion);
             txtbuscar.Focus();
+            dgDetalleDeVenta.Visible = false;
             if (Tipo_de_busqueda == "TECLADO")
             {
                 lbltipodebusqueda2.Text = "Buscar con TECLADO";
@@ -96,6 +97,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 lbltipodebusqueda2.Text = "Buscar con TECLADO";
                 btnScanner.BackColor = Color.WhiteSmoke;
                 btnTeclado.BackColor = Color.LightGreen;
+                dgDetalleDeVenta.Visible = true;
                 txtbuscar.Clear();
                 txtbuscar.Focus();
             }
@@ -104,6 +106,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 lbltipodebusqueda2.Text = "Buscar con LECTORA de Codigos de Barras";
                 btnScanner.BackColor = Color.LightGreen;
                 btnTeclado.BackColor = Color.WhiteSmoke;
+                dgDetalleDeVenta.Visible = true;
                 txtbuscar.Clear();
                 txtbuscar.Focus();
             }
@@ -186,7 +189,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             {
 
                 int x;
-                x = datalistadoDetalleVenta.Rows.Count;
+                x = dgDetalleDeVenta.Rows.Count;
                 if (x == 0)
                 {
                     txt_total_suma.Text = "0.00";
@@ -194,7 +197,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
                 double totalpagar;
                 totalpagar = 0;
-                foreach (DataGridViewRow fila in datalistadoDetalleVenta.Rows)
+                foreach (DataGridViewRow fila in dgDetalleDeVenta.Rows)
                 {
 
                     totalpagar += Convert.ToDouble(fila.Cells["Importe"].Value);
@@ -236,7 +239,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 dgProductos.Columns[9].Visible = false;
                 dgProductos.Columns[10].Visible = false;
 
-
+                dgDetalleDeVenta.Visible = true;
             }
             catch (Exception ex)
             {
@@ -382,7 +385,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         public void ValidarVentasNuevas()
         {
-            if(datalistadoDetalleVenta.RowCount==0)
+            if(dgDetalleDeVenta.RowCount==0)
             {
                 Limpiar_para_venta_nueva();
             }
@@ -569,29 +572,29 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@idventa", idVenta);
                 da.Fill(dt);
-                datalistadoDetalleVenta.DataSource = dt;
+                dgDetalleDeVenta.DataSource = dt;
                 con.Close();
-                datalistadoDetalleVenta.Columns[0].Width = 50;
-                datalistadoDetalleVenta.Columns[1].Width = 50;
-                datalistadoDetalleVenta.Columns[2].Width = 50;
-                datalistadoDetalleVenta.Columns[3].Visible = false;
-                datalistadoDetalleVenta.Columns[4].Width = 250;
-                datalistadoDetalleVenta.Columns[5].Width = 100;
-                datalistadoDetalleVenta.Columns[6].Width = 100;
-                datalistadoDetalleVenta.Columns[7].Width = 100;
-                datalistadoDetalleVenta.Columns[8].Visible = false;
-                datalistadoDetalleVenta.Columns[9].Visible = false;
-                datalistadoDetalleVenta.Columns[10].Visible = false;
-                datalistadoDetalleVenta.Columns[11].Width = datalistadoDetalleVenta.Width - (datalistadoDetalleVenta.Columns[0].Width - datalistadoDetalleVenta.Columns[1].Width - datalistadoDetalleVenta.Columns[2].Width -
-                datalistadoDetalleVenta.Columns[4].Width - datalistadoDetalleVenta.Columns[5].Width - datalistadoDetalleVenta.Columns[6].Width - datalistadoDetalleVenta.Columns[7].Width);
-                datalistadoDetalleVenta.Columns[12].Visible = false;
-                datalistadoDetalleVenta.Columns[13].Visible = false;
-                datalistadoDetalleVenta.Columns[14].Visible = false;
-                datalistadoDetalleVenta.Columns[15].Visible = false;
-                datalistadoDetalleVenta.Columns[16].Visible = false;
-                datalistadoDetalleVenta.Columns[17].Visible = false;
-                datalistadoDetalleVenta.Columns[18].Visible = false;
-                Bases.Multilinea(ref datalistadoDetalleVenta);
+                dgDetalleDeVenta.Columns[0].Width = 50;
+                dgDetalleDeVenta.Columns[1].Width = 50;
+                dgDetalleDeVenta.Columns[2].Width = 50;
+                dgDetalleDeVenta.Columns[3].Visible = false;
+                dgDetalleDeVenta.Columns[4].Width = 250;
+                dgDetalleDeVenta.Columns[5].Width = 100;
+                dgDetalleDeVenta.Columns[6].Width = 100;
+                dgDetalleDeVenta.Columns[7].Width = 100;
+                dgDetalleDeVenta.Columns[8].Visible = false;
+                dgDetalleDeVenta.Columns[9].Visible = false;
+                dgDetalleDeVenta.Columns[10].Visible = false;
+                dgDetalleDeVenta.Columns[11].Width = dgDetalleDeVenta.Width - (dgDetalleDeVenta.Columns[0].Width - dgDetalleDeVenta.Columns[1].Width - dgDetalleDeVenta.Columns[2].Width -
+                dgDetalleDeVenta.Columns[4].Width - dgDetalleDeVenta.Columns[5].Width - dgDetalleDeVenta.Columns[6].Width - dgDetalleDeVenta.Columns[7].Width);
+                dgDetalleDeVenta.Columns[12].Visible = false;
+                dgDetalleDeVenta.Columns[13].Visible = false;
+                dgDetalleDeVenta.Columns[14].Visible = false;
+                dgDetalleDeVenta.Columns[15].Visible = false;
+                dgDetalleDeVenta.Columns[16].Visible = false;
+                dgDetalleDeVenta.Columns[17].Visible = false;
+                dgDetalleDeVenta.Columns[18].Visible = false;
+                Bases.Multilinea(ref dgDetalleDeVenta);
                 sumar();
             }
             catch (Exception ex)
@@ -775,11 +778,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             try
             {
-                iddetalleventa = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[9].Value.ToString());
-                idproducto = Convert.ToInt32(datalistadoDetalleVenta.SelectedCells[8].Value.ToString());
-                sevendePor = datalistadoDetalleVenta.SelectedCells[17].Value.ToString();
-                usaInventarios = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
-                cantidad=Convert.ToDouble( datalistadoDetalleVenta.SelectedCells[5].Value);
+                iddetalleventa = Convert.ToInt32(dgDetalleDeVenta.SelectedCells[9].Value.ToString());
+                idproducto = Convert.ToInt32(dgDetalleDeVenta.SelectedCells[8].Value.ToString());
+                sevendePor = dgDetalleDeVenta.SelectedCells[17].Value.ToString();
+                usaInventarios = dgDetalleDeVenta.SelectedCells[16].Value.ToString();
+                cantidad=Convert.ToDouble( dgDetalleDeVenta.SelectedCells[5].Value);
 
             }
             catch (Exception ex)
@@ -792,7 +795,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                
                 if (usaInventarios == "SI")
                 {
-                   lblStock_De_Productos =Convert.ToDouble( datalistadoDetalleVenta.SelectedCells[15].Value.ToString());
+                   lblStock_De_Productos =Convert.ToDouble( dgDetalleDeVenta.SelectedCells[15].Value.ToString());
                    if(lblStock_De_Productos>0)
                     {
                         ejecutar_editar_detalle_venta_sumar();
@@ -870,12 +873,12 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             Obtener_datos_del_detalle_de_venta();
 
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["S"].Index)
+            if (e.ColumnIndex == this.dgDetalleDeVenta.Columns["S"].Index)
             {
                 txtpantalla = 1;
                 editar_detalle_venta_sumar();
             }
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["R"].Index)
+            if (e.ColumnIndex == this.dgDetalleDeVenta.Columns["R"].Index)
             {
                 txtpantalla = 1;
                 editar_detalle_venta_restar();
@@ -884,9 +887,9 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             }
 
 
-            if (e.ColumnIndex == this.datalistadoDetalleVenta.Columns["EL"].Index)
+            if (e.ColumnIndex == this.dgDetalleDeVenta.Columns["EL"].Index)
             {
-                foreach (DataGridViewRow row in datalistadoDetalleVenta.SelectedRows)
+                foreach (DataGridViewRow row in dgDetalleDeVenta.SelectedRows)
                 {
                     int iddetalle_venta = Convert.ToInt32(row.Cells["iddetalle_venta"].Value);
                     try
@@ -932,12 +935,12 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         private void contar_tablas_ventas()
         {
             int x;
-            x = datalistadoDetalleVenta.Rows.Count;
+            x = dgDetalleDeVenta.Rows.Count;
             contador = (x);
         }
         private void DatalistadoDetalleVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(datalistadoDetalleVenta.RowCount>0)
+            if(dgDetalleDeVenta.RowCount>0)
             {
                 Obtener_datos_del_detalle_de_venta();
                 if (e.KeyChar == Convert.ToChar("+"))
@@ -1154,7 +1157,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if(datalistadoDetalleVenta.RowCount>0)
+            if(dgDetalleDeVenta.RowCount>0)
             {
          DialogResult Pregunta = MessageBox.Show("¿Realmente desea eliminar esta Venta?", "Eliminado registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if(Pregunta==DialogResult.OK)
@@ -1170,7 +1173,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnPonerEspera_Click(object sender, EventArgs e)
         {
-            if(datalistadoDetalleVenta.RowCount>0)
+            if(dgDetalleDeVenta.RowCount>0)
             {
                 pnlEnEspera.Visible = true;
                 pnlEnEspera.BringToFront();
@@ -1277,7 +1280,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void aplicar_precio_mayoreo()
         {
-            if(datalistadoDetalleVenta.Rows.Count>0)
+            if(dgDetalleDeVenta.Rows.Count>0)
             {
                 LdetalleVenta parametros = new LdetalleVenta();
                 Editar_datos funcion = new Editar_datos();
@@ -1301,7 +1304,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             if (!string.IsNullOrEmpty(txtmonto.Text))
             {
-                if (datalistadoDetalleVenta.RowCount > 0)
+                if (dgDetalleDeVenta.RowCount > 0)
                 {
 
                     if (sevendePor == "Unidad")
@@ -1338,15 +1341,15 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             double MontoaIngresar;
             MontoaIngresar = Convert.ToDouble(txtmonto.Text);
             double Cantidad;
-            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+            Cantidad = Convert.ToDouble(dgDetalleDeVenta.SelectedCells[5].Value);
 
             double stock;
             double condicional;
             string ControlStock;
-            ControlStock = datalistadoDetalleVenta.SelectedCells[16].Value.ToString();
+            ControlStock = dgDetalleDeVenta.SelectedCells[16].Value.ToString();
             if (ControlStock == "SI")
             {
-                stock = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[11].Value);
+                stock = Convert.ToDouble(dgDetalleDeVenta.SelectedCells[11].Value);
                 condicional = Cantidad + stock;
                 if (condicional >= MontoaIngresar)
                 {
@@ -1369,7 +1372,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             double MontoaIngresar;
             MontoaIngresar = Convert.ToDouble(txtmonto.Text);
             double Cantidad;
-            Cantidad = Convert.ToDouble(datalistadoDetalleVenta.SelectedCells[5].Value);
+            Cantidad = Convert.ToDouble(dgDetalleDeVenta.SelectedCells[5].Value);
 
             if (MontoaIngresar > Cantidad)
             {
@@ -1434,7 +1437,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             pnlDevolucion.BackColor = Color.FromArgb(40, 45, 61);
             pnlColorTema.BackColor = Color.FromArgb(40, 45, 61);
 
-            datalistadoDetalleVenta.BackgroundColor = Color.FromArgb(40, 45, 61);
+            dgDetalleDeVenta.BackgroundColor = Color.FromArgb(40, 45, 61);
 
             lblTotal.ForeColor = Color.FromArgb(100, 101, 108);
             txt_total_suma.ForeColor = Color.FromArgb(100, 101, 108);
@@ -1488,7 +1491,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             pnlDevolucion.BackColor = Color.FromArgb(214, 250, 250);
             pnlColorTema.BackColor = Color.FromArgb(214, 250, 250);
 
-            datalistadoDetalleVenta.BackgroundColor = Color.FromArgb(214, 250, 250);
+            dgDetalleDeVenta.BackgroundColor = Color.FromArgb(214, 250, 250);
 
             lblTotal.ForeColor = Color.FromArgb(0, 85, 128);
             txt_total_suma.ForeColor = Color.FromArgb(0, 85, 128);
@@ -1577,6 +1580,19 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         {
             tiposDeBusquedas(e);
             EventosNavegarDgProductos(e);
+            EventosNavegarDgDetalleDeVenta(e);
+        }
+        private void EventosNavegarDgDetalleDeVenta(KeyEventArgs e)
+        {
+            if (dgProductos.Visible == false)
+            {
+               
+                if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+                {
+                    dgDetalleDeVenta.Focus();
+
+                }
+            }
         }
         private void EventosNavegarDgProductos(KeyEventArgs e)
         {
