@@ -616,6 +616,7 @@
             this.txtcredito2.TabIndex = 1;
             this.txtcredito2.Click += new System.EventHandler(this.Txtcredito2_Click);
             this.txtcredito2.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
+            this.txtcredito2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtcredito2_KeyDown);
             this.txtcredito2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcredito2_KeyPress);
             // 
             // panel6
@@ -637,6 +638,7 @@
             this.txttarjeta2.TabIndex = 1;
             this.txttarjeta2.Click += new System.EventHandler(this.Txttarjeta2_Click);
             this.txttarjeta2.TextChanged += new System.EventHandler(this.Txttarjeta2_TextChanged);
+            this.txttarjeta2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txttarjeta2_KeyDown);
             this.txttarjeta2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txttarjeta2_KeyPress);
             // 
             // panel5
@@ -659,6 +661,7 @@
             this.txtefectivo2.TabIndex = 1;
             this.txtefectivo2.Click += new System.EventHandler(this.Txtefectivo2_Click);
             this.txtefectivo2.TextChanged += new System.EventHandler(this.Txtefectivo2_TextChanged);
+            this.txtefectivo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtefectivo2_KeyDown);
             this.txtefectivo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtefectivo2_KeyPress);
             // 
             // panel1
@@ -748,6 +751,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(358, 450);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReportViewer1_KeyDown);
             // 
             // pictureBox5
             // 
@@ -774,12 +778,12 @@
             this.GuardarYVerEnPanatalla.BackColor = System.Drawing.Color.DimGray;
             this.GuardarYVerEnPanatalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarYVerEnPanatalla.ForeColor = System.Drawing.Color.White;
-            this.GuardarYVerEnPanatalla.Location = new System.Drawing.Point(313, 456);
+            this.GuardarYVerEnPanatalla.Location = new System.Drawing.Point(337, 456);
             this.GuardarYVerEnPanatalla.Margin = new System.Windows.Forms.Padding(1);
             this.GuardarYVerEnPanatalla.Name = "GuardarYVerEnPanatalla";
-            this.GuardarYVerEnPanatalla.Size = new System.Drawing.Size(190, 36);
+            this.GuardarYVerEnPanatalla.Size = new System.Drawing.Size(207, 34);
             this.GuardarYVerEnPanatalla.TabIndex = 7;
-            this.GuardarYVerEnPanatalla.Text = "Guardar y Visualizar";
+            this.GuardarYVerEnPanatalla.Text = "Guardar y Visualizar (f1)";
             this.GuardarYVerEnPanatalla.UseVisualStyleBackColor = false;
             this.GuardarYVerEnPanatalla.Click += new System.EventHandler(this.GuardarYVerEnPanatalla_Click);
             // 
@@ -798,12 +802,12 @@
             this.GuardarYImprimirDirecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.GuardarYImprimirDirecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarYImprimirDirecto.ForeColor = System.Drawing.Color.White;
-            this.GuardarYImprimirDirecto.Location = new System.Drawing.Point(88, 456);
+            this.GuardarYImprimirDirecto.Location = new System.Drawing.Point(69, 456);
             this.GuardarYImprimirDirecto.Margin = new System.Windows.Forms.Padding(1);
             this.GuardarYImprimirDirecto.Name = "GuardarYImprimirDirecto";
-            this.GuardarYImprimirDirecto.Size = new System.Drawing.Size(212, 34);
+            this.GuardarYImprimirDirecto.Size = new System.Drawing.Size(266, 34);
             this.GuardarYImprimirDirecto.TabIndex = 6;
-            this.GuardarYImprimirDirecto.Text = "Guardar e Imprimir Directo";
+            this.GuardarYImprimirDirecto.Text = "Guardar e Imprimir Directo (enter)";
             this.GuardarYImprimirDirecto.UseVisualStyleBackColor = false;
             this.GuardarYImprimirDirecto.Click += new System.EventHandler(this.GuardarYImprimirDirecto_Click);
             // 
@@ -976,6 +980,7 @@
             this.txtTrasferencia2.TabIndex = 1;
             this.txtTrasferencia2.Click += new System.EventHandler(this.Txtcredito2_Click);
             this.txtTrasferencia2.TextChanged += new System.EventHandler(this.Txtcredito2_TextChanged);
+            this.txtTrasferencia2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtTrasferencia2_KeyDown);
             this.txtTrasferencia2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTrasferencia2_KeyPress);
             // 
             // panel12
@@ -988,9 +993,9 @@
             this.panel12.Controls.Add(this.txttotaldecimal);
             this.panel12.Controls.Add(this.txtnumerofin);
             this.panel12.Controls.Add(this.PANEL_CLIENTE_FACTURA);
-            this.panel12.Location = new System.Drawing.Point(581, 492);
+            this.panel12.Location = new System.Drawing.Point(578, 495);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(27, 10);
+            this.panel12.Size = new System.Drawing.Size(30, 10);
             this.panel12.TabIndex = 5;
             // 
             // dtComprobantes

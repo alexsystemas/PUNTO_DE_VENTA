@@ -905,6 +905,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             CONFIRMAR_VENTA_EFECTIVO();
             if (lblproceso == "PROCEDE")
             {
+                reportViewer1.Focus();
+                VENTAS_MENU_PRINCIPALOK.EstadosMediosPago = true;
                 disminuir_stock_productos();
                 INSERTAR_KARDEX_SALIDA();
                 aumentar_monto_a_cliente();
@@ -1292,30 +1294,38 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void GuardarYImprimirDirecto_Click(object sender, EventArgs e)
         {
+            procesoImprimirDirecto();
+        }
+        private void procesoImprimirDirecto()
+        {
             if (restante == 0)
             {
-                if (txtImpresora.Text != "Ninguna")
-                {
+                //if (txtImpresora.Text != "Ninguna")
+                //{
                     editar_eleccion_de_impresora();
                     indicador = "DIRECTO";
                     identificar_el_tipo_de_pago();
                     INGRESAR_LOS_DATOS();
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una Impresora", "Impresora Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            else
-            {
-                MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Seleccione una Impresora", "Impresora Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                //}
+                //else
+                //{
+                //    MessageBox.Show("El restante debe ser 0", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
-        private void GuardarYVerEnPanatalla_Click(object sender, EventArgs e)
+            private void GuardarYVerEnPanatalla_Click(object sender, EventArgs e)
         {
+            procesoVerEnPantalla();
+           
+        }
 
-            if (restante == 0)
+        private void procesoVerEnPantalla()
+        {
+             if (restante == 0)
             {
                 indicador = "VISTA PREVIA";
                 identificar_el_tipo_de_pago();
@@ -1355,6 +1365,46 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         private void TxtTrasferencia2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Bases.Separador_de_Numeros(txtTrasferencia2, e);
+        }
+
+        private void EventoCobro(KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                procesoImprimirDirecto();
+            }
+            if (e.KeyCode == Keys.F1)
+            {
+                procesoVerEnPantalla();
+            }
+        }
+
+        private void Txtefectivo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void Txttarjeta2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void Txtcredito2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void TxtTrasferencia2_KeyDown(object sender, KeyEventArgs e)
+        {
+            EventoCobro(e);
+        }
+
+        private void ReportViewer1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                Dispose();
+            }
         }
     }
 }

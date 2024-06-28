@@ -49,6 +49,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string ip;
         int contadorVentasEspera;
         bool estadoCobrar=false;
+        public static bool EstadosMediosPago = false;
         Panel panel_mostrador_de_productos = new Panel();
       
 
@@ -183,6 +184,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             sumar();
             pnlEnEspera.Visible = false;
             contarVentasEspera();
+            EstadosMediosPago = false;
         }
         private void sumar()
         {
@@ -1125,7 +1127,11 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         }
         private void frm_FormClosed(Object sender, FormClosedEventArgs e)
         {
-            Limpiar_para_venta_nueva();
+            if(EstadosMediosPago==true)
+            {
+                Limpiar_para_venta_nueva();
+            }
+           
         }
 
         private void TimerLABEL_Stock_Tick(object sender, EventArgs e)
@@ -1664,6 +1670,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             EventosNavegarDgProductos(e);
             tiposDeBusquedas(e);
         }
+
+     
     }
 }
 
