@@ -48,6 +48,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
         string Tema;
         string ip;
         int contadorVentasEspera;
+        bool estadoCobrar=false;
         Panel panel_mostrador_de_productos = new Panel();
       
 
@@ -1109,12 +1110,19 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
         private void BtnCobrar_Click_1(object sender, EventArgs e)
         {
-            total = Convert.ToDouble(txt_total_suma.Text);
-            VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO frm = new VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO();
-            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
-            frm.ShowDialog();
+            Cobrar();
         }
-
+        private void Cobrar()
+        {
+            if (dgDetalleDeVenta.RowCount>0)
+            {
+                total = Convert.ToDouble(txt_total_suma.Text);
+                VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO frm = new VENTAS_MENU_PRINCIPAL.MEDIOS_DE_PAGO();
+                frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                frm.ShowDialog();
+            }
+          
+        }
         private void frm_FormClosed(Object sender, FormClosedEventArgs e)
         {
             Limpiar_para_venta_nueva();
@@ -1592,14 +1600,18 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
                     dgDetalleDeVenta.Focus();
 
                 }
+               
+               
             }
         }
         private void EventosNavegarDgProductos(KeyEventArgs e)
         {
+            estadoCobrar = true;
             if(dgProductos.Visible==true)
             {
                 if(e.KeyCode==Keys.Enter)
                 {
+                    estadoCobrar = false;
                     vender_por_teclado();
                 }
                 if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
@@ -1608,12 +1620,28 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
 
                 }
             }
+            else
+            {
+                if (e.KeyCode == Keys.Enter && estadoCobrar==true)
+                {
+                    Cobrar();
+                }
+            }
         }
 
         private void DatalistadoDetalleVenta_KeyDown(object sender, KeyEventArgs e)
         {
             tiposDeBusquedas(e);
+            EventoDeCobros(e);
         }
+        private void EventoDeCobros(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && dgProductos.Visible==false)
+            {
+                Cobrar();
+            }
+        }
+
         private void tiposDeBusquedas(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -1628,6 +1656,7 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             {
                 validarTiposDeBusquedas();
             }
+
         }
 
         private void DgProductos_KeyDown(object sender, KeyEventArgs e)
