@@ -961,7 +961,7 @@
             this.txtcosto.Size = new System.Drawing.Size(150, 24);
             this.txtcosto.TabIndex = 13;
             this.txtcosto.Text = "0";
-            this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcosto_KeyPress);
+       //     this.txtcosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcosto_KeyPress);
             // 
             // label9
             // 

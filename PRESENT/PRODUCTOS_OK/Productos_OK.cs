@@ -1079,55 +1079,61 @@ namespace PUNTO_DE_VENTA.PRESENT.PRODUCTOS_OK
             datalistado.Visible = true;
         }
 
-        private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar != '.') || (e.KeyChar != ','))
-            {
+        /// SUSPENDIDO PARA PRUEBAS 13-07-24
+        
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        //private void Txtcosto_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if ((e.KeyChar != '.') || (e.KeyChar != ','))
+        //    {
 
 
-                string CultureName = Thread.CurrentThread.CurrentCulture.Name;
-                CultureInfo ci = new CultureInfo(CultureName);
+        //        string CultureName = Thread.CurrentThread.CurrentCulture.Name;
+        //        CultureInfo ci = new CultureInfo(CultureName);
 
 
-                ci.NumberFormat.NumberDecimalSeparator = ".";
-                Thread.CurrentThread.CurrentCulture = ci;
+        //        ci.NumberFormat.NumberDecimalSeparator = ".";
+        //        Thread.CurrentThread.CurrentCulture = ci;
 
-            }
-            Separador_de_Numeros(txtcosto, e);
-        }
-        public static void Separador_de_Numeros(System.Windows.Forms.TextBox CajaTexto, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+        //    }
+        //    Separador_de_Numeros(txtcosto, e);
+        //}
+        //public static void Separador_de_Numeros(System.Windows.Forms.TextBox CajaTexto, System.Windows.Forms.KeyPressEventArgs e)
+        //{
+        //    if (Char.IsDigit(e.KeyChar))
+        //    {
+        //        e.Handled = false;
+        //    }
+        //    else if (Char.IsControl(e.KeyChar))
+        //    {
+        //        e.Handled = false;
+        //    }
 
-            else if (!(e.KeyChar == CajaTexto.Text.IndexOf('.')))
-            {
-                e.Handled = true;
-            }
+        //    else if (!(e.KeyChar == CajaTexto.Text.IndexOf('.')))
+        //    {
+        //        e.Handled = true;
+        //    }
 
 
-            else if (e.KeyChar == '.')
-            {
-                e.Handled = false;
-            }
-            else if (e.KeyChar == ',')
-            {
-                e.Handled = false;
+        //    else if (e.KeyChar == '.')
+        //    {
+        //        e.Handled = false;
+        //    }
+        //    else if (e.KeyChar == ',')
+        //    {
+        //        e.Handled = false;
 
-            }
-            else
-            {
-                e.Handled = true;
+        //    }
+        //    else
+        //    {
+        //        e.Handled = true;
 
-            }
+        //    }
 
-        }
+        //}
 
         private void BtnImportarExcel_Click(object sender, EventArgs e)
         {

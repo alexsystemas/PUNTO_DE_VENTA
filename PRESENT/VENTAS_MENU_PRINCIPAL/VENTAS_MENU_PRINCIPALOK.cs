@@ -334,9 +334,12 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             txtbuscar.Focus();
         }
         private void Txtbuscar_TextChanged(object sender, EventArgs e)
+       
+        
         {
             if (Tipo_de_busqueda == "LECTORA")
-            {
+            
+                    {
 
                 lbltipodebusqueda2.Visible = false;
                 timerBUSCADORcodigodebarras.Start();

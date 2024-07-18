@@ -75,10 +75,8 @@ namespace PUNTO_DE_VENTA.PRESENT.VENTAS_MENU_PRINCIPAL
             idventa = 0;
             mostrar_ventas_en_espera_con_fecha_y_monto();
             mostrar_detalle_venta();
-            
-
-
         }
+     
 
         private void Btn_restaurar_Click(object sender, EventArgs e)
         {
